@@ -5,6 +5,10 @@
   margin: 10px;
   padding: 10px;
 
+  &.dndEmpty {
+    border: 2px dotted red;
+  }
+
   .ngx-dnd-item {
     margin: 10px;
     padding: 10px;

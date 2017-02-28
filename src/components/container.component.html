@@ -1,12 +1,26 @@
 <div [ngSwitch]="type">
   <div *ngSwitchCase="'object'">
     {{model.label}}
-    <ngx-dnd-container [bag]="bag" [model]="model.children"></ngx-dnd-container>
+    <ngx-dnd-container
+      [bag]="bag"
+      [model]="model.children"
+      [class]="class">
+    </ngx-dnd-container>
   </div>
   <div *ngSwitchCase="'array'">
-    <div class='ngx-dnd-container' [class.dndEmpty]="!model.length" [dragula]="bag" [dragulaModel]="model" [dragulaOptions]="options">
-      <div class="ngx-dnd-item" *ngFor="let item of model">
-        <ngx-dnd-container [bag]="bag" [model]="item"></ngx-dnd-container>
+    <div class='ngx-dnd-container {{class}}'
+      [class.dndEmpty]="!model.length"
+      [dragula]="bag"
+      [dragulaModel]="model"
+      [dragulaOptions]="options">
+      <div
+        class="ngx-dnd-item"
+        *ngFor="let item of model">
+        <ngx-dnd-container
+          [bag]="bag"
+          [model]="item"
+          [class]="class">
+        </ngx-dnd-container>
       </div>
     </div>
   </div>

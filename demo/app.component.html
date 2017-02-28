@@ -7,88 +7,181 @@
     </h1>
   </div -->
   <div class="field" fxFlex="100%">
-    <div>
-      <ngx-section class="shadow" sectionTitle="Ordering - Template Only">
 
-        <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
-          <div fxFlex="50%">
-            <div class='wrapper'>
-              <div class='ngx-dnd-container' dragula="example-1">
-                <div class="ngx-dnd-item">Item 1</div>
-                <div class="ngx-dnd-item">Item 2</div>
-                <div class="ngx-dnd-item">Item 3</div>
-              </div>
+    <ngx-section class="shadow" sectionTitle="Ordering - Template Only">
+      <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
+        <div fxFlex="50%">
+          <div class='wrapper' fxFlex>
+            <div class='ngx-dnd-container' dragula="example-1">
+              <div class="ngx-dnd-item">Item 1</div>
+              <div class="ngx-dnd-item">Item 2</div>
+              <div class="ngx-dnd-item">Item 3</div>
             </div>
           </div>
-          <div fxFlex="50%">
-            <pre></pre>
+        </div>
+        <div fxFlex="50%">
+          <h3>Template</h3>
+          <pre><code><![CDATA[<div class='ngx-dnd-container' dragula="example-1">
+  <div class="ngx-dnd-item">Item 1</div>
+  <div class="ngx-dnd-item">Item 2</div>
+  <div class="ngx-dnd-item">Item 3</div>
+</div>]]></code></pre>
+        </div>
+      </div>
+    </ngx-section>
+
+    <ngx-section class="shadow" sectionTitle="Ordering - from array">
+      <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
+        <div fxFlex="50%">
+          <div class='wrapper'>
+            <ngx-dnd-container [model]="orderableList" bag="example-2"></ngx-dnd-container>
           </div>
         </div>
-      </ngx-section>
+        <div fxFlex="25%">
+          <h3>Model</h3>
+          <pre><code>{{orderableList | json}}</code></pre>
+        </div>
+        <div fxFlex="25%">
+          <h3>Template</h3>
+          <pre><code><![CDATA[<ngx-dnd-container
+  [model]="orderableList"
+  bag="example-2">
+</ngx-dnd-container>]]></code></pre>
+        </div>
+      </div>
+    </ngx-section>
 
-      <ngx-section class="shadow" sectionTitle="Ordering - from array">
-        <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
-          <div fxFlex="50%">
-            <div class='wrapper'>
-              <ngx-dnd-container [model]="orderableList" bag="example-2"></ngx-dnd-container>
+    <ngx-section class="shadow" sectionTitle="DnD - Template Only">
+      <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
+        <div fxFlex="50%">
+          <div class='wrapper'>
+            <div class='ngx-dnd-container' dragula="example-3">
+              <div class="ngx-dnd-item">Item 1a</div>
+              <div class="ngx-dnd-item">Item 2a</div>
+              <div class="ngx-dnd-item">Item 3a</div>
+            </div>
+            <div class='ngx-dnd-container' dragula="example-3">
+              <div class="ngx-dnd-item">Item 1b</div>
+              <div class="ngx-dnd-item">Item 2b</div>
+              <div class="ngx-dnd-item">Item 3b</div>
             </div>
           </div>
-          <div fxFlex="50%">
-            <pre>{{orderableList | json}}</pre>
-          </div>
         </div>
-      </ngx-section>
+        <div fxFlex="50%">
+          <h3>Template</h3>
+          <pre><code><![CDATA[<div class='ngx-dnd-container' dragula="example-3">
+  <div class="ngx-dnd-item">Item 1a</div>
+  <div class="ngx-dnd-item">Item 2a</div>
+  <div class="ngx-dnd-item">Item 3a</div>
+</div>
+<div class='ngx-dnd-container' dragula="example-3">
+  <div class="ngx-dnd-item">Item 1b</div>
+  <div class="ngx-dnd-item">Item 2b</div>
+  <div class="ngx-dnd-item">Item 3b</div>
+</div>]]></code></pre>
+        </div>
+      </div>
+    </ngx-section>
 
-      <ngx-section class="shadow" sectionTitle="DnD - Template Only">
-        <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
-          <div fxFlex="50%">
-            <div class='wrapper'>
-              <div class='ngx-dnd-container' dragula="example-3">
-                <div class="ngx-dnd-item">Item 1a</div>
-                <div class="ngx-dnd-item">Item 2a</div>
-                <div class="ngx-dnd-item">Item 3a</div>
-              </div>
-              <div class='ngx-dnd-container' dragula="example-3">
-                <div class="ngx-dnd-item">Item 1b</div>
-                <div class="ngx-dnd-item">Item 2b</div>
-                <div class="ngx-dnd-item">Item 3b</div>
-              </div>
+    <ngx-section class="shadow" sectionTitle="DnD - from array">
+      <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
+        <div fxFlex="50%">
+          <div class='wrapper'>
+            <div *ngFor="let group of orderableLists">
+              <ngx-dnd-container [model]="group" bag="example-4"></ngx-dnd-container>
             </div>
           </div>
-          <div fxFlex="50%">
-            <pre></pre>
+        </div>
+        <div fxFlex="25%">
+          <h3>Model</h3>
+          <pre>{{orderableLists | json}}</pre>
+        </div>
+        <div fxFlex="25%">
+          <h3>Template</h3>
+          <pre><code><![CDATA[<div *ngFor="let group of orderableLists">
+  <ngx-dnd-container
+    [model]="group"
+    bag="example-4">
+  </ngx-dnd-container>
+</div>]]></code></pre>
+        </div>
+      </div>
+    </ngx-section>
+
+    <ngx-section class="shadow" sectionTitle="DnD - nested">
+      <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
+        <div fxFlex="50%">
+          <div class='wrapper'>
+            <ngx-dnd-container [model]="nestedLists" bag="example-5"></ngx-dnd-container>
           </div>
         </div>
-      </ngx-section>
-
-      <ngx-section class="shadow" sectionTitle="DnD - from array">
-        <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
-          <div fxFlex="50%">
-            <div class='wrapper'>
-              <div *ngFor="let group of orderableLists">
-                <ngx-dnd-container [model]="group" bag="example-4"></ngx-dnd-container>
-              </div>
-            </div>
-          </div>
-          <div fxFlex="50%">
-            <pre>{{orderableLists | json}}</pre>
-          </div>
+        <div fxFlex="25%">
+          <h3>Model</h3>
+          <code><pre>{{nestedLists | json}}</pre></code>
         </div>
-      </ngx-section>
-
-      <ngx-section class="shadow" sectionTitle="DnD - nested">
-        <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
-          <div fxFlex="50%">
-            <div class='wrapper'>
-              <ngx-dnd-container [model]="nestedLists" bag="example-5"></ngx-dnd-container>
-            </div>
-          </div>
-          <div fxFlex="50%">
-            <code><pre>{{nestedLists | json}}</pre></code>
-          </div>
+        <div fxFlex="25%">
+          <h3>Template</h3>
+          <pre><code><![CDATA[<ngx-dnd-container
+  [model]="nestedLists"
+  bag="example-5">
+</ngx-dnd-container>]]></code></pre>
         </div>
-      </ngx-section>
+      </div>
+    </ngx-section>
 
-    </div>
+    <ngx-section class="shadow" sectionTitle="One Way Drag">
+      <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
+        <div fxFlex="25%">
+          <h4>Source</h4>
+            <ngx-dnd-container
+              [class]="'source'"
+              [model]="sourceItems"
+              [options]="builder"
+              bag="example-0">
+            </ngx-dnd-container>
+        </div>
+        <div fxFlex="25%">
+          <h4>Target</h4>
+          <ngx-dnd-container
+            [class]="'target'"
+            [model]="targetItems"
+            [options]="builder"
+            bag="example-0">
+          </ngx-dnd-container>
+        </div>
+        <div fxFlex="25%">
+          <h3>Model</h3>
+          <pre><code>{{targetItems | json}}</code></pre>
+        </div>
+      </div>
+    </ngx-section>
+
+    <ngx-section class="shadow" sectionTitle="Nested One Way Drag">
+      <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
+        <div fxFlex="25%">
+          <h4>Source</h4>
+            <ngx-dnd-container
+              [class]="'source'"
+              [model]="sourceNestedItems"
+              [options]="builder"
+              bag="example-0">
+            </ngx-dnd-container>
+        </div>
+        <div fxFlex="25%">
+          <h4>Target</h4>
+          <ngx-dnd-container
+            [class]="'target'"
+            [model]="targetNestedItems"
+            [options]="builder"
+            bag="example-0">
+          </ngx-dnd-container>
+        </div>
+        <div fxFlex="25%">
+          <h3>Model</h3>
+          <pre><code>{{targetNestedItems | json}}</code></pre>
+        </div>
+      </div>
+    </ngx-section>
+
   </div>
 </main>

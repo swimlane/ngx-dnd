@@ -10,26 +10,23 @@ import { DragulaService } from 'ng2-dragula';
 export class ContainerComponent implements OnInit {
   static nextId = 0;
 
-  /* static getNextId() {
-    return `container-${ContainerComponent.nextId++}`;
-  } */
-
   @Input() model: any[];
   @Input() bag: string = 'default';
+  @Input() class: string = '';
 
-  options: any;
+  @Input() options: any;
   type: string;
 
   constructor(private dragulaService: DragulaService) {
-
-    this.options = {
-      accepts(el, target, source, sibling) {
-        return !el.contains(target);
-      }
-    };
   }
 
   ngOnInit() {
+    this.options = Object.assign({
+      accepts(el, target, source, sibling) {
+        return !el.contains(target);
+      }
+    }, this.options);
+
     this.type = getType(this.model);
   }
 }

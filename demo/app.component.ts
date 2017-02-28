@@ -36,4 +36,24 @@ export class AppComponent {
       },
     ]
   };
+
+  builder = {
+    removeOnSpill: true,
+    accepts(el, target) {
+      return target.classList.contains('target');
+    },
+    copy(el, source) {
+      return source.classList.contains('source');
+    }
+  };
+
+  sourceItems = ['Item 1', 'Item 2', 'Item 3'];
+  targetItems = [];
+
+  sourceNestedItems = [
+    { label: 'Item 1, no children', children: [] },
+    { label: 'Item 2', children: ['has', 'children'] },
+    { label: 'Item 3, can\'t have children' }
+  ];
+  targetNestedItems = [];
 }
