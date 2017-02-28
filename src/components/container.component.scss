@@ -1,0 +1,43 @@
+
+.ngx-dnd-container {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid red;
+  margin: 10px;
+  padding: 10px;
+
+  .ngx-dnd-item {
+    margin: 10px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: opacity 0.4s ease-in-out;
+    border: 1px solid lightblue;
+    cursor: move;
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+
+    &:hover {
+      border: 1px solid blue;
+    }
+  }
+
+  &:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .ex-moved {
+    background-color: #e74c3c;
+  }
+
+  .ex-over {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .handle {
+    padding: 0 5px;
+    margin-right: 5px;
+    background-color: rgba(0, 0, 0, 0.4);
+    cursor: move;
+  }
+}
+
