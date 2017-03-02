@@ -1,2 +1,1 @@
-export * from './draggable.directive';
-export * from './orderable.directive';
+export * from './delay-drag-lift.directive';

@@ -6,16 +6,12 @@
 
 ## Features
 
-- Autoscaling
-- Timeline Filtering
-- Line Interpolation
-- Configurable Axis Labels
-- Legends (Labels & Gradient)
-- Advanced Label Positioning
-- Real-time data support
-- Advanced Tooltips
-- Data point Event Handlers
-- Works with ngUpgrade
+- Drag and Drop
+- Sorting
+- Events (drag, drop, over, out)
+- Nesting
+- Container sets
+- Touch support
 
 ## Install
 To use ngx-dnd in your project install it via [npm](https://www.npmjs.com/package/@swimlane/ngx-dnd):

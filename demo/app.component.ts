@@ -1,4 +1,6 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, Inject } from '@angular/core';
+import { DragulaService } from 'ng2-dragula';
+import { AlertService } from '@swimlane/ngx-ui/release/index.js';
 
 @Component({
   selector: 'app',
@@ -47,13 +49,57 @@ export class AppComponent {
     }
   };
 
-  sourceItems = ['Item 1', 'Item 2', 'Item 3'];
+  sourceItems = [
+    { label: 'Item 1' },
+    { label: 'Item 2' },
+    { label: 'Item 3' }
+  ];
   targetItems = [];
 
   sourceNestedItems = [
     { label: 'Item 1, no children', children: [] },
-    { label: 'Item 2', children: ['has', 'children'] },
+    { label: 'Item 2', children: [
+        { label: 'no' },
+        { label: 'children' }
+      ]
+    },
     { label: 'Item 3, can\'t have children' }
   ];
   targetNestedItems = [];
+
+  sourceBuilderTools = [
+    { name: 'Section', children: [], itemType: 'section', icon: 'section', class: 'wide' },
+    { name: 'A String', itemType: 'string', icon: 'field-text', class: 'half' },
+    { name: 'A Number', itemType: 'number', icon: 'field-numeric', class: 'half' }
+  ];
+  targetBuilderTools = [];
+  builderClasses = {
+    container: 'target',
+    item: item => `${item.class} ${item.layoutType}`
+  };
+
+  constructor(
+    private dragulaService: DragulaService,
+    private alertService: AlertService) {
+
+  }
+
+  builderDrag(e) {
+    const item = e.value;
+    item.data = Math.random();
+    if (item.itemType !== 'number') {
+      item.data = item.data.toString(36).substring(20);
+    }
+  }
+
+  log(e) {
+    console.log(e.type, e);
+  }
+
+  onPromptClick(model) {
+    const subject = this.alertService.prompt({
+      title: `Update ${model.name}`,
+      content: `Enter a ${model.itemType}`
+    }).subscribe(v => model.data = v.data);
+  }
 }

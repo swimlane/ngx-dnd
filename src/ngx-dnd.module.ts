@@ -5,11 +5,7 @@ import { DragulaModule, DragulaDirective } from 'ng2-dragula';
 
 import 'dragula/dist/dragula.css';
 
-/* import {
-  OrderableDirective,
-  DraggableDirective
-} from './directives'; */
-
+import { DelayDragLiftDirective } from './directives';
 import { ContainerComponent } from './components';
 
 @NgModule({
@@ -18,10 +14,10 @@ import { ContainerComponent } from './components';
     BrowserModule
   ],
   declarations: [
-    ContainerComponent
+    ContainerComponent, DelayDragLiftDirective
   ],
   exports: [
-    ContainerComponent, DragulaDirective
+    ContainerComponent, DragulaDirective, DelayDragLiftDirective
   ]
 })
 export class NgxDnDModule {}

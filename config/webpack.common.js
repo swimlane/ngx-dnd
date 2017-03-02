@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const { ENV, IS_PRODUCTION, IS_DEV, APP_VERSION, TRAVIS, dir } = require('./helpers');
+const path = require('path');
 
 module.exports = function(options = {}) {
   return {
@@ -9,10 +10,12 @@ module.exports = function(options = {}) {
     resolve: {
       extensions: ['.ts', '.js', '.json', '.css', '.scss', '.html'],
       modules: [
+        dir('node_modules'),
         'node_modules',
         dir('src'),
         dir('demo')
-      ]
+      ],
+      symlinks: false
     },
     output: {
       path: dir('dist'),

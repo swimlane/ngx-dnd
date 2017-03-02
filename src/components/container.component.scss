@@ -3,10 +3,11 @@
   background-color: rgba(255, 255, 255, 0.2);
   border: 2px solid red;
   margin: 10px;
-  padding: 10px;
+  padding: 0;
 
   &.dndEmpty {
     border: 2px dotted red;
+    padding: 10px;
   }
 
   .ngx-dnd-item {
@@ -19,6 +20,10 @@
     cursor: grab;
     cursor: -moz-grab;
     cursor: -webkit-grab;
+
+    .ngx-dnd-content {
+      user-select: none;
+    }
 
     &:hover {
       border: 1px solid blue;
@@ -43,5 +48,28 @@
     background-color: rgba(0, 0, 0, 0.4);
     cursor: move;
   }
+}
+
+.gu-mirror {
+  position: fixed !important;
+  margin: 0 !important;
+  z-index: 9999 !important;
+  opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+}
+.gu-hide {
+  display: none !important;
+}
+.gu-unselectable {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+.gu-transit {
+  opacity: 0.2;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+  filter: alpha(opacity=20);
 }
 

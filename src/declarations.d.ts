@@ -17,4 +17,4 @@ interface ErrorConstructor {
   stackTraceLimit: number;
 }
 
-declare module "@swimlane/ngx-ui";
+declare module '@swimlane/ngx-ui';

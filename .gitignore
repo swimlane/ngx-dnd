@@ -5,4 +5,5 @@ compiled/
 dist/
 build/
 coverage/
+release/
 .idea

@@ -4,4 +4,20 @@
 - [ ] Build a builder
 - [ ] Templates
 - [ ] Can drop filtering
-- [ ] test touch support
+- [ ] Test touch support
+- [ ] Handles
+- [ ] Sizing
+- [ ] Consistant class names (ngx-dnd-*?)
+- [ ] Consistant directive and component names (ngx-dnd-*?)
+- [ ] Consistant event names names
+    - drag vs onDrag vs onDragFrom vs onDragStart
+    - drop vs onDrop vs onDropInto
+    - over vs dragOver vs onDragOver
+    - out vs dragOut vs onDragLeave
+    - remove
+- [ ] "Zone" names (zones, bags, scopes)
+- [ ] Service, directive, component
+- [ ] More templates?
+- [ ] Custom classes (`[classes]="{}"` vs `[dragOverClass]=""`)
+- [ ] AOT?
+- [ ] resizable?

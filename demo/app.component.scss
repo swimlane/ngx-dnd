@@ -62,6 +62,10 @@ $color-text-lighter: #fff;
   padding: 20px;
 }
 
+.no-margin {
+  margin: 0 !important;
+}
+
 /**
  * Navigation
  */
@@ -107,3 +111,52 @@ $color-text-lighter: #fff;
   padding: 0 30px;
 }
 
+.builder {
+  .ngx-dnd-item {
+    font-size: 16px;
+  }
+
+  .builder-source .ngx-dnd-container {
+    border: none;
+    padding: 5px;
+  }
+
+  .builder-target {
+    .ngx-dnd-container {
+      justify-content: space-between;
+      flex-flow: row wrap;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      box-sizing: border-box;
+
+      border: 2px dotted transparent;
+
+      .gu-unselectable &, &.gu-over, &.gu-over .ngx-dnd-container {
+        border: 2px dotted orange;
+      }
+
+      .ngx-dnd-item {
+        margin: 5px 1%;
+        border: 1px solid transparent;
+
+        flex: 1 1 100%;
+        box-sizing: border-box;
+        -webkit-box-flex: 1;
+        max-width: 100%;
+
+        &.half {
+          flex: 1 1 48%;
+          box-sizing: border-box;
+          -webkit-box-flex: 1;
+          max-width: 48%;
+        }
+      }
+
+      .ngx-dnd-item.gu-transit,
+      .ngx-dnd-item:hover  {
+        border: 1px solid #1786e9
+      }
+    }
+  }
+}
