@@ -37,6 +37,7 @@
     "package:replace-scss": "node ./config/replace-scss.js",
     "package:minify": "uglifyjs release/index.js --source-map release/index.min.js.map --source-map-url release/index.js.map --compress --mangle --screw-ie8 --output release/index.min.js",
     "deploy": "node ./config/deploy.js",
+    "build:deploy": "npm run build && npm run deploy",
     "profile": "NODE_ENV=production webpack --profile --json > dist/stats.json"
   },
   "repository": {

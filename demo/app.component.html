@@ -267,8 +267,12 @@
                    </ngx-section>
                 </div>
                 <div *ngSwitchDefault (click)="onPromptClick(model)">
-                  <ngx-icon [fontIcon]="model.icon"></ngx-icon>
-                  {{model.data}}
+                  <ngx-input
+                    [type]="model.inputType"
+                    [hint]="model.name"
+                    [autofocus]="true"
+                    [ngModel]="model.data">
+                  </ngx-input>
                 </div>
               </div>
             </template>

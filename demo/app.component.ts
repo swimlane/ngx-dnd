@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation, Inject } from '@angular/core';
 import { DragulaService } from 'ng2-dragula';
-import { AlertService } from '@swimlane/ngx-ui/release/index.js';
+import { AlertService } from '@swimlane/ngx-ui';
 
 @Component({
   selector: 'app',
@@ -80,7 +80,7 @@ export class AppComponent {
 
   constructor(
     private dragulaService: DragulaService,
-    private alertService: AlertService) {
+    /* private alertService: AlertService */) {
 
   }
 
@@ -97,9 +97,9 @@ export class AppComponent {
   }
 
   onPromptClick(model) {
-    const subject = this.alertService.prompt({
+    /* const subject = this.alertService.prompt({
       title: `Update ${model.name}`,
       content: `Enter a ${model.itemType}`
-    }).subscribe(v => model.data = v.data);
+    }).subscribe(v => model.data = v.data); */
   }
 }

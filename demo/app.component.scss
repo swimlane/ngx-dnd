@@ -122,6 +122,14 @@ $color-text-lighter: #fff;
   }
 
   .builder-target {
+
+    .ngx-input {
+      margin: 0;
+      .ngx-input-wrap {
+        margin: 0;
+      }
+    }
+
     .ngx-dnd-container {
       justify-content: space-between;
       flex-flow: row wrap;
