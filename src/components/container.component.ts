@@ -101,7 +101,7 @@ export class ContainerComponent implements OnInit, AfterViewInit {
       }
     });
 
-    drake.on('drop', (el: any, target: any, source: any, sibling: any) => {
+    /* drake.on('drop', (el: any, target: any, source: any, sibling: any) => {
       if (this.dragula && this.dragula.el.nativeElement === target) {
         this.drop.emit({
           type: 'drop',
@@ -112,7 +112,7 @@ export class ContainerComponent implements OnInit, AfterViewInit {
           value: drake.draggingItem
         });
       }
-    });
+    }); */
 
     drake.on('over', (el: any, container: any, source: any) => {
       if (this.dragula && this.dragula.el.nativeElement === container) {

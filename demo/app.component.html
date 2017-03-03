@@ -199,7 +199,6 @@
           <h4>Target</h4>
           <ngx-dnd-container
             [classes]="{container: 'target'}"
-            [debug]="true"
             [model]="targetNestedItems"
             [options]="builder"
             bag="example-nested">
@@ -266,11 +265,11 @@
                      </ngx-dnd-container>
                    </ngx-section>
                 </div>
-                <div *ngSwitchDefault (click)="onPromptClick(model)">
+                <div *ngSwitchDefault>
                   <ngx-input
                     [type]="model.inputType"
                     [hint]="model.name"
-                    [autofocus]="true"
+                    [autofocus]="false"
                     [ngModel]="model.data">
                   </ngx-input>
                 </div>
