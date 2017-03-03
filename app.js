@@ -39,9 +39,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = __webpack_require__("./node_modules/@angular/core/index.js");
 var ng2_dragula_1 = __webpack_require__("./node_modules/ng2-dragula/index.js");
 var AppComponent = (function () {
-    function AppComponent(dragulaService, alertService) {
+    function AppComponent(dragulaService) {
         this.dragulaService = dragulaService;
-        this.alertService = alertService;
         this.version = "1.0.0";
         this.theme = 'dark';
         this.orderableList = ['Item 1', 'Item 2', 'Item 3'];
@@ -114,10 +113,10 @@ var AppComponent = (function () {
         console.log(e.type, e);
     };
     AppComponent.prototype.onPromptClick = function (model) {
-        var subject = this.alertService.prompt({
-            title: "Update " + model.name,
-            content: "Enter a " + model.itemType
-        }).subscribe(function (v) { return model.data = v.data; });
+        /* const subject = this.alertService.prompt({
+          title: `Update ${model.name}`,
+          content: `Enter a ${model.itemType}`
+        }).subscribe(v => model.data = v.data); */
     };
     AppComponent = __decorate([
         core_1.Component({
@@ -126,7 +125,7 @@ var AppComponent = (function () {
             styles: [__webpack_require__("./demo/app.component.scss")],
             template: __webpack_require__("./demo/app.component.html")
         }), 
-        __metadata('design:paramtypes', [ng2_dragula_1.DragulaService, Object])
+        __metadata('design:paramtypes', [ng2_dragula_1.DragulaService])
     ], AppComponent);
     return AppComponent;
 }());
@@ -153,12 +152,11 @@ var core_1 = __webpack_require__("./node_modules/@angular/core/index.js");
 var platform_browser_1 = __webpack_require__("./node_modules/@angular/platform-browser/index.js");
 var forms_1 = __webpack_require__("./node_modules/@angular/forms/index.js");
 var common_1 = __webpack_require__("./node_modules/@angular/common/index.js");
-var ngx_ui_1 = __webpack_require__("./node_modules/@swimlane/ngx-ui/release/index.js");
 var flex_layout_1 = __webpack_require__("./node_modules/@angular/flex-layout/index.js");
-var common_2 = __webpack_require__("./node_modules/@angular/common/index.js");
+var ngx_ui_1 = __webpack_require__("./node_modules/@swimlane/ngx-ui/release/index.js");
+__webpack_require__("./node_modules/@swimlane/ngx-ui/release/index.css");
 var app_component_1 = __webpack_require__("./demo/app.component.ts");
 var src_1 = __webpack_require__("./src/index.ts");
-__webpack_require__("./node_modules/@swimlane/ngx-ui/release/index.css");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -166,7 +164,7 @@ var AppModule = (function () {
         core_1.NgModule({
             providers: [
                 {
-                    provide: common_2.APP_BASE_HREF,
+                    provide: common_1.APP_BASE_HREF,
                     useFactory: getBaseLocation
                 }
             ],
