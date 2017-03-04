@@ -10,7 +10,6 @@
 - Sorting
 - Events (drag, drop, over, out)
 - Nesting
-- Container sets
 - Touch support
 
 ## Install

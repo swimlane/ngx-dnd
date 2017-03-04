@@ -1,0 +1,18 @@
+<div
+  class='ngx-dnd-container {{classes.container}}'
+  [ngClass]="{ 'gu-empty': !model?.length }"
+  [ngxDroppable]="bag"
+  [model]="model"
+  [dragulaOptions]="dragulaOptions">
+  <ng-container *ngIf="model">
+    <ng-container *ngFor="let item of model">
+      <ngx-dnd-item
+        class="ngx-dnd-item {{classes.item(item)}}"
+        [model]="item"
+        ngxDraggable
+        dropZones="['a', 'b']">
+      </ngx-dnd-item>
+    </ng-container>
+  </ng-container>
+  <ng-content *ngIf="!model"></ng-content>
+</div>

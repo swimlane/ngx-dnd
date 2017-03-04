@@ -17,4 +17,10 @@ interface ErrorConstructor {
   stackTraceLimit: number;
 }
 
+interface Drake {
+  containers: any[];
+  on: (s: string, f: any) => void;
+}
+
+declare module 'dragula';
 declare module '@swimlane/ngx-ui';

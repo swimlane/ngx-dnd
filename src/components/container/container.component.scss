@@ -3,11 +3,10 @@
   background-color: rgba(255, 255, 255, 0.2);
   border: 2px solid red;
   margin: 10px;
-  padding: 0;
+  padding: 10px;
 
   &.dndEmpty {
     border: 2px dotted red;
-    padding: 10px;
   }
 
   .ngx-dnd-item {
@@ -71,5 +70,15 @@
   opacity: 0.2;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
   filter: alpha(opacity=20);
+}
+
+.no-select {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* IE/Edge */
+  user-select: none;           /* non-prefixed version, currently
+                                  not supported by any browser */
 }
 

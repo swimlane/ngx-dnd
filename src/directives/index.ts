@@ -1,1 +1,2 @@
-export * from './delay-drag-lift.directive';
+export * from './ngx-draggable.directive';
+export * from './ngx-droppable.directive';

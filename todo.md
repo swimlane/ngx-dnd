@@ -1,23 +1,19 @@
 # Todo list
 
-- [ ] Replace ng2-dragula
-- [ ] Build a builder
-- [ ] Templates
 - [ ] Can drop filtering
-- [ ] Test touch support
-- [ ] Handles
-- [ ] Sizing
-- [ ] Consistant class names (ngx-dnd-*?)
-- [ ] Consistant directive and component names (ngx-dnd-*?)
-- [ ] Consistant event names names
-    - drag vs onDrag vs onDragFrom vs onDragStart
-    - drop vs onDrop vs onDropInto
-    - over vs dragOver vs onDragOver
-    - out vs dragOut vs onDragLeave
+- [-] Test touch support
+- [ ] Handles (handle=".selector")
+- [-] Consistant class names (ngx-dnd-*?)
+- [-] component names (ngx-dnd-*?)
+- [-] directive ngxDnD*
+- [ ] Consistant event names
+    - dragStart
+    - dragEnd
+    - drop
+    - over
+    - leave
     - remove
-- [ ] "Zone" names (zones, bags, scopes)
-- [ ] Service, directive, component
-- [ ] More templates?
-- [ ] Custom classes (`[classes]="{}"` vs `[dragOverClass]=""`)
+- [ ] "Zone" names (dropZone, dragZone)
+- [ ] Custom classes (`[dragOverClass]=""`)
 - [ ] AOT?
-- [ ] resizable?
+- [ ] Scroll when dragging outside view

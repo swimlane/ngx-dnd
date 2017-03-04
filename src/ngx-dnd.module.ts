@@ -1,23 +1,25 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule  } from '@angular/platform-browser';
 
-import { DragulaModule, DragulaDirective } from 'ng2-dragula';
-
 import 'dragula/dist/dragula.css';
 
-import { DelayDragLiftDirective } from './directives';
-import { ContainerComponent } from './components';
+import { DraggableDirective, DroppableDirective } from './directives';
+import { ContainerComponent, ItemComponent } from './components';
+
+const components = [ContainerComponent, ItemComponent];
+const directives = [DraggableDirective, DroppableDirective];
 
 @NgModule({
   imports: [
-    DragulaModule,
     BrowserModule
   ],
   declarations: [
-    ContainerComponent, DelayDragLiftDirective
+    ...components,
+    ...directives
   ],
   exports: [
-    ContainerComponent, DragulaDirective, DelayDragLiftDirective
+    ...components,
+    ...directives
   ]
 })
 export class NgxDnDModule {}
