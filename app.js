@@ -58580,21 +58580,6 @@ exports.push([module.i, "/**\n * swui v\"13.2.4\" (https://github.com/swimlane/s
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/index.js?sourceMap!./node_modules/dragula/dist/dragula.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")();
-// imports
-
-
-// module
-exports.push([module.i, ".gu-mirror {\n  position: fixed !important;\n  margin: 0 !important;\n  z-index: 9999 !important;\n  opacity: 0.8;\n  -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)\";\n  filter: alpha(opacity=80);\n}\n.gu-hide {\n  display: none !important;\n}\n.gu-unselectable {\n  -webkit-user-select: none !important;\n  -moz-user-select: none !important;\n  -ms-user-select: none !important;\n  user-select: none !important;\n}\n.gu-transit {\n  opacity: 0.2;\n  -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=20)\";\n  filter: alpha(opacity=20);\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/index.js?sourceMap!./node_modules/sass-loader/index.js?sourceMap!./demo/app.component.scss":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -58791,21 +58776,6 @@ module.exports = {
   rm: rmClass
 };
 
-
-/***/ }),
-
-/***/ "./node_modules/dragula/dist/dragula.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-
-        var result = __webpack_require__("./node_modules/css-loader/index.js!./node_modules/postcss-loader/index.js?sourceMap!./node_modules/dragula/dist/dragula.css");
-
-        if (typeof result === "string") {
-            module.exports = result;
-        } else {
-            module.exports = result.toString();
-        }
-    
 
 /***/ }),
 
@@ -60405,153 +60375,6 @@ function getType(item) {
 
 /***/ }),
 
-/***/ "./src/directives/drake-store.service.ts":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var dragula = __webpack_require__("./node_modules/dragula/dragula.js");
-var DrakeStoreService = (function () {
-    function DrakeStoreService() {
-        this.droppableMap = new WeakMap();
-        this.drakeMap = {};
-    }
-    DrakeStoreService.prototype.register = function (droppable) {
-        var name = droppable.ngxDroppable;
-        this.droppableMap.set(droppable.container, droppable);
-        var drake = this.drakeMap[name];
-        if (drake) {
-            drake.containers.push(droppable.container);
-        }
-        else {
-            drake = this.drakeMap[name] = dragula([droppable.container], droppable.dragulaOptions);
-            this.registerEvents(drake);
-        }
-        return drake;
-    };
-    DrakeStoreService.prototype.remove = function (droppable) {
-        var name = droppable.ngxDroppable;
-        this.droppableMap.delete(droppable.container);
-        var drake = this.drakeMap[name];
-        if (drake) {
-            var idx = drake.containers.indexOf(droppable.container);
-            if (idx > -1) {
-                drake.containers.splice(idx, 1);
-            }
-        }
-    };
-    DrakeStoreService.prototype.registerEvents = function (drake) {
-        var _this = this;
-        var dragElm;
-        var dragIndex;
-        var draggedItem;
-        drake.on('drag', function (el, source) {
-            draggedItem = undefined;
-            dragElm = el;
-            if (!source) {
-                return;
-            }
-            dragIndex = domIndexOf(el, source);
-            if (_this.droppableMap.has(source)) {
-                var component = _this.droppableMap.get(source);
-                var sourceModel = component.model;
-                draggedItem = sourceModel ? sourceModel[dragIndex] : undefined;
-                component.drag.emit({
-                    type: 'remove',
-                    el: el,
-                    source: source,
-                    value: draggedItem
-                });
-            }
-        });
-        drake.on('drop', function (el, target, source) {
-            if (_this.droppableMap.has(target) && _this.droppableMap.has(source)) {
-                var targetComponent = _this.droppableMap.get(target);
-                if (_this.droppableMap.has(source)) {
-                    var sourceComponent = _this.droppableMap.get(source);
-                    var sourceModel = sourceComponent.model;
-                    var targetModel = targetComponent.model;
-                    var dropIndex = domIndexOf(el, target);
-                    if (sourceModel && targetModel) {
-                        if (target === source) {
-                            sourceModel.splice(dropIndex, 0, sourceModel.splice(dragIndex, 1)[0]);
-                        }
-                        else {
-                            var notCopy = dragElm === el;
-                            var dropElmModel = notCopy ?
-                                sourceModel[dragIndex] :
-                                JSON.parse(JSON.stringify(sourceModel[dragIndex]));
-                            if (notCopy) {
-                                sourceModel.splice(dragIndex, 1);
-                            }
-                            targetModel.splice(dropIndex, 0, dropElmModel);
-                            target.removeChild(el); // element must be removed for ngFor to apply correctly
-                        }
-                    }
-                }
-                targetComponent.drop.emit({
-                    type: 'drop',
-                    el: el,
-                    source: source,
-                    value: draggedItem
-                });
-            }
-        });
-        drake.on('remove', function (el, container, source) {
-            if (_this.droppableMap.has(container)) {
-                var sourceComponent = _this.droppableMap.get(source);
-                var sourceModel = sourceComponent.model;
-                var removedItem = void 0;
-                if (sourceModel) {
-                    removedItem = sourceModel.splice(dragIndex, 1);
-                }
-                sourceComponent.remove.emit({
-                    type: 'remove',
-                    el: el,
-                    container: container,
-                    source: source,
-                    value: removedItem
-                });
-            }
-        });
-        drake.on('over', function (el, container, source) {
-            if (_this.droppableMap.has(container)) {
-                var component = _this.droppableMap.get(container);
-                // this.renderer.setElementClass(container, 'gu-over', true);
-                component.over.emit({
-                    type: 'over',
-                    el: el,
-                    container: container,
-                    source: source,
-                    value: draggedItem
-                });
-            }
-        });
-        drake.on('out', function (el, container, source) {
-            if (_this.droppableMap.has(container)) {
-                var component = _this.droppableMap.get(container);
-                // this.renderer.setElementClass(container, 'gu-over', true);
-                component.out.emit({
-                    type: 'out',
-                    el: el,
-                    container: container,
-                    source: source,
-                    value: draggedItem
-                });
-            }
-        });
-        function domIndexOf(child, parent) {
-            return Array.prototype.indexOf.call(parent.children, child);
-        }
-    };
-    ;
-    return DrakeStoreService;
-}());
-exports.DrakeStoreService = DrakeStoreService;
-
-
-/***/ }),
-
 /***/ "./src/directives/index.ts":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -60581,18 +60404,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__("./node_modules/@angular/core/index.js");
+var drake_store_service_1 = __webpack_require__("./src/services/drake-store.service.ts");
 /**
- * From: https://github.com/bevacqua/dragula/issues/289#issuecomment-277143172
  *
  * @export
  * @class NgxDndItemDirective
  */
 var DraggableDirective = (function () {
-    function DraggableDirective(el) {
+    function DraggableDirective(el, drakesService) {
         this.el = el;
+        this.drakesService = drakesService;
+        this.drag = new core_1.EventEmitter();
         this.dragDelay = 200; // milliseconds
         this.draggable = false;
+        this.element = el.nativeElement;
     }
+    // From: https://github.com/bevacqua/dragula/issues/289#issuecomment-277143172
     DraggableDirective.prototype.onMove = function (e) {
         if (!this.draggable) {
             e.stopPropagation();
@@ -60609,6 +60436,20 @@ var DraggableDirective = (function () {
         clearTimeout(this.touchTimeout);
         this.draggable = false;
     };
+    DraggableDirective.prototype.ngOnInit = function () {
+        this.drakesService.registerDraggable(this);
+    };
+    DraggableDirective.prototype.ngOnDestroy = function () {
+        this.drakesService.removeDraggable(this);
+    };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], DraggableDirective.prototype, "model", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', core_1.EventEmitter)
+    ], DraggableDirective.prototype, "drag", void 0);
     __decorate([
         core_1.HostListener('touchmove', ['$event']), 
         __metadata('design:type', Function), 
@@ -60629,7 +60470,7 @@ var DraggableDirective = (function () {
     ], DraggableDirective.prototype, "onUp", null);
     DraggableDirective = __decorate([
         core_1.Directive({ selector: '[ngxDraggable]' }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
+        __metadata('design:paramtypes', [core_1.ElementRef, drake_store_service_1.DrakeStoreService])
     ], DraggableDirective);
     return DraggableDirective;
 }());
@@ -60653,12 +60494,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__("./node_modules/@angular/core/index.js");
-var drake_store_service_1 = __webpack_require__("./src/directives/drake-store.service.ts");
-var drakesService = new drake_store_service_1.DrakeStoreService();
+var drake_store_service_1 = __webpack_require__("./src/services/drake-store.service.ts");
 var DroppableDirective = (function () {
-    function DroppableDirective(el, renderer) {
+    function DroppableDirective(el, renderer, drakesService) {
         this.el = el;
         this.renderer = renderer;
+        this.drakesService = drakesService;
         this.drop = new core_1.EventEmitter();
         this.drag = new core_1.EventEmitter();
         this.over = new core_1.EventEmitter();
@@ -60679,7 +60520,7 @@ var DroppableDirective = (function () {
                 return true;
             }
         }, this.dragulaOptions);
-        drakesService.register(this);
+        this.drakesService.register(this);
     };
     DroppableDirective.prototype.ngAfterViewInit = function () {
         var _this = this;
@@ -60691,7 +60532,7 @@ var DroppableDirective = (function () {
         this.out.subscribe(overAndOut);
     };
     DroppableDirective.prototype.ngOnDestroy = function () {
-        drakesService.remove(this);
+        this.drakesService.remove(this);
     };
     __decorate([
         core_1.Input(), 
@@ -60731,7 +60572,7 @@ var DroppableDirective = (function () {
     ], DroppableDirective.prototype, "remove", void 0);
     DroppableDirective = __decorate([
         core_1.Directive({ selector: '[ngxDroppable]' }), 
-        __metadata('design:paramtypes', [core_1.ElementRef, core_1.Renderer])
+        __metadata('design:paramtypes', [core_1.ElementRef, core_1.Renderer, drake_store_service_1.DrakeStoreService])
     ], DroppableDirective);
     return DroppableDirective;
 }());
@@ -60769,11 +60610,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__("./node_modules/@angular/core/index.js");
 var platform_browser_1 = __webpack_require__("./node_modules/@angular/platform-browser/index.js");
-__webpack_require__("./node_modules/dragula/dist/dragula.css");
 var directives_1 = __webpack_require__("./src/directives/index.ts");
 var components_1 = __webpack_require__("./src/components/index.ts");
+var services_1 = __webpack_require__("./src/services/index.ts");
 var components = [components_1.ContainerComponent, components_1.ItemComponent];
 var directives = [directives_1.DraggableDirective, directives_1.DroppableDirective];
+var providers = [services_1.DrakeStoreService];
 var NgxDnDModule = (function () {
     function NgxDnDModule() {
     }
@@ -60783,13 +60625,198 @@ var NgxDnDModule = (function () {
                 platform_browser_1.BrowserModule
             ],
             declarations: components.concat(directives),
-            exports: components.concat(directives)
+            exports: components.concat(directives),
+            providers: providers
         }), 
         __metadata('design:paramtypes', [])
     ], NgxDnDModule);
     return NgxDnDModule;
 }());
 exports.NgxDnDModule = NgxDnDModule;
+
+
+/***/ }),
+
+/***/ "./src/services/drake-store.service.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__("./node_modules/@angular/core/index.js");
+var dragula = __webpack_require__("./node_modules/dragula/dragula.js");
+var DrakeStoreService = (function () {
+    function DrakeStoreService() {
+        this.droppableMap = new WeakMap();
+        this.draggableMap = new WeakMap();
+        this.drakeMap = {};
+    }
+    DrakeStoreService.prototype.register = function (droppable) {
+        var name = droppable.ngxDroppable;
+        this.droppableMap.set(droppable.container, droppable);
+        var drake = this.drakeMap[name];
+        if (drake) {
+            drake.containers.push(droppable.container);
+        }
+        else {
+            drake = this.drakeMap[name] = dragula([droppable.container], droppable.dragulaOptions);
+            this.registerEvents(drake);
+        }
+        return drake;
+    };
+    DrakeStoreService.prototype.remove = function (droppable) {
+        this.droppableMap.delete(droppable.container);
+        var name = droppable.ngxDroppable;
+        var drake = this.drakeMap[name];
+        if (drake) {
+            var idx = drake.containers.indexOf(droppable.container);
+            if (idx > -1) {
+                drake.containers.splice(idx, 1);
+            }
+        }
+    };
+    DrakeStoreService.prototype.registerDraggable = function (draggable) {
+        this.draggableMap.set(draggable.element, draggable);
+    };
+    DrakeStoreService.prototype.removeDraggable = function (draggable) {
+        this.draggableMap.delete(draggable.element);
+    };
+    DrakeStoreService.prototype.registerEvents = function (drake) {
+        var _this = this;
+        var dragElm;
+        var draggedItem;
+        drake.on('drag', function (el, source) {
+            draggedItem = undefined;
+            dragElm = el;
+            if (!el || !source) {
+                return;
+            }
+            if (_this.draggableMap.has(el)) {
+                var elementComponent = _this.draggableMap.get(el);
+                draggedItem = elementComponent.model;
+                elementComponent.drag.emit({
+                    type: 'drag',
+                    el: el,
+                    source: source,
+                    value: draggedItem
+                });
+            }
+            if (_this.droppableMap.has(source)) {
+                var sourceComponent = _this.droppableMap.get(source);
+                sourceComponent.drag.emit({
+                    type: 'drag',
+                    el: el,
+                    source: source,
+                    value: draggedItem
+                });
+            }
+        });
+        drake.on('drop', function (el, target, source) {
+            if (_this.droppableMap.has(target)) {
+                var targetComponent = _this.droppableMap.get(target);
+                if (_this.droppableMap.has(source)) {
+                    var sourceComponent = _this.droppableMap.get(source);
+                    var sourceModel = sourceComponent.model;
+                    var targetModel = targetComponent.model;
+                    var dropIndex = Array.prototype.indexOf.call(target.children, el);
+                    var dragIndex = (sourceModel && draggedItem) ? sourceModel.indexOf(draggedItem) : -1;
+                    if (dropIndex > -1 && dragIndex > -1 && sourceModel && targetModel) {
+                        if (target === source) {
+                            sourceModel.splice(dropIndex, 0, sourceModel.splice(dragIndex, 1)[0]);
+                        }
+                        else {
+                            var notCopy = dragElm === el;
+                            var dropElmModel = notCopy ?
+                                sourceModel[dragIndex] :
+                                JSON.parse(JSON.stringify(sourceModel[dragIndex]));
+                            if (notCopy) {
+                                sourceModel.splice(dragIndex, 1);
+                            }
+                            targetModel.splice(dropIndex, 0, dropElmModel);
+                            target.removeChild(el);
+                        }
+                    }
+                }
+                targetComponent.drop.emit({
+                    type: 'drop',
+                    el: el,
+                    source: source,
+                    value: draggedItem
+                });
+            }
+        });
+        drake.on('remove', function (el, container, source) {
+            if (_this.droppableMap.has(container)) {
+                var sourceComponent = _this.droppableMap.get(source);
+                var sourceModel = sourceComponent.model;
+                var dragIndex = (draggedItem && sourceModel) ? sourceModel.indexOf(draggedItem) : -1;
+                if (dragIndex > 0) {
+                    sourceModel.splice(dragIndex, 1);
+                }
+                sourceComponent.remove.emit({
+                    type: 'remove',
+                    el: el,
+                    container: container,
+                    source: source,
+                    value: draggedItem
+                });
+            }
+        });
+        drake.on('over', function (el, container, source) {
+            if (_this.droppableMap.has(container)) {
+                var containerComponent = _this.droppableMap.get(container);
+                containerComponent.over.emit({
+                    type: 'over',
+                    el: el,
+                    container: container,
+                    source: source,
+                    value: draggedItem
+                });
+            }
+        });
+        drake.on('out', function (el, container, source) {
+            if (_this.droppableMap.has(container)) {
+                var containerComponent = _this.droppableMap.get(container);
+                containerComponent.out.emit({
+                    type: 'out',
+                    el: el,
+                    container: container,
+                    source: source,
+                    value: draggedItem
+                });
+            }
+        });
+    };
+    ;
+    DrakeStoreService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [])
+    ], DrakeStoreService);
+    return DrakeStoreService;
+}());
+exports.DrakeStoreService = DrakeStoreService;
+exports.drakesService = new DrakeStoreService();
+
+
+/***/ }),
+
+/***/ "./src/services/index.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+__export(__webpack_require__("./src/services/drake-store.service.ts"));
 
 
 /***/ })
