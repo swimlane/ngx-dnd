@@ -3,7 +3,7 @@ webpackJsonp([0],{
 /***/ "./demo/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<main fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n  <!-- div class=\"nav-col\" fxFlex=\"20%\">\n    <h1>\n      Ngx-<strong>dnd</strong>\n      <small class=\"version\">{{version}}</small>\n      <small class=\"subtitle\">Angular2+ DnD</small>\n    </h1>\n  </div -->\n  <div class=\"field\" fxFlex=\"100%\">\n\n    <ngx-section class=\"shadow\" sectionTitle=\"Ordering - Template Only\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper' fxFlex>\n            <div class='ngx-dnd-container' dragula=\"example-1\">\n              <div class=\"ngx-dnd-item\" >Item 1</div>\n              <div class=\"ngx-dnd-item\">Item 2</div>\n              <div class=\"ngx-dnd-item\">Item 3</div>\n            </div>\n          </div>\n        </div>\n        <div fxFlex=\"50%\">\n          <h3>Template</h3>\n          <pre><code><![CDATA[<div class='ngx-dnd-container' dragula=\"example-1\">\n  <div class=\"ngx-dnd-item\">Item 1</div>\n  <div class=\"ngx-dnd-item\">Item 2</div>\n  <div class=\"ngx-dnd-item\">Item 3</div>\n</div>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"Ordering - Template Only - With Layout\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper' fxFlex>\n            <div class=\"ngx-dnd-container\" fxLayout=\"row\" fxLayoutWrap=\"wrap\" dragula=\"example-layout\">\n              <div fxFlex=\"45\" class=\"ngx-dnd-item\">Item 1</div>\n              <div fxFlex=\"45\" class=\"ngx-dnd-item\">Item 2</div>\n              <div fxFlex=\"20\" class=\"ngx-dnd-item\">Item 3</div>\n              <div fxFlex=\"20\" class=\"ngx-dnd-item\">Item 4</div>\n              <div fxFlex=\"20\" class=\"ngx-dnd-item\">Item 5</div>\n            </div>\n          </div>\n        </div>\n        <div fxFlex=\"50%\">\n          <h3>Template</h3>\n          <pre><code><![CDATA[<div class='wrapper' fxFlex>\n  <div class=\"ngx-dnd-container\" fxLayout=\"row\" fxLayoutWrap=\"wrap\" dragula=\"example-layout\">\n    <div fxFlex=\"45\" class=\"ngx-dnd-item\">Item 1</div>\n    <div fxFlex=\"45\" class=\"ngx-dnd-item\">Item 2</div>\n    <div fxFlex=\"20\" class=\"ngx-dnd-item\">Item 3</div>\n    <div fxFlex=\"20\" class=\"ngx-dnd-item\">Item 4</div>\n    <div fxFlex=\"20\" class=\"ngx-dnd-item\">Item 5</div>\n  </div>\n</div>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"Ordering - from array\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper'>\n            <ngx-dnd-container [model]=\"orderableList\" bag=\"example-2\" [options]=\"{removeOnSpill: true}\"></ngx-dnd-container>\n          </div>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Model</h3>\n          <pre><code>{{orderableList | json}}</code></pre>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Template</h3>\n          <pre><code><![CDATA[<ngx-dnd-container\n  [model]=\"orderableList\"\n  bag=\"example-2\">\n</ngx-dnd-container>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"DnD - Template Only\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper'>\n            <div class='ngx-dnd-container' dragula=\"example-3\">\n              <div class=\"ngx-dnd-item\">Item 1a</div>\n              <div class=\"ngx-dnd-item\">Item 2a</div>\n              <div class=\"ngx-dnd-item\">Item 3a</div>\n            </div>\n            <div class='ngx-dnd-container' dragula=\"example-3\">\n              <div class=\"ngx-dnd-item\">Item 1b</div>\n              <div class=\"ngx-dnd-item\">Item 2b</div>\n              <div class=\"ngx-dnd-item\">Item 3b</div>\n            </div>\n          </div>\n        </div>\n        <div fxFlex=\"50%\">\n          <h3>Template</h3>\n          <pre><code><![CDATA[<div class='ngx-dnd-container' dragula=\"example-3\">\n  <div class=\"ngx-dnd-item\">Item 1a</div>\n  <div class=\"ngx-dnd-item\">Item 2a</div>\n  <div class=\"ngx-dnd-item\">Item 3a</div>\n</div>\n<div class='ngx-dnd-container' dragula=\"example-3\">\n  <div class=\"ngx-dnd-item\">Item 1b</div>\n  <div class=\"ngx-dnd-item\">Item 2b</div>\n  <div class=\"ngx-dnd-item\">Item 3b</div>\n</div>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"DnD - from array\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper'>\n            <div *ngFor=\"let group of orderableLists\">\n              <ngx-dnd-container [model]=\"group\" bag=\"example-4\"></ngx-dnd-container>\n            </div>\n          </div>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Model</h3>\n          <pre>{{orderableLists | json}}</pre>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Template</h3>\n          <pre><code><![CDATA[<div *ngFor=\"let group of orderableLists\">\n  <ngx-dnd-container\n    [model]=\"group\"\n    bag=\"example-4\">\n  </ngx-dnd-container>\n</div>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"DnD - nested\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper'>\n            <ngx-dnd-container [model]=\"nestedLists\" bag=\"example-5\"></ngx-dnd-container>\n          </div>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Model</h3>\n          <code><pre>{{nestedLists | json}}</pre></code>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Template</h3>\n          <pre><code><![CDATA[<ngx-dnd-container\n  [model]=\"nestedLists\"\n  bag=\"example-5\">\n</ngx-dnd-container>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"One Way Drag\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"25%\">\n          <h4>Source</h4>\n            <ngx-dnd-container\n              [classes]=\"{container: 'source'}\"\n              [model]=\"sourceItems\"\n              [options]=\"builder\"\n              bag=\"example-0\">\n            </ngx-dnd-container>\n        </div>\n        <div fxFlex=\"25%\">\n          <h4>Target</h4>\n          <ngx-dnd-container\n            [classes]=\"{container: 'target'}\"\n            [model]=\"targetItems\"\n            [options]=\"builder\"\n            bag=\"example-0\">\n          </ngx-dnd-container>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Model</h3>\n          <pre><code>{{targetItems | json}}</code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"Nested One Way Drag\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"25%\">\n          <h4>Source</h4>\n            <ngx-dnd-container\n              [classes]=\"{container: 'source'}\"\n              [model]=\"sourceNestedItems\"\n              [options]=\"builder\"\n              bag=\"example-nested\">\n            </ngx-dnd-container>\n        </div>\n        <div fxFlex=\"25%\">\n          <h4>Target</h4>\n          <ngx-dnd-container\n            [classes]=\"{container: 'target'}\"\n            [model]=\"targetNestedItems\"\n            [options]=\"builder\"\n            bag=\"example-nested\">\n          </ngx-dnd-container>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Model</h3>\n          <pre><code>{{targetNestedItems | json}}</code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n\n    <ngx-section class=\"shadow builder\" sectionTitle=\"Builder Demo\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div class=\"builder-source\" fxFlex=\"20%\">\n          <h4>Source</h4>\n\n          <ngx-dnd-container\n            class=\"root-container\"\n            [classes]=\"{container: 'source', item: builderClasses.item}\"\n            [model]=\"sourceBuilderTools\"\n            [options]=\"builder\"\n            bag=\"example-builder\"\n            (drag)=\"builderDrag($event)\"\n            (remove)=\"log($event)\">\n\n            <template let-model=\"model\">\n              <ngx-icon [fontIcon]=\"model.icon\"></ngx-icon>\n              {{model.name}}\n            </template>\n          </ngx-dnd-container>\n\n        </div>\n        <div class=\"builder-target\" fxFlex=\"60%\">\n          <h4>Target</h4>\n\n          <ngx-dnd-container\n            class=\"root-container\"\n            [classes]=\"builderClasses\"\n            [model]=\"targetBuilderTools\"\n            [options]=\"builder\"\n            (drag)=\"log($event)\"\n            (drop)=\"log($event)\"\n            (over)=\"log($event)\"\n            (out)=\"log($event)\"\n            bag=\"example-builder\"\n            (remove)=\"log($event)\">\n \n            <template let-model=\"model\" let-bag=\"bag\" let-template=\"template\">\n              <div [ngSwitch]=\"model.itemType\">\n                <div *ngSwitchCase=\"'section'\">\n                   <ngx-section class=\"shadow\" [sectionTitle]=\"model.name\">\n                     <ngx-dnd-container\n                       [classes]=\"builderClasses\"\n                       [bag]=\"bag\"\n                       [model]=\"model.children\"\n                       [options]=\"builder\"\n                       [template]=\"template\"\n                       (drag)=\"log($event)\"\n                       (drop)=\"log($event)\"\n                       (over)=\"log($event)\"\n                       (out)=\"log($event)\">\n                     </ngx-dnd-container>\n                   </ngx-section>\n                </div>\n                <div *ngSwitchDefault>\n                  <ngx-input\n                    [type]=\"model.inputType\"\n                    [hint]=\"model.name\"\n                    [autofocus]=\"false\"\n                    [ngModel]=\"model.data\">\n                  </ngx-input>\n                </div>\n              </div>\n            </template>\n          </ngx-dnd-container>\n        </div>\n        <div fxFlex>\n          <h3>Model</h3>\n          <pre><code>{{targetBuilderTools | json}}</code></pre>\n        </div>\n      </div>\n      <i>Open console to see events</i>\n    </ngx-section>\n\n  </div>\n</main>\n"
+module.exports = "<main fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n  <!-- div class=\"nav-col\" fxFlex=\"20%\">\n    <h1>\n      Ngx-<strong>dnd</strong>\n      <small class=\"version\">{{version}}</small>\n      <small class=\"subtitle\">Angular2+ DnD</small>\n    </h1>\n  </div -->\n  <div class=\"field\" fxFlex=\"100%\">\n\n    <ngx-section class=\"shadow\" sectionTitle=\"Ordering - Template Only\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper'>\n            <ngx-dnd-container bag=\"example-1\">\n              <div class=\"ngx-dnd-item\">Item 1</div>\n              <div class=\"ngx-dnd-item\">Item 2</div>\n              <div class=\"ngx-dnd-item\">Item 3</div>\n            </ngx-dnd-container>\n          </div>\n        </div>\n        <div fxFlex=\"50%\">\n          <h3>Template</h3>\n          <pre><code><![CDATA[<ngx-dnd-container bag=\"example-1\">\n  <div class=\"ngx-dnd-item\">Item 1</div>\n  <div class=\"ngx-dnd-item\">Item 2</div>\n  <div class=\"ngx-dnd-item\">Item 3</div>\n</ngx-dnd-container>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"Ordering - Template Only - With fxLayout\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper'>\n\n            <div class=\"ngx-dnd-container\" fxLayout=\"row\" fxLayoutWrap=\"wrap\" ngxDroppable=\"example-layout\">\n              <div fxFlex=\"45\" class=\"ngx-dnd-item\">Item 1</div>\n              <div fxFlex=\"45\" class=\"ngx-dnd-item\">Item 2</div>\n              <div fxFlex=\"20\" class=\"ngx-dnd-item\">Item 3</div>\n              <div fxFlex=\"20\" class=\"ngx-dnd-item\">Item 4</div>\n              <div fxFlex=\"20\" class=\"ngx-dnd-item\">Item 5</div>\n            </div>\n\n          </div>\n        </div>\n        <div fxFlex=\"50%\">\n          <h3>Template</h3>\n          <pre><code><![CDATA[<div class='wrapper' fxFlex>\n  <div class=\"ngx-dnd-container\" fxLayout=\"row\" fxLayoutWrap=\"wrap\" ngxDroppable=\"example-layout\">\n    <div fxFlex=\"45\" class=\"ngx-dnd-item\">Item 1</div>\n    <div fxFlex=\"45\" class=\"ngx-dnd-item\">Item 2</div>\n    <div fxFlex=\"20\" class=\"ngx-dnd-item\">Item 3</div>\n    <div fxFlex=\"20\" class=\"ngx-dnd-item\">Item 4</div>\n    <div fxFlex=\"20\" class=\"ngx-dnd-item\">Item 5</div>\n  </div>\n</div>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"Ordering - from array\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper'>\n            <ngx-dnd-container\n              [model]=\"orderableList\"\n              bag=\"example-2\"\n              [dragulaOptions]=\"{removeOnSpill: true}\">\n            </ngx-dnd-container>\n          </div>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Model</h3>\n          <pre><code>{{orderableList | json}}</code></pre>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Template</h3>\n          <pre><code><![CDATA[<ngx-dnd-container\n  [model]=\"orderableList\"\n  bag=\"example-2\">\n</ngx-dnd-container>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"DnD - Template Only\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper'>\n            <ngx-dnd-container bag=\"example-3\">\n              <div class=\"ngx-dnd-item\">Item 1a</div>\n              <div class=\"ngx-dnd-item\">Item 2a</div>\n              <div class=\"ngx-dnd-item\">Item 3a</div>\n            </ngx-dnd-container>\n            <ngx-dnd-container bag=\"example-3\">\n              <div class=\"ngx-dnd-item\">Item 1b</div>\n              <div class=\"ngx-dnd-item\">Item 2b</div>\n              <div class=\"ngx-dnd-item\">Item 3b</div>\n            </ngx-dnd-container>\n          </div>\n        </div>\n        <div fxFlex=\"50%\">\n          <h3>Template</h3>\n          <pre><code><![CDATA[<ngx-dnd-container bag=\"example-3\">\n  <div class=\"ngx-dnd-item\">Item 1a</div>\n  <div class=\"ngx-dnd-item\">Item 2a</div>\n  <div class=\"ngx-dnd-item\">Item 3a</div>\n</ngx-dnd-container>\n<ngx-dnd-container bag=\"example-3\">\n  <div class=\"ngx-dnd-item\">Item 1b</div>\n  <div class=\"ngx-dnd-item\">Item 2b</div>\n  <div class=\"ngx-dnd-item\">Item 3b</div>\n</ngx-dnd-container>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"DnD - from nested array\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper'>\n            <ngx-dnd-container\n              [model]=\"orderableLists\"\n              bag=\"example-4\">\n            </ngx-dnd-container>\n          </div>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Model</h3>\n          <pre>{{orderableLists | json}}</pre>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Template</h3>\n          <pre><code><![CDATA[<ngx-dnd-container\n  [model]=\"orderableLists\"\n  bag=\"example-4\">\n</ngx-dnd-container>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"DnD - nested containers\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper'>\n            <ngx-dnd-container\n              [model]=\"nestedLists\"\n              bag=\"example-5\">\n            </ngx-dnd-container>\n          </div>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Model</h3>\n          <code><pre>{{nestedLists | json}}</pre></code>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Template</h3>\n          <pre><code><![CDATA[<ngx-dnd-container\n  [model]=\"nestedLists\"\n  bag=\"example-5\">\n</ngx-dnd-container>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"One Way Drag\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"25%\">\n          <h4>Source</h4>\n            <ngx-dnd-container\n              [classes]=\"{container: 'source'}\"\n              [model]=\"sourceItems\"\n              [dragulaOptions]=\"builder\"\n              bag=\"example-one-way\">\n            </ngx-dnd-container>\n        </div>\n        <div fxFlex=\"25%\">\n          <h4>Target</h4>\n          <ngx-dnd-container\n            [classes]=\"{container: 'target'}\"\n            [model]=\"targetItems\"\n            [dragulaOptions]=\"builder\"\n            bag=\"example-one-way\">\n          </ngx-dnd-container>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Model</h3>\n          <pre><code>{{sourceItems | json}}</code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"Nested One Way Drag\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"25%\">\n          <h4>Source</h4>\n            <ngx-dnd-container\n              [classes]=\"{container: 'source'}\"\n              [model]=\"sourceNestedItems\"\n              [dragulaOptions]=\"builder\"\n              bag=\"example-nested\">\n            </ngx-dnd-container>\n        </div>\n        <div fxFlex=\"25%\">\n          <h4>Target</h4>\n          <ngx-dnd-container\n            [classes]=\"{container: 'target'}\"\n            [model]=\"targetNestedItems\"\n            [dragulaOptions]=\"builder\"\n            bag=\"example-nested\">\n          </ngx-dnd-container>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Model</h3>\n          <pre><code>{{targetNestedItems | json}}</code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow builder\" sectionTitle=\"Builder Demo\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div class=\"builder-source\" fxFlex=\"20%\">\n          <h4>Source</h4>\n\n          <ngx-dnd-container\n            class=\"root-container\"\n            [classes]=\"{container: 'source', item: builderClasses.item}\"\n            [model]=\"sourceBuilderTools\"\n            [dragulaOptions]=\"builder\"\n            bag=\"example-builder\"\n            (drag)=\"builderDrag($event)\"\n            (remove)=\"log($event)\">\n\n            <template let-model=\"model\">\n              <ngx-icon [fontIcon]=\"model.icon\"></ngx-icon>\n              {{model.name}}\n            </template>\n          </ngx-dnd-container>\n\n        </div>\n        <div class=\"builder-target\" fxFlex=\"60%\">\n          <h4>Target</h4>\n\n          <ngx-dnd-container\n            class=\"root-container\"\n            [classes]=\"builderClasses\"\n            [model]=\"targetBuilderTools\"\n            bag=\"example-builder\"\n            [dragulaOptions]=\"builder\"\n            (drag)=\"log($event)\"\n            (drop)=\"log($event)\"\n            (over)=\"log($event)\"\n            (out)=\"log($event)\"\n            (remove)=\"log($event)\">\n\n            <template let-model=\"model\" let-template=\"template\">\n              <div [ngSwitch]=\"model.inputType\">\n                <div *ngSwitchCase=\"'section'\">\n                   <ngx-section class=\"shadow\" [sectionTitle]=\"model.name\">\n                     <ngx-dnd-container\n                       [classes]=\"builderClasses\"\n                       bag=\"example-builder\"\n                       [model]=\"model.children\"\n                       [dragulaOptions]=\"builder\"\n                       [template]=\"template\"\n                       (drag)=\"log($event)\"\n                       (drop)=\"log($event)\"\n                       (over)=\"log($event)\"\n                       (out)=\"log($event)\"\n                       (remove)=\"log($event)\">\n                     </ngx-dnd-container>\n                   </ngx-section>\n                </div>\n                <div *ngSwitchDefault>\n                  <ngx-input\n                    [type]=\"model.inputType\"\n                    [hint]=\"model.name\"\n                    [autofocus]=\"false\"\n                    [ngModel]=\"model.data\">\n                  </ngx-input>\n                </div>\n              </div>\n            </template>\n          </ngx-dnd-container>\n        </div>\n        <div fxFlex>\n          <h3>Model</h3>\n          <pre><code>{{targetBuilderTools | json}}</code></pre>\n        </div>\n      </div>\n      <i>Open console to see events</i>\n    </ngx-section>\n\n  </div>\n</main>\n"
 
 /***/ }),
 
@@ -37,10 +37,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__("./node_modules/@angular/core/index.js");
-var ng2_dragula_1 = __webpack_require__("./node_modules/ng2-dragula/index.js");
 var AppComponent = (function () {
-    function AppComponent(dragulaService) {
-        this.dragulaService = dragulaService;
+    function AppComponent() {
         this.version = "1.0.0";
         this.theme = 'dark';
         this.orderableList = ['Item 1', 'Item 2', 'Item 3'];
@@ -48,24 +46,21 @@ var AppComponent = (function () {
             ['Item 1a', 'Item 2a', 'Item 3a'],
             ['Item 1b', 'Item 2b', 'Item 3b']
         ];
-        this.nestedLists = {
-            label: 'root',
-            children: [
-                { label: 'Item 1', children: [] },
-                { label: 'Item 2', children: [
-                        { label: 'Item 2a', children: [] },
-                        { label: 'Item 2b', children: [] },
-                        { label: 'Item 2c', children: [] },
-                    ]
-                },
-                { label: 'Item 3', children: [
-                        { label: 'Item 3a', children: [] },
-                        { label: 'Item 3b', children: [] },
-                        { label: 'Item 3c', children: [] },
-                    ]
-                },
-            ]
-        };
+        this.nestedLists = [
+            { label: 'Item 1', children: [] },
+            { label: 'Item 2', children: [
+                    { label: 'Item 2a', children: [] },
+                    { label: 'Item 2b', children: [] },
+                    { label: 'Item 2c', children: [] },
+                ]
+            },
+            { label: 'Item 3', children: [
+                    { label: 'Item 3a', children: [] },
+                    { label: 'Item 3b', children: [] },
+                    { label: 'Item 3c', children: [] },
+                ]
+            },
+        ];
         this.builder = {
             removeOnSpill: true,
             accepts: function (el, target) {
@@ -92,31 +87,24 @@ var AppComponent = (function () {
         ];
         this.targetNestedItems = [];
         this.sourceBuilderTools = [
-            { name: 'Section', children: [], itemType: 'section', icon: 'section', class: 'wide' },
-            { name: 'A String', itemType: 'string', icon: 'field-text', class: 'half' },
-            { name: 'A Number', itemType: 'number', icon: 'field-numeric', class: 'half' }
+            { name: 'Section', children: [], inputType: 'section', icon: 'section', class: 'wide' },
+            { name: 'A String', inputType: 'string', icon: 'field-text', class: 'half' },
+            { name: 'A Number', inputType: 'number', icon: 'field-numeric', class: 'half' }
         ];
         this.targetBuilderTools = [];
         this.builderClasses = {
             container: 'target',
-            item: function (item) { return (item.class + " " + item.layoutType); }
+            item: function (item) { return (item.class + " " + item.inputType); }
         };
     }
     AppComponent.prototype.builderDrag = function (e) {
         var item = e.value;
-        item.data = Math.random();
-        if (item.itemType !== 'number') {
-            item.data = item.data.toString(36).substring(20);
-        }
+        item.data = item.inputType === 'number' ?
+            (Math.random() * 100) | 0 :
+            Math.random().toString(36).substring(20);
     };
     AppComponent.prototype.log = function (e) {
         console.log(e.type, e);
-    };
-    AppComponent.prototype.onPromptClick = function (model) {
-        /* const subject = this.alertService.prompt({
-          title: `Update ${model.name}`,
-          content: `Enter a ${model.itemType}`
-        }).subscribe(v => model.data = v.data); */
     };
     AppComponent = __decorate([
         core_1.Component({
@@ -125,7 +113,7 @@ var AppComponent = (function () {
             styles: [__webpack_require__("./demo/app.component.scss")],
             template: __webpack_require__("./demo/app.component.html")
         }), 
-        __metadata('design:paramtypes', [ng2_dragula_1.DragulaService])
+        __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
 }());
@@ -58622,7 +58610,7 @@ exports.push([module.i, "html, body {\n  margin: 0;\n  padding: 0; }\n\nbody {\n
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/index.js?sourceMap!./node_modules/sass-loader/index.js?sourceMap!./src/components/container.component.scss":
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/index.js?sourceMap!./node_modules/sass-loader/index.js?sourceMap!./src/components/container/container.component.scss":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")();
@@ -58630,7 +58618,22 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, ".ngx-dnd-container {\n  background-color: rgba(255, 255, 255, 0.2);\n  border: 2px solid red;\n  margin: 10px;\n  padding: 0; }\n  .ngx-dnd-container.dndEmpty {\n    border: 2px dotted red;\n    padding: 10px; }\n  .ngx-dnd-container .ngx-dnd-item {\n    margin: 10px;\n    padding: 10px;\n    background-color: rgba(0, 0, 0, 0.2);\n    -webkit-transition: opacity 0.4s ease-in-out;\n    transition: opacity 0.4s ease-in-out;\n    border: 1px solid lightblue;\n    cursor: move;\n    cursor: grab;\n    cursor: -webkit-grab; }\n    .ngx-dnd-container .ngx-dnd-item .ngx-dnd-content {\n      -webkit-user-select: none;\n         -moz-user-select: none;\n          -ms-user-select: none;\n              user-select: none; }\n    .ngx-dnd-container .ngx-dnd-item:hover {\n      border: 1px solid blue; }\n  .ngx-dnd-container:nth-child(odd) {\n    background-color: rgba(0, 0, 0, 0.2); }\n  .ngx-dnd-container .ex-moved {\n    background-color: #e74c3c; }\n  .ngx-dnd-container .ex-over {\n    background-color: rgba(255, 255, 255, 0.3); }\n  .ngx-dnd-container .handle {\n    padding: 0 5px;\n    margin-right: 5px;\n    background-color: rgba(0, 0, 0, 0.4);\n    cursor: move; }\n\n.gu-mirror {\n  position: fixed !important;\n  margin: 0 !important;\n  z-index: 9999 !important;\n  opacity: 0.8;\n  -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)\";\n  filter: alpha(opacity=80); }\n\n.gu-hide {\n  display: none !important; }\n\n.gu-unselectable {\n  -webkit-user-select: none !important;\n  -moz-user-select: none !important;\n  -ms-user-select: none !important;\n  user-select: none !important; }\n\n.gu-transit {\n  opacity: 0.2;\n  -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=20)\";\n  filter: alpha(opacity=20); }\n", ""]);
+exports.push([module.i, ".ngx-dnd-container {\n  background-color: rgba(255, 255, 255, 0.2);\n  border: 2px solid red;\n  margin: 10px;\n  padding: 10px; }\n  .ngx-dnd-container.dndEmpty {\n    border: 2px dotted red; }\n  .ngx-dnd-container .ngx-dnd-item {\n    margin: 10px;\n    padding: 10px;\n    background-color: rgba(0, 0, 0, 0.2);\n    -webkit-transition: opacity 0.4s ease-in-out;\n    transition: opacity 0.4s ease-in-out;\n    border: 1px solid lightblue;\n    cursor: move;\n    cursor: grab;\n    cursor: -webkit-grab; }\n    .ngx-dnd-container .ngx-dnd-item .ngx-dnd-content {\n      -webkit-user-select: none;\n         -moz-user-select: none;\n          -ms-user-select: none;\n              user-select: none; }\n    .ngx-dnd-container .ngx-dnd-item:hover {\n      border: 1px solid blue; }\n  .ngx-dnd-container:nth-child(odd) {\n    background-color: rgba(0, 0, 0, 0.2); }\n  .ngx-dnd-container .ex-moved {\n    background-color: #e74c3c; }\n  .ngx-dnd-container .ex-over {\n    background-color: rgba(255, 255, 255, 0.3); }\n  .ngx-dnd-container .handle {\n    padding: 0 5px;\n    margin-right: 5px;\n    background-color: rgba(0, 0, 0, 0.4);\n    cursor: move; }\n\n.gu-mirror {\n  position: fixed !important;\n  margin: 0 !important;\n  z-index: 9999 !important;\n  opacity: 0.8;\n  -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)\";\n  filter: alpha(opacity=80); }\n\n.gu-hide {\n  display: none !important; }\n\n.gu-unselectable {\n  -webkit-user-select: none !important;\n  -moz-user-select: none !important;\n  -ms-user-select: none !important;\n  user-select: none !important; }\n\n.gu-transit {\n  opacity: 0.2;\n  -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=20)\";\n  filter: alpha(opacity=20); }\n\n.no-select {\n  -webkit-touch-callout: none;\n  /* iOS Safari */\n  -webkit-user-select: none;\n  /* Chrome/Safari/Opera */\n  /* Konqueror */\n  -moz-user-select: none;\n  /* Firefox */\n  -ms-user-select: none;\n  /* IE/Edge */\n  user-select: none;\n  /* non-prefixed version, currently\n                                  not supported by any browser */ }\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/index.js?sourceMap!./node_modules/sass-loader/index.js?sourceMap!./src/components/item/item.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")();
+// imports
+
+
+// module
+exports.push([module.i, ".ngx-dnd-item {\n  margin: 10px;\n  padding: 10px;\n  background-color: rgba(0, 0, 0, 0.2);\n  -webkit-transition: opacity 0.4s ease-in-out;\n  transition: opacity 0.4s ease-in-out;\n  border: 1px solid lightblue;\n  cursor: move;\n  cursor: grab;\n  cursor: -webkit-grab;\n  display: block; }\n  .ngx-dnd-item .ngx-dnd-content {\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none; }\n  .ngx-dnd-item:hover {\n    border: 1px solid blue; }\n\n.gu-mirror {\n  position: fixed !important;\n  margin: 0 !important;\n  z-index: 9999 !important;\n  opacity: 0.8;\n  -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)\";\n  filter: alpha(opacity=80); }\n\n.gu-hide {\n  display: none !important; }\n\n.gu-unselectable {\n  -webkit-user-select: none !important;\n  -moz-user-select: none !important;\n  -ms-user-select: none !important;\n  user-select: none !important; }\n\n.gu-transit {\n  opacity: 0.2;\n  -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=20)\";\n  filter: alpha(opacity=20); }\n\n.no-select {\n  -webkit-touch-callout: none;\n  /* iOS Safari */\n  -webkit-user-select: none;\n  /* Chrome/Safari/Opera */\n  /* Konqueror */\n  -moz-user-select: none;\n  /* Firefox */\n  -ms-user-select: none;\n  /* IE/Edge */\n  user-select: none;\n  /* non-prefixed version, currently\n                                  not supported by any browser */ }\n", ""]);
 
 // exports
 
@@ -59423,266 +59426,6 @@ module.exports = dragula;
 
 /***/ }),
 
-/***/ "./node_modules/ng2-dragula/components/dragula.class.js":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var dragulaExpt = __webpack_require__("./node_modules/dragula/dragula.js");
-exports.dragula = dragulaExpt.default || dragulaExpt;
-
-
-/***/ }),
-
-/***/ "./node_modules/ng2-dragula/components/dragula.directive.js":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var core_1 = __webpack_require__("./node_modules/@angular/core/index.js");
-var dragula_provider_1 = __webpack_require__("./node_modules/ng2-dragula/components/dragula.provider.js");
-var dragula_class_1 = __webpack_require__("./node_modules/ng2-dragula/components/dragula.class.js");
-var DragulaDirective = (function () {
-    function DragulaDirective(el, dragulaService) {
-        this.el = el;
-        this.dragulaService = dragulaService;
-        this.container = el.nativeElement;
-    }
-    DragulaDirective.prototype.ngOnInit = function () {
-        var _this = this;
-        // console.log(this.bag);
-        var bag = this.dragulaService.find(this.dragula);
-        var checkModel = function () {
-            if (_this.dragulaModel) {
-                if (_this.drake.models) {
-                    _this.drake.models.push(_this.dragulaModel);
-                }
-                else {
-                    _this.drake.models = [_this.dragulaModel];
-                }
-            }
-        };
-        if (bag) {
-            this.drake = bag.drake;
-            checkModel();
-            this.drake.containers.push(this.container);
-        }
-        else {
-            this.drake = dragula_class_1.dragula([this.container], Object.assign({}, this.dragulaOptions));
-            checkModel();
-            this.dragulaService.add(this.dragula, this.drake);
-        }
-    };
-    DragulaDirective.prototype.ngOnChanges = function (changes) {
-        // console.log('dragula.directive: ngOnChanges');
-        // console.log(changes);
-        if (changes && changes.dragulaModel) {
-            if (this.drake) {
-                if (this.drake.models) {
-                    var modelIndex = this.drake.models.indexOf(changes.dragulaModel.previousValue);
-                    this.drake.models.splice(modelIndex, 1, changes.dragulaModel.currentValue);
-                }
-                else {
-                    this.drake.models = [changes.dragulaModel.currentValue];
-                }
-            }
-        }
-    };
-    DragulaDirective.decorators = [
-        { type: core_1.Directive, args: [{ selector: '[dragula]' },] },
-    ];
-    /** @nocollapse */
-    DragulaDirective.ctorParameters = function () { return [
-        { type: core_1.ElementRef, },
-        { type: dragula_provider_1.DragulaService, },
-    ]; };
-    DragulaDirective.propDecorators = {
-        'dragula': [{ type: core_1.Input },],
-        'dragulaModel': [{ type: core_1.Input },],
-        'dragulaOptions': [{ type: core_1.Input },],
-    };
-    return DragulaDirective;
-}());
-exports.DragulaDirective = DragulaDirective;
-
-
-/***/ }),
-
-/***/ "./node_modules/ng2-dragula/components/dragula.provider.js":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var dragula_class_1 = __webpack_require__("./node_modules/ng2-dragula/components/dragula.class.js");
-var core_1 = __webpack_require__("./node_modules/@angular/core/index.js");
-var DragulaService = (function () {
-    function DragulaService() {
-        this.cancel = new core_1.EventEmitter();
-        this.cloned = new core_1.EventEmitter();
-        this.drag = new core_1.EventEmitter();
-        this.dragend = new core_1.EventEmitter();
-        this.drop = new core_1.EventEmitter();
-        this.out = new core_1.EventEmitter();
-        this.over = new core_1.EventEmitter();
-        this.remove = new core_1.EventEmitter();
-        this.shadow = new core_1.EventEmitter();
-        this.dropModel = new core_1.EventEmitter();
-        this.removeModel = new core_1.EventEmitter();
-        this.events = [
-            'cancel', 'cloned', 'drag', 'dragend', 'drop', 'out', 'over',
-            'remove', 'shadow', 'dropModel', 'removeModel'
-        ];
-        this.bags = [];
-    }
-    DragulaService.prototype.add = function (name, drake) {
-        var bag = this.find(name);
-        if (bag) {
-            throw new Error('Bag named: "' + name + '" already exists.');
-        }
-        bag = { name: name, drake: drake };
-        this.bags.push(bag);
-        if (drake.models) {
-            this.handleModels(name, drake);
-        }
-        if (!bag.initEvents) {
-            this.setupEvents(bag);
-        }
-        return bag;
-    };
-    DragulaService.prototype.find = function (name) {
-        for (var _i = 0, _a = this.bags; _i < _a.length; _i++) {
-            var bag = _a[_i];
-            if (bag.name === name) {
-                return bag;
-            }
-        }
-    };
-    DragulaService.prototype.destroy = function (name) {
-        var bag = this.find(name);
-        var i = this.bags.indexOf(bag);
-        this.bags.splice(i, 1);
-        bag.drake.destroy();
-    };
-    DragulaService.prototype.setOptions = function (name, options) {
-        var bag = this.add(name, dragula_class_1.dragula(options));
-        this.handleModels(name, bag.drake);
-    };
-    DragulaService.prototype.handleModels = function (name, drake) {
-        var _this = this;
-        var dragElm;
-        var dragIndex;
-        var dropIndex;
-        var dragSource;
-        var sourceModel;
-        drake.on('remove', function (el, source) {
-            if (!drake.models) {
-                return;
-            }
-            sourceModel = drake.models[drake.containers.indexOf(dragSource)];
-            sourceModel.splice(dragIndex, 1);
-            // console.log('REMOVE');
-            // console.log(sourceModel);
-            _this.removeModel.emit([name, el, source]);
-        });
-        drake.on('drag', function (el, source) {
-            dragElm = el;
-            dragIndex = _this.domIndexOf(el, source);
-            dragSource = source;
-        });
-        drake.on('drop', function (dropElm, target, source) {
-            if (!drake.models || !target) {
-                return;
-            }
-            dropIndex = _this.domIndexOf(dropElm, target);
-            sourceModel = drake.models[drake.containers.indexOf(source)];
-            // console.log('DROP');
-            // console.log(sourceModel);
-            if (target === source) {
-                sourceModel.splice(dropIndex, 0, sourceModel.splice(dragIndex, 1)[0]);
-            }
-            else {
-                var notCopy = dragElm === dropElm;
-                var targetModel = drake.models[drake.containers.indexOf(target)];
-                var dropElmModel = notCopy ? sourceModel[dragIndex] : JSON.parse(JSON.stringify(sourceModel[dragIndex]));
-                if (notCopy) {
-                    sourceModel.splice(dragIndex, 1);
-                }
-                targetModel.splice(dropIndex, 0, dropElmModel);
-                target.removeChild(dropElm); // element must be removed for ngFor to apply correctly
-            }
-            _this.dropModel.emit([name, dropElm, target, source]);
-        });
-    };
-    DragulaService.prototype.setupEvents = function (bag) {
-        bag.initEvents = true;
-        var that = this;
-        var emitter = function (type) {
-            function replicate() {
-                var args = Array.prototype.slice.call(arguments);
-                that[type].emit([bag.name].concat(args));
-            }
-            bag.drake.on(type, replicate);
-        };
-        this.events.forEach(emitter);
-    };
-    DragulaService.prototype.domIndexOf = function (child, parent) {
-        return Array.prototype.indexOf.call(parent.children, child);
-    };
-    DragulaService.decorators = [
-        { type: core_1.Injectable },
-    ];
-    /** @nocollapse */
-    DragulaService.ctorParameters = function () { return []; };
-    return DragulaService;
-}());
-exports.DragulaService = DragulaService;
-
-
-/***/ }),
-
-/***/ "./node_modules/ng2-dragula/components/dragular.module.js":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var core_1 = __webpack_require__("./node_modules/@angular/core/index.js");
-var dragula_directive_1 = __webpack_require__("./node_modules/ng2-dragula/components/dragula.directive.js");
-var dragula_provider_1 = __webpack_require__("./node_modules/ng2-dragula/components/dragula.provider.js");
-var DragulaModule = (function () {
-    function DragulaModule() {
-    }
-    DragulaModule.decorators = [
-        { type: core_1.NgModule, args: [{
-                    exports: [dragula_directive_1.DragulaDirective],
-                    declarations: [dragula_directive_1.DragulaDirective],
-                    providers: [dragula_provider_1.DragulaService]
-                },] },
-    ];
-    /** @nocollapse */
-    DragulaModule.ctorParameters = function () { return []; };
-    return DragulaModule;
-}());
-exports.DragulaModule = DragulaModule;
-
-
-/***/ }),
-
-/***/ "./node_modules/ng2-dragula/index.js":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-__export(__webpack_require__("./node_modules/ng2-dragula/components/dragula.class.js"));
-__export(__webpack_require__("./node_modules/ng2-dragula/components/dragula.directive.js"));
-__export(__webpack_require__("./node_modules/ng2-dragula/components/dragula.provider.js"));
-__export(__webpack_require__("./node_modules/ng2-dragula/components/dragular.module.js"));
-
-
-/***/ }),
-
 /***/ "./node_modules/rxjs/BehaviorSubject.js":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -60444,18 +60187,18 @@ exports.clearImmediate = clearImmediate;
 
 /***/ }),
 
-/***/ "./src/components/container.component.html":
+/***/ "./src/components/container/container.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div [ngSwitch]=\"type\">\n\n  <div *ngSwitchCase=\"'array'\">\n    <div\n        class='ngx-dnd-container {{classes.container}}'\n        [class.dndEmpty]=\"!model.length\"\n        [dragula]=\"bag\"\n        [dragulaModel]=\"model\"\n        [dragulaOptions]=\"options\">\n        <div\n          *ngFor=\"let item of model\"\n          class=\"ngx-dnd-item {{classes.item(item)}}\"\n          delay-drag-lift>\n          <ngx-dnd-container\n            [bag]=\"bag\"\n            [model]=\"item\"\n            [classes]=\"classes\"\n            [template]=\"template\"\n            (drop)=\"drop($event)\">\n          </ngx-dnd-container>\n        </div>\n    </div>\n  </div>\n\n  <div *ngSwitchCase=\"'object'\">\n    <template\n      *ngIf=\"template\"\n      [ngTemplateOutlet]=\"template\"\n      [ngOutletContext]=\"data\">\n    </template>\n    <div *ngIf=\"!template\">\n      <div\n        class=\"ngx-dnd-content {{classes.content}}\"\n        [class]=\"classes.content\">\n        {{model.label}}\n      </div>\n      <ngx-dnd-container\n        [bag]=\"bag\"\n        [model]=\"model.children\"\n        [classes]=\"classes\"\n        [template]=\"template\"\n        (drop)=\"drop($event)\">\n      </ngx-dnd-container>\n    </div>\n  </div>\n\n  <div *ngSwitchCase=\"'undefined'\">\n  </div>\n\n  <div *ngSwitchDefault>\n    <template\n      *ngIf=\"template\"\n      [ngTemplateOutlet]=\"template\"\n      [ngOutletContext]=\"data\">\n    </template>\n    <div\n      *ngIf=\"!template\"\n      class=\"\">\n      <div\n        class=\"ngx-dnd-content {{classes.content}}\"\n        [class]=\"classes.content\">\n        {{model}}\n      </div>\n    </div>\n  </div>\n\n</div>"
+module.exports = "<div\n  class='ngx-dnd-container {{classes.container}}'\n  [ngClass]=\"{ 'gu-empty': !model?.length }\"\n  [ngxDroppable]=\"bag\"\n  [model]=\"model\"\n  [dragulaOptions]=\"dragulaOptions\">\n  <ng-container *ngIf=\"model\">\n    <ng-container *ngFor=\"let item of model\">\n      <ngx-dnd-item\n        class=\"ngx-dnd-item {{classes.item(item)}}\"\n        [model]=\"item\"\n        ngxDraggable\n        dropZones=\"['a', 'b']\">\n      </ngx-dnd-item>\n    </ng-container>\n  </ng-container>\n  <ng-content *ngIf=\"!model\"></ng-content>\n</div>"
 
 /***/ }),
 
-/***/ "./src/components/container.component.scss":
+/***/ "./src/components/container/container.component.scss":
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__("./node_modules/css-loader/index.js!./node_modules/postcss-loader/index.js?sourceMap!./node_modules/sass-loader/index.js?sourceMap!./src/components/container.component.scss");
+        var result = __webpack_require__("./node_modules/css-loader/index.js!./node_modules/postcss-loader/index.js?sourceMap!./node_modules/sass-loader/index.js?sourceMap!./src/components/container/container.component.scss");
 
         if (typeof result === "string") {
             module.exports = result;
@@ -60466,7 +60209,7 @@ module.exports = "<div [ngSwitch]=\"type\">\n\n  <div *ngSwitchCase=\"'array'\">
 
 /***/ }),
 
-/***/ "./src/components/container.component.ts":
+/***/ "./src/components/container/container.component.ts":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -60481,107 +60224,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__("./node_modules/@angular/core/index.js");
-var ng2_dragula_1 = __webpack_require__("./node_modules/ng2-dragula/index.js");
+var directives_1 = __webpack_require__("./src/directives/index.ts");
 var ContainerComponent = (function () {
-    function ContainerComponent(dragulaService, renderer) {
-        this.dragulaService = dragulaService;
+    function ContainerComponent(renderer) {
         this.renderer = renderer;
         this.bag = 'default';
         this.class = '';
         this.classes = {};
-        this.debug = false;
         this.drop = new core_1.EventEmitter();
         this.drag = new core_1.EventEmitter();
         this.over = new core_1.EventEmitter();
         this.out = new core_1.EventEmitter();
     }
     ContainerComponent.prototype.ngOnInit = function () {
-        this.options = Object.assign({
-            accepts: function (el, target, source, sibling) {
-                return !el.contains(target);
-            }
-        }, this.options);
-        this.type = getType(this.model);
-        var item = this.classes.item;
         this.classes = {
             container: this.classes.container,
-            item: this.functor(this.classes.item)
-        };
-        this.data = {
-            model: this.model,
-            type: this.type,
-            bag: this.bag,
-            template: this.template
+            item: functor(this.classes.item)
         };
     };
     ContainerComponent.prototype.ngAfterViewInit = function () {
         var _this = this;
-        var bag = this.dragulaService.find(this.bag);
-        var drake = bag.drake;
-        drake.on('drag', function (el, source) {
-            if (_this.dragula && _this.dragula.el.nativeElement === source) {
-                var dragIndex = Array.prototype.indexOf.call(source.children, el);
-                var sourceModel = drake.models[drake.containers.indexOf(source)];
-                var sourceItem = _this.model[dragIndex];
-                drake.draggingItem = sourceItem;
-                _this.drag.emit({
-                    type: 'drag',
-                    el: el,
-                    source: source,
-                    value: drake.draggingItem
-                });
-            }
-        });
-        /* drake.on('drop', (el: any, target: any, source: any, sibling: any) => {
-          if (this.dragula && this.dragula.el.nativeElement === target) {
-            this.drop.emit({
-              type: 'drop',
-              el,
-              source,
-              target,
-              sibling,
-              value: drake.draggingItem
-            });
-          }
-        }); */
-        drake.on('over', function (el, container, source) {
-            if (_this.dragula && _this.dragula.el.nativeElement === container) {
-                _this.renderer.setElementClass(container, 'gu-over', true);
-                _this.over.emit({
-                    type: 'over',
-                    el: el,
-                    container: container,
-                    source: source,
-                    value: drake.draggingItem
-                });
-            }
-        });
-        drake.on('out', function (el, container, source) {
-            if (_this.dragula && _this.dragula.el.nativeElement === container) {
-                _this.renderer.setElementClass(container, 'gu-over', false);
-                _this.out.emit({
-                    type: 'out',
-                    el: el,
-                    container: container,
-                    source: source,
-                    value: drake.draggingItem
-                });
-            }
-        });
-        drake.on('remove', function (el, container, source) {
-            if (_this.dragula && _this.dragula.el.nativeElement === source) {
-                _this.out.emit({
-                    type: 'remove',
-                    el: el,
-                    container: container,
-                    source: source,
-                    value: drake.draggingItem
-                });
-            }
-        });
-    };
-    ContainerComponent.prototype.functor = function (maybeFunction) {
-        return typeof maybeFunction === 'function' ? maybeFunction : function () { return maybeFunction; };
+        this.droppable.drag.subscribe(function (v) { return _this.drag.emit(v); });
+        this.droppable.drop.subscribe(function (v) { return _this.drop.emit(v); });
+        this.droppable.over.subscribe(function (v) { return _this.over.emit(v); });
+        this.droppable.out.subscribe(function (v) { return _this.out.emit(v); });
     };
     __decorate([
         core_1.Input(), 
@@ -60602,11 +60268,7 @@ var ContainerComponent = (function () {
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
-    ], ContainerComponent.prototype, "options", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object)
-    ], ContainerComponent.prototype, "debug", void 0);
+    ], ContainerComponent.prototype, "dragulaOptions", void 0);
     __decorate([
         core_1.Input(),
         core_1.ContentChild(core_1.TemplateRef), 
@@ -60614,9 +60276,9 @@ var ContainerComponent = (function () {
     ], ContainerComponent.prototype, "template", void 0);
     __decorate([
         core_1.Input(),
-        core_1.ViewChild(ng2_dragula_1.DragulaDirective), 
+        core_1.ViewChild(directives_1.DroppableDirective), 
         __metadata('design:type', Object)
-    ], ContainerComponent.prototype, "dragula", void 0);
+    ], ContainerComponent.prototype, "droppable", void 0);
     __decorate([
         core_1.Output(), 
         __metadata('design:type', core_1.EventEmitter)
@@ -60636,20 +60298,17 @@ var ContainerComponent = (function () {
     ContainerComponent = __decorate([
         core_1.Component({
             selector: 'ngx-dnd-container',
-            template: __webpack_require__("./src/components/container.component.html"),
+            template: __webpack_require__("./src/components/container/container.component.html"),
             encapsulation: core_1.ViewEncapsulation.None,
-            styles: [__webpack_require__("./src/components/container.component.scss")],
+            styles: [__webpack_require__("./src/components/container/container.component.scss")],
         }), 
-        __metadata('design:paramtypes', [ng2_dragula_1.DragulaService, core_1.Renderer])
+        __metadata('design:paramtypes', [core_1.Renderer])
     ], ContainerComponent);
     return ContainerComponent;
 }());
 exports.ContainerComponent = ContainerComponent;
-function getType(item) {
-    if (Array.isArray(item)) {
-        return 'array';
-    }
-    return typeof item;
+function functor(maybeFunction) {
+    return typeof maybeFunction === 'function' ? maybeFunction : function () { return maybeFunction; };
 }
 
 
@@ -60663,16 +60322,38 @@ function getType(item) {
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
-__export(__webpack_require__("./src/components/container.component.ts"));
+__export(__webpack_require__("./src/components/container/container.component.ts"));
+__export(__webpack_require__("./src/components/item/item.component.ts"));
 
 
 /***/ }),
 
-/***/ "./src/directives/delay-drag-lift.directive.ts":
+/***/ "./src/components/item/item.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div>\n  <ng-container [ngSwitch]=\"type\">\n\n    <ng-container *ngSwitchCase=\"'array'\">\n      <ngx-dnd-container\n        [model]=\"model\"\n        [bag]=\"container.bag\"\n        [classes]=\"container.classes\"\n        [template]=\"container.template\"\n        [dragulaOptions]=\"container.dragulaOptions\">\n      </ngx-dnd-container>\n    </ng-container>\n\n    <ng-container *ngSwitchCase=\"'object'\">\n      <template\n        *ngIf=\"container.template\"\n        [ngTemplateOutlet]=\"container.template\"\n        [ngOutletContext]=\"data\">\n      </template>\n      <ng-container *ngIf=\"!container.template\">\n        <div\n          class=\"ngx-dnd-content {{container.classes.content}}\">\n          {{model.label}}\n        </div>\n        <ngx-dnd-container\n          *ngIf=\"model.children\"\n          [bag]=\"container.bag\"\n          [model]=\"model.children\"\n          [classes]=\"container.classes\"\n          [template]=\"container.template\"\n          [dragulaOptions]=\"container.dragulaOptions\">\n        </ngx-dnd-container>\n      </ng-container>\n    </ng-container>\n\n    <ng-container *ngSwitchCase=\"'undefined'\">\n    </ng-container>\n\n    <ng-container *ngSwitchDefault>\n      <template\n        *ngIf=\"container.template\"\n        [ngTemplateOutlet]=\"container.template\"\n        [ngOutletContext]=\"data\">\n      </template>\n      <div\n        *ngIf=\"!container.template\"\n        class=\"ngx-dnd-content {{container.classes.content}}\">\n        {{model}}\n      </div>\n    </ng-container>\n\n  </ng-container>\n</div>\n\n\n\n\n\n\n"
+
+/***/ }),
+
+/***/ "./src/components/item/item.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__("./node_modules/css-loader/index.js!./node_modules/postcss-loader/index.js?sourceMap!./node_modules/sass-loader/index.js?sourceMap!./src/components/item/item.component.scss");
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ }),
+
+/***/ "./src/components/item/item.component.ts":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-// From: https://github.com/bevacqua/dragula/issues/289#issuecomment-277143172
 
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -60684,59 +60365,189 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__("./node_modules/@angular/core/index.js");
-var DelayDragLiftDirective = (function () {
-    function DelayDragLiftDirective(el) {
-        this.el = el;
-        this.dragDelay = 200; // milliseconds
-        this.draggable = false;
+var _1 = __webpack_require__("./src/components/index.ts");
+var ItemComponent = (function () {
+    function ItemComponent(container) {
+        this.container = container;
     }
-    DelayDragLiftDirective.prototype.
-    // @HostListener('mousemove', ['$event'])
-    onMove = function (e) {
-        if (!this.draggable) {
-            e.stopPropagation();
-            clearTimeout(this.touchTimeout);
+    ItemComponent.prototype.ngOnInit = function () {
+        this.type = getType(this.model);
+        this.data = {
+            model: this.model,
+            type: this.type,
+            bag: this.container.bag,
+            template: this.container.template
+        };
+    };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], ItemComponent.prototype, "model", void 0);
+    ItemComponent = __decorate([
+        core_1.Component({
+            selector: 'ngx-dnd-item',
+            template: __webpack_require__("./src/components/item/item.component.html"),
+            encapsulation: core_1.ViewEncapsulation.None,
+            styles: [__webpack_require__("./src/components/item/item.component.scss")],
+        }), 
+        __metadata('design:paramtypes', [_1.ContainerComponent])
+    ], ItemComponent);
+    return ItemComponent;
+}());
+exports.ItemComponent = ItemComponent;
+function getType(item) {
+    if (Array.isArray(item)) {
+        return 'array';
+    }
+    return typeof item;
+}
+
+
+/***/ }),
+
+/***/ "./src/directives/drake-store.service.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var dragula = __webpack_require__("./node_modules/dragula/dragula.js");
+var DrakeStoreService = (function () {
+    function DrakeStoreService() {
+        this.droppableMap = new WeakMap();
+        this.drakeMap = {};
+    }
+    DrakeStoreService.prototype.register = function (droppable) {
+        var name = droppable.ngxDroppable;
+        this.droppableMap.set(droppable.container, droppable);
+        var drake = this.drakeMap[name];
+        if (drake) {
+            drake.containers.push(droppable.container);
+        }
+        else {
+            drake = this.drakeMap[name] = dragula([droppable.container], droppable.dragulaOptions);
+            this.registerEvents(drake);
+        }
+        return drake;
+    };
+    DrakeStoreService.prototype.remove = function (droppable) {
+        var name = droppable.ngxDroppable;
+        this.droppableMap.delete(droppable.container);
+        var drake = this.drakeMap[name];
+        if (drake) {
+            var idx = drake.containers.indexOf(droppable.container);
+            if (idx > -1) {
+                drake.containers.splice(idx, 1);
+            }
         }
     };
-    DelayDragLiftDirective.prototype.
-    // @HostListener('mousedown', ['$event'])
-    onDown = function (e) {
+    DrakeStoreService.prototype.registerEvents = function (drake) {
         var _this = this;
-        this.touchTimeout = setTimeout(function () {
-            _this.draggable = true;
-        }, this.dragDelay);
+        var dragElm;
+        var dragIndex;
+        var draggedItem;
+        drake.on('drag', function (el, source) {
+            draggedItem = undefined;
+            dragElm = el;
+            if (!source) {
+                return;
+            }
+            dragIndex = domIndexOf(el, source);
+            if (_this.droppableMap.has(source)) {
+                var component = _this.droppableMap.get(source);
+                var sourceModel = component.model;
+                draggedItem = sourceModel ? sourceModel[dragIndex] : undefined;
+                component.drag.emit({
+                    type: 'remove',
+                    el: el,
+                    source: source,
+                    value: draggedItem
+                });
+            }
+        });
+        drake.on('drop', function (el, target, source) {
+            if (_this.droppableMap.has(target) && _this.droppableMap.has(source)) {
+                var targetComponent = _this.droppableMap.get(target);
+                if (_this.droppableMap.has(source)) {
+                    var sourceComponent = _this.droppableMap.get(source);
+                    var sourceModel = sourceComponent.model;
+                    var targetModel = targetComponent.model;
+                    var dropIndex = domIndexOf(el, target);
+                    if (sourceModel && targetModel) {
+                        if (target === source) {
+                            sourceModel.splice(dropIndex, 0, sourceModel.splice(dragIndex, 1)[0]);
+                        }
+                        else {
+                            var notCopy = dragElm === el;
+                            var dropElmModel = notCopy ?
+                                sourceModel[dragIndex] :
+                                JSON.parse(JSON.stringify(sourceModel[dragIndex]));
+                            if (notCopy) {
+                                sourceModel.splice(dragIndex, 1);
+                            }
+                            targetModel.splice(dropIndex, 0, dropElmModel);
+                            target.removeChild(el); // element must be removed for ngFor to apply correctly
+                        }
+                    }
+                }
+                targetComponent.drop.emit({
+                    type: 'drop',
+                    el: el,
+                    source: source,
+                    value: draggedItem
+                });
+            }
+        });
+        drake.on('remove', function (el, container, source) {
+            if (_this.droppableMap.has(container)) {
+                var sourceComponent = _this.droppableMap.get(source);
+                var sourceModel = sourceComponent.model;
+                var removedItem = void 0;
+                if (sourceModel) {
+                    removedItem = sourceModel.splice(dragIndex, 1);
+                }
+                sourceComponent.remove.emit({
+                    type: 'remove',
+                    el: el,
+                    container: container,
+                    source: source,
+                    value: removedItem
+                });
+            }
+        });
+        drake.on('over', function (el, container, source) {
+            if (_this.droppableMap.has(container)) {
+                var component = _this.droppableMap.get(container);
+                // this.renderer.setElementClass(container, 'gu-over', true);
+                component.over.emit({
+                    type: 'over',
+                    el: el,
+                    container: container,
+                    source: source,
+                    value: draggedItem
+                });
+            }
+        });
+        drake.on('out', function (el, container, source) {
+            if (_this.droppableMap.has(container)) {
+                var component = _this.droppableMap.get(container);
+                // this.renderer.setElementClass(container, 'gu-over', true);
+                component.out.emit({
+                    type: 'out',
+                    el: el,
+                    container: container,
+                    source: source,
+                    value: draggedItem
+                });
+            }
+        });
+        function domIndexOf(child, parent) {
+            return Array.prototype.indexOf.call(parent.children, child);
+        }
     };
-    DelayDragLiftDirective.prototype.
-    // @HostListener('mouseup', ['$event'])
-    onUp = function (e) {
-        clearTimeout(this.touchTimeout);
-        this.draggable = false;
-    };
-    __decorate([
-        core_1.HostListener('touchmove', ['$event']), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', [Event]), 
-        __metadata('design:returntype', void 0)
-    ], DelayDragLiftDirective.prototype, "onMove", null);
-    __decorate([
-        core_1.HostListener('touchstart', ['$event']), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', [Event]), 
-        __metadata('design:returntype', void 0)
-    ], DelayDragLiftDirective.prototype, "onDown", null);
-    __decorate([
-        core_1.HostListener('touchend', ['$event']), 
-        __metadata('design:type', Function), 
-        __metadata('design:paramtypes', [Event]), 
-        __metadata('design:returntype', void 0)
-    ], DelayDragLiftDirective.prototype, "onUp", null);
-    DelayDragLiftDirective = __decorate([
-        core_1.Directive({ selector: '[delay-drag-lift]' }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
-    ], DelayDragLiftDirective);
-    return DelayDragLiftDirective;
+    ;
+    return DrakeStoreService;
 }());
-exports.DelayDragLiftDirective = DelayDragLiftDirective;
+exports.DrakeStoreService = DrakeStoreService;
 
 
 /***/ }),
@@ -60749,7 +60560,182 @@ exports.DelayDragLiftDirective = DelayDragLiftDirective;
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
-__export(__webpack_require__("./src/directives/delay-drag-lift.directive.ts"));
+__export(__webpack_require__("./src/directives/ngx-draggable.directive.ts"));
+__export(__webpack_require__("./src/directives/ngx-droppable.directive.ts"));
+
+
+/***/ }),
+
+/***/ "./src/directives/ngx-draggable.directive.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__("./node_modules/@angular/core/index.js");
+/**
+ * From: https://github.com/bevacqua/dragula/issues/289#issuecomment-277143172
+ *
+ * @export
+ * @class NgxDndItemDirective
+ */
+var DraggableDirective = (function () {
+    function DraggableDirective(el) {
+        this.el = el;
+        this.dragDelay = 200; // milliseconds
+        this.draggable = false;
+    }
+    DraggableDirective.prototype.onMove = function (e) {
+        if (!this.draggable) {
+            e.stopPropagation();
+            clearTimeout(this.touchTimeout);
+        }
+    };
+    DraggableDirective.prototype.onDown = function (e) {
+        var _this = this;
+        this.touchTimeout = setTimeout(function () {
+            _this.draggable = true;
+        }, this.dragDelay);
+    };
+    DraggableDirective.prototype.onUp = function (e) {
+        clearTimeout(this.touchTimeout);
+        this.draggable = false;
+    };
+    __decorate([
+        core_1.HostListener('touchmove', ['$event']), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', [Event]), 
+        __metadata('design:returntype', void 0)
+    ], DraggableDirective.prototype, "onMove", null);
+    __decorate([
+        core_1.HostListener('touchstart', ['$event']), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', [Event]), 
+        __metadata('design:returntype', void 0)
+    ], DraggableDirective.prototype, "onDown", null);
+    __decorate([
+        core_1.HostListener('touchend', ['$event']), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', [Event]), 
+        __metadata('design:returntype', void 0)
+    ], DraggableDirective.prototype, "onUp", null);
+    DraggableDirective = __decorate([
+        core_1.Directive({ selector: '[ngxDraggable]' }), 
+        __metadata('design:paramtypes', [core_1.ElementRef])
+    ], DraggableDirective);
+    return DraggableDirective;
+}());
+exports.DraggableDirective = DraggableDirective;
+
+
+/***/ }),
+
+/***/ "./src/directives/ngx-droppable.directive.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__("./node_modules/@angular/core/index.js");
+var drake_store_service_1 = __webpack_require__("./src/directives/drake-store.service.ts");
+var drakesService = new drake_store_service_1.DrakeStoreService();
+var DroppableDirective = (function () {
+    function DroppableDirective(el, renderer) {
+        this.el = el;
+        this.renderer = renderer;
+        this.drop = new core_1.EventEmitter();
+        this.drag = new core_1.EventEmitter();
+        this.over = new core_1.EventEmitter();
+        this.out = new core_1.EventEmitter();
+        this.remove = new core_1.EventEmitter();
+        this.container = el.nativeElement;
+    }
+    DroppableDirective.prototype.ngOnInit = function () {
+        this.dragulaOptions = Object.assign({
+            accepts: function (el, target, source, sibling) {
+                if (el.contains(target)) {
+                    return false;
+                }
+                /* if (!this.dropZone && this.drake.allowedDropZones.length === 0) {
+                  return true;
+                }
+                return this.drake.allowedDropZones.contains(this.dropZone); */
+                return true;
+            }
+        }, this.dragulaOptions);
+        drakesService.register(this);
+    };
+    DroppableDirective.prototype.ngAfterViewInit = function () {
+        var _this = this;
+        var overAndOut = function (_a) {
+            var type = _a.type;
+            return _this.renderer.setElementClass(_this.container, 'gu-over', type === 'over');
+        };
+        this.over.subscribe(overAndOut);
+        this.out.subscribe(overAndOut);
+    };
+    DroppableDirective.prototype.ngOnDestroy = function () {
+        drakesService.remove(this);
+    };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], DroppableDirective.prototype, "ngxDroppable", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], DroppableDirective.prototype, "model", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], DroppableDirective.prototype, "dragulaOptions", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], DroppableDirective.prototype, "dropZone", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', core_1.EventEmitter)
+    ], DroppableDirective.prototype, "drop", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', core_1.EventEmitter)
+    ], DroppableDirective.prototype, "drag", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', core_1.EventEmitter)
+    ], DroppableDirective.prototype, "over", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', core_1.EventEmitter)
+    ], DroppableDirective.prototype, "out", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', core_1.EventEmitter)
+    ], DroppableDirective.prototype, "remove", void 0);
+    DroppableDirective = __decorate([
+        core_1.Directive({ selector: '[ngxDroppable]' }), 
+        __metadata('design:paramtypes', [core_1.ElementRef, core_1.Renderer])
+    ], DroppableDirective);
+    return DroppableDirective;
+}());
+exports.DroppableDirective = DroppableDirective;
 
 
 /***/ }),
@@ -60783,25 +60769,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__("./node_modules/@angular/core/index.js");
 var platform_browser_1 = __webpack_require__("./node_modules/@angular/platform-browser/index.js");
-var ng2_dragula_1 = __webpack_require__("./node_modules/ng2-dragula/index.js");
 __webpack_require__("./node_modules/dragula/dist/dragula.css");
 var directives_1 = __webpack_require__("./src/directives/index.ts");
 var components_1 = __webpack_require__("./src/components/index.ts");
+var components = [components_1.ContainerComponent, components_1.ItemComponent];
+var directives = [directives_1.DraggableDirective, directives_1.DroppableDirective];
 var NgxDnDModule = (function () {
     function NgxDnDModule() {
     }
     NgxDnDModule = __decorate([
         core_1.NgModule({
             imports: [
-                ng2_dragula_1.DragulaModule,
                 platform_browser_1.BrowserModule
             ],
-            declarations: [
-                components_1.ContainerComponent, directives_1.DelayDragLiftDirective
-            ],
-            exports: [
-                components_1.ContainerComponent, ng2_dragula_1.DragulaDirective, directives_1.DelayDragLiftDirective
-            ]
+            declarations: components.concat(directives),
+            exports: components.concat(directives)
         }), 
         __metadata('design:paramtypes', [])
     ], NgxDnDModule);
