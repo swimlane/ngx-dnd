@@ -16,11 +16,11 @@ import { DrakeStoreService } from '../services/drake-store.service';
 
 @Directive({selector: '[ngxDroppable]'})
 export class DroppableDirective implements OnInit, OnDestroy, AfterViewInit {
-  @Input() ngxDroppable: string;
   @Input() model: any;
-  @Input() dragulaOptions: any;
-
   @Input() dropZone: string;
+
+  @Input() dragulaOptions: any;
+  @Input() ngxDroppable: string;
 
   @Output()
   drop: EventEmitter<any> = new EventEmitter<any>();
@@ -48,19 +48,6 @@ export class DroppableDirective implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.dragulaOptions = Object.assign({
-      accepts(el, target, source, sibling) {
-      if (el.contains(target)) {
-        return false;
-      }
-      /* if (!this.dropZone && this.drake.allowedDropZones.length === 0) {
-        return true;
-      }
-      return this.drake.allowedDropZones.contains(this.dropZone); */
-      return true;
-      }
-    }, this.dragulaOptions);
-
     this.drakesService.register(this);
   }
 

@@ -5,6 +5,7 @@
 - [ ] Move most css to demo
 - [ ] Repeal and replace dragulaOptions
 - [ ] Repeal and replace classes
+- [ ] Scroll when dragging outside view
 - [ ] Re-test touch support
 - [ ] Handles (handle=".selector")?
 - [-] Consistant class names (ngx-dnd-*?)
@@ -19,4 +20,4 @@
     - remove
 - [ ] More events on draggables
 - [ ] AOT?
-- [ ] Scroll when dragging outside view
+- [ ] Multi-item drag!!

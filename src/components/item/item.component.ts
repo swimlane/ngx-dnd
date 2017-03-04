@@ -23,6 +23,9 @@ import { ContainerComponent } from '../';
 export class ItemComponent implements OnInit {
   @Input() model: any;
 
+  @Input() dropZone: any;
+  @Input() dropZones: any;
+
   type: string;
   data: any;
 

@@ -12,8 +12,8 @@ import { DrakeStoreService } from '../services/drake-store.service';
 @Directive({ selector: '[ngxDraggable]' })
 export class DraggableDirective implements OnInit, OnDestroy {
 
-  @Input()
-  model: any;
+  @Input() model: any;
+  @Input() dropZones: string[];
 
   @Output()
   drag: EventEmitter<any> = new EventEmitter<any>();

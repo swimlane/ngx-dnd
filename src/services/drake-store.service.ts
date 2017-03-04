@@ -15,11 +15,31 @@ export class DrakeStoreService {
 
     this.droppableMap.set(droppable.container, droppable);
 
+    droppable.dragulaOptions = droppable.dragulaOptions || {};
+    const _accpets = droppable.dragulaOptions.accepts || (() => true);
+
+    const accepts = (el, target, source, sibling) => {
+      if (el.contains(target)) {
+        return false;
+      }
+
+      const elementComponet = this.draggableMap.get(el);
+      const targetComponet = this.droppableMap.get(target);
+
+      if (elementComponet && targetComponet && elementComponet.dropZones && targetComponet.dropZone) {
+        return elementComponet.dropZones.includes(targetComponet.dropZone);
+      }
+  
+      return _accpets(el, target, source, sibling);
+    };
+
+    const dragulaOptions = Object.assign({}, droppable.dragulaOptions, {accepts});
+
     let drake = this.drakeMap[name];
     if (drake) {
       drake.containers.push(droppable.container);
     } else {
-      drake = this.drakeMap[name] = dragula([droppable.container], droppable.dragulaOptions);
+      drake = this.drakeMap[name] = dragula([droppable.container], dragulaOptions);
       this.registerEvents(drake);
     }
 
@@ -95,16 +115,16 @@ export class DrakeStoreService {
           const dropIndex = Array.prototype.indexOf.call(target.children, el);
           const dragIndex = (sourceModel && draggedItem) ? sourceModel.indexOf(draggedItem) : -1;
 
-          if (dropIndex > -1 && dragIndex > -1 && sourceModel && targetModel) {
-            if (target === source) {
+          if (dropIndex > -1 && targetModel) {
+            if (dragIndex > -1 && sourceModel && target === source) {
               sourceModel.splice(dropIndex, 0, sourceModel.splice(dragIndex, 1)[0]);
             } else {
-              const notCopy = dragElm === el;
-              const dropElmModel = notCopy ?
-                sourceModel[dragIndex] :
-                JSON.parse(JSON.stringify(sourceModel[dragIndex]));
+              const copy = !sourceModel || (dragElm !== el);
+              const dropElmModel = copy ?
+                JSON.parse(JSON.stringify(draggedItem)) :
+                draggedItem;
 
-              if (notCopy) {
+              if (!copy) {
                 sourceModel.splice(dragIndex, 1);
               }
               targetModel.splice(dropIndex, 0, dropElmModel);

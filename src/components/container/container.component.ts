@@ -24,6 +24,10 @@ export class ContainerComponent implements OnInit, AfterViewInit {
   @Input() model: any;
   @Input() bag = 'default';
   @Input() class = '';
+
+  @Input() dropZone = 'default';
+  @Input() dropZones = ['default'];
+
   @Input() classes: any = {};
   @Input() dragulaOptions: any;
 

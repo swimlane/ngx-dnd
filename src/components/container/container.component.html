@@ -3,14 +3,16 @@
   [ngClass]="{ 'gu-empty': !model?.length }"
   [ngxDroppable]="bag"
   [model]="model"
+  [dropZone]="dropZone"
   [dragulaOptions]="dragulaOptions">
   <ng-container *ngIf="model">
     <ng-container *ngFor="let item of model">
       <ngx-dnd-item
         class="ngx-dnd-item {{classes.item(item)}}"
         [model]="item"
-        ngxDraggable
-        dropZones="['a', 'b']">
+        [dropZone]="dropZone"
+        [dropZones]="dropZones"
+        ngxDraggable>
       </ngx-dnd-item>
     </ng-container>
   </ng-container>

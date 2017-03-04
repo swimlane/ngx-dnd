@@ -38,7 +38,7 @@ export class AppComponent {
   builder = {
     removeOnSpill: true,
     accepts(el, target) {
-      return target.classList.contains('target');
+      return true; // target.classList.contains('target');
     },
     copy(el, source) {
       return source.classList.contains('source');

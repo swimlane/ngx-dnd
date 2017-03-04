@@ -173,7 +173,9 @@
               [classes]="{container: 'source'}"
               [model]="sourceItems"
               [dragulaOptions]="builder"
-              bag="example-one-way">
+              bag="example-one-way"
+              dropZone="source"
+              [dropZones]="'target'">
             </ngx-dnd-container>
         </div>
         <div fxFlex="25%">
@@ -182,6 +184,8 @@
             [classes]="{container: 'target'}"
             [model]="targetItems"
             [dragulaOptions]="builder"
+            dropZone="target"
+            [dropZones]="'target'"
             bag="example-one-way">
           </ngx-dnd-container>
         </div>
@@ -199,6 +203,8 @@
             <ngx-dnd-container
               [classes]="{container: 'source'}"
               [model]="sourceNestedItems"
+              [dropZone]="'source'"
+              [dropZones]="['target']"
               [dragulaOptions]="builder"
               bag="example-nested">
             </ngx-dnd-container>
@@ -209,7 +215,9 @@
             [classes]="{container: 'target'}"
             [model]="targetNestedItems"
             [dragulaOptions]="builder"
-            bag="example-nested">
+            bag="example-nested"
+            dropZone="target"
+            [dropZones]="['target']">
           </ngx-dnd-container>
         </div>
         <div fxFlex="25%">
@@ -227,15 +235,17 @@
           <ngx-dnd-container
             class="root-container"
             [classes]="{container: 'source', item: builderClasses.item}"
-            [model]="sourceBuilderTools"
             [dragulaOptions]="builder"
+            [model]="sourceBuilderTools"
+            dropZone="source"
+            [dropZones]="['target']"
             bag="example-builder"
             (drag)="builderDrag($event)"
             (remove)="log($event)">
 
-            <template let-model="model">
-              <ngx-icon [fontIcon]="model.icon"></ngx-icon>
-              {{model.name}}
+            <template let-item="model">
+              <ngx-icon [fontIcon]="item.icon"></ngx-icon>
+              {{item.name}}
             </template>
           </ngx-dnd-container>
 
@@ -248,6 +258,8 @@
             [classes]="builderClasses"
             [model]="targetBuilderTools"
             bag="example-builder"
+            dropZone="target"
+            [dropZones]="['target']"
             [dragulaOptions]="builder"
             (drag)="log($event)"
             (drop)="log($event)"
@@ -262,6 +274,8 @@
                      <ngx-dnd-container
                        [classes]="builderClasses"
                        bag="example-builder"
+                       dropZone="target"
+                       [dropZones]="['target']"
                        [model]="model.children"
                        [dragulaOptions]="builder"
                        [template]="template"
