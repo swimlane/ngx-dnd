@@ -4,6 +4,7 @@ import {
   Output,
   OnInit,
   OnChanges,
+  OnDestroy,
   AfterViewInit,
   ElementRef,
   EventEmitter,
@@ -11,12 +12,10 @@ import {
   Renderer
 } from '@angular/core';
 
-import { DrakeStoreService } from './drake-store.service';
-
-const drakesService = new DrakeStoreService();
+import { DrakeStoreService } from '../services/drake-store.service';
 
 @Directive({selector: '[ngxDroppable]'})
-export class DroppableDirective implements OnInit, AfterViewInit {
+export class DroppableDirective implements OnInit, OnDestroy, AfterViewInit {
   @Input() ngxDroppable: string;
   @Input() model: any;
   @Input() dragulaOptions: any;
@@ -42,7 +41,8 @@ export class DroppableDirective implements OnInit, AfterViewInit {
 
   constructor(
     private el: ElementRef,
-    private renderer: Renderer
+    private renderer: Renderer,
+    private drakesService: DrakeStoreService
   ) {
     this.container = el.nativeElement;
   }
@@ -61,7 +61,7 @@ export class DroppableDirective implements OnInit, AfterViewInit {
       }
     }, this.dragulaOptions);
 
-    drakesService.register(this);
+    this.drakesService.register(this);
   }
 
   ngAfterViewInit() {
@@ -72,6 +72,6 @@ export class DroppableDirective implements OnInit, AfterViewInit {
   }
 
   ngOnDestroy() {
-    drakesService.remove(this);
+    this.drakesService.remove(this);
   }
 }

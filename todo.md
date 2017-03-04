@@ -1,19 +1,22 @@
 # Todo list
 
 - [ ] Can drop filtering
-- [-] Test touch support
-- [ ] Handles (handle=".selector")
+    - "Zones"
+- [ ] Move most css to demo
+- [ ] Repeal and replace dragulaOptions
+- [ ] Repeal and replace classes
+- [ ] Re-test touch support
+- [ ] Handles (handle=".selector")?
 - [-] Consistant class names (ngx-dnd-*?)
 - [-] component names (ngx-dnd-*?)
 - [-] directive ngxDnD*
 - [ ] Consistant event names
-    - dragStart
-    - dragEnd
+    - drag (dragStart?)
+    - dragEnd?
     - drop
     - over
-    - leave
+    - out (leave?)
     - remove
-- [ ] "Zone" names (dropZone, dragZone)
-- [ ] Custom classes (`[dragOverClass]=""`)
+- [ ] More events on draggables
 - [ ] AOT?
 - [ ] Scroll when dragging outside view

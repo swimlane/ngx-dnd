@@ -1,8 +1,13 @@
-import * as dragula from 'dragula';
-import { DroppableDirective } from './ngx-droppable.directive';
+import {Injectable, EventEmitter} from '@angular/core';
 
+import * as dragula from 'dragula';
+import { DroppableDirective } from '../directives/ngx-droppable.directive';
+import { DraggableDirective } from '../directives/ngx-draggable.directive';
+
+@Injectable()
 export class DrakeStoreService {
   private droppableMap = new WeakMap<any, DroppableDirective>();
+  private draggableMap = new WeakMap<any, DraggableDirective>();
   private drakeMap: { [s: string]: Drake; } = {};
 
   register(droppable: DroppableDirective) {
@@ -22,9 +27,9 @@ export class DrakeStoreService {
   }
 
   remove(droppable: DroppableDirective) {
-    const name = droppable.ngxDroppable;
-
     this.droppableMap.delete(droppable.container);
+
+    const name = droppable.ngxDroppable;
     const drake = this.drakeMap[name];
     if (drake) {
       const idx = drake.containers.indexOf(droppable.container);
@@ -34,28 +39,42 @@ export class DrakeStoreService {
     }
   }
 
+  registerDraggable(draggable: DraggableDirective) {
+    this.draggableMap.set(draggable.element, draggable);
+  }
+
+  removeDraggable(draggable: DraggableDirective) {
+    this.draggableMap.delete(draggable.element);
+  }
+
   registerEvents(drake: Drake): void {
     let dragElm: any;
-    let dragIndex: number;
     let draggedItem: any;
 
     drake.on('drag', (el: any, source: any) => {
       draggedItem = undefined;
       dragElm = el;
 
-      if (!source) {
+      if (!el || !source) {
         return;
       }
-      dragIndex = domIndexOf(el, source);
+
+      if (this.draggableMap.has(el)) {
+        const elementComponent = <any>this.draggableMap.get(el);
+        draggedItem = elementComponent.model;
+
+        elementComponent.drag.emit({
+          type: 'drag',
+          el,
+          source,
+          value: draggedItem
+        });
+      }
 
       if (this.droppableMap.has(source)) {
-        const component = <any>this.droppableMap.get(source);
-        const sourceModel = component.model;
-
-        draggedItem = sourceModel ? sourceModel[dragIndex] : undefined;
-
-        component.drag.emit({
-          type: 'remove',
+        const sourceComponent = <any>this.droppableMap.get(source);
+        sourceComponent.drag.emit({
+          type: 'drag',
           el,
           source,
           value: draggedItem
@@ -64,7 +83,7 @@ export class DrakeStoreService {
     });
 
     drake.on('drop', (el: any, target: any, source: any) => {
-      if (this.droppableMap.has(target) && this.droppableMap.has(source)) {
+      if (this.droppableMap.has(target)) {
         const targetComponent = <any>this.droppableMap.get(target);
 
         if (this.droppableMap.has(source)) {
@@ -73,9 +92,10 @@ export class DrakeStoreService {
           const sourceModel = sourceComponent.model;
           const targetModel = targetComponent.model;
 
-          const dropIndex = domIndexOf(el, target);
+          const dropIndex = Array.prototype.indexOf.call(target.children, el);
+          const dragIndex = (sourceModel && draggedItem) ? sourceModel.indexOf(draggedItem) : -1;
 
-          if (sourceModel && targetModel) {
+          if (dropIndex > -1 && dragIndex > -1 && sourceModel && targetModel) {
             if (target === source) {
               sourceModel.splice(dropIndex, 0, sourceModel.splice(dragIndex, 1)[0]);
             } else {
@@ -88,7 +108,7 @@ export class DrakeStoreService {
                 sourceModel.splice(dragIndex, 1);
               }
               targetModel.splice(dropIndex, 0, dropElmModel);
-              target.removeChild(el); // element must be removed for ngFor to apply correctly
+              target.removeChild(el);
             }
           }
         }
@@ -107,9 +127,10 @@ export class DrakeStoreService {
         const sourceComponent = <any>this.droppableMap.get(source);
         const sourceModel = sourceComponent.model;
 
-        let removedItem;
-        if (sourceModel) {
-          removedItem = sourceModel.splice(dragIndex, 1);
+        const dragIndex = (draggedItem && sourceModel) ? sourceModel.indexOf(draggedItem) : -1;
+
+        if (dragIndex > 0) {
+          sourceModel.splice(dragIndex, 1);
         }
 
         sourceComponent.remove.emit({
@@ -117,16 +138,15 @@ export class DrakeStoreService {
           el,
           container,
           source,
-          value: removedItem
+          value: draggedItem
         });
       }
     });
 
     drake.on('over', (el: any, container: any, source: any) => {
       if (this.droppableMap.has(container)) {
-        const component = <any>this.droppableMap.get(container);
-        // this.renderer.setElementClass(container, 'gu-over', true);
-        component.over.emit({
+        const containerComponent = <any>this.droppableMap.get(container);
+        containerComponent.over.emit({
           type: 'over',
           el,
           container,
@@ -138,9 +158,8 @@ export class DrakeStoreService {
 
     drake.on('out', (el: any, container: any, source: any) => {
       if (this.droppableMap.has(container)) {
-        const component = <any>this.droppableMap.get(container);
-        // this.renderer.setElementClass(container, 'gu-over', true);
-        component.out.emit({
+        const containerComponent = <any>this.droppableMap.get(container);
+        containerComponent.out.emit({
           type: 'out',
           el,
           container,
@@ -149,9 +168,7 @@ export class DrakeStoreService {
         });
       }
     });
-
-    function domIndexOf(child: any, parent: any): any {
-      return Array.prototype.indexOf.call(parent.children, child);
-    }
   };
 }
+
+export const drakesService = new DrakeStoreService();
