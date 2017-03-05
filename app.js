@@ -60586,7 +60586,7 @@ var DroppableDirective = (function () {
             _this.renderer.setElementClass(_this.container, 'gu-over', true);
         });
         this.out.subscribe(function (ev) {
-            _this.renderer.setElementClass(_this.container, 'gu-over', true);
+            _this.renderer.setElementClass(_this.container, 'gu-over', false);
         });
     };
     DroppableDirective.prototype.ngOnDestroy = function () {
