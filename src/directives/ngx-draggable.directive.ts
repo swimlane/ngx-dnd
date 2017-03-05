@@ -5,13 +5,17 @@ import {
 import { DrakeStoreService } from '../services/drake-store.service';
 
 /**
+ * Adds properties and events to draggable elements
  * 
  * @export
- * @class NgxDndItemDirective
+ * @class DraggableDirective
+ * @implements {OnInit}
+ * @implements {OnDestroy}
  */
 @Directive({ selector: '[ngxDraggable]' })
 export class DraggableDirective implements OnInit, OnDestroy {
 
+  @Input() ngxDraggable: string[];
   @Input() model: any;
   @Input() dropZones: string[];
 
@@ -52,7 +56,8 @@ export class DraggableDirective implements OnInit, OnDestroy {
     this.draggable = false;
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.dropZones = this.dropZones || this.ngxDraggable;
     this.drakesService.registerDraggable(this);
   }
 

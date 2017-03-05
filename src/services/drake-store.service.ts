@@ -1,61 +1,38 @@
-import {Injectable, EventEmitter} from '@angular/core';
+import {Injectable, EventEmitter, Renderer} from '@angular/core';
 
 import * as dragula from 'dragula';
 import { DroppableDirective } from '../directives/ngx-droppable.directive';
 import { DraggableDirective } from '../directives/ngx-draggable.directive';
 
+/**
+ * Central service that handles all events
+ * 
+ * @export
+ * @class DrakeStoreService
+ */
 @Injectable()
 export class DrakeStoreService {
   private droppableMap = new WeakMap<any, DroppableDirective>();
   private draggableMap = new WeakMap<any, DraggableDirective>();
-  private drakeMap: { [s: string]: Drake; } = {};
+  private dragulaOptions: any = {};
+  private drake: Drake;
+
+  constructor() {
+    this.dragulaOptions = this.createDrakeOptions();
+    this.drake = dragula([], this.dragulaOptions);
+    this.registerEvents();
+  }
 
   register(droppable: DroppableDirective) {
-    const name = droppable.ngxDroppable;
-
     this.droppableMap.set(droppable.container, droppable);
-
-    droppable.dragulaOptions = droppable.dragulaOptions || {};
-    const _accpets = droppable.dragulaOptions.accepts || (() => true);
-
-    const accepts = (el, target, source, sibling) => {
-      if (el.contains(target)) {
-        return false;
-      }
-
-      const elementComponet = this.draggableMap.get(el);
-      const targetComponet = this.droppableMap.get(target);
-
-      if (elementComponet && targetComponet && elementComponet.dropZones && targetComponet.dropZone) {
-        return elementComponet.dropZones.includes(targetComponet.dropZone);
-      }
-  
-      return _accpets(el, target, source, sibling);
-    };
-
-    const dragulaOptions = Object.assign({}, droppable.dragulaOptions, {accepts});
-
-    let drake = this.drakeMap[name];
-    if (drake) {
-      drake.containers.push(droppable.container);
-    } else {
-      drake = this.drakeMap[name] = dragula([droppable.container], dragulaOptions);
-      this.registerEvents(drake);
-    }
-
-    return drake;
+    this.drake.containers.push(droppable.container);
   }
 
   remove(droppable: DroppableDirective) {
     this.droppableMap.delete(droppable.container);
-
-    const name = droppable.ngxDroppable;
-    const drake = this.drakeMap[name];
-    if (drake) {
-      const idx = drake.containers.indexOf(droppable.container);
-      if (idx > -1) {
-        drake.containers.splice(idx, 1);
-      }
+    const idx = this.drake.containers.indexOf(droppable.container);
+    if (idx > -1) {
+      this.drake.containers.splice(idx, 1);
     }
   }
 
@@ -67,11 +44,36 @@ export class DrakeStoreService {
     this.draggableMap.delete(draggable.element);
   }
 
-  registerEvents(drake: Drake): void {
+  createDrakeOptions() {
+    const accepts = (el, target, source, sibling) => {
+      if (el.contains(target)) {
+        return false;
+      }
+      const elementComponet = this.draggableMap.get(el);
+      const targetComponet = this.droppableMap.get(target);
+      if (elementComponet && targetComponet) {
+        return elementComponet.dropZones.includes(targetComponet.dropZone);
+      }
+      return true;
+    };
+
+    const copy = (el, source) => {
+      
+      const sourceComponet = this.droppableMap.get(source);
+      if (sourceComponet) {
+        return sourceComponet.copy;
+      }
+      return false;
+    };
+
+    return {accepts, copy};
+  }
+
+  registerEvents(): void {
     let dragElm: any;
     let draggedItem: any;
 
-    drake.on('drag', (el: any, source: any) => {
+    this.drake.on('drag', (el: any, source: any) => {
       draggedItem = undefined;
       dragElm = el;
 
@@ -93,6 +95,8 @@ export class DrakeStoreService {
 
       if (this.droppableMap.has(source)) {
         const sourceComponent = <any>this.droppableMap.get(source);
+        this.dragulaOptions.removeOnSpill = sourceComponent.removeOnSpill;
+
         sourceComponent.drag.emit({
           type: 'drag',
           el,
@@ -102,7 +106,7 @@ export class DrakeStoreService {
       }
     });
 
-    drake.on('drop', (el: any, target: any, source: any) => {
+    this.drake.on('drop', (el: any, target: any, source: any) => {
       if (this.droppableMap.has(target)) {
         const targetComponent = <any>this.droppableMap.get(target);
 
@@ -142,14 +146,14 @@ export class DrakeStoreService {
       }
     });
 
-    drake.on('remove', (el: any, container: any, source: any) => {
-      if (this.droppableMap.has(container)) {
+    this.drake.on('remove', (el: any, container: any, source: any) => {
+      if (this.droppableMap.has(source)) {
         const sourceComponent = <any>this.droppableMap.get(source);
         const sourceModel = sourceComponent.model;
 
         const dragIndex = (draggedItem && sourceModel) ? sourceModel.indexOf(draggedItem) : -1;
 
-        if (dragIndex > 0) {
+        if (dragIndex > -1) {
           sourceModel.splice(dragIndex, 1);
         }
 
@@ -163,7 +167,7 @@ export class DrakeStoreService {
       }
     });
 
-    drake.on('over', (el: any, container: any, source: any) => {
+    this.drake.on('over', (el: any, container: any, source: any) => {
       if (this.droppableMap.has(container)) {
         const containerComponent = <any>this.droppableMap.get(container);
         containerComponent.over.emit({
@@ -176,7 +180,7 @@ export class DrakeStoreService {
       }
     });
 
-    drake.on('out', (el: any, container: any, source: any) => {
+    this.drake.on('out', (el: any, container: any, source: any) => {
       if (this.droppableMap.has(container)) {
         const containerComponent = <any>this.droppableMap.get(container);
         containerComponent.out.emit({
@@ -188,7 +192,15 @@ export class DrakeStoreService {
         });
       }
     });
+
+    this.drake.on('cancel', (el: any, source: any) => {
+      if (this.droppableMap.has(source)) {
+        const sourceComponent = <any>this.droppableMap.get(source);
+        if (sourceComponent.removeOnSpill) {
+          this.drake.emit('remove', el, source, source);
+        }
+      }
+    });
+
   };
 }
-
-export const drakesService = new DrakeStoreService();

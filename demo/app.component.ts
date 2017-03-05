@@ -35,16 +35,6 @@ export class AppComponent {
     },
   ];
 
-  builder = {
-    removeOnSpill: true,
-    accepts(el, target) {
-      return true; // target.classList.contains('target');
-    },
-    copy(el, source) {
-      return source.classList.contains('source');
-    }
-  };
-
   sourceItems = [
     { label: 'Item 1' },
     { label: 'Item 2' },
@@ -69,10 +59,8 @@ export class AppComponent {
     { name: 'A Number', inputType: 'number', icon: 'field-numeric', class: 'half' }
   ];
   targetBuilderTools = [];
-  builderClasses = {
-    container: 'target',
-    item: item => `${item.class} ${item.inputType}`
-  };
+
+  droppableItemClass = item => `${item.class} ${item.inputType}`;
 
   builderDrag(e) {
     const item = e.value;

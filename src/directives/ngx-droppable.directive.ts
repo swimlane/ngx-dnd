@@ -14,13 +14,25 @@ import {
 
 import { DrakeStoreService } from '../services/drake-store.service';
 
+/**
+ * Makes the conatiner droppable and children draggable.
+ * 
+ * @export
+ * @class DroppableDirective
+ * @implements {OnInit}
+ * @implements {OnDestroy}
+ * @implements {AfterViewInit}
+ */
 @Directive({selector: '[ngxDroppable]'})
 export class DroppableDirective implements OnInit, OnDestroy, AfterViewInit {
   @Input() model: any;
+  @Input() copy = false;
+  @Input() removeOnSpill = false;
   @Input() dropZone: string;
-
-  @Input() dragulaOptions: any;
   @Input() ngxDroppable: string;
+
+  // @Input() dragulaOptions: any;
+  // @Input() ngxDroppable: string;
 
   @Output()
   drop: EventEmitter<any> = new EventEmitter<any>();
@@ -48,14 +60,17 @@ export class DroppableDirective implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngOnInit(): void {
+    this.dropZone = this.dropZone || this.ngxDroppable;
     this.drakesService.register(this);
   }
 
   ngAfterViewInit() {
-    const overAndOut = ({type}) => this.renderer.setElementClass(this.container, 'gu-over', type === 'over');
-
-    this.over.subscribe(overAndOut);
-    this.out.subscribe(overAndOut);
+    this.over.subscribe((ev) => {
+      this.renderer.setElementClass(this.container, 'gu-over', true);
+    });
+    this.out.subscribe((ev) => {
+      this.renderer.setElementClass(this.container, 'gu-over', true);
+    });
   }
 
   ngOnDestroy() {

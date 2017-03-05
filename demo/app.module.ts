@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule, APP_BASE_HREF, Location } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { NgxUIModule, AlertService } from '@swimlane/ngx-ui';
+import { NgxUIModule } from '@swimlane/ngx-ui';
 import '@swimlane/ngx-ui/release/index.css';
 
 import { AppComponent } from './app.component';

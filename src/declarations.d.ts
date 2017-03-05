@@ -19,7 +19,10 @@ interface ErrorConstructor {
 
 interface Drake {
   containers: any[];
+  remove: () => void;
   on: (s: string, f: any) => void;
+  emit: (s: string, a: any, b: any, c: any) => void;
+  dragging: boolean;
 }
 
 declare module 'dragula';

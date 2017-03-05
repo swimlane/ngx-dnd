@@ -1,60 +1,59 @@
-<div>
-  <ng-container [ngSwitch]="type">
+<ng-container [ngSwitch]="type">
 
-    <ng-container *ngSwitchCase="'array'">
+  <ng-container *ngSwitchCase="'array'">
+    <ngx-dnd-container
+      [model]="model"
+      [template]="container.template"
+      [dropZone]="dropZone"
+      [dropZones]="dropZones"
+      [removeOnSpill]="removeOnSpill"
+      [droppableItemClass]="droppableItemClass"
+      [copy]="copy">
+    </ngx-dnd-container>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="'object'">
+    <template
+      *ngIf="container.template"
+      [ngTemplateOutlet]="container.template"
+      [ngOutletContext]="data">
+    </template>
+    <ng-container *ngIf="!container.template">
+      <div
+        class="ngx-dnd-content">
+        {{model.label}}
+      </div>
       <ngx-dnd-container
-        [model]="model"
-        [bag]="container.bag"
-        [classes]="container.classes"
+        *ngIf="model.children"
+        [model]="model.children"
         [template]="container.template"
         [dropZone]="dropZone"
         [dropZones]="dropZones"
-        [dragulaOptions]="container.dragulaOptions">
+        [removeOnSpill]="removeOnSpill"
+        [droppableItemClass]="droppableItemClass"
+        [copy]="copy">
       </ngx-dnd-container>
     </ng-container>
-
-    <ng-container *ngSwitchCase="'object'">
-      <template
-        *ngIf="container.template"
-        [ngTemplateOutlet]="container.template"
-        [ngOutletContext]="data">
-      </template>
-      <ng-container *ngIf="!container.template">
-        <div
-          class="ngx-dnd-content {{container.classes.content}}">
-          {{model.label}}
-        </div>
-        <ngx-dnd-container
-          *ngIf="model.children"
-          [bag]="container.bag"
-          [model]="model.children"
-          [classes]="container.classes"
-          [template]="container.template"
-          [dropZone]="dropZone"
-          [dropZones]="dropZones"
-          [dragulaOptions]="container.dragulaOptions">
-        </ngx-dnd-container>
-      </ng-container>
-    </ng-container>
-
-    <ng-container *ngSwitchCase="'undefined'">
-    </ng-container>
-
-    <ng-container *ngSwitchDefault>
-      <template
-        *ngIf="container.template"
-        [ngTemplateOutlet]="container.template"
-        [ngOutletContext]="data">
-      </template>
-      <div
-        *ngIf="!container.template"
-        class="ngx-dnd-content {{container.classes.content}}">
-        {{model}}
-      </div>
-    </ng-container>
-
   </ng-container>
-</div>
+
+  <ng-container *ngSwitchCase="'undefined'">
+  </ng-container>
+
+  <ng-container *ngSwitchDefault>
+    <template
+      *ngIf="container.template"
+      [ngTemplateOutlet]="container.template"
+      [ngOutletContext]="data">
+    </template>
+    <div
+      *ngIf="!container.template"
+      class="ngx-dnd-content">
+      {{model}}
+    </div>
+  </ng-container>
+
+</ng-container>
+
 
 
 

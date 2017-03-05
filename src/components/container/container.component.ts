@@ -9,11 +9,23 @@ import {
   TemplateRef,
   ViewChild,
   EventEmitter,
-  Renderer
 } from '@angular/core';
 
 import { DroppableDirective } from '../../directives';
 
+let i = 0;
+function getNextId() {
+  return i++;
+}
+
+/**
+ * Component that allows nested ngxDroppable and ngxDraggables
+ * 
+ * @export
+ * @class ContainerComponent
+ * @implements {OnInit}
+ * @implements {AfterViewInit}
+ */
 @Component({
   selector: 'ngx-dnd-container',
   templateUrl: 'container.component.html',
@@ -22,15 +34,15 @@ import { DroppableDirective } from '../../directives';
 })
 export class ContainerComponent implements OnInit, AfterViewInit {
   @Input() model: any;
-  @Input() bag = 'default';
-  @Input() class = '';
+  @Input() copy = false;
+  @Input() removeOnSpill = false;
+  @Input() droppableItemClass = '';
 
-  @Input() dropZone = 'default';
-  @Input() dropZones = ['default'];
+  @Input() dropZone = `@@DefaultDropZone-${getNextId()}@@`;
+  @Input() dropZones: string[];
 
-  @Input() classes: any = {};
-  @Input() dragulaOptions: any;
-
+  // @Input() classes: any = {};
+  // @Input() dragulaOptions: any;
   @Input()
   @ContentChild(TemplateRef) 
   template: TemplateRef<any>;
@@ -51,13 +63,11 @@ export class ContainerComponent implements OnInit, AfterViewInit {
   @Output()
   out: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor(private renderer: Renderer) {}
+  @Output()
+  remove: EventEmitter<any> = new EventEmitter<any>();
 
   ngOnInit() {
-    this.classes = {
-      container: this.classes.container,
-      item: functor(this.classes.item)
-    };
+    this.dropZones = this.dropZones || [this.dropZone];
   }
 
   ngAfterViewInit() {
@@ -65,6 +75,7 @@ export class ContainerComponent implements OnInit, AfterViewInit {
     this.droppable.drop.subscribe(v => this.drop.emit(v));
     this.droppable.over.subscribe(v => this.over.emit(v));
     this.droppable.out.subscribe(v => this.out.emit(v));
+    this.droppable.remove.subscribe(v => this.remove.emit(v));
   }
 }
 
