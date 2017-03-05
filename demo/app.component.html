@@ -8,57 +8,89 @@
   </div -->
   <div class="field" fxFlex="100%">
 
-    <ngx-section class="shadow" sectionTitle="Ordering - Template Only">
+    <ngx-section class="shadow" sectionTitle="Simple Sortable - Template Only">
       <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
         <div fxFlex="50%">
           <div class='wrapper'>
-            <div class="ngx-dnd-container" ngxDroppable="example-one">
-              <div class="ngx-dnd-item" ngxDraggable="['example-one']">Item 1</div>
-              <div class="ngx-dnd-item" ngxDraggable="['example-one']">Item 2</div>
-              <div class="ngx-dnd-item" ngxDraggable="['example-one']">Item 3</div>
+            <div class="ngx-dnd-container" ngxDroppable>
+              <div class="ngx-dnd-item" ngxDraggable>Item 1</div>
+              <div class="ngx-dnd-item" ngxDraggable>Item 2</div>
+              <div class="ngx-dnd-item" ngxDraggable>Item 3</div>
             </div>
           </div>
         </div>
         <div fxFlex="50%">
           <h3>Template</h3>
-          <pre><code><![CDATA[<div class="ngx-dnd-container" ngxDroppable="example-one">
-  <div class="ngx-dnd-item" ngxDraggable="['example-one']">Item 1</div>
-  <div class="ngx-dnd-item" ngxDraggable="['example-one']">Item 2</div>
-  <div class="ngx-dnd-item" ngxDraggable="['example-one']">Item 3</div>
+          <pre><code><![CDATA[<div class="ngx-dnd-container" ngxDroppable>
+  <div class="ngx-dnd-item">Item 1</div>
+  <div class="ngx-dnd-item">Item 2</div>
+  <div class="ngx-dnd-item">Item 3</div>
 </div>]]></code></pre>
         </div>
       </div>
     </ngx-section>
 
-    <ngx-section class="shadow" sectionTitle="Ordering - Template Only - With fxLayout">
+    <ngx-section class="shadow" sectionTitle="Orderable - Template Only - With fxLayout">
       <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
         <div fxFlex="50%">
           <div class='wrapper'>
 
-            <div class="ngx-dnd-container" fxLayout="row" fxLayoutWrap="wrap" ngxDroppable="example-two">
-              <div fxFlex="45" class="ngx-dnd-item" ngxDraggable="['example-two']">Item 1</div>
-              <div fxFlex="45" class="ngx-dnd-item" ngxDraggable="['example-two']">Item 2</div>
-              <div fxFlex="20" class="ngx-dnd-item" ngxDraggable="['example-two']">Item 3</div>
-              <div fxFlex="20" class="ngx-dnd-item" ngxDraggable="['example-two']">Item 4</div>
-              <div fxFlex="20" class="ngx-dnd-item" ngxDraggable="['example-two']">Item 5</div>
+            <div class="ngx-dnd-container" fxLayout="row" fxLayoutWrap="wrap" ngxDroppable>
+              <div fxFlex="45" class="ngx-dnd-item" ngxDraggable>Item 1</div>
+              <div fxFlex="45" class="ngx-dnd-item" ngxDraggable>Item 2</div>
+              <div fxFlex="20" class="ngx-dnd-item" ngxDraggable>Item 3</div>
+              <div fxFlex="20" class="ngx-dnd-item" ngxDraggable>Item 4</div>
+              <div fxFlex="20" class="ngx-dnd-item" ngxDraggable>Item 5</div>
             </div>
 
           </div>
         </div>
         <div fxFlex="50%">
           <h3>Template</h3>
-          <pre><code><![CDATA[<div class="ngx-dnd-container" fxLayout="row" fxLayoutWrap="wrap" ngxDroppable="example-two">
-  <div fxFlex="45" class="ngx-dnd-item" ngxDraggable="['example-two']">Item 1</div>
-  <div fxFlex="45" class="ngx-dnd-item" ngxDraggable="['example-two']">Item 2</div>
-  <div fxFlex="20" class="ngx-dnd-item" ngxDraggable="['example-two']">Item 3</div>
-  <div fxFlex="20" class="ngx-dnd-item" ngxDraggable="['example-two']">Item 4</div>
-  <div fxFlex="20" class="ngx-dnd-item" ngxDraggable="['example-two']">Item 5</div>
+          <pre><code><![CDATA[<div class="ngx-dnd-container" fxLayout="row" fxLayoutWrap="wrap">
+  <div fxFlex="45" class="ngx-dnd-item">Item 1</div>
+  <div fxFlex="45" class="ngx-dnd-item">Item 2</div>
+  <div fxFlex="20" class="ngx-dnd-item">Item 3</div>
+  <div fxFlex="20" class="ngx-dnd-item">Item 4</div>
+  <div fxFlex="20" class="ngx-dnd-item">Item 5</div>
 </div>]]></code></pre>
         </div>
       </div>
     </ngx-section>
 
-    <ngx-section class="shadow" sectionTitle="Ordering - from array">
+    <ngx-section class="shadow" sectionTitle="Simple Drag-and-Drop - Template Only">
+      <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
+        <div fxFlex="50%">
+          <div class='wrapper'>
+            <div class="ngx-dnd-container" ngxDroppable="example-two" (drag)="log($event)">
+              <div class="ngx-dnd-item" ngxDraggable>Item 1a</div>
+              <div class="ngx-dnd-item" ngxDraggable>Item 2a</div>
+              <div class="ngx-dnd-item" ngxDraggable>Item 3a</div>
+            </div>
+            <div class="ngx-dnd-container" ngxDroppable="example-two">
+              <div class="ngx-dnd-item" ngxDraggable>Item 1b</div>
+              <div class="ngx-dnd-item" ngxDraggable>Item 2b</div>
+              <div class="ngx-dnd-item" ngxDraggable>Item 3b</div>
+            </div>
+          </div>
+        </div>
+        <div fxFlex="50%">
+          <h3>Template</h3>
+          <pre><code><![CDATA[<div class="ngx-dnd-container" ngxDroppable="example-two">
+  <div class="ngx-dnd-item" ngxDraggable>Item 1a</div>
+  <div class="ngx-dnd-item" ngxDraggable>Item 2a</div>
+  <div class="ngx-dnd-item" ngxDraggable>Item 3a</div>
+</div>
+<div class="ngx-dnd-container" ngxDroppable="example-two">
+  <div class="ngx-dnd-item" ngxDraggable>Item 1b</div>
+  <div class="ngx-dnd-item" ngxDraggable>Item 2b</div>
+  <div class="ngx-dnd-item" ngxDraggable>Item 3b</div>
+</div>]]></code></pre>
+        </div>
+      </div>
+    </ngx-section>
+
+    <ngx-section class="shadow" sectionTitle="Sortable - from array">
       <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
         <div fxFlex="50%">
           <div class='wrapper'>
@@ -80,39 +112,7 @@
       </div>
     </ngx-section>
 
-    <ngx-section class="shadow" sectionTitle="DnD - Template Only">
-      <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
-        <div fxFlex="50%">
-          <div class='wrapper'>
-            <div class="ngx-dnd-container" ngxDroppable="example-two">
-              <div class="ngx-dnd-item" ngxDraggable="['example-two']">Item 1a</div>
-              <div class="ngx-dnd-item" ngxDraggable="['example-two']">Item 2a</div>
-              <div class="ngx-dnd-item" ngxDraggable="['example-two']">Item 3a</div>
-            </div>
-            <div class="ngx-dnd-container" ngxDroppable="example-two">
-              <div class="ngx-dnd-item" ngxDraggable="['example-two']">Item 1b</div>
-              <div class="ngx-dnd-item" ngxDraggable="['example-two']">Item 2b</div>
-              <div class="ngx-dnd-item" ngxDraggable="['example-two']">Item 3b</div>
-            </div>
-          </div>
-        </div>
-        <div fxFlex="50%">
-          <h3>Template</h3>
-          <pre><code><![CDATA[<div class="ngx-dnd-container" ngxDroppable="example-two">
-  <div class="ngx-dnd-item" ngxDraggable="['example-two']">Item 1a</div>
-  <div class="ngx-dnd-item" ngxDraggable="['example-two']">Item 2a</div>
-  <div class="ngx-dnd-item" ngxDraggable="['example-two']">Item 3a</div>
-</div>
-<div class="ngx-dnd-container" ngxDroppable="example-two">
-  <div class="ngx-dnd-item" ngxDraggable="['example-two']">Item 1b</div>
-  <div class="ngx-dnd-item" ngxDraggable="['example-two']">Item 2b</div>
-  <div class="ngx-dnd-item" ngxDraggable="['example-two']">Item 3b</div>
-</div>]]></code></pre>
-        </div>
-      </div>
-    </ngx-section>
-
-    <ngx-section class="shadow" sectionTitle="DnD - from nested array">
+    <ngx-section class="shadow" sectionTitle="Nested Sortable">
       <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
         <div fxFlex="50%">
           <div class='wrapper'>
@@ -134,7 +134,7 @@
       </div>
     </ngx-section>
 
-    <ngx-section class="shadow" sectionTitle="DnD - nested containers">
+    <ngx-section class="shadow" sectionTitle="Nested Sortable - containers">
       <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
         <div fxFlex="50%">
           <div class='wrapper'>
@@ -150,21 +150,19 @@
         <div fxFlex="25%">
           <h3>Template</h3>
           <pre><code><![CDATA[<ngx-dnd-container
-  [model]="nestedLists"
-  bag="example-5">
+  [model]="nestedLists">
 </ngx-dnd-container>]]></code></pre>
         </div>
       </div>
     </ngx-section>
 
-    <ngx-section class="shadow" sectionTitle="One Way Drag - removeOnSpill">
+    <ngx-section class="shadow" sectionTitle="Restricted Drag-and-Drop - with remove on spill">
       <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
         <div fxFlex="25%">
           <h4>Source</h4>
             <ngx-dnd-container
               [model]="sourceItems"
               [copy]="true"
-              dropZone="oneway-source"
               [dropZones]="['oneway-target']">
             </ngx-dnd-container>
         </div>
@@ -173,40 +171,110 @@
           <ngx-dnd-container
             [model]="targetItems"
             dropZone="oneway-target"
-            [dropZones]="['oneway-target']"
             [removeOnSpill]="true">
           </ngx-dnd-container>
         </div>
         <div fxFlex="25%">
-          <h3>Model</h3>
+          <h3>Target Model</h3>
           <pre><code>{{targetItems | json}}</code></pre>
+        </div>
+        <div fxFlex="25%">
+          <h3>Templates</h3>
+          <pre><code><![CDATA[<ngx-dnd-container
+  [model]="sourceItems"
+  [copy]="true"
+  [dropZones]="['oneway-target']">
+</ngx-dnd-container>]]></code></pre>
+                    <pre><code><![CDATA[<ngx-dnd-container
+  [model]="targetItems"
+  dropZone="oneway-target"
+  [removeOnSpill]="true">
+</ngx-dnd-container>]]></code></pre>
         </div>
       </div>
     </ngx-section>
 
-    <ngx-section class="shadow" sectionTitle="Nested One Way Drag">
+    <ngx-section class="shadow" sectionTitle="Nested Restricted Drag-and-Drop - with remove on spill">
       <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
         <div fxFlex="25%">
           <h4>Source</h4>
-            <ngx-dnd-container
-              [model]="sourceNestedItems"
-              [copy]="true"
-              dropZone="nested-oneway-source"
-              [dropZones]="['nested-oneway-target']">
-            </ngx-dnd-container>
+          <ngx-dnd-container
+            [model]="sourceNestedItems"
+            [copy]="true"
+            [dropZones]="['nested-oneway-target']">
+          </ngx-dnd-container>
         </div>
         <div fxFlex="25%">
           <h4>Target</h4>
           <ngx-dnd-container
             [model]="targetNestedItems"
             dropZone="nested-oneway-target"
-            [dropZones]="['nested-oneway-target']"
             [removeOnSpill]="true">
           </ngx-dnd-container>
         </div>
         <div fxFlex="25%">
-          <h3>Model</h3>
+          <h3>Target Model</h3>
           <pre><code>{{targetNestedItems | json}}</code></pre>
+        </div>
+        <div fxFlex="25%">
+          <h3>Templates</h3>
+          <pre><code><![CDATA[<ngx-dnd-container
+  [model]="sourceNestedItems"
+  [copy]="true"
+  [dropZones]="['nested-oneway-target']">
+</ngx-dnd-container>]]></code></pre>
+                    <pre><code><![CDATA[<ngx-dnd-container
+  [model]="targetNestedItems"
+  dropZone="nested-oneway-target"
+  [removeOnSpill]="true">
+</ngx-dnd-container>]]></code></pre>
+        </div>
+      </div>
+    </ngx-section>
+
+    <ngx-section class="shadow" sectionTitle="Restricted Drag-and-Drop - multiple containers">
+      <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
+        <div fxFlex="25%">
+          <h4>Source</h4>
+            <ngx-dnd-container
+              [model]="sourceItems"
+              [copy]="true"
+              [dropZones]="['multiple-target-a', 'multiple-target-b']">
+            </ngx-dnd-container>
+        </div>
+        <div fxFlex="25%">
+          <h4>Target A</h4>
+          <ngx-dnd-container
+            [model]="targetItemsA"
+            dropZone="multiple-target-a"
+            [removeOnSpill]="true">
+          </ngx-dnd-container>
+        </div>
+        <div fxFlex="25%">
+          <h4>Target B</h4>
+          <ngx-dnd-container
+            [model]="targetItemsB"
+            dropZone="multiple-target-b"
+            [removeOnSpill]="true">
+          </ngx-dnd-container>
+        </div>
+        <div fxFlex="25%">
+          <h3>Templates</h3>
+          <pre><code><![CDATA[<ngx-dnd-container
+  [model]="sourceItems"
+  [copy]="true"
+  [dropZones]="['multiple-target-a', 'multiple-target-b']">
+</ngx-dnd-container>]]></code></pre>
+          <pre><code><![CDATA[<ngx-dnd-container
+  [model]="targetItemsA"
+  dropZone="multiple-target-a"
+  [removeOnSpill]="true">
+</ngx-dnd-container>]]></code></pre>
+          <pre><code><![CDATA[<ngx-dnd-container
+  [model]="targetItemsB"
+  dropZone="multiple-target-b"
+  [removeOnSpill]="true">
+</ngx-dnd-container>]]></code></pre>
         </div>
       </div>
     </ngx-section>
@@ -219,12 +287,10 @@
           <ngx-dnd-container
             class="root-container"
             [model]="sourceBuilderTools"
-            dropZone="builder-source"
             [dropZones]="['builder-target']"
             [copy]="true"
             [droppableItemClass]="droppableItemClass"
-            (drag)="builderDrag($event)"
-            (remove)="log($event)">
+            (drag)="builderDrag($event)">
 
             <template let-item="model">
               <ngx-icon [fontIcon]="item.icon"></ngx-icon>
@@ -240,7 +306,6 @@
             class="root-container"
             [model]="targetBuilderTools"
             dropZone="builder-target"
-            [dropZones]="['builder-target']"
             [removeOnSpill]="true"
             [droppableItemClass]="droppableItemClass"
             (drag)="log($event)"
@@ -255,7 +320,6 @@
                    <ngx-section class="shadow" [sectionTitle]="model.name">
                      <ngx-dnd-container
                        dropZone="builder-target"
-                       [dropZones]="['builder-target']"
                        [model]="model.children"
                        [removeOnSpill]="true"
                        [template]="template"

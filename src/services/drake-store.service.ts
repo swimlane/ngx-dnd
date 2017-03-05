@@ -66,7 +66,7 @@ export class DrakeStoreService {
       return false;
     };
 
-    return {accepts, copy};
+    return {accepts, copy, revertOnSpill: true};
   }
 
   registerEvents(): void {
@@ -101,6 +101,7 @@ export class DrakeStoreService {
           type: 'drag',
           el,
           source,
+          sourceComponent,
           value: draggedItem
         });
       }
@@ -192,15 +193,5 @@ export class DrakeStoreService {
         });
       }
     });
-
-    this.drake.on('cancel', (el: any, source: any) => {
-      if (this.droppableMap.has(source)) {
-        const sourceComponent = <any>this.droppableMap.get(source);
-        if (sourceComponent.removeOnSpill) {
-          this.drake.emit('remove', el, source, source);
-        }
-      }
-    });
-
   };
 }

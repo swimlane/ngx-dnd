@@ -41,6 +41,8 @@ export class AppComponent {
     { label: 'Item 3' }
   ];
   targetItems = [];
+  targetItemsA = [];
+  targetItemsB = [];
 
   sourceNestedItems = [
     { label: 'Item 1, no children', children: [] },

@@ -2,6 +2,7 @@ import {
   Directive, ElementRef, HostListener, Input, Output, EventEmitter, OnDestroy, OnInit
 } from '@angular/core';
 
+import { DroppableDirective } from './ngx-droppable.directive';
 import { DrakeStoreService } from '../services/drake-store.service';
 
 /**
@@ -29,7 +30,8 @@ export class DraggableDirective implements OnInit, OnDestroy {
 
   constructor(
     private el: ElementRef,
-    private drakesService: DrakeStoreService
+    private drakesService: DrakeStoreService,
+    private droppableDirective: DroppableDirective
   ) {
     this.element = el.nativeElement;
   }
@@ -57,7 +59,7 @@ export class DraggableDirective implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.dropZones = this.dropZones || this.ngxDraggable;
+    this.dropZones = this.dropZones || this.ngxDraggable || [this.droppableDirective.dropZone];
     this.drakesService.registerDraggable(this);
   }
 

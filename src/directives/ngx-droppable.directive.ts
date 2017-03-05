@@ -14,6 +14,11 @@ import {
 
 import { DrakeStoreService } from '../services/drake-store.service';
 
+let i = 10000;
+function getNextId() {
+  return i++;
+}
+
 /**
  * Makes the conatiner droppable and children draggable.
  * 
@@ -28,8 +33,8 @@ export class DroppableDirective implements OnInit, OnDestroy, AfterViewInit {
   @Input() model: any;
   @Input() copy = false;
   @Input() removeOnSpill = false;
-  @Input() dropZone: string;
-  @Input() ngxDroppable: string;
+  @Input() dropZone;
+  @Input() ngxDroppable;
 
   // @Input() dragulaOptions: any;
   // @Input() ngxDroppable: string;
@@ -60,7 +65,7 @@ export class DroppableDirective implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.dropZone = this.dropZone || this.ngxDroppable;
+    this.dropZone = this.dropZone || this.ngxDroppable || `@@DefaultDropZone-${getNextId()}@@`;
     this.drakesService.register(this);
   }
 
