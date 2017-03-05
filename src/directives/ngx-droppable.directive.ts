@@ -69,7 +69,7 @@ export class DroppableDirective implements OnInit, OnDestroy, AfterViewInit {
       this.renderer.setElementClass(this.container, 'gu-over', true);
     });
     this.out.subscribe((ev) => {
-      this.renderer.setElementClass(this.container, 'gu-over', true);
+      this.renderer.setElementClass(this.container, 'gu-over', false);
     });
   }
 
