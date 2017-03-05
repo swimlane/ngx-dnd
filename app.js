@@ -3,7 +3,7 @@ webpackJsonp([0],{
 /***/ "./demo/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<main fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n  <!-- div class=\"nav-col\" fxFlex=\"20%\">\n    <h1>\n      Ngx-<strong>dnd</strong>\n      <small class=\"version\">{{version}}</small>\n      <small class=\"subtitle\">Angular2+ DnD</small>\n    </h1>\n  </div -->\n  <div class=\"field\" fxFlex=\"100%\">\n\n    <ngx-section class=\"shadow\" sectionTitle=\"Ordering - Template Only\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper'>\n            <ngx-dnd-container bag=\"example-1\">\n              <div class=\"ngx-dnd-item\">Item 1</div>\n              <div class=\"ngx-dnd-item\">Item 2</div>\n              <div class=\"ngx-dnd-item\">Item 3</div>\n            </ngx-dnd-container>\n          </div>\n        </div>\n        <div fxFlex=\"50%\">\n          <h3>Template</h3>\n          <pre><code><![CDATA[<ngx-dnd-container bag=\"example-1\">\n  <div class=\"ngx-dnd-item\">Item 1</div>\n  <div class=\"ngx-dnd-item\">Item 2</div>\n  <div class=\"ngx-dnd-item\">Item 3</div>\n</ngx-dnd-container>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"Ordering - Template Only - With fxLayout\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper'>\n\n            <div class=\"ngx-dnd-container\" fxLayout=\"row\" fxLayoutWrap=\"wrap\" ngxDroppable=\"example-layout\">\n              <div fxFlex=\"45\" class=\"ngx-dnd-item\">Item 1</div>\n              <div fxFlex=\"45\" class=\"ngx-dnd-item\">Item 2</div>\n              <div fxFlex=\"20\" class=\"ngx-dnd-item\">Item 3</div>\n              <div fxFlex=\"20\" class=\"ngx-dnd-item\">Item 4</div>\n              <div fxFlex=\"20\" class=\"ngx-dnd-item\">Item 5</div>\n            </div>\n\n          </div>\n        </div>\n        <div fxFlex=\"50%\">\n          <h3>Template</h3>\n          <pre><code><![CDATA[<div class='wrapper' fxFlex>\n  <div class=\"ngx-dnd-container\" fxLayout=\"row\" fxLayoutWrap=\"wrap\" ngxDroppable=\"example-layout\">\n    <div fxFlex=\"45\" class=\"ngx-dnd-item\">Item 1</div>\n    <div fxFlex=\"45\" class=\"ngx-dnd-item\">Item 2</div>\n    <div fxFlex=\"20\" class=\"ngx-dnd-item\">Item 3</div>\n    <div fxFlex=\"20\" class=\"ngx-dnd-item\">Item 4</div>\n    <div fxFlex=\"20\" class=\"ngx-dnd-item\">Item 5</div>\n  </div>\n</div>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"Ordering - from array\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper'>\n            <ngx-dnd-container\n              [model]=\"orderableList\"\n              bag=\"example-2\"\n              [dragulaOptions]=\"{removeOnSpill: true}\">\n            </ngx-dnd-container>\n          </div>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Model</h3>\n          <pre><code>{{orderableList | json}}</code></pre>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Template</h3>\n          <pre><code><![CDATA[<ngx-dnd-container\n  [model]=\"orderableList\"\n  bag=\"example-2\">\n</ngx-dnd-container>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"DnD - Template Only\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper'>\n            <ngx-dnd-container bag=\"example-3\">\n              <div class=\"ngx-dnd-item\">Item 1a</div>\n              <div class=\"ngx-dnd-item\">Item 2a</div>\n              <div class=\"ngx-dnd-item\">Item 3a</div>\n            </ngx-dnd-container>\n            <ngx-dnd-container bag=\"example-3\">\n              <div class=\"ngx-dnd-item\">Item 1b</div>\n              <div class=\"ngx-dnd-item\">Item 2b</div>\n              <div class=\"ngx-dnd-item\">Item 3b</div>\n            </ngx-dnd-container>\n          </div>\n        </div>\n        <div fxFlex=\"50%\">\n          <h3>Template</h3>\n          <pre><code><![CDATA[<ngx-dnd-container bag=\"example-3\">\n  <div class=\"ngx-dnd-item\">Item 1a</div>\n  <div class=\"ngx-dnd-item\">Item 2a</div>\n  <div class=\"ngx-dnd-item\">Item 3a</div>\n</ngx-dnd-container>\n<ngx-dnd-container bag=\"example-3\">\n  <div class=\"ngx-dnd-item\">Item 1b</div>\n  <div class=\"ngx-dnd-item\">Item 2b</div>\n  <div class=\"ngx-dnd-item\">Item 3b</div>\n</ngx-dnd-container>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"DnD - from nested array\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper'>\n            <ngx-dnd-container\n              [model]=\"orderableLists\"\n              bag=\"example-4\">\n            </ngx-dnd-container>\n          </div>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Model</h3>\n          <pre>{{orderableLists | json}}</pre>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Template</h3>\n          <pre><code><![CDATA[<ngx-dnd-container\n  [model]=\"orderableLists\"\n  bag=\"example-4\">\n</ngx-dnd-container>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"DnD - nested containers\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper'>\n            <ngx-dnd-container\n              [model]=\"nestedLists\"\n              bag=\"example-5\">\n            </ngx-dnd-container>\n          </div>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Model</h3>\n          <code><pre>{{nestedLists | json}}</pre></code>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Template</h3>\n          <pre><code><![CDATA[<ngx-dnd-container\n  [model]=\"nestedLists\"\n  bag=\"example-5\">\n</ngx-dnd-container>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"One Way Drag\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"25%\">\n          <h4>Source</h4>\n            <ngx-dnd-container\n              [classes]=\"{container: 'source'}\"\n              [model]=\"sourceItems\"\n              [dragulaOptions]=\"builder\"\n              bag=\"example-one-way\">\n            </ngx-dnd-container>\n        </div>\n        <div fxFlex=\"25%\">\n          <h4>Target</h4>\n          <ngx-dnd-container\n            [classes]=\"{container: 'target'}\"\n            [model]=\"targetItems\"\n            [dragulaOptions]=\"builder\"\n            bag=\"example-one-way\">\n          </ngx-dnd-container>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Model</h3>\n          <pre><code>{{sourceItems | json}}</code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"Nested One Way Drag\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"25%\">\n          <h4>Source</h4>\n            <ngx-dnd-container\n              [classes]=\"{container: 'source'}\"\n              [model]=\"sourceNestedItems\"\n              [dragulaOptions]=\"builder\"\n              bag=\"example-nested\">\n            </ngx-dnd-container>\n        </div>\n        <div fxFlex=\"25%\">\n          <h4>Target</h4>\n          <ngx-dnd-container\n            [classes]=\"{container: 'target'}\"\n            [model]=\"targetNestedItems\"\n            [dragulaOptions]=\"builder\"\n            bag=\"example-nested\">\n          </ngx-dnd-container>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Model</h3>\n          <pre><code>{{targetNestedItems | json}}</code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow builder\" sectionTitle=\"Builder Demo\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div class=\"builder-source\" fxFlex=\"20%\">\n          <h4>Source</h4>\n\n          <ngx-dnd-container\n            class=\"root-container\"\n            [classes]=\"{container: 'source', item: builderClasses.item}\"\n            [model]=\"sourceBuilderTools\"\n            [dragulaOptions]=\"builder\"\n            bag=\"example-builder\"\n            (drag)=\"builderDrag($event)\"\n            (remove)=\"log($event)\">\n\n            <template let-model=\"model\">\n              <ngx-icon [fontIcon]=\"model.icon\"></ngx-icon>\n              {{model.name}}\n            </template>\n          </ngx-dnd-container>\n\n        </div>\n        <div class=\"builder-target\" fxFlex=\"60%\">\n          <h4>Target</h4>\n\n          <ngx-dnd-container\n            class=\"root-container\"\n            [classes]=\"builderClasses\"\n            [model]=\"targetBuilderTools\"\n            bag=\"example-builder\"\n            [dragulaOptions]=\"builder\"\n            (drag)=\"log($event)\"\n            (drop)=\"log($event)\"\n            (over)=\"log($event)\"\n            (out)=\"log($event)\"\n            (remove)=\"log($event)\">\n\n            <template let-model=\"model\" let-template=\"template\">\n              <div [ngSwitch]=\"model.inputType\">\n                <div *ngSwitchCase=\"'section'\">\n                   <ngx-section class=\"shadow\" [sectionTitle]=\"model.name\">\n                     <ngx-dnd-container\n                       [classes]=\"builderClasses\"\n                       bag=\"example-builder\"\n                       [model]=\"model.children\"\n                       [dragulaOptions]=\"builder\"\n                       [template]=\"template\"\n                       (drag)=\"log($event)\"\n                       (drop)=\"log($event)\"\n                       (over)=\"log($event)\"\n                       (out)=\"log($event)\"\n                       (remove)=\"log($event)\">\n                     </ngx-dnd-container>\n                   </ngx-section>\n                </div>\n                <div *ngSwitchDefault>\n                  <ngx-input\n                    [type]=\"model.inputType\"\n                    [hint]=\"model.name\"\n                    [autofocus]=\"false\"\n                    [ngModel]=\"model.data\">\n                  </ngx-input>\n                </div>\n              </div>\n            </template>\n          </ngx-dnd-container>\n        </div>\n        <div fxFlex>\n          <h3>Model</h3>\n          <pre><code>{{targetBuilderTools | json}}</code></pre>\n        </div>\n      </div>\n      <i>Open console to see events</i>\n    </ngx-section>\n\n  </div>\n</main>\n"
+module.exports = "<main fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n  <!-- div class=\"nav-col\" fxFlex=\"20%\">\n    <h1>\n      Ngx-<strong>dnd</strong>\n      <small class=\"version\">{{version}}</small>\n      <small class=\"subtitle\">Angular2+ DnD</small>\n    </h1>\n  </div -->\n  <div class=\"field\" fxFlex=\"100%\">\n\n    <ngx-section class=\"shadow\" sectionTitle=\"Ordering - Template Only\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper'>\n            <div class=\"ngx-dnd-container\" ngxDroppable=\"example-one\">\n              <div class=\"ngx-dnd-item\" ngxDraggable=\"['example-one']\">Item 1</div>\n              <div class=\"ngx-dnd-item\" ngxDraggable=\"['example-one']\">Item 2</div>\n              <div class=\"ngx-dnd-item\" ngxDraggable=\"['example-one']\">Item 3</div>\n            </div>\n          </div>\n        </div>\n        <div fxFlex=\"50%\">\n          <h3>Template</h3>\n          <pre><code><![CDATA[<div class=\"ngx-dnd-container\" ngxDroppable=\"example-one\">\n  <div class=\"ngx-dnd-item\" ngxDraggable=\"['example-one']\">Item 1</div>\n  <div class=\"ngx-dnd-item\" ngxDraggable=\"['example-one']\">Item 2</div>\n  <div class=\"ngx-dnd-item\" ngxDraggable=\"['example-one']\">Item 3</div>\n</div>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"Ordering - Template Only - With fxLayout\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper'>\n\n            <div class=\"ngx-dnd-container\" fxLayout=\"row\" fxLayoutWrap=\"wrap\" ngxDroppable=\"example-two\">\n              <div fxFlex=\"45\" class=\"ngx-dnd-item\" ngxDraggable=\"['example-two']\">Item 1</div>\n              <div fxFlex=\"45\" class=\"ngx-dnd-item\" ngxDraggable=\"['example-two']\">Item 2</div>\n              <div fxFlex=\"20\" class=\"ngx-dnd-item\" ngxDraggable=\"['example-two']\">Item 3</div>\n              <div fxFlex=\"20\" class=\"ngx-dnd-item\" ngxDraggable=\"['example-two']\">Item 4</div>\n              <div fxFlex=\"20\" class=\"ngx-dnd-item\" ngxDraggable=\"['example-two']\">Item 5</div>\n            </div>\n\n          </div>\n        </div>\n        <div fxFlex=\"50%\">\n          <h3>Template</h3>\n          <pre><code><![CDATA[<div class=\"ngx-dnd-container\" fxLayout=\"row\" fxLayoutWrap=\"wrap\" ngxDroppable=\"example-two\">\n  <div fxFlex=\"45\" class=\"ngx-dnd-item\" ngxDraggable=\"['example-two']\">Item 1</div>\n  <div fxFlex=\"45\" class=\"ngx-dnd-item\" ngxDraggable=\"['example-two']\">Item 2</div>\n  <div fxFlex=\"20\" class=\"ngx-dnd-item\" ngxDraggable=\"['example-two']\">Item 3</div>\n  <div fxFlex=\"20\" class=\"ngx-dnd-item\" ngxDraggable=\"['example-two']\">Item 4</div>\n  <div fxFlex=\"20\" class=\"ngx-dnd-item\" ngxDraggable=\"['example-two']\">Item 5</div>\n</div>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"Ordering - from array\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper'>\n            <ngx-dnd-container\n              [model]=\"orderableList\">\n            </ngx-dnd-container>\n          </div>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Model</h3>\n          <pre><code>{{orderableList | json}}</code></pre>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Template</h3>\n          <pre><code><![CDATA[<ngx-dnd-container\n  [model]=\"orderableList\">\n</ngx-dnd-container>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"DnD - Template Only\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper'>\n            <div class=\"ngx-dnd-container\" ngxDroppable=\"example-two\">\n              <div class=\"ngx-dnd-item\" ngxDraggable=\"['example-two']\">Item 1a</div>\n              <div class=\"ngx-dnd-item\" ngxDraggable=\"['example-two']\">Item 2a</div>\n              <div class=\"ngx-dnd-item\" ngxDraggable=\"['example-two']\">Item 3a</div>\n            </div>\n            <div class=\"ngx-dnd-container\" ngxDroppable=\"example-two\">\n              <div class=\"ngx-dnd-item\" ngxDraggable=\"['example-two']\">Item 1b</div>\n              <div class=\"ngx-dnd-item\" ngxDraggable=\"['example-two']\">Item 2b</div>\n              <div class=\"ngx-dnd-item\" ngxDraggable=\"['example-two']\">Item 3b</div>\n            </div>\n          </div>\n        </div>\n        <div fxFlex=\"50%\">\n          <h3>Template</h3>\n          <pre><code><![CDATA[<div class=\"ngx-dnd-container\" ngxDroppable=\"example-two\">\n  <div class=\"ngx-dnd-item\" ngxDraggable=\"['example-two']\">Item 1a</div>\n  <div class=\"ngx-dnd-item\" ngxDraggable=\"['example-two']\">Item 2a</div>\n  <div class=\"ngx-dnd-item\" ngxDraggable=\"['example-two']\">Item 3a</div>\n</div>\n<div class=\"ngx-dnd-container\" ngxDroppable=\"example-two\">\n  <div class=\"ngx-dnd-item\" ngxDraggable=\"['example-two']\">Item 1b</div>\n  <div class=\"ngx-dnd-item\" ngxDraggable=\"['example-two']\">Item 2b</div>\n  <div class=\"ngx-dnd-item\" ngxDraggable=\"['example-two']\">Item 3b</div>\n</div>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"DnD - from nested array\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper'>\n            <ngx-dnd-container\n              [model]=\"orderableLists\">\n            </ngx-dnd-container>\n          </div>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Model</h3>\n          <pre>{{orderableLists | json}}</pre>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Template</h3>\n          <pre><code><![CDATA[<ngx-dnd-container\n  [model]=\"orderableLists\">\n</ngx-dnd-container>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"DnD - nested containers\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper'>\n            <ngx-dnd-container\n              [model]=\"nestedLists\">\n            </ngx-dnd-container>\n          </div>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Model</h3>\n          <code><pre>{{nestedLists | json}}</pre></code>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Template</h3>\n          <pre><code><![CDATA[<ngx-dnd-container\n  [model]=\"nestedLists\"\n  bag=\"example-5\">\n</ngx-dnd-container>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"One Way Drag - removeOnSpill\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"25%\">\n          <h4>Source</h4>\n            <ngx-dnd-container\n              [model]=\"sourceItems\"\n              [copy]=\"true\"\n              dropZone=\"oneway-source\"\n              [dropZones]=\"['oneway-target']\">\n            </ngx-dnd-container>\n        </div>\n        <div fxFlex=\"25%\">\n          <h4>Target</h4>\n          <ngx-dnd-container\n            [model]=\"targetItems\"\n            dropZone=\"oneway-target\"\n            [dropZones]=\"['oneway-target']\"\n            [removeOnSpill]=\"true\">\n          </ngx-dnd-container>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Model</h3>\n          <pre><code>{{targetItems | json}}</code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"Nested One Way Drag\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"25%\">\n          <h4>Source</h4>\n            <ngx-dnd-container\n              [model]=\"sourceNestedItems\"\n              [copy]=\"true\"\n              dropZone=\"nested-oneway-source\"\n              [dropZones]=\"['nested-oneway-target']\">\n            </ngx-dnd-container>\n        </div>\n        <div fxFlex=\"25%\">\n          <h4>Target</h4>\n          <ngx-dnd-container\n            [model]=\"targetNestedItems\"\n            dropZone=\"nested-oneway-target\"\n            [dropZones]=\"['nested-oneway-target']\"\n            [removeOnSpill]=\"true\">\n          </ngx-dnd-container>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Model</h3>\n          <pre><code>{{targetNestedItems | json}}</code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow builder\" sectionTitle=\"Builder Demo\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div class=\"builder-source\" fxFlex=\"20%\">\n          <h4>Source</h4>\n\n          <ngx-dnd-container\n            class=\"root-container\"\n            [model]=\"sourceBuilderTools\"\n            dropZone=\"builder-source\"\n            [dropZones]=\"['builder-target']\"\n            [copy]=\"true\"\n            [droppableItemClass]=\"droppableItemClass\"\n            (drag)=\"builderDrag($event)\"\n            (remove)=\"log($event)\">\n\n            <template let-item=\"model\">\n              <ngx-icon [fontIcon]=\"item.icon\"></ngx-icon>\n              {{item.name}}\n            </template>\n          </ngx-dnd-container>\n\n        </div>\n        <div class=\"builder-target\" fxFlex=\"60%\">\n          <h4>Target</h4>\n\n          <ngx-dnd-container\n            class=\"root-container\"\n            [model]=\"targetBuilderTools\"\n            dropZone=\"builder-target\"\n            [dropZones]=\"['builder-target']\"\n            [removeOnSpill]=\"true\"\n            [droppableItemClass]=\"droppableItemClass\"\n            (drag)=\"log($event)\"\n            (drop)=\"log($event)\"\n            (over)=\"log($event)\"\n            (out)=\"log($event)\"\n            (remove)=\"log($event)\">\n\n            <template let-model=\"model\" let-template=\"template\">\n              <div [ngSwitch]=\"model.inputType\">\n                <div *ngSwitchCase=\"'section'\">\n                   <ngx-section class=\"shadow\" [sectionTitle]=\"model.name\">\n                     <ngx-dnd-container\n                       dropZone=\"builder-target\"\n                       [dropZones]=\"['builder-target']\"\n                       [model]=\"model.children\"\n                       [removeOnSpill]=\"true\"\n                       [template]=\"template\"\n                       [droppableItemClass]=\"droppableItemClass\"\n                       (drag)=\"log($event)\"\n                       (drop)=\"log($event)\"\n                       (over)=\"log($event)\"\n                       (out)=\"log($event)\"\n                       (remove)=\"log($event)\">\n                     </ngx-dnd-container>\n                   </ngx-section>\n                </div>\n                <div *ngSwitchDefault>\n                  <ngx-input\n                    [type]=\"model.inputType\"\n                    [hint]=\"model.name\"\n                    [autofocus]=\"false\"\n                    [ngModel]=\"model.data\">\n                  </ngx-input>\n                </div>\n              </div>\n            </template>\n          </ngx-dnd-container>\n        </div>\n        <div fxFlex>\n          <h3>Model</h3>\n          <pre><code>{{targetBuilderTools | json}}</code></pre>\n        </div>\n      </div>\n      <i>Open console to see events</i>\n    </ngx-section>\n\n  </div>\n</main>\n"
 
 /***/ }),
 
@@ -61,15 +61,6 @@ var AppComponent = (function () {
                 ]
             },
         ];
-        this.builder = {
-            removeOnSpill: true,
-            accepts: function (el, target) {
-                return target.classList.contains('target');
-            },
-            copy: function (el, source) {
-                return source.classList.contains('source');
-            }
-        };
         this.sourceItems = [
             { label: 'Item 1' },
             { label: 'Item 2' },
@@ -92,10 +83,7 @@ var AppComponent = (function () {
             { name: 'A Number', inputType: 'number', icon: 'field-numeric', class: 'half' }
         ];
         this.targetBuilderTools = [];
-        this.builderClasses = {
-            container: 'target',
-            item: function (item) { return (item.class + " " + item.inputType); }
-        };
+        this.droppableItemClass = function (item) { return (item.class + " " + item.inputType); };
     }
     AppComponent.prototype.builderDrag = function (e) {
         var item = e.value;
@@ -60160,7 +60148,7 @@ exports.clearImmediate = clearImmediate;
 /***/ "./src/components/container/container.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div\n  class='ngx-dnd-container {{classes.container}}'\n  [ngClass]=\"{ 'gu-empty': !model?.length }\"\n  [ngxDroppable]=\"bag\"\n  [model]=\"model\"\n  [dragulaOptions]=\"dragulaOptions\">\n  <ng-container *ngIf=\"model\">\n    <ng-container *ngFor=\"let item of model\">\n      <ngx-dnd-item\n        class=\"ngx-dnd-item {{classes.item(item)}}\"\n        [model]=\"item\"\n        ngxDraggable\n        dropZones=\"['a', 'b']\">\n      </ngx-dnd-item>\n    </ng-container>\n  </ng-container>\n  <ng-content *ngIf=\"!model\"></ng-content>\n</div>"
+module.exports = "<div\n  ngxDroppable\n  [dropZone]=\"dropZone\"\n  [model]=\"model\"\n  [copy]=\"copy\"\n  [ngClass]=\"{ 'gu-empty': !model?.length }\"\n  [removeOnSpill]=\"removeOnSpill\"\n  class='ngx-dnd-container'>\n  <ng-container *ngIf=\"model\">\n    <ng-container *ngFor=\"let item of model\">\n      <ngx-dnd-item\n        ngxDraggable\n        [model]=\"item\"\n        [dropZone]=\"dropZone\"\n        [dropZones]=\"dropZones\"\n        [removeOnSpill]=\"removeOnSpill\"\n        [droppableItemClass]=\"droppableItemClass\"\n        class=\"ngx-dnd-item {{droppableItemClass && droppableItemClass(item)}}\">\n      </ngx-dnd-item>\n    </ng-container>\n  </ng-container>\n  <ng-content *ngIf=\"!model\"></ng-content>\n</div>\n"
 
 /***/ }),
 
@@ -60195,22 +60183,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__("./node_modules/@angular/core/index.js");
 var directives_1 = __webpack_require__("./src/directives/index.ts");
+var i = 0;
+function getNextId() {
+    return i++;
+}
+/**
+ * Component that allows nested ngxDroppable and ngxDraggables
+ *
+ * @export
+ * @class ContainerComponent
+ * @implements {OnInit}
+ * @implements {AfterViewInit}
+ */
 var ContainerComponent = (function () {
-    function ContainerComponent(renderer) {
-        this.renderer = renderer;
-        this.bag = 'default';
-        this.class = '';
-        this.classes = {};
+    function ContainerComponent() {
+        this.copy = false;
+        this.removeOnSpill = false;
+        this.droppableItemClass = '';
+        this.dropZone = "@@DefaultDropZone-" + getNextId() + "@@";
         this.drop = new core_1.EventEmitter();
         this.drag = new core_1.EventEmitter();
         this.over = new core_1.EventEmitter();
         this.out = new core_1.EventEmitter();
+        this.remove = new core_1.EventEmitter();
     }
     ContainerComponent.prototype.ngOnInit = function () {
-        this.classes = {
-            container: this.classes.container,
-            item: functor(this.classes.item)
-        };
+        this.dropZones = this.dropZones || [this.dropZone];
     };
     ContainerComponent.prototype.ngAfterViewInit = function () {
         var _this = this;
@@ -60218,6 +60216,7 @@ var ContainerComponent = (function () {
         this.droppable.drop.subscribe(function (v) { return _this.drop.emit(v); });
         this.droppable.over.subscribe(function (v) { return _this.over.emit(v); });
         this.droppable.out.subscribe(function (v) { return _this.out.emit(v); });
+        this.droppable.remove.subscribe(function (v) { return _this.remove.emit(v); });
     };
     __decorate([
         core_1.Input(), 
@@ -60226,19 +60225,23 @@ var ContainerComponent = (function () {
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
-    ], ContainerComponent.prototype, "bag", void 0);
+    ], ContainerComponent.prototype, "copy", void 0);
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
-    ], ContainerComponent.prototype, "class", void 0);
+    ], ContainerComponent.prototype, "removeOnSpill", void 0);
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
-    ], ContainerComponent.prototype, "classes", void 0);
+    ], ContainerComponent.prototype, "droppableItemClass", void 0);
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
-    ], ContainerComponent.prototype, "dragulaOptions", void 0);
+    ], ContainerComponent.prototype, "dropZone", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Array)
+    ], ContainerComponent.prototype, "dropZones", void 0);
     __decorate([
         core_1.Input(),
         core_1.ContentChild(core_1.TemplateRef), 
@@ -60265,6 +60268,10 @@ var ContainerComponent = (function () {
         core_1.Output(), 
         __metadata('design:type', core_1.EventEmitter)
     ], ContainerComponent.prototype, "out", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', core_1.EventEmitter)
+    ], ContainerComponent.prototype, "remove", void 0);
     ContainerComponent = __decorate([
         core_1.Component({
             selector: 'ngx-dnd-container',
@@ -60272,7 +60279,7 @@ var ContainerComponent = (function () {
             encapsulation: core_1.ViewEncapsulation.None,
             styles: [__webpack_require__("./src/components/container/container.component.scss")],
         }), 
-        __metadata('design:paramtypes', [core_1.Renderer])
+        __metadata('design:paramtypes', [])
     ], ContainerComponent);
     return ContainerComponent;
 }());
@@ -60301,7 +60308,7 @@ __export(__webpack_require__("./src/components/item/item.component.ts"));
 /***/ "./src/components/item/item.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n  <ng-container [ngSwitch]=\"type\">\n\n    <ng-container *ngSwitchCase=\"'array'\">\n      <ngx-dnd-container\n        [model]=\"model\"\n        [bag]=\"container.bag\"\n        [classes]=\"container.classes\"\n        [template]=\"container.template\"\n        [dragulaOptions]=\"container.dragulaOptions\">\n      </ngx-dnd-container>\n    </ng-container>\n\n    <ng-container *ngSwitchCase=\"'object'\">\n      <template\n        *ngIf=\"container.template\"\n        [ngTemplateOutlet]=\"container.template\"\n        [ngOutletContext]=\"data\">\n      </template>\n      <ng-container *ngIf=\"!container.template\">\n        <div\n          class=\"ngx-dnd-content {{container.classes.content}}\">\n          {{model.label}}\n        </div>\n        <ngx-dnd-container\n          *ngIf=\"model.children\"\n          [bag]=\"container.bag\"\n          [model]=\"model.children\"\n          [classes]=\"container.classes\"\n          [template]=\"container.template\"\n          [dragulaOptions]=\"container.dragulaOptions\">\n        </ngx-dnd-container>\n      </ng-container>\n    </ng-container>\n\n    <ng-container *ngSwitchCase=\"'undefined'\">\n    </ng-container>\n\n    <ng-container *ngSwitchDefault>\n      <template\n        *ngIf=\"container.template\"\n        [ngTemplateOutlet]=\"container.template\"\n        [ngOutletContext]=\"data\">\n      </template>\n      <div\n        *ngIf=\"!container.template\"\n        class=\"ngx-dnd-content {{container.classes.content}}\">\n        {{model}}\n      </div>\n    </ng-container>\n\n  </ng-container>\n</div>\n\n\n\n\n\n\n"
+module.exports = "<ng-container [ngSwitch]=\"type\">\n\n  <ng-container *ngSwitchCase=\"'array'\">\n    <ngx-dnd-container\n      [model]=\"model\"\n      [template]=\"container.template\"\n      [dropZone]=\"dropZone\"\n      [dropZones]=\"dropZones\"\n      [removeOnSpill]=\"removeOnSpill\"\n      [droppableItemClass]=\"droppableItemClass\"\n      [copy]=\"copy\">\n    </ngx-dnd-container>\n  </ng-container>\n\n  <ng-container *ngSwitchCase=\"'object'\">\n    <template\n      *ngIf=\"container.template\"\n      [ngTemplateOutlet]=\"container.template\"\n      [ngOutletContext]=\"data\">\n    </template>\n    <ng-container *ngIf=\"!container.template\">\n      <div\n        class=\"ngx-dnd-content\">\n        {{model.label}}\n      </div>\n      <ngx-dnd-container\n        *ngIf=\"model.children\"\n        [model]=\"model.children\"\n        [template]=\"container.template\"\n        [dropZone]=\"dropZone\"\n        [dropZones]=\"dropZones\"\n        [removeOnSpill]=\"removeOnSpill\"\n        [droppableItemClass]=\"droppableItemClass\"\n        [copy]=\"copy\">\n      </ngx-dnd-container>\n    </ng-container>\n  </ng-container>\n\n  <ng-container *ngSwitchCase=\"'undefined'\">\n  </ng-container>\n\n  <ng-container *ngSwitchDefault>\n    <template\n      *ngIf=\"container.template\"\n      [ngTemplateOutlet]=\"container.template\"\n      [ngOutletContext]=\"data\">\n    </template>\n    <div\n      *ngIf=\"!container.template\"\n      class=\"ngx-dnd-content\">\n      {{model}}\n    </div>\n  </ng-container>\n\n</ng-container>\n\n\n\n\n\n\n\n"
 
 /***/ }),
 
@@ -60336,16 +60343,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__("./node_modules/@angular/core/index.js");
 var _1 = __webpack_require__("./src/components/index.ts");
+/**
+ * Component that allows nested ngxDroppable and ngxDraggables
+ * Should only be use inside a ngx-dnd-container
+ * Outside a ngx-dnd-container use ngxDroppable
+ *
+ * @export
+ * @class ItemComponent
+ * @implements {OnInit}
+ */
 var ItemComponent = (function () {
     function ItemComponent(container) {
         this.container = container;
+        this.copy = false;
+        this.removeOnSpill = false;
+        this.droppableItemClass = '';
     }
     ItemComponent.prototype.ngOnInit = function () {
         this.type = getType(this.model);
+        this.dropZone = this.dropZone || this.container.dropZone;
+        this.dropZones = this.dropZones || this.container.dropZones;
+        this.droppableItemClass = this.droppableItemClass || this.container.droppableItemClass;
+        this.removeOnSpill = typeof this.removeOnSpill === 'boolean' ? this.removeOnSpill : this.container.removeOnSpill;
+        this.copy = typeof this.copy === 'boolean' ? this.copy : this.container.copy;
         this.data = {
             model: this.model,
             type: this.type,
-            bag: this.container.bag,
+            dropZone: this.dropZone,
             template: this.container.template
         };
     };
@@ -60353,6 +60377,26 @@ var ItemComponent = (function () {
         core_1.Input(), 
         __metadata('design:type', Object)
     ], ItemComponent.prototype, "model", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], ItemComponent.prototype, "copy", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], ItemComponent.prototype, "removeOnSpill", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], ItemComponent.prototype, "droppableItemClass", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], ItemComponent.prototype, "dropZone", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], ItemComponent.prototype, "dropZones", void 0);
     ItemComponent = __decorate([
         core_1.Component({
             selector: 'ngx-dnd-item',
@@ -60406,9 +60450,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = __webpack_require__("./node_modules/@angular/core/index.js");
 var drake_store_service_1 = __webpack_require__("./src/services/drake-store.service.ts");
 /**
+ * Adds properties and events to draggable elements
  *
  * @export
- * @class NgxDndItemDirective
+ * @class DraggableDirective
+ * @implements {OnInit}
+ * @implements {OnDestroy}
  */
 var DraggableDirective = (function () {
     function DraggableDirective(el, drakesService) {
@@ -60437,6 +60484,7 @@ var DraggableDirective = (function () {
         this.draggable = false;
     };
     DraggableDirective.prototype.ngOnInit = function () {
+        this.dropZones = this.dropZones || this.ngxDraggable;
         this.drakesService.registerDraggable(this);
     };
     DraggableDirective.prototype.ngOnDestroy = function () {
@@ -60444,8 +60492,16 @@ var DraggableDirective = (function () {
     };
     __decorate([
         core_1.Input(), 
+        __metadata('design:type', Array)
+    ], DraggableDirective.prototype, "ngxDraggable", void 0);
+    __decorate([
+        core_1.Input(), 
         __metadata('design:type', Object)
     ], DraggableDirective.prototype, "model", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Array)
+    ], DraggableDirective.prototype, "dropZones", void 0);
     __decorate([
         core_1.Output(), 
         __metadata('design:type', core_1.EventEmitter)
@@ -60495,11 +60551,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__("./node_modules/@angular/core/index.js");
 var drake_store_service_1 = __webpack_require__("./src/services/drake-store.service.ts");
+/**
+ * Makes the conatiner droppable and children draggable.
+ *
+ * @export
+ * @class DroppableDirective
+ * @implements {OnInit}
+ * @implements {OnDestroy}
+ * @implements {AfterViewInit}
+ */
 var DroppableDirective = (function () {
     function DroppableDirective(el, renderer, drakesService) {
         this.el = el;
         this.renderer = renderer;
         this.drakesService = drakesService;
+        this.copy = false;
+        this.removeOnSpill = false;
+        // @Input() dragulaOptions: any;
+        // @Input() ngxDroppable: string;
         this.drop = new core_1.EventEmitter();
         this.drag = new core_1.EventEmitter();
         this.over = new core_1.EventEmitter();
@@ -60508,36 +60577,21 @@ var DroppableDirective = (function () {
         this.container = el.nativeElement;
     }
     DroppableDirective.prototype.ngOnInit = function () {
-        this.dragulaOptions = Object.assign({
-            accepts: function (el, target, source, sibling) {
-                if (el.contains(target)) {
-                    return false;
-                }
-                /* if (!this.dropZone && this.drake.allowedDropZones.length === 0) {
-                  return true;
-                }
-                return this.drake.allowedDropZones.contains(this.dropZone); */
-                return true;
-            }
-        }, this.dragulaOptions);
+        this.dropZone = this.dropZone || this.ngxDroppable;
         this.drakesService.register(this);
     };
     DroppableDirective.prototype.ngAfterViewInit = function () {
         var _this = this;
-        var overAndOut = function (_a) {
-            var type = _a.type;
-            return _this.renderer.setElementClass(_this.container, 'gu-over', type === 'over');
-        };
-        this.over.subscribe(overAndOut);
-        this.out.subscribe(overAndOut);
+        this.over.subscribe(function (ev) {
+            _this.renderer.setElementClass(_this.container, 'gu-over', true);
+        });
+        this.out.subscribe(function (ev) {
+            _this.renderer.setElementClass(_this.container, 'gu-over', true);
+        });
     };
     DroppableDirective.prototype.ngOnDestroy = function () {
         this.drakesService.remove(this);
     };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], DroppableDirective.prototype, "ngxDroppable", void 0);
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
@@ -60545,11 +60599,19 @@ var DroppableDirective = (function () {
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
-    ], DroppableDirective.prototype, "dragulaOptions", void 0);
+    ], DroppableDirective.prototype, "copy", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], DroppableDirective.prototype, "removeOnSpill", void 0);
     __decorate([
         core_1.Input(), 
         __metadata('design:type', String)
     ], DroppableDirective.prototype, "dropZone", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], DroppableDirective.prototype, "ngxDroppable", void 0);
     __decorate([
         core_1.Output(), 
         __metadata('design:type', core_1.EventEmitter)
@@ -60653,34 +60715,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__("./node_modules/@angular/core/index.js");
 var dragula = __webpack_require__("./node_modules/dragula/dragula.js");
+/**
+ * Central service that handles all events
+ *
+ * @export
+ * @class DrakeStoreService
+ */
 var DrakeStoreService = (function () {
     function DrakeStoreService() {
         this.droppableMap = new WeakMap();
         this.draggableMap = new WeakMap();
-        this.drakeMap = {};
+        this.dragulaOptions = {};
+        this.dragulaOptions = this.createDrakeOptions();
+        this.drake = dragula([], this.dragulaOptions);
+        this.registerEvents();
     }
     DrakeStoreService.prototype.register = function (droppable) {
-        var name = droppable.ngxDroppable;
         this.droppableMap.set(droppable.container, droppable);
-        var drake = this.drakeMap[name];
-        if (drake) {
-            drake.containers.push(droppable.container);
-        }
-        else {
-            drake = this.drakeMap[name] = dragula([droppable.container], droppable.dragulaOptions);
-            this.registerEvents(drake);
-        }
-        return drake;
+        this.drake.containers.push(droppable.container);
     };
     DrakeStoreService.prototype.remove = function (droppable) {
         this.droppableMap.delete(droppable.container);
-        var name = droppable.ngxDroppable;
-        var drake = this.drakeMap[name];
-        if (drake) {
-            var idx = drake.containers.indexOf(droppable.container);
-            if (idx > -1) {
-                drake.containers.splice(idx, 1);
-            }
+        var idx = this.drake.containers.indexOf(droppable.container);
+        if (idx > -1) {
+            this.drake.containers.splice(idx, 1);
         }
     };
     DrakeStoreService.prototype.registerDraggable = function (draggable) {
@@ -60689,11 +60747,33 @@ var DrakeStoreService = (function () {
     DrakeStoreService.prototype.removeDraggable = function (draggable) {
         this.draggableMap.delete(draggable.element);
     };
-    DrakeStoreService.prototype.registerEvents = function (drake) {
+    DrakeStoreService.prototype.createDrakeOptions = function () {
+        var _this = this;
+        var accepts = function (el, target, source, sibling) {
+            if (el.contains(target)) {
+                return false;
+            }
+            var elementComponet = _this.draggableMap.get(el);
+            var targetComponet = _this.droppableMap.get(target);
+            if (elementComponet && targetComponet) {
+                return elementComponet.dropZones.includes(targetComponet.dropZone);
+            }
+            return true;
+        };
+        var copy = function (el, source) {
+            var sourceComponet = _this.droppableMap.get(source);
+            if (sourceComponet) {
+                return sourceComponet.copy;
+            }
+            return false;
+        };
+        return { accepts: accepts, copy: copy };
+    };
+    DrakeStoreService.prototype.registerEvents = function () {
         var _this = this;
         var dragElm;
         var draggedItem;
-        drake.on('drag', function (el, source) {
+        this.drake.on('drag', function (el, source) {
             draggedItem = undefined;
             dragElm = el;
             if (!el || !source) {
@@ -60711,6 +60791,7 @@ var DrakeStoreService = (function () {
             }
             if (_this.droppableMap.has(source)) {
                 var sourceComponent = _this.droppableMap.get(source);
+                _this.dragulaOptions.removeOnSpill = sourceComponent.removeOnSpill;
                 sourceComponent.drag.emit({
                     type: 'drag',
                     el: el,
@@ -60719,7 +60800,7 @@ var DrakeStoreService = (function () {
                 });
             }
         });
-        drake.on('drop', function (el, target, source) {
+        this.drake.on('drop', function (el, target, source) {
             if (_this.droppableMap.has(target)) {
                 var targetComponent = _this.droppableMap.get(target);
                 if (_this.droppableMap.has(source)) {
@@ -60728,16 +60809,16 @@ var DrakeStoreService = (function () {
                     var targetModel = targetComponent.model;
                     var dropIndex = Array.prototype.indexOf.call(target.children, el);
                     var dragIndex = (sourceModel && draggedItem) ? sourceModel.indexOf(draggedItem) : -1;
-                    if (dropIndex > -1 && dragIndex > -1 && sourceModel && targetModel) {
-                        if (target === source) {
+                    if (dropIndex > -1 && targetModel) {
+                        if (dragIndex > -1 && sourceModel && target === source) {
                             sourceModel.splice(dropIndex, 0, sourceModel.splice(dragIndex, 1)[0]);
                         }
                         else {
-                            var notCopy = dragElm === el;
-                            var dropElmModel = notCopy ?
-                                sourceModel[dragIndex] :
-                                JSON.parse(JSON.stringify(sourceModel[dragIndex]));
-                            if (notCopy) {
+                            var copy = !sourceModel || (dragElm !== el);
+                            var dropElmModel = copy ?
+                                JSON.parse(JSON.stringify(draggedItem)) :
+                                draggedItem;
+                            if (!copy) {
                                 sourceModel.splice(dragIndex, 1);
                             }
                             targetModel.splice(dropIndex, 0, dropElmModel);
@@ -60753,12 +60834,12 @@ var DrakeStoreService = (function () {
                 });
             }
         });
-        drake.on('remove', function (el, container, source) {
-            if (_this.droppableMap.has(container)) {
+        this.drake.on('remove', function (el, container, source) {
+            if (_this.droppableMap.has(source)) {
                 var sourceComponent = _this.droppableMap.get(source);
                 var sourceModel = sourceComponent.model;
                 var dragIndex = (draggedItem && sourceModel) ? sourceModel.indexOf(draggedItem) : -1;
-                if (dragIndex > 0) {
+                if (dragIndex > -1) {
                     sourceModel.splice(dragIndex, 1);
                 }
                 sourceComponent.remove.emit({
@@ -60770,7 +60851,7 @@ var DrakeStoreService = (function () {
                 });
             }
         });
-        drake.on('over', function (el, container, source) {
+        this.drake.on('over', function (el, container, source) {
             if (_this.droppableMap.has(container)) {
                 var containerComponent = _this.droppableMap.get(container);
                 containerComponent.over.emit({
@@ -60782,7 +60863,7 @@ var DrakeStoreService = (function () {
                 });
             }
         });
-        drake.on('out', function (el, container, source) {
+        this.drake.on('out', function (el, container, source) {
             if (_this.droppableMap.has(container)) {
                 var containerComponent = _this.droppableMap.get(container);
                 containerComponent.out.emit({
@@ -60794,6 +60875,14 @@ var DrakeStoreService = (function () {
                 });
             }
         });
+        this.drake.on('cancel', function (el, source) {
+            if (_this.droppableMap.has(source)) {
+                var sourceComponent = _this.droppableMap.get(source);
+                if (sourceComponent.removeOnSpill) {
+                    _this.drake.emit('remove', el, source, source);
+                }
+            }
+        });
     };
     ;
     DrakeStoreService = __decorate([
@@ -60803,7 +60892,6 @@ var DrakeStoreService = (function () {
     return DrakeStoreService;
 }());
 exports.DrakeStoreService = DrakeStoreService;
-exports.drakesService = new DrakeStoreService();
 
 
 /***/ }),
