@@ -9,26 +9,6 @@
     border: 2px dotted red;
   }
 
-  .ngx-dnd-item {
-    margin: 10px;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.2);
-    transition: opacity 0.4s ease-in-out;
-    border: 1px solid lightblue;
-    cursor: move;
-    cursor: grab;
-    cursor: -moz-grab;
-    cursor: -webkit-grab;
-
-    .ngx-dnd-content {
-      user-select: none;
-    }
-
-    &:hover {
-      border: 1px solid blue;
-    }
-  }
-
   &:nth-child(odd) {
     background-color: rgba(0, 0, 0, 0.2);
   }
