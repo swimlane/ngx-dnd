@@ -247,6 +247,7 @@
           <ngx-dnd-container
             [model]="targetItemsA"
             dropZone="multiple-target-a"
+            [dropZones]="['multiple-target-a', 'multiple-target-b']"
             [removeOnSpill]="true">
           </ngx-dnd-container>
         </div>
@@ -255,6 +256,7 @@
           <ngx-dnd-container
             [model]="targetItemsB"
             dropZone="multiple-target-b"
+            [dropZones]="['multiple-target-a', 'multiple-target-b']"
             [removeOnSpill]="true">
           </ngx-dnd-container>
         </div>
