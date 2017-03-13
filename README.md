@@ -27,7 +27,7 @@
 </div>
 ```
 
-Give  multiple containers the `dropZone` same name to allow drag-and-drop between these containers.
+Give multiple containers the same `dropZone` name to allow drag-and-drop between these containers.
 
 ```html
 <div class="ngx-dnd-container" ngxDroppable="example">
