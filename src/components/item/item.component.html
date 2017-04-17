@@ -13,11 +13,11 @@
   </ng-container>
 
   <ng-container *ngSwitchCase="'object'">
-    <template
+    <ng-template
       *ngIf="container.template"
       [ngTemplateOutlet]="container.template"
       [ngOutletContext]="data">
-    </template>
+    </ng-template>
     <ng-container *ngIf="!container.template">
       <div
         class="ngx-dnd-content">
@@ -40,11 +40,11 @@
   </ng-container>
 
   <ng-container *ngSwitchDefault>
-    <template
+    <ng-template
       *ngIf="container.template"
       [ngTemplateOutlet]="container.template"
       [ngOutletContext]="data">
-    </template>
+    </ng-template>
     <div
       *ngIf="!container.template"
       class="ngx-dnd-content">

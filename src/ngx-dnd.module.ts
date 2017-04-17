@@ -7,7 +7,6 @@ import { DrakeStoreService } from './services';
 
 const components = [ContainerComponent, ItemComponent];
 const directives = [DraggableDirective, DroppableDirective];
-const providers = [DrakeStoreService];
 
 @NgModule({
   imports: [
@@ -21,6 +20,6 @@ const providers = [DrakeStoreService];
     ...components,
     ...directives
   ],
-  providers
+  providers: [DrakeStoreService]
 })
 export class NgxDnDModule {}
