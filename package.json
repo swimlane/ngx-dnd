@@ -1,10 +1,12 @@
 {
   "name": "@swimlane/ngx-dnd",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Drag and Drop for Angular2 and beyond!",
   "main": "release/index.js",
   "typings": "release/index.d.ts",
-  "files": ["release"],
+  "files": [
+    "release"
+  ],
   "scripts": {
     "check": "npm-check --skip-unused",
     "test": "npm run lint && karma start",
