@@ -13,10 +13,3 @@ replace({
   recursive: true,
   silent: false
 });
-
-/**
- * ngc output pathing is totally wrong
- */
-fs.copySync('./release/build', './release');
-fs.removeSync('./release/node_modules')
-fs.removeSync('./release/build')
