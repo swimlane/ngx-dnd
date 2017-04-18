@@ -1,6 +1,6 @@
 # ngx-dnd
 
-🕶  Drag, Drop and Sorting Library for Angular2 and beyond!
+🕶  Drag, Drop and Sorting Library for Angular4 and beyond!
 
 *Note: This project is under heavy construction. As such, the API may change dramatically between major releases and documentation is lacking.*
 
