@@ -1,4 +1,4 @@
-# ngx-dnd
+# ngx-dnd [![Codacy Badge](https://api.codacy.com/project/badge/Grade/06120385a7c84f18801b7b7c36e9fc82)](https://www.codacy.com/app/hypercubed/ngx-dnd?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=swimlane/ngx-dnd&amp;utm_campaign=Badge_Grade)
 
 🕶  Drag, Drop and Sorting Library for Angular4 and beyond!
 
