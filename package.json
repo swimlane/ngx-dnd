@@ -73,16 +73,16 @@
   "devDependencies": {
     "@angular/common": "^4.0.2",
     "@angular/compiler": "^4.0.2",
-    "@angular/compiler-cli": "~2.4.5",
+    "@angular/compiler-cli": "^4.0.2",
     "@angular/core": "^4.0.2",
-    "@angular/flex-layout": "^2.0.0-rc.1",
+    "@angular/flex-layout": "^2.0.0-beta.7",
     "@angular/forms": "^4.0.2",
     "@angular/http": "^4.0.2",
     "@angular/platform-browser": "^4.0.2",
     "@angular/platform-browser-dynamic": "^4.0.2",
     "@angular/platform-server": "^4.0.2",
     "@angular/router": "^4.0.2",
-    "@swimlane/ngx-ui": "^13.2.4",
+    "@swimlane/ngx-ui": "^14.2.4",
     "@types/core-js": "^0.9.35",
     "@types/jasmine": "2.5.41",
     "@types/node": "^7.0.5",
@@ -141,6 +141,7 @@
     "zone.js": "^0.7.6"
   },
   "dependencies": {
+    "@angular/animations": "^4.0.2",
     "dragula": "^3.7.2"
   }
 }

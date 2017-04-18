@@ -327,10 +327,10 @@
             [droppableItemClass]="droppableItemClass"
             (drag)="builderDrag($event)">
 
-            <template let-item="model">
+            <ng-template let-item="model">
               <ngx-icon [fontIcon]="item.icon"></ngx-icon>
               {{item.name}}
-            </template>
+            </ng-template>
           </ngx-dnd-container>
 
         </div>
@@ -349,7 +349,7 @@
             (out)="log($event)"
             (remove)="log($event)">
 
-            <template let-model="model" let-template="template">
+            <ng-template let-model="model" let-template="template">
               <div [ngSwitch]="model.inputType">
                 <div *ngSwitchCase="'section'">
                    <ngx-section class="shadow" [sectionTitle]="model.name">
@@ -376,7 +376,7 @@
                   </ngx-input>
                 </div>
               </div>
-            </template>
+            </ng-template>
           </ngx-dnd-container>
         </div>
         <div fxFlex>

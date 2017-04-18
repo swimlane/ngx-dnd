@@ -3,6 +3,7 @@ CHANGELOG
 
 ## HEAD (Unreleased)
 * build typescript types
+* upgrade for angular ~4.0
 
 --------------------
 

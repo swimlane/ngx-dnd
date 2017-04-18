@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule  } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { DraggableDirective, DroppableDirective } from './directives';
 import { ContainerComponent, ItemComponent } from './components';
@@ -10,7 +12,9 @@ const directives = [DraggableDirective, DroppableDirective];
 
 @NgModule({
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    CommonModule
   ],
   declarations: [
     ...components,
