@@ -11,13 +11,9 @@
     "check": "npm-check --skip-unused",
     "test": "npm run lint && karma start",
     "test:watch": "npm run test -- --auto-watch --no-single-run",
-    "watch:test": "npm run test -- --auto-watch --no-single-run",
     "lint": "tslint \"./src/{,**/}*.ts\" \"./demo/{,**/}*.ts\"",
     "version": "chg release -y && git add -A CHANGELOG.md && npm run release",
-    "preversion": "npm test",
-    "postversion": "git push && git push --tags",
     "clean": "npm-run-all -p clean:*",
-    "clean:build": "rimraf build",
     "clean:dist": "rimraf dist",
     "clean:release": "rimraf release",
     "build": "webpack --display-error-details",
@@ -25,20 +21,19 @@
     "build:package": "cross-env NODE_ENV=package npm run build",
     "build:ts": "tsc",
     "build:aot": "ngc",
-    "build:sass": "node-sass -r build/ -o build/",
     "build:css": "postcss --use autoprefixer dist/*.css -d dist/",
     "watch": "webpack --display-error-details --watch",
     "start": "webpack-dev-server",
     "start:hmr": "webpack-dev-server --env.HMR",
     "release": "npm-run-all build:release",
+    "np": "npm run package && np",
     "package": "npm-run-all -s clean package:aot build:package package:replace package:minify",
     "package:ts": "tsc --outDir release",
     "package:aot": "ngc -p tsconfig-aot.json",
     "package:replace": "node ./config/replace.js",
     "package:replace-scss": "node ./config/replace-scss.js",
     "package:minify": "uglifyjs release/index.js --source-map release/index.min.js.map --source-map-url release/index.js.map --compress --mangle --screw-ie8 --output release/index.min.js",
-    "deploy": "node ./config/deploy.js",
-    "build:deploy": "npm run build && npm run deploy",
+    "deploy": "npm run build && node ./config/deploy.js",
     "profile": "NODE_ENV=production webpack --profile --json > dist/stats.json"
   },
   "repository": {
@@ -61,6 +56,7 @@
   },
   "homepage": "https://github.com/swimlane/ngx-dnd#readme",
   "peerDependencies": {
+    "@angular/animations": "^4.0.2",
     "@angular/common": "~4.0.2",
     "@angular/compiler": "~4.0.2",
     "@angular/core": "~4.0.2",
@@ -71,6 +67,7 @@
     "zone.js": "^0.7.6"
   },
   "devDependencies": {
+    "@angular/animations": "^4.0.2",
     "@angular/common": "^4.0.2",
     "@angular/compiler": "^4.0.2",
     "@angular/compiler-cli": "^4.0.2",
@@ -141,7 +138,6 @@
     "zone.js": "^0.7.6"
   },
   "dependencies": {
-    "@angular/animations": "^4.0.2",
     "dragula": "^3.7.2"
   }
 }
