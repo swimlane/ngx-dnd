@@ -54,6 +54,9 @@ export class DroppableDirective implements OnInit, OnDestroy, AfterViewInit {
   @Output()
   remove: EventEmitter<any> = new EventEmitter<any>();
 
+  @Output()
+  cancel: EventEmitter<any> = new EventEmitter<any>();
+
   container: any;
 
   constructor(

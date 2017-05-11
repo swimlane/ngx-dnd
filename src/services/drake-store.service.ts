@@ -1,4 +1,4 @@
-import {Injectable, EventEmitter, Renderer} from '@angular/core';
+import { Injectable, EventEmitter, Renderer } from '@angular/core';
 
 import * as dragula from 'dragula';
 import { DroppableDirective } from '../directives/ngx-droppable.directive';
@@ -58,7 +58,6 @@ export class DrakeStoreService {
     };
 
     const copy = (el, source) => {
-      
       const sourceComponet = this.droppableMap.get(source);
       if (sourceComponet) {
         return sourceComponet.copy;
@@ -82,7 +81,7 @@ export class DrakeStoreService {
       }
 
       if (this.draggableMap.has(el)) {
-        const elementComponent = <any>this.draggableMap.get(el);
+        const elementComponent = this.draggableMap.get(el);
         draggedItem = elementComponent.model;
 
         elementComponent.drag.emit({
@@ -94,7 +93,7 @@ export class DrakeStoreService {
       }
 
       if (this.droppableMap.has(source)) {
-        const sourceComponent = <any>this.droppableMap.get(source);
+        const sourceComponent = this.droppableMap.get(source);
         this.dragulaOptions.removeOnSpill = sourceComponent.removeOnSpill;
 
         sourceComponent.drag.emit({
@@ -109,10 +108,10 @@ export class DrakeStoreService {
 
     this.drake.on('drop', (el: any, target: any, source: any) => {
       if (this.droppableMap.has(target)) {
-        const targetComponent = <any>this.droppableMap.get(target);
+        const targetComponent = this.droppableMap.get(target);
 
         if (this.droppableMap.has(source)) {
-          const sourceComponent = <any>this.droppableMap.get(source);
+          const sourceComponent = this.droppableMap.get(source);
 
           const sourceModel = sourceComponent.model;
           const targetModel = targetComponent.model;
@@ -129,11 +128,18 @@ export class DrakeStoreService {
                 JSON.parse(JSON.stringify(draggedItem)) :
                 draggedItem;
 
+              if (el.parentNode === target) {
+                target.removeChild(el);
+              }
+
               if (!copy) {
+                if (el.parentNode !== source) {
+                  // add element back, let angular remove it
+                  source.append(el);
+                }
                 sourceModel.splice(dragIndex, 1);
               }
               targetModel.splice(dropIndex, 0, dropElmModel);
-              target.removeChild(el);
             }
           }
         }
@@ -149,12 +155,16 @@ export class DrakeStoreService {
 
     this.drake.on('remove', (el: any, container: any, source: any) => {
       if (this.droppableMap.has(source)) {
-        const sourceComponent = <any>this.droppableMap.get(source);
+        const sourceComponent = this.droppableMap.get(source);
         const sourceModel = sourceComponent.model;
 
         const dragIndex = (draggedItem && sourceModel) ? sourceModel.indexOf(draggedItem) : -1;
 
         if (dragIndex > -1) {
+          if (el.parentNode !== source) {
+            // add element back, let angular remove it
+            source.append(el);
+          }
           sourceModel.splice(dragIndex, 1);
         }
 
@@ -168,9 +178,22 @@ export class DrakeStoreService {
       }
     });
 
+    this.drake.on('cancel', (el: any, container: any, source: any) => {
+      if (this.droppableMap.has(container)) {
+        const containerComponent = this.droppableMap.get(container);
+        containerComponent.cancel.emit({
+          type: 'cancel',
+          el,
+          container,
+          source,
+          value: draggedItem
+        });
+      }
+    });
+
     this.drake.on('over', (el: any, container: any, source: any) => {
       if (this.droppableMap.has(container)) {
-        const containerComponent = <any>this.droppableMap.get(container);
+        const containerComponent = this.droppableMap.get(container);
         containerComponent.over.emit({
           type: 'over',
           el,
@@ -183,7 +206,7 @@ export class DrakeStoreService {
 
     this.drake.on('out', (el: any, container: any, source: any) => {
       if (this.droppableMap.has(container)) {
-        const containerComponent = <any>this.droppableMap.get(container);
+        const containerComponent = this.droppableMap.get(container);
         containerComponent.out.emit({
           type: 'out',
           el,

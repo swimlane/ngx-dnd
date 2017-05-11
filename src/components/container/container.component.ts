@@ -66,6 +66,9 @@ export class ContainerComponent implements OnInit, AfterViewInit {
   @Output()
   remove: EventEmitter<any> = new EventEmitter<any>();
 
+  @Output()
+  cancel: EventEmitter<any> = new EventEmitter<any>();
+
   ngOnInit() {
     this.dropZones = this.dropZones || [this.dropZone];
   }
@@ -76,6 +79,7 @@ export class ContainerComponent implements OnInit, AfterViewInit {
     this.droppable.over.subscribe(v => this.over.emit(v));
     this.droppable.out.subscribe(v => this.out.emit(v));
     this.droppable.remove.subscribe(v => this.remove.emit(v));
+    this.droppable.cancel.subscribe(v => this.cancel.emit(v));
   }
 }
 
