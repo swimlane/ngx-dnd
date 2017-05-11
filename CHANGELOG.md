@@ -2,9 +2,12 @@ CHANGELOG
 =========
 
 ## HEAD (Unreleased)
-* Bugfix: Angular thows errors during digest
+_(none)_
 
 --------------------
+
+## 2.0.2 (2017-05-11)
+* Bugfix: Angular thows errors during digest
 
 ## 2.0.1 (2017-04-17)
 _(none)_
