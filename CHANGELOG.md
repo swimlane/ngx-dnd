@@ -2,7 +2,7 @@ CHANGELOG
 =========
 
 ## HEAD (Unreleased)
-_(none)_
+* Bugfix: Angular thows errors during digest
 
 --------------------
 
