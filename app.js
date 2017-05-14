@@ -69998,10 +69998,8 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 /***/ "./node_modules/isarray/index.js":
 /***/ (function(module, exports) {
 
-var toString = {}.toString;
-
 module.exports = Array.isArray || function (arr) {
-  return toString.call(arr) == '[object Array]';
+  return Object.prototype.toString.call(arr) == '[object Array]';
 };
 
 
@@ -70881,6 +70879,7 @@ var ContainerComponent = (function () {
         this.over = new core_1.EventEmitter();
         this.out = new core_1.EventEmitter();
         this.remove = new core_1.EventEmitter();
+        this.cancel = new core_1.EventEmitter();
     }
     ContainerComponent.prototype.ngOnInit = function () {
         this.dropZones = this.dropZones || [this.dropZone];
@@ -70892,6 +70891,7 @@ var ContainerComponent = (function () {
         this.droppable.over.subscribe(function (v) { return _this.over.emit(v); });
         this.droppable.out.subscribe(function (v) { return _this.out.emit(v); });
         this.droppable.remove.subscribe(function (v) { return _this.remove.emit(v); });
+        this.droppable.cancel.subscribe(function (v) { return _this.cancel.emit(v); });
     };
     return ContainerComponent;
 }());
@@ -70949,6 +70949,10 @@ __decorate([
     core_1.Output(),
     __metadata("design:type", core_1.EventEmitter)
 ], ContainerComponent.prototype, "remove", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", core_1.EventEmitter)
+], ContainerComponent.prototype, "cancel", void 0);
 ContainerComponent = __decorate([
     core_1.Component({
         selector: 'ngx-dnd-container',
@@ -71261,6 +71265,7 @@ var DroppableDirective = (function () {
         this.over = new core_1.EventEmitter();
         this.out = new core_1.EventEmitter();
         this.remove = new core_1.EventEmitter();
+        this.cancel = new core_1.EventEmitter();
         this.container = el.nativeElement;
     }
     DroppableDirective.prototype.ngOnInit = function () {
@@ -71321,6 +71326,10 @@ __decorate([
     core_1.Output(),
     __metadata("design:type", core_1.EventEmitter)
 ], DroppableDirective.prototype, "remove", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", core_1.EventEmitter)
+], DroppableDirective.prototype, "cancel", void 0);
 DroppableDirective = __decorate([
     core_1.Directive({ selector: '[ngxDroppable]' }),
     __metadata("design:paramtypes", [core_1.ElementRef,
@@ -71513,11 +71522,17 @@ var DrakeStoreService = (function () {
                             var dropElmModel = copy ?
                                 JSON.parse(JSON.stringify(draggedItem)) :
                                 draggedItem;
+                            if (el.parentNode === target) {
+                                target.removeChild(el);
+                            }
                             if (!copy) {
+                                if (el.parentNode !== source) {
+                                    // add element back, let angular remove it
+                                    source.append(el);
+                                }
                                 sourceModel.splice(dragIndex, 1);
                             }
                             targetModel.splice(dropIndex, 0, dropElmModel);
-                            target.removeChild(el);
                         }
                     }
                 }
@@ -71535,10 +71550,26 @@ var DrakeStoreService = (function () {
                 var sourceModel = sourceComponent.model;
                 var dragIndex = (draggedItem && sourceModel) ? sourceModel.indexOf(draggedItem) : -1;
                 if (dragIndex > -1) {
+                    if (el.parentNode !== source) {
+                        // add element back, let angular remove it
+                        source.append(el);
+                    }
                     sourceModel.splice(dragIndex, 1);
                 }
                 sourceComponent.remove.emit({
                     type: 'remove',
+                    el: el,
+                    container: container,
+                    source: source,
+                    value: draggedItem
+                });
+            }
+        });
+        this.drake.on('cancel', function (el, container, source) {
+            if (_this.droppableMap.has(container)) {
+                var containerComponent = _this.droppableMap.get(container);
+                containerComponent.cancel.emit({
+                    type: 'cancel',
                     el: el,
                     container: container,
                     source: source,
