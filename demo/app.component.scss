@@ -172,3 +172,8 @@ ngx-section pre {
     }
   }
 }
+
+[ngxDragHandle].icon {
+  font-size: 0.7em;
+  cursor: move;
+}

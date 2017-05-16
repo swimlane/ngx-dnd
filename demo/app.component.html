@@ -30,6 +30,46 @@
       </div>
     </ngx-section>
 
+    <ngx-section class="shadow" sectionTitle="Simple Sortable - With Handle - Template Only">
+      <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
+        <div fxFlex="50%">
+          <div class='wrapper'>
+            <div class="ngx-dnd-container" ngxDroppable>
+              <div class="ngx-dnd-item has-handle" ngxDraggable>
+                <i class="icon icon-dots-vert" ngxDragHandle></i>
+                Item 1
+              </div>
+              <div class="ngx-dnd-item has-handle" ngxDraggable>
+                <i class="icon icon-dots-vert" ngxDragHandle></i>
+                Item 2
+              </div>
+              <div class="ngx-dnd-item has-handle" ngxDraggable>
+                <i class="icon icon-dots-vert" ngxDragHandle></i>
+                Item 3
+              </div>
+            </div>
+          </div>
+        </div>
+        <div fxFlex="50%">
+          <h3>Template</h3>
+          <pre><code><![CDATA[<div class="ngx-dnd-container" ngxDroppable>
+  <div class="ngx-dnd-item" ngxDraggable>
+    <i class="icon icon-dots-vert" ngxDragHandle></i>
+    Item 1
+  </div>
+  <div class="ngx-dnd-item" ngxDraggable>
+    <i class="icon icon-dots-vert" ngxDragHandle></i>
+    Item 2
+  </div>
+  <div class="ngx-dnd-item" ngxDraggable>
+    <i class="icon icon-dots-vert" ngxDragHandle></i>
+    Item 3
+  </div>
+</div>]]></code></pre>
+        </div>
+      </div>
+    </ngx-section>
+
     <ngx-section class="shadow" sectionTitle="Orderable - Template Only - With fxLayout">
       <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
         <div fxFlex="50%">

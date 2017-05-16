@@ -15,7 +15,7 @@ export class DrakeStoreService {
   private droppableMap = new WeakMap<any, DroppableDirective>();
   private draggableMap = new WeakMap<any, DraggableDirective>();
   private dragulaOptions: any = {};
-  private drake: Drake;
+  private drake: any;
 
   constructor() {
     this.dragulaOptions = this.createDrakeOptions();
@@ -49,23 +49,31 @@ export class DrakeStoreService {
       if (el.contains(target)) {
         return false;
       }
-      const elementComponet = this.draggableMap.get(el);
-      const targetComponet = this.droppableMap.get(target);
-      if (elementComponet && targetComponet) {
-        return elementComponet.dropZones.includes(targetComponet.dropZone);
+      const elementComponent = this.draggableMap.get(el);
+      const targetComponent = this.droppableMap.get(target);
+      if (elementComponent && targetComponent) {
+        return elementComponent.dropZones.includes(targetComponent.dropZone);
       }
       return true;
     };
 
     const copy = (el, source) => {
-      const sourceComponet = this.droppableMap.get(source);
-      if (sourceComponet) {
-        return sourceComponet.copy;
+      const sourceComponent = this.droppableMap.get(source);
+      if (sourceComponent) {
+        return sourceComponent.copy;
       }
       return false;
     };
 
-    return {accepts, copy, revertOnSpill: true};
+    const moves = (el, source, handle, sibling) => {
+      const elementComponent = this.draggableMap.get(el);
+      if (elementComponent) {
+        return elementComponent.moves(source, handle, sibling);
+      }
+      return true;
+    };
+
+    return {accepts, copy, moves, revertOnSpill: true};
   }
 
   registerEvents(): void {

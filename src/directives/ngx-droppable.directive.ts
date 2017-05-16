@@ -20,7 +20,7 @@ function getNextId() {
 }
 
 /**
- * Makes the conatiner droppable and children draggable.
+ * Makes the container droppable and children draggable.
  * 
  * @export
  * @class DroppableDirective

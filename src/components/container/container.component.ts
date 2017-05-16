@@ -36,13 +36,14 @@ export class ContainerComponent implements OnInit, AfterViewInit {
   @Input() model: any;
   @Input() copy = false;
   @Input() removeOnSpill = false;
-  @Input() droppableItemClass = '';
+  @Input() droppableItemClass: (o: any) => any;
 
   @Input() dropZone = `@@DefaultDropZone-${getNextId()}@@`;
   @Input() dropZones: string[];
 
   // @Input() classes: any = {};
   // @Input() dragulaOptions: any;
+
   @Input()
   @ContentChild(TemplateRef) 
   template: TemplateRef<any>;

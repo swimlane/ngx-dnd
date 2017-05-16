@@ -5,12 +5,16 @@
   background-color: rgba(0, 0, 0, 0.2);
   transition: opacity 0.4s ease-in-out;
   border: 1px solid lightblue;
-  cursor: move;
-  cursor: grab;
-  cursor: -moz-grab;
-  cursor: -webkit-grab;
-
   display: block;
+
+  &:not(.has-handle),
+  &.has-handle [ngxdraghandle],
+  &.has-handle [ngxDragHandle] {
+    cursor: move;
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+  }
 
   .ngx-dnd-content {
     user-select: none;

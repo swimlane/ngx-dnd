@@ -9,10 +9,12 @@ import {
   TemplateRef,
   ViewChild,
   EventEmitter,
-  Renderer
+  Renderer,
+  HostBinding
 } from '@angular/core';
 
 import { ContainerComponent } from '../';
+import { DraggableDirective } from '../../directives/';
 
 /**
  * Component that allows nested ngxDroppable and ngxDraggables
@@ -33,7 +35,7 @@ export class ItemComponent implements OnInit {
   @Input() model: any;
   @Input() copy = false;
   @Input() removeOnSpill = false;
-  @Input() droppableItemClass = '';
+  @Input() droppableItemClass: (o: any) => any;
 
   @Input() dropZone: any;
   @Input() dropZones: any;
@@ -41,7 +43,15 @@ export class ItemComponent implements OnInit {
   type: string;
   data: any;
 
-  constructor(private container: ContainerComponent) {
+  @HostBinding('class.has-handle')
+  get hasHandle() {
+    return this.draggableDirective.hasHandle;
+  }
+
+  constructor(
+    public container: ContainerComponent,
+    public draggableDirective: DraggableDirective
+  ) {
   }
 
   ngOnInit() {

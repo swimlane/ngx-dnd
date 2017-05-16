@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { DraggableDirective, DroppableDirective } from './directives';
+import { DraggableDirective, DroppableDirective, DragHandleDirective } from './directives';
 import { ContainerComponent, ItemComponent } from './components';
 import { DrakeStoreService } from './services';
 
 const components = [ContainerComponent, ItemComponent];
-const directives = [DraggableDirective, DroppableDirective];
+const directives = [DraggableDirective, DroppableDirective, DragHandleDirective];
 
 @NgModule({
   imports: [
