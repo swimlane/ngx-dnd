@@ -2,9 +2,12 @@ CHANGELOG
 =========
 
 ## HEAD (Unreleased)
-* Feature: drag handles
+_(none)_
 
 --------------------
+
+## 2.1.0 (2017-05-16)
+* Feature: drag handles
 
 ## 2.0.2 (2017-05-11)
 * Bugfix: Angular throws errors during digest
