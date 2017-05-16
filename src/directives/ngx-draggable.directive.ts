@@ -108,7 +108,7 @@ export class DraggableDirective implements OnInit, OnDestroy {
 
     function handelFor(c, p) {
       if (c === p) return true;
-      while((c = c.parentNode) && c !== p);
+      while((c = c.parentNode) && c !== p);  // tslint:disable-line
       return !!c;
     }
   }
