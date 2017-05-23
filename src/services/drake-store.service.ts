@@ -117,6 +117,7 @@ export class DrakeStoreService {
     this.drake.on('drop', (el: any, target: any, source: any) => {
       if (this.droppableMap.has(target)) {
         const targetComponent = this.droppableMap.get(target);
+        let dropElmModel = draggedItem;
 
         if (this.droppableMap.has(source)) {
           const sourceComponent = this.droppableMap.get(source);
@@ -131,16 +132,15 @@ export class DrakeStoreService {
             if (dragIndex > -1 && sourceModel && target === source) {
               sourceModel.splice(dropIndex, 0, sourceModel.splice(dragIndex, 1)[0]);
             } else {
-              const copy = !sourceModel || (dragElm !== el);
-              const dropElmModel = copy ?
-                JSON.parse(JSON.stringify(draggedItem)) :
-                draggedItem;
-
+              
               if (el.parentNode === target) {
                 target.removeChild(el);
               }
 
-              if (!copy) {
+              const copy = !sourceModel || (dragElm !== el);
+              if (copy) {
+                dropElmModel = JSON.parse(JSON.stringify(dropElmModel));
+              } else {
                 if (el.parentNode !== source) {
                   // add element back, let angular remove it
                   source.append(el);
@@ -156,7 +156,7 @@ export class DrakeStoreService {
           type: 'drop',
           el,
           source,
-          value: draggedItem
+          value: dropElmModel
         });
       }
     });
