@@ -2,9 +2,12 @@ CHANGELOG
 =========
 
 ## HEAD (Unreleased)
-* Fix: emit drop event with copied item instead of source
+_(none)_
 
 --------------------
+
+## 2.1.1 (2017-05-23)
+* Fix: emit drop event with copied item instead of source
 
 ## 2.1.0 (2017-05-16)
 * Feature: drag handles
