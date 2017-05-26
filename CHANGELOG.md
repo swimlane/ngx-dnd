@@ -2,9 +2,12 @@ CHANGELOG
 =========
 
 ## HEAD (Unreleased)
-* bugfix: removed browser animation module from NgxDnDModule
+_(none)_
 
 --------------------
+
+## 2.1.2 (2017-05-26)
+* bugfix: removed browser animation module from NgxDnDModule
 
 ## 2.1.1 (2017-05-23)
 * Fix: emit drop event with copied item instead of source
