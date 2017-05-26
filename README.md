@@ -59,7 +59,7 @@ Give multiple containers the same `dropZone` name to allow drag-and-drop between
 
 ### Components
 
-`ngx-dnd` provides a set of components that encapsulates the directives mentioned and adds capability for data driven structures.
+`ngx-dnd` provides a set of components that encapsulates the directives mentioned and adds capability for data driven structures.  In general you should prefer directives to components.
 
 ```html
 <ngx-dnd-container
@@ -138,9 +138,43 @@ See [https://swimlane.github.io/ngx-dnd/](https://swimlane.github.io/ngx-dnd/) f
 ## Install
 To use ngx-dnd in your project install it via [npm](https://www.npmjs.com/package/@swimlane/ngx-dnd):
 
-```
-npm i @swimlane/ngx-dnd --save
-```
+* `npm i @swimlane/ngx-dnd --save`
+* Add `NgxDnDModule` to your application module
+
+## Development
+
+* `git clone git@github.com:swimlane/ngx-dnd.git`
+* `cd ngx-dnd`
+* `npm install`
+* `npm start`
+* Browse to http://localhost:9999
+
+## [CHANGELOG](https://github.com/swimlane/ngx-dnd/blob/master/CHANGELOG.md)
+
+This project uses [heff/chg](https://github.com/heff/chg), a simple changelog/release history manager.  When contributing to this project please add change notes (manually or using the [heff/chg](https://github.com/heff/chg) cli) to the `## HEAD (Unreleased)` section.
+
+## Release
+
+This project uses [sindresorhus/np](https://github.com/sindresorhus/np), a better `npm publish`.  To publish a new version to npm, first ensure all entries in the `## HEAD (Unreleased)` section of the changelog are approprate, commit changes, and push changes to github (if not already done).  Then use `npm run np` to launch an interactive UI that will guide you through publishing a new version.  `sindresorhus/np` and `heff/chg` will perform various pre-publish checks, run tests, bump the version number, update the changelog, then publish to npm and push to github. 
+
+<details>
+  <summary>Manual process</summary>
+
+* `rm -rf node_modules`
+* `npm i`
+* `npm test`
+* update version in `package.json`
+* Update CHANGELOG.md:
+  * move entries in the `## HEAD (Unreleased)` section below the horizontal rule, under a new header with the version number.
+  * ensure all entries are approprate.
+  * Leave a single `* _(none)_` entry in the `## HEAD (Unreleased)` section.
+* `git commit -am {VERSION NUMBER}`
+* `git tag {VERSION NUMBER}`
+* `git push --tags`
+* `npm run package`
+* `npm publish`
+
+</details>
 
 ## Credits
 `ngx-dnd` is a [Swimlane](http://swimlane.com) open-source project; we believe in giving back to the open-source community by sharing some of the projects we build for our application. Swimlane is an automated cyber security operations and incident response platform that enables cyber security teams to leverage threat intelligence, speed up incident response and automate security operations.

@@ -1,9 +1,9 @@
 # Todo list
 
-- [-] Move most css to demo
+- [ ] Move most css to demo
 - [ ] Scroll when dragging outside view
 - [ ] Re-test touch support
-- [ ] Handles (handle=".selector")?
+- [x] Handles (handle=".selector")?
 - [ ] Consistent event names
     - drag (dragStart?)
     - dragEnd?
