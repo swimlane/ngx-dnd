@@ -2,7 +2,7 @@ CHANGELOG
 =========
 
 ## HEAD (Unreleased)
-_(none)_
+* bugfix: removed browser animation module from NgxDnDModule
 
 --------------------
 
