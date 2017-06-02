@@ -19,7 +19,8 @@
     "suppressExcessPropertyErrors": true,
     "suppressImplicitAnyIndexErrors": true,
     "outDir": "dist",
-    "declarationDir": "release"
+    "declarationDir": "release",
+    "lib": ["es7", "dom"]
   },
   "files": [
     "src/declarations.d.ts",

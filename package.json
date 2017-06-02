@@ -80,7 +80,7 @@
     "@angular/platform-server": "^4.0.2",
     "@angular/router": "^4.0.2",
     "@swimlane/ngx-ui": "^14.2.4",
-    "@types/core-js": "^0.9.35",
+    "@types/core-js": "^0.9.41",
     "@types/jasmine": "2.5.41",
     "@types/node": "^7.0.5",
     "angular2-template-loader": "^0.6.0",

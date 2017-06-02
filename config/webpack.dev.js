@@ -11,7 +11,6 @@ module.exports = function(options) {
   return webpackMerge(commonConfig({ env: ENV }), {
     devtool: 'cheap-module-source-map',
     devServer: {
-      host: '0.0.0.0',
       port: 9999,
       hot: options.HMR,
       stats: {

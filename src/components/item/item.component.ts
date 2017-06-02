@@ -35,7 +35,7 @@ export class ItemComponent implements OnInit {
   @Input() model: any;
   @Input() copy = false;
   @Input() removeOnSpill = false;
-  @Input() droppableItemClass: (o: any) => any;
+  @Input() droppableItemClass: string | ((o: any) => any);
 
   @Input() dropZone: any;
   @Input() dropZones: any;
@@ -48,11 +48,18 @@ export class ItemComponent implements OnInit {
     return this.draggableDirective.hasHandle;
   }
 
+  @HostBinding('class')
+  get classString() {
+    const itemClass = (typeof this.droppableItemClass === 'function') ?
+      this.droppableItemClass(this.model) :
+      this.droppableItemClass;
+    return  `ngx-dnd-item ${itemClass || ''}`;
+  }
+
   constructor(
     public container: ContainerComponent,
     public draggableDirective: DraggableDirective
-  ) {
-  }
+  ) {}
 
   ngOnInit() {
     this.type = getType(this.model);
