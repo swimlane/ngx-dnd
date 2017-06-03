@@ -17,7 +17,7 @@
 
 ### Directives
 
-`ngx-dnd` provides a base set of directives to enable drag-and-drop.  By default all children of a `ngxDroppable` element may be dragged and dropped.  Add the `ngxDraggable` to restrict drag-and-drop to the parent container.
+`ngx-dnd` provides a base set of directives to enable drag-and-drop.  By default all children of a `ngxDroppable` element may be dragged and dropped.  Add the `ngxDraggable` to restrict drag-and-drop to the parent container.  In general prefer using the base directives to the help components introduced later.
 
 ```html
 <div class="ngx-dnd-container" ngxDroppable>
@@ -59,13 +59,7 @@ Give multiple containers the same `dropZone` name to allow drag-and-drop between
 
 ### Components
 
-`ngx-dnd` provides a set of components that encapsulates the directives mentioned and adds capability for data driven structures.  In general you should prefer directives to components.
-
-```html
-<ngx-dnd-container
-  [model]="orderableLists">
-</ngx-dnd-container>
-```
+`ngx-dnd` provides a set of helper components that encapsulates the directives mentioned and adds capability for data driven structures.  In general you should prefer directives to components.
 
 ```js
 orderableLists = [
@@ -80,6 +74,23 @@ orderableLists = [
     "Item 3b"
   ]
 ]
+```
+
+```html
+<ngx-dnd-container
+  [model]="orderableLists">
+</ngx-dnd-container>
+```
+
+This component is effectively equivalent to:
+
+```html
+<div class="ngx-dnd-container" ngxDroppable [model]="orderableLists">
+  <div
+    class="ngx-dnd-item"
+    ngxDraggable
+    *ngFor="let item of orderableLists">{{item}}</div>
+</div>
 ```
 
 Including nested containers:
@@ -155,7 +166,7 @@ This project uses [heff/chg](https://github.com/heff/chg), a simple changelog/re
 
 ## Release
 
-This project uses [sindresorhus/np](https://github.com/sindresorhus/np), a better `npm publish`.  To publish a new version to npm, first ensure all entries in the `## HEAD (Unreleased)` section of the changelog are approprate, commit changes, and push changes to github (if not already done).  Then use `npm run np` to launch an interactive UI that will guide you through publishing a new version.  `sindresorhus/np` and `heff/chg` will perform various pre-publish checks, run tests, bump the version number, update the changelog, then publish to npm and push to github. 
+This project uses [sindresorhus/np](https://github.com/sindresorhus/np), a better `npm publish`.  To publish a new version to npm, first ensure all entries in the `## HEAD (Unreleased)` section of the changelog are appropriate, commit changes, and push changes to github (if not already done).  Then use `npm run np` to launch an interactive UI that will guide you through publishing a new version.  `sindresorhus/np` and `heff/chg` will perform various pre-publish checks, run tests, bump the version number, update the changelog, then publish to npm and push to github. 
 
 <details>
   <summary>Manual process</summary>
