@@ -3,6 +3,7 @@ CHANGELOG
 
 ## HEAD (Unreleased)
 * Support strings as droppableItemClass
+* Improved component reactivity
 
 --------------------
 

@@ -33,11 +33,7 @@ export class DroppableDirective implements OnInit, OnDestroy, AfterViewInit {
   @Input() model: any;
   @Input() copy = false;
   @Input() removeOnSpill = false;
-  @Input() dropZone;
   @Input() ngxDroppable;
-
-  // @Input() dragulaOptions: any;
-  // @Input() ngxDroppable: string;
 
   @Output()
   drop: EventEmitter<any> = new EventEmitter<any>();
@@ -57,18 +53,29 @@ export class DroppableDirective implements OnInit, OnDestroy, AfterViewInit {
   @Output()
   cancel: EventEmitter<any> = new EventEmitter<any>();
 
-  container: any;
+  get container() {
+    return this.el.nativeElement;
+  }
+
+  @Input()
+  get dropZone() {
+    return this._dropZone || this.ngxDroppable || this.defaultZone;
+  }
+  set dropZone(val) {
+    this._dropZone = val;
+  }
+
+  defaultZone: string;
+  _dropZone: string;
 
   constructor(
     private el: ElementRef,
     private renderer: Renderer,
     private drakesService: DrakeStoreService
-  ) {
-    this.container = el.nativeElement;
-  }
+  ) { }
 
   ngOnInit(): void {
-    this.dropZone = this.dropZone || this.ngxDroppable || `@@DefaultDropZone-${getNextId()}@@`;
+    this.defaultZone = `@@DefaultDropZone-${getNextId()}@@`;
     this.drakesService.register(this);
   }
 

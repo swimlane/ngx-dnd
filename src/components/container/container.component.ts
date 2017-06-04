@@ -39,7 +39,14 @@ export class ContainerComponent implements OnInit, AfterViewInit {
   @Input() droppableItemClass: string | ((o: any) => any);
 
   @Input() dropZone = `@@DefaultDropZone-${getNextId()}@@`;
-  @Input() dropZones: string[];
+
+  @Input()
+  get dropZones() {
+    return this._dropZones || this._defaultZones;
+  }
+  set dropZones(val) {
+    this._dropZones = val;
+  }
 
   // @Input() classes: any = {};
   // @Input() dragulaOptions: any;
@@ -70,8 +77,11 @@ export class ContainerComponent implements OnInit, AfterViewInit {
   @Output()
   cancel: EventEmitter<any> = new EventEmitter<any>();
 
+  _dropZones: string[];
+  _defaultZones: string[];
+
   ngOnInit() {
-    this.dropZones = this.dropZones || [this.dropZone];
+    this._defaultZones = [this.dropZone];
   }
 
   ngAfterViewInit() {
@@ -82,8 +92,4 @@ export class ContainerComponent implements OnInit, AfterViewInit {
     this.droppable.remove.subscribe(v => this.remove.emit(v));
     this.droppable.cancel.subscribe(v => this.cancel.emit(v));
   }
-}
-
-function functor(maybeFunction) {
-  return typeof maybeFunction === 'function' ? maybeFunction : () => maybeFunction;
 }

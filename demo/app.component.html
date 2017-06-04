@@ -78,7 +78,7 @@
       <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
         <div fxFlex="50%">
           <div class='wrapper'>
-            <div class="ngx-dnd-container" ngxDroppable [model]="orderableList">
+            <div class="ngx-dnd-container" ngxDroppable [model]="orderableList" dropZone="a">
               <div class="ngx-dnd-item has-handle" ngxDraggable *ngFor="let item of orderableList" [model]="item">
                 <i class="icon icon-dots-vert" ngxDragHandle></i>
                 {{item}}
@@ -86,7 +86,7 @@
             </div>
 
             <!-- ngx-dnd-container
-              [model]="orderableList">
+              [model]="orderableList"
               <ng-template let-model="model">
                 <i class="icon icon-dots-vert" ngxDragHandle></i>
                 {{model}}
@@ -191,11 +191,11 @@
 
           <h3>Using Components</h3>
           <pre><code ngNonBindable><![CDATA[<ngx-dnd-container
-  [model]="['Item 1a', 'Item 2b', 'Item 3c']"
+  [model]="['Item 1a', 'Item 2a', 'Item 3a']"
   dropZone="example-two">
 </ngx-dnd-container>
 <ngx-dnd-container
-  [model]="['Item 1a', 'Item 2b', 'Item 3c']"
+  [model]="['Item 1b', 'Item 2b', 'Item 3b']"
   dropZone="example-two">
 </ngx-dnd-container>]]></code></pre>
         </div>
@@ -285,7 +285,7 @@
       </div>
     </ngx-section>
 
-    <ngx-section class="shadow" sectionTitle="Restricted Drag-and-Drop - with remove on spill">
+    <ngx-section class="shadow" sectionTitle="Restricted Drag-and-Drop - copy and remove on spill">
       <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
         <div fxFlex="25%">
           <h4>Source</h4>

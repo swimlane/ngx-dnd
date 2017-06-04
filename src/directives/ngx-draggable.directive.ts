@@ -21,8 +21,14 @@ export class DraggableDirective implements OnInit, OnDestroy {
 
   @Input() ngxDraggable: string[];
   @Input() model: any;
-  @Input() dropZones: string[];
-  // @Input() hasHandle = false;
+
+  @Input()
+  get dropZones() {
+    return this._dropZones || this.ngxDraggable || this._parentDropzones;
+  }
+  set dropZones(val) {
+    this._dropZones = val;
+  }
 
   /*
   ContentChildren doesn't get children created with NgTemplateOutlet
@@ -44,15 +50,19 @@ export class DraggableDirective implements OnInit, OnDestroy {
   dragDelay: number = 200; // milliseconds
   draggable: boolean = false;
   touchTimeout: any;
-  element: any;
+
+  get element() {
+    return this.el.nativeElement;
+  }
+
+  _dropZones: string[];
+  _parentDropzones: string[];
 
   constructor(
     private el: ElementRef,
     private drakesService: DrakeStoreService,
     private droppableDirective: DroppableDirective,
-  ) {
-    this.element = el.nativeElement;
-  }
+  ) { }
 
   // From: https://github.com/bevacqua/dragula/issues/289#issuecomment-277143172
   @HostListener('touchmove', ['$event'])
@@ -77,7 +87,7 @@ export class DraggableDirective implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.dropZones = this.dropZones || this.ngxDraggable || [this.droppableDirective.dropZone];
+    this._parentDropzones = [this.droppableDirective.dropZone];
     this.drakesService.registerDraggable(this);
     this.updateElements();
   }

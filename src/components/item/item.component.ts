@@ -33,14 +33,52 @@ import { DraggableDirective } from '../../directives/';
 })
 export class ItemComponent implements OnInit {
   @Input() model: any;
-  @Input() copy = false;
-  @Input() removeOnSpill = false;
-  @Input() droppableItemClass: string | ((o: any) => any);
 
-  @Input() dropZone: any;
-  @Input() dropZones: any;
+  @Input()
+  get dropZone() {
+    return this._dropZone || this.container.dropZone;
+  }
+  set dropZone(val) {
+    this._dropZone = val;
+  }
 
-  type: string;
+  @Input()
+  get dropZones() {
+    return this._dropZones || this.container.dropZones;
+  }
+  set dropZones(val) {
+    this._dropZones = val;
+  }
+
+  @Input()
+  get droppableItemClass() {
+    return this._droppableItemClass || this.container.droppableItemClass;
+  }
+  set droppableItemClass(val) {
+    this._droppableItemClass = val;
+  }
+
+  @Input()
+  get removeOnSpill() {
+    return typeof this._removeOnSpill === 'boolean' ? this._removeOnSpill : this.container.removeOnSpill;
+  }
+  set removeOnSpill(val) {
+    this._removeOnSpill = val;
+  }
+
+  @Input()
+  get copy() {
+    return typeof this._copy === 'boolean' ? this._copy : this.container.copy;
+  }
+  set copy(val) {
+    this._copy = val;
+  }
+
+  _copy = false;
+  _dropZone: any;
+  _dropZones: any;
+  _droppableItemClass: any;
+  _removeOnSpill = false;
   data: any;
 
   @HostBinding('class.has-handle')
@@ -56,20 +94,19 @@ export class ItemComponent implements OnInit {
     return  `ngx-dnd-item ${itemClass || ''}`;
   }
 
+  get type() {
+    if (Array.isArray(this.model)) {
+      return 'array';
+    }
+    return typeof this.model;
+  }
+
   constructor(
     public container: ContainerComponent,
     public draggableDirective: DraggableDirective
   ) {}
 
   ngOnInit() {
-    this.type = getType(this.model);
-
-    this.dropZone = this.dropZone || this.container.dropZone;
-    this.dropZones = this.dropZones || this.container.dropZones;
-    this.droppableItemClass = this.droppableItemClass || this.container.droppableItemClass;
-    this.removeOnSpill = typeof this.removeOnSpill === 'boolean' ? this.removeOnSpill : this.container.removeOnSpill;
-    this.copy = typeof this.copy === 'boolean' ? this.copy : this.container.copy;
-
     this.data = {
       model: this.model,
       type: this.type,
@@ -77,11 +114,4 @@ export class ItemComponent implements OnInit {
       template: this.container.template
     };
   }
-}
-
-function getType(item: any) {
-  if (Array.isArray(item)) {
-    return 'array';
-  }
-  return typeof item;
 }
