@@ -3,7 +3,7 @@ webpackJsonp([0],{
 /***/ "./demo/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<main fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n  <!-- div class=\"nav-col\" fxFlex=\"20%\">\n    <h1>\n      Ngx-<strong>dnd</strong>\n      <small class=\"version\">{{version}}</small>\n      <small class=\"subtitle\">Angular2+ DnD</small>\n    </h1>\n  </div -->\n  <div class=\"field\" fxFlex=\"100%\">\n\n    <ngx-section class=\"shadow\" sectionTitle=\"Sortable - No model\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper'>\n            <div class=\"ngx-dnd-container\" ngxDroppable>\n              <div class=\"ngx-dnd-item\" ngxDraggable>Item 1</div>\n              <div class=\"ngx-dnd-item\" ngxDraggable>Item 2</div>\n              <div class=\"ngx-dnd-item\" ngxDraggable>Item 3</div>\n            </div>\n\n            <!-- ngx-dnd-container [model]=\"['Item 1', 'Item 2', 'Item 3']\">\n            </ngx-dnd-container -->\n          </div>\n        </div>\n        <div fxFlex=\"50%\">\n          <h3>Using Directives</h3>\n          <pre><code ngNonBindable><![CDATA[<div class=\"ngx-dnd-container\" ngxDroppable>\n  <div class=\"ngx-dnd-item\" ngxDraggable>Item 1</div>\n  <div class=\"ngx-dnd-item\" ngxDraggable>Item 2</div>\n  <div class=\"ngx-dnd-item\" ngxDraggable>Item 3</div>\n</div>]]></code></pre>\n\n          <h3>Using Components</h3>\n          <pre><code ngNonBindable><![CDATA[<ngx-dnd-container [model]=\"['Item 1', 'Item 2', 'Item 3']\">\n</ngx-dnd-container>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"Simple Sortable - from array model\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper'>\n            <div class=\"ngx-dnd-container\" ngxDroppable [model]=\"orderableList\">\n              <div class=\"ngx-dnd-item\" ngxDraggable *ngFor=\"let item of orderableList\" [model]=\"item\">{{item}}</div>\n            </div>\n\n            <!-- ngx-dnd-container\n              [model]=\"orderableList\">\n            </ngx-dnd-container -->\n          </div>\n        </div>\n        <div fxFlex=\"20%\">\n          <h3>Model</h3>\n          <pre><code>orderableList = {{orderableList | json}}</code></pre>\n        </div>\n        <div fxFlex=\"30%\">\n          <h3>Using Directives</h3>\n          <pre><code ngNonBindable><![CDATA[<div class=\"ngx-dnd-container\"\n    ngxDroppable [model]=\"orderableList\">\n  <div class=\"ngx-dnd-item\"\n    ngxDraggable\n    *ngFor=\"let item of orderableList\"\n    [model]=\"item\">\n      {{item}}\n    </div>\n</div>]]></code></pre>\n\n          <h3>Using Components</h3>\n          <pre><code ngNonBindable><![CDATA[<ngx-dnd-container\n  [model]=\"orderableList\">\n</ngx-dnd-container>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"Simple Sortable - with drag handle\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper'>\n            <div class=\"ngx-dnd-container\" ngxDroppable [model]=\"orderableList\">\n              <div class=\"ngx-dnd-item has-handle\" ngxDraggable *ngFor=\"let item of orderableList\" [model]=\"item\">\n                <i class=\"icon icon-dots-vert\" ngxDragHandle></i>\n                {{item}}\n              </div>\n            </div>\n\n            <!-- ngx-dnd-container\n              [model]=\"orderableList\">\n              <ng-template let-model=\"model\">\n                <i class=\"icon icon-dots-vert\" ngxDragHandle></i>\n                {{model}}\n              </ng-template>\n            </ngx-dnd-container -->\n          </div>\n        </div>\n        <div fxFlex=\"20%\">\n          <h3>Model</h3>\n          <pre><code>orderableList = {{orderableList | json}}</code></pre>\n        </div>\n        <div fxFlex=\"30%\">\n          <h3>Using Directives</h3>\n          <pre><code ngNonBindable><![CDATA[<div class=\"ngx-dnd-container\"\n    ngxDroppable [model]=\"orderableList\">\n  <div class=\"ngx-dnd-item has-handle\"\n      ngxDraggable\n      *ngFor=\"let item of orderableList\" [model]=\"item\">\n    <i class=\"icon icon-dots-vert\" ngxDragHandle></i>\n    {{item}}\n  </div>\n</div>]]></code></pre>\n\n          <h3>Using Components</h3>\n          <pre><code ngNonBindable><![CDATA[<ngx-dnd-container\n  [model]=\"orderableList\">\n  <ng-template let-model=\"model\">\n    <i class=\"icon icon-dots-vert\" ngxDragHandle></i>\n    {{model}}\n  </ng-template>\n</ngx-dnd-container>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"Orderable - With fxLayout\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper'>\n\n            <div class=\"ngx-dnd-container\" fxLayout=\"row\" fxLayoutWrap=\"wrap\" ngxDroppable>\n              <div fxFlex=\"45\" class=\"ngx-dnd-item\" ngxDraggable>Item 1</div>\n              <div fxFlex=\"45\" class=\"ngx-dnd-item\" ngxDraggable>Item 2</div>\n              <div fxFlex=\"20\" class=\"ngx-dnd-item\" ngxDraggable>Item 3</div>\n              <div fxFlex=\"20\" class=\"ngx-dnd-item\" ngxDraggable>Item 4</div>\n              <div fxFlex=\"20\" class=\"ngx-dnd-item\" ngxDraggable>Item 5</div>\n            </div>\n\n          </div>\n        </div>\n        <div fxFlex=\"50%\">\n          <h3>Using Directives</h3>\n          <pre><code ngNonBindable><![CDATA[<div class=\"ngx-dnd-container\" fxLayout=\"row\" fxLayoutWrap=\"wrap\">\n  <div fxFlex=\"45\" class=\"ngx-dnd-item\">Item 1</div>\n  <div fxFlex=\"45\" class=\"ngx-dnd-item\">Item 2</div>\n  <div fxFlex=\"20\" class=\"ngx-dnd-item\">Item 3</div>\n  <div fxFlex=\"20\" class=\"ngx-dnd-item\">Item 4</div>\n  <div fxFlex=\"20\" class=\"ngx-dnd-item\">Item 5</div>\n</div>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"Simple Drag-and-Drop - No model\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper'>\n            <div class=\"ngx-dnd-container\" ngxDroppable=\"example-two\">\n              <div class=\"ngx-dnd-item\" ngxDraggable>Item 1a</div>\n              <div class=\"ngx-dnd-item\" ngxDraggable>Item 2a</div>\n              <div class=\"ngx-dnd-item\" ngxDraggable>Item 3a</div>\n            </div>\n            <div class=\"ngx-dnd-container\" ngxDroppable=\"example-two\">\n              <div class=\"ngx-dnd-item\" ngxDraggable>Item 1b</div>\n              <div class=\"ngx-dnd-item\" ngxDraggable>Item 2b</div>\n              <div class=\"ngx-dnd-item\" ngxDraggable>Item 3b</div>\n            </div>\n\n            <!-- ngx-dnd-container\n              [model]=\"['Item 1a', 'Item 2b', 'Item 3c']\"\n              dropZone=\"example-two\">\n            </ngx-dnd-container>\n            <ngx-dnd-container\n              [model]=\"['Item 1a', 'Item 2b', 'Item 3c']\"\n              dropZone=\"example-two\">\n            </ngx-dnd-container -->\n\n          </div>\n        </div>\n        <div fxFlex=\"50%\">\n          <h3>Using Directives</h3>\n          <pre><code ngNonBindable><![CDATA[<div class=\"ngx-dnd-container\" ngxDroppable=\"example-two\">\n  <div class=\"ngx-dnd-item\" ngxDraggable>Item 1a</div>\n  <div class=\"ngx-dnd-item\" ngxDraggable>Item 2a</div>\n  <div class=\"ngx-dnd-item\" ngxDraggable>Item 3a</div>\n</div>\n<div class=\"ngx-dnd-container\" ngxDroppable=\"example-two\">\n  <div class=\"ngx-dnd-item\" ngxDraggable>Item 1b</div>\n  <div class=\"ngx-dnd-item\" ngxDraggable>Item 2b</div>\n  <div class=\"ngx-dnd-item\" ngxDraggable>Item 3b</div>\n</div>]]></code></pre>\n\n          <h3>Using Components</h3>\n          <pre><code ngNonBindable><![CDATA[<ngx-dnd-container\n  [model]=\"['Item 1a', 'Item 2b', 'Item 3c']\"\n  dropZone=\"example-two\">\n</ngx-dnd-container>\n<ngx-dnd-container\n  [model]=\"['Item 1a', 'Item 2b', 'Item 3c']\"\n  dropZone=\"example-two\">\n</ngx-dnd-container>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n\n    <ngx-section class=\"shadow\" sectionTitle=\"Restricted Drag-and-Drop - No model\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper'>\n            <div class=\"ngx-dnd-container\" ngxDroppable>\n              <div class=\"ngx-dnd-item\" ngxDraggable=\"['restricted-target']\">Item 1a</div>\n              <div class=\"ngx-dnd-item\" ngxDraggable=\"['restricted-target']\">Item 2a</div>\n              <div class=\"ngx-dnd-item\" ngxDraggable=\"['restricted-target']\">Item 3a</div>\n            </div>\n            <div class=\"ngx-dnd-container\" ngxDroppable=\"restricted-target\">\n              <div class=\"ngx-dnd-item\" ngxDraggable>Item 1b</div>\n              <div class=\"ngx-dnd-item\" ngxDraggable>Item 2b</div>\n              <div class=\"ngx-dnd-item\" ngxDraggable>Item 3b</div>\n            </div>\n\n            <!-- todo -->\n          </div>\n        </div>\n        <div fxFlex=\"50%\">\n          <h3>Using Directives</h3>\n          <pre><code ngNonBindable><![CDATA[<div class=\"ngx-dnd-container\" ngxDroppable>\n  <div class=\"ngx-dnd-item\" ngxDraggable=\"['restricted-target']\">Item 1a</div>\n  <div class=\"ngx-dnd-item\" ngxDraggable=\"['restricted-target']\">Item 2a</div>\n  <div class=\"ngx-dnd-item\" ngxDraggable=\"['restricted-target']\">Item 3a</div>\n</div>\n<div class=\"ngx-dnd-container\" ngxDroppable=\"restricted-target\">\n  <div class=\"ngx-dnd-item\" ngxDraggable>Item 1b</div>\n  <div class=\"ngx-dnd-item\" ngxDraggable>Item 2b</div>\n  <div class=\"ngx-dnd-item\" ngxDraggable>Item 3b</div>\n</div>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"Nested Sortable\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper'>\n            <ngx-dnd-container\n              [model]=\"orderableLists\">\n            </ngx-dnd-container>\n\n            <!-- todo -->\n          </div>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Model</h3>\n          <pre><code>orderableLists = {{orderableLists | json}}</code></pre>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Using Components</h3>\n          <pre><code ngNonBindable><![CDATA[<ngx-dnd-container\n  [model]=\"orderableLists\">\n</ngx-dnd-container>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"Nested Sortable - containers\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper'>\n            <ngx-dnd-container\n              [model]=\"nestedLists\">\n            </ngx-dnd-container>\n\n            <!-- todo -->\n          </div>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Model</h3>\n          <code><pre>nestedLists = {{nestedLists | json}}</pre></code>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Using Components</h3>\n          <pre><code ngNonBindable><![CDATA[<ngx-dnd-container\n  [model]=\"nestedLists\">\n</ngx-dnd-container>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"Restricted Drag-and-Drop - with remove on spill\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"25%\">\n          <h4>Source</h4>\n            <ngx-dnd-container\n              [model]=\"sourceItems\"\n              [copy]=\"true\"\n              [dropZones]=\"['oneway-target']\">\n            </ngx-dnd-container>\n        </div>\n        <div fxFlex=\"25%\">\n          <h4>Target</h4>\n          <ngx-dnd-container\n            [model]=\"targetItems\"\n            dropZone=\"oneway-target\"\n            [removeOnSpill]=\"true\">\n          </ngx-dnd-container>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Target Model</h3>\n          <pre><code>targetItems = {{targetItems | json}}</code></pre>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Using Components</h3>\n          <pre><code ngNonBindable><![CDATA[<ngx-dnd-container\n  [model]=\"sourceItems\"\n  [copy]=\"true\"\n  [dropZones]=\"['oneway-target']\">\n</ngx-dnd-container>\n<ngx-dnd-container\n  [model]=\"targetItems\"\n  dropZone=\"oneway-target\"\n  [removeOnSpill]=\"true\">\n</ngx-dnd-container>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"Nested Restricted Drag-and-Drop - with remove on spill\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"25%\">\n          <h4>Source</h4>\n          <ngx-dnd-container\n            [model]=\"sourceNestedItems\"\n            [copy]=\"true\"\n            [dropZones]=\"['nested-oneway-target']\">\n          </ngx-dnd-container>\n        </div>\n        <div fxFlex=\"25%\">\n          <h4>Target</h4>\n          <ngx-dnd-container\n            [model]=\"targetNestedItems\"\n            dropZone=\"nested-oneway-target\"\n            [removeOnSpill]=\"true\">\n          </ngx-dnd-container>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Target Model</h3>\n          <pre><code>targetNestedItems = {{targetNestedItems | json}}</code></pre>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Using Components</h3>\n          <pre><code ngNonBindable><![CDATA[<ngx-dnd-container\n  [model]=\"sourceNestedItems\"\n  [copy]=\"true\"\n  [dropZones]=\"['nested-oneway-target']\">\n</ngx-dnd-container>\n<ngx-dnd-container\n  [model]=\"targetNestedItems\"\n  dropZone=\"nested-oneway-target\"\n  [removeOnSpill]=\"true\">\n</ngx-dnd-container>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"Restricted Drag-and-Drop - multiple containers\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"25%\">\n          <h4>Source</h4>\n            <ngx-dnd-container\n              [model]=\"sourceItems\"\n              [copy]=\"true\"\n              [dropZones]=\"['multiple-target-a', 'multiple-target-b']\">\n            </ngx-dnd-container>\n        </div>\n        <div fxFlex=\"25%\">\n          <h4>Target A</h4>\n          <ngx-dnd-container\n            [model]=\"targetItemsA\"\n            dropZone=\"multiple-target-a\"\n            [dropZones]=\"['multiple-target-a', 'multiple-target-b']\"\n            [removeOnSpill]=\"true\">\n          </ngx-dnd-container>\n        </div>\n        <div fxFlex=\"25%\">\n          <h4>Target B</h4>\n          <ngx-dnd-container\n            [model]=\"targetItemsB\"\n            dropZone=\"multiple-target-b\"\n            [dropZones]=\"['multiple-target-a', 'multiple-target-b']\"\n            [removeOnSpill]=\"true\">\n          </ngx-dnd-container>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Using Components</h3>\n          <pre><code ngNonBindable><![CDATA[<ngx-dnd-container\n  [model]=\"sourceItems\"\n  [copy]=\"true\"\n  [dropZones]=\"['multiple-target-a', 'multiple-target-b']\">\n</ngx-dnd-container>\n<ngx-dnd-container\n  [model]=\"targetItemsA\"\n  dropZone=\"multiple-target-a\"\n  [removeOnSpill]=\"true\">\n</ngx-dnd-container>\n<ngx-dnd-container\n  [model]=\"targetItemsB\"\n  dropZone=\"multiple-target-b\"\n  [removeOnSpill]=\"true\">\n</ngx-dnd-container>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow builder\" sectionTitle=\"Builder Demo\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div class=\"builder-source\" fxFlex=\"20%\">\n          <h4>Source</h4>\n\n          <ngx-dnd-container\n            class=\"root-container\"\n            [model]=\"sourceBuilderTools\"\n            [dropZones]=\"['builder-target']\"\n            [copy]=\"true\"\n            [droppableItemClass]=\"droppableItemClass\"\n            (drag)=\"builderDrag($event)\">\n\n            <ng-template let-item=\"model\">\n              <ngx-icon [fontIcon]=\"item.icon\"></ngx-icon>\n              {{item.name}}\n            </ng-template>\n          </ngx-dnd-container>\n\n        </div>\n        <div class=\"builder-target\" fxFlex=\"60%\">\n          <h4>Target</h4>\n\n          <ngx-dnd-container\n            class=\"root-container\"\n            [model]=\"targetBuilderTools\"\n            dropZone=\"builder-target\"\n            [removeOnSpill]=\"true\"\n            [droppableItemClass]=\"droppableItemClass\"\n            (drag)=\"log($event)\"\n            (drop)=\"log($event)\"\n            (over)=\"log($event)\"\n            (out)=\"log($event)\"\n            (remove)=\"log($event)\">\n\n            <ng-template let-model=\"model\" let-template=\"template\">\n              <div [ngSwitch]=\"model.inputType\">\n                <div *ngSwitchCase=\"'section'\">\n                   <ngx-section class=\"shadow\" [sectionTitle]=\"model.name\">\n                     <ngx-dnd-container\n                       dropZone=\"builder-target\"\n                       [model]=\"model.children\"\n                       [removeOnSpill]=\"true\"\n                       [template]=\"template\"\n                       [droppableItemClass]=\"droppableItemClass\"\n                       (drag)=\"log($event)\"\n                       (drop)=\"log($event)\"\n                       (over)=\"log($event)\"\n                       (out)=\"log($event)\"\n                       (remove)=\"log($event)\">\n                     </ngx-dnd-container>\n                   </ngx-section>\n                </div>\n                <div *ngSwitchDefault>\n                  <ngx-input\n                    [type]=\"model.inputType\"\n                    [hint]=\"model.name\"\n                    [autofocus]=\"false\"\n                    [ngModel]=\"model.data\">\n                  </ngx-input>\n                </div>\n              </div>\n            </ng-template>\n          </ngx-dnd-container>\n        </div>\n        <div fxFlex>\n          <h3>Model</h3>\n          <pre><code>{{targetBuilderTools | json}}</code></pre>\n        </div>\n      </div>\n      <i>View code <a href=\"https://github.com/swimlane/ngx-dnd/blob/master/demo/app.component.html#L357\">here</a></i>\n      <br /><i>Open console to see events</i>\n    </ngx-section>\n\n  </div>\n</main>\n"
+module.exports = "<main fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n  <!-- div class=\"nav-col\" fxFlex=\"20%\">\n    <h1>\n      Ngx-<strong>dnd</strong>\n      <small class=\"version\">{{version}}</small>\n      <small class=\"subtitle\">Angular2+ DnD</small>\n    </h1>\n  </div -->\n  <div class=\"field\" fxFlex=\"100%\">\n\n    <ngx-section class=\"shadow\" sectionTitle=\"Sortable - No model\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper'>\n            <div class=\"ngx-dnd-container\" ngxDroppable>\n              <div class=\"ngx-dnd-item\" ngxDraggable>Item 1</div>\n              <div class=\"ngx-dnd-item\" ngxDraggable>Item 2</div>\n              <div class=\"ngx-dnd-item\" ngxDraggable>Item 3</div>\n            </div>\n\n            <!-- ngx-dnd-container [model]=\"['Item 1', 'Item 2', 'Item 3']\">\n            </ngx-dnd-container -->\n          </div>\n        </div>\n        <div fxFlex=\"50%\">\n          <h3>Using Directives</h3>\n          <pre><code ngNonBindable><![CDATA[<div class=\"ngx-dnd-container\" ngxDroppable>\n  <div class=\"ngx-dnd-item\" ngxDraggable>Item 1</div>\n  <div class=\"ngx-dnd-item\" ngxDraggable>Item 2</div>\n  <div class=\"ngx-dnd-item\" ngxDraggable>Item 3</div>\n</div>]]></code></pre>\n\n          <h3>Using Components</h3>\n          <pre><code ngNonBindable><![CDATA[<ngx-dnd-container [model]=\"['Item 1', 'Item 2', 'Item 3']\">\n</ngx-dnd-container>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"Simple Sortable - from array model\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper'>\n            <div class=\"ngx-dnd-container\" ngxDroppable [model]=\"orderableList\">\n              <div class=\"ngx-dnd-item\" ngxDraggable *ngFor=\"let item of orderableList\" [model]=\"item\">{{item}}</div>\n            </div>\n\n            <!-- ngx-dnd-container\n              [model]=\"orderableList\">\n            </ngx-dnd-container -->\n          </div>\n        </div>\n        <div fxFlex=\"20%\">\n          <h3>Model</h3>\n          <pre><code>orderableList = {{orderableList | json}}</code></pre>\n        </div>\n        <div fxFlex=\"30%\">\n          <h3>Using Directives</h3>\n          <pre><code ngNonBindable><![CDATA[<div class=\"ngx-dnd-container\"\n    ngxDroppable [model]=\"orderableList\">\n  <div class=\"ngx-dnd-item\"\n    ngxDraggable\n    *ngFor=\"let item of orderableList\"\n    [model]=\"item\">\n      {{item}}\n    </div>\n</div>]]></code></pre>\n\n          <h3>Using Components</h3>\n          <pre><code ngNonBindable><![CDATA[<ngx-dnd-container\n  [model]=\"orderableList\">\n</ngx-dnd-container>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"Simple Sortable - with drag handle\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper'>\n            <div class=\"ngx-dnd-container\" ngxDroppable [model]=\"orderableList\" dropZone=\"a\">\n              <div class=\"ngx-dnd-item has-handle\" ngxDraggable *ngFor=\"let item of orderableList\" [model]=\"item\">\n                <i class=\"icon icon-dots-vert\" ngxDragHandle></i>\n                {{item}}\n              </div>\n            </div>\n\n            <!-- ngx-dnd-container\n              [model]=\"orderableList\"\n              <ng-template let-model=\"model\">\n                <i class=\"icon icon-dots-vert\" ngxDragHandle></i>\n                {{model}}\n              </ng-template>\n            </ngx-dnd-container -->\n          </div>\n        </div>\n        <div fxFlex=\"20%\">\n          <h3>Model</h3>\n          <pre><code>orderableList = {{orderableList | json}}</code></pre>\n        </div>\n        <div fxFlex=\"30%\">\n          <h3>Using Directives</h3>\n          <pre><code ngNonBindable><![CDATA[<div class=\"ngx-dnd-container\"\n    ngxDroppable [model]=\"orderableList\">\n  <div class=\"ngx-dnd-item has-handle\"\n      ngxDraggable\n      *ngFor=\"let item of orderableList\" [model]=\"item\">\n    <i class=\"icon icon-dots-vert\" ngxDragHandle></i>\n    {{item}}\n  </div>\n</div>]]></code></pre>\n\n          <h3>Using Components</h3>\n          <pre><code ngNonBindable><![CDATA[<ngx-dnd-container\n  [model]=\"orderableList\">\n  <ng-template let-model=\"model\">\n    <i class=\"icon icon-dots-vert\" ngxDragHandle></i>\n    {{model}}\n  </ng-template>\n</ngx-dnd-container>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"Orderable - With fxLayout\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper'>\n\n            <div class=\"ngx-dnd-container\" fxLayout=\"row\" fxLayoutWrap=\"wrap\" ngxDroppable>\n              <div fxFlex=\"45\" class=\"ngx-dnd-item\" ngxDraggable>Item 1</div>\n              <div fxFlex=\"45\" class=\"ngx-dnd-item\" ngxDraggable>Item 2</div>\n              <div fxFlex=\"20\" class=\"ngx-dnd-item\" ngxDraggable>Item 3</div>\n              <div fxFlex=\"20\" class=\"ngx-dnd-item\" ngxDraggable>Item 4</div>\n              <div fxFlex=\"20\" class=\"ngx-dnd-item\" ngxDraggable>Item 5</div>\n            </div>\n\n          </div>\n        </div>\n        <div fxFlex=\"50%\">\n          <h3>Using Directives</h3>\n          <pre><code ngNonBindable><![CDATA[<div class=\"ngx-dnd-container\" fxLayout=\"row\" fxLayoutWrap=\"wrap\">\n  <div fxFlex=\"45\" class=\"ngx-dnd-item\">Item 1</div>\n  <div fxFlex=\"45\" class=\"ngx-dnd-item\">Item 2</div>\n  <div fxFlex=\"20\" class=\"ngx-dnd-item\">Item 3</div>\n  <div fxFlex=\"20\" class=\"ngx-dnd-item\">Item 4</div>\n  <div fxFlex=\"20\" class=\"ngx-dnd-item\">Item 5</div>\n</div>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"Simple Drag-and-Drop - No model\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper'>\n            <div class=\"ngx-dnd-container\" ngxDroppable=\"example-two\">\n              <div class=\"ngx-dnd-item\" ngxDraggable>Item 1a</div>\n              <div class=\"ngx-dnd-item\" ngxDraggable>Item 2a</div>\n              <div class=\"ngx-dnd-item\" ngxDraggable>Item 3a</div>\n            </div>\n            <div class=\"ngx-dnd-container\" ngxDroppable=\"example-two\">\n              <div class=\"ngx-dnd-item\" ngxDraggable>Item 1b</div>\n              <div class=\"ngx-dnd-item\" ngxDraggable>Item 2b</div>\n              <div class=\"ngx-dnd-item\" ngxDraggable>Item 3b</div>\n            </div>\n\n            <!-- ngx-dnd-container\n              [model]=\"['Item 1a', 'Item 2b', 'Item 3c']\"\n              dropZone=\"example-two\">\n            </ngx-dnd-container>\n            <ngx-dnd-container\n              [model]=\"['Item 1a', 'Item 2b', 'Item 3c']\"\n              dropZone=\"example-two\">\n            </ngx-dnd-container -->\n\n          </div>\n        </div>\n        <div fxFlex=\"50%\">\n          <h3>Using Directives</h3>\n          <pre><code ngNonBindable><![CDATA[<div class=\"ngx-dnd-container\" ngxDroppable=\"example-two\">\n  <div class=\"ngx-dnd-item\" ngxDraggable>Item 1a</div>\n  <div class=\"ngx-dnd-item\" ngxDraggable>Item 2a</div>\n  <div class=\"ngx-dnd-item\" ngxDraggable>Item 3a</div>\n</div>\n<div class=\"ngx-dnd-container\" ngxDroppable=\"example-two\">\n  <div class=\"ngx-dnd-item\" ngxDraggable>Item 1b</div>\n  <div class=\"ngx-dnd-item\" ngxDraggable>Item 2b</div>\n  <div class=\"ngx-dnd-item\" ngxDraggable>Item 3b</div>\n</div>]]></code></pre>\n\n          <h3>Using Components</h3>\n          <pre><code ngNonBindable><![CDATA[<ngx-dnd-container\n  [model]=\"['Item 1a', 'Item 2a', 'Item 3a']\"\n  dropZone=\"example-two\">\n</ngx-dnd-container>\n<ngx-dnd-container\n  [model]=\"['Item 1b', 'Item 2b', 'Item 3b']\"\n  dropZone=\"example-two\">\n</ngx-dnd-container>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n\n    <ngx-section class=\"shadow\" sectionTitle=\"Restricted Drag-and-Drop - No model\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper'>\n            <div class=\"ngx-dnd-container\" ngxDroppable>\n              <div class=\"ngx-dnd-item\" ngxDraggable=\"['restricted-target']\">Item 1a</div>\n              <div class=\"ngx-dnd-item\" ngxDraggable=\"['restricted-target']\">Item 2a</div>\n              <div class=\"ngx-dnd-item\" ngxDraggable=\"['restricted-target']\">Item 3a</div>\n            </div>\n            <div class=\"ngx-dnd-container\" ngxDroppable=\"restricted-target\">\n              <div class=\"ngx-dnd-item\" ngxDraggable>Item 1b</div>\n              <div class=\"ngx-dnd-item\" ngxDraggable>Item 2b</div>\n              <div class=\"ngx-dnd-item\" ngxDraggable>Item 3b</div>\n            </div>\n\n            <!-- todo -->\n          </div>\n        </div>\n        <div fxFlex=\"50%\">\n          <h3>Using Directives</h3>\n          <pre><code ngNonBindable><![CDATA[<div class=\"ngx-dnd-container\" ngxDroppable>\n  <div class=\"ngx-dnd-item\" ngxDraggable=\"['restricted-target']\">Item 1a</div>\n  <div class=\"ngx-dnd-item\" ngxDraggable=\"['restricted-target']\">Item 2a</div>\n  <div class=\"ngx-dnd-item\" ngxDraggable=\"['restricted-target']\">Item 3a</div>\n</div>\n<div class=\"ngx-dnd-container\" ngxDroppable=\"restricted-target\">\n  <div class=\"ngx-dnd-item\" ngxDraggable>Item 1b</div>\n  <div class=\"ngx-dnd-item\" ngxDraggable>Item 2b</div>\n  <div class=\"ngx-dnd-item\" ngxDraggable>Item 3b</div>\n</div>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"Nested Sortable\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper'>\n            <ngx-dnd-container\n              [model]=\"orderableLists\">\n            </ngx-dnd-container>\n\n            <!-- todo -->\n          </div>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Model</h3>\n          <pre><code>orderableLists = {{orderableLists | json}}</code></pre>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Using Components</h3>\n          <pre><code ngNonBindable><![CDATA[<ngx-dnd-container\n  [model]=\"orderableLists\">\n</ngx-dnd-container>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"Nested Sortable - containers\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"50%\">\n          <div class='wrapper'>\n            <ngx-dnd-container\n              [model]=\"nestedLists\">\n            </ngx-dnd-container>\n\n            <!-- todo -->\n          </div>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Model</h3>\n          <code><pre>nestedLists = {{nestedLists | json}}</pre></code>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Using Components</h3>\n          <pre><code ngNonBindable><![CDATA[<ngx-dnd-container\n  [model]=\"nestedLists\">\n</ngx-dnd-container>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"Restricted Drag-and-Drop - copy and remove on spill\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"25%\">\n          <h4>Source</h4>\n            <ngx-dnd-container\n              [model]=\"sourceItems\"\n              [copy]=\"true\"\n              [dropZones]=\"['oneway-target']\">\n            </ngx-dnd-container>\n        </div>\n        <div fxFlex=\"25%\">\n          <h4>Target</h4>\n          <ngx-dnd-container\n            [model]=\"targetItems\"\n            dropZone=\"oneway-target\"\n            [removeOnSpill]=\"true\">\n          </ngx-dnd-container>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Target Model</h3>\n          <pre><code>targetItems = {{targetItems | json}}</code></pre>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Using Components</h3>\n          <pre><code ngNonBindable><![CDATA[<ngx-dnd-container\n  [model]=\"sourceItems\"\n  [copy]=\"true\"\n  [dropZones]=\"['oneway-target']\">\n</ngx-dnd-container>\n<ngx-dnd-container\n  [model]=\"targetItems\"\n  dropZone=\"oneway-target\"\n  [removeOnSpill]=\"true\">\n</ngx-dnd-container>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"Nested Restricted Drag-and-Drop - with remove on spill\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"25%\">\n          <h4>Source</h4>\n          <ngx-dnd-container\n            [model]=\"sourceNestedItems\"\n            [copy]=\"true\"\n            [dropZones]=\"['nested-oneway-target']\">\n          </ngx-dnd-container>\n        </div>\n        <div fxFlex=\"25%\">\n          <h4>Target</h4>\n          <ngx-dnd-container\n            [model]=\"targetNestedItems\"\n            dropZone=\"nested-oneway-target\"\n            [removeOnSpill]=\"true\">\n          </ngx-dnd-container>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Target Model</h3>\n          <pre><code>targetNestedItems = {{targetNestedItems | json}}</code></pre>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Using Components</h3>\n          <pre><code ngNonBindable><![CDATA[<ngx-dnd-container\n  [model]=\"sourceNestedItems\"\n  [copy]=\"true\"\n  [dropZones]=\"['nested-oneway-target']\">\n</ngx-dnd-container>\n<ngx-dnd-container\n  [model]=\"targetNestedItems\"\n  dropZone=\"nested-oneway-target\"\n  [removeOnSpill]=\"true\">\n</ngx-dnd-container>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow\" sectionTitle=\"Restricted Drag-and-Drop - multiple containers\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div fxFlex=\"25%\">\n          <h4>Source</h4>\n            <ngx-dnd-container\n              [model]=\"sourceItems\"\n              [copy]=\"true\"\n              [dropZones]=\"['multiple-target-a', 'multiple-target-b']\">\n            </ngx-dnd-container>\n        </div>\n        <div fxFlex=\"25%\">\n          <h4>Target A</h4>\n          <ngx-dnd-container\n            [model]=\"targetItemsA\"\n            dropZone=\"multiple-target-a\"\n            [dropZones]=\"['multiple-target-a', 'multiple-target-b']\"\n            [removeOnSpill]=\"true\">\n          </ngx-dnd-container>\n        </div>\n        <div fxFlex=\"25%\">\n          <h4>Target B</h4>\n          <ngx-dnd-container\n            [model]=\"targetItemsB\"\n            dropZone=\"multiple-target-b\"\n            [dropZones]=\"['multiple-target-a', 'multiple-target-b']\"\n            [removeOnSpill]=\"true\">\n          </ngx-dnd-container>\n        </div>\n        <div fxFlex=\"25%\">\n          <h3>Using Components</h3>\n          <pre><code ngNonBindable><![CDATA[<ngx-dnd-container\n  [model]=\"sourceItems\"\n  [copy]=\"true\"\n  [dropZones]=\"['multiple-target-a', 'multiple-target-b']\">\n</ngx-dnd-container>\n<ngx-dnd-container\n  [model]=\"targetItemsA\"\n  dropZone=\"multiple-target-a\"\n  [removeOnSpill]=\"true\">\n</ngx-dnd-container>\n<ngx-dnd-container\n  [model]=\"targetItemsB\"\n  dropZone=\"multiple-target-b\"\n  [removeOnSpill]=\"true\">\n</ngx-dnd-container>]]></code></pre>\n        </div>\n      </div>\n    </ngx-section>\n\n    <ngx-section class=\"shadow builder\" sectionTitle=\"Builder Demo\">\n      <div fxLayout=\"row\" fxLayoutWrap=\"nowrap\" fxFill>\n        <div class=\"builder-source\" fxFlex=\"20%\">\n          <h4>Source</h4>\n\n          <ngx-dnd-container\n            class=\"root-container\"\n            [model]=\"sourceBuilderTools\"\n            [dropZones]=\"['builder-target']\"\n            [copy]=\"true\"\n            [droppableItemClass]=\"droppableItemClass\"\n            (drag)=\"builderDrag($event)\">\n\n            <ng-template let-item=\"model\">\n              <ngx-icon [fontIcon]=\"item.icon\"></ngx-icon>\n              {{item.name}}\n            </ng-template>\n          </ngx-dnd-container>\n\n        </div>\n        <div class=\"builder-target\" fxFlex=\"60%\">\n          <h4>Target</h4>\n\n          <ngx-dnd-container\n            class=\"root-container\"\n            [model]=\"targetBuilderTools\"\n            dropZone=\"builder-target\"\n            [removeOnSpill]=\"true\"\n            [droppableItemClass]=\"droppableItemClass\"\n            (drag)=\"log($event)\"\n            (drop)=\"log($event)\"\n            (over)=\"log($event)\"\n            (out)=\"log($event)\"\n            (remove)=\"log($event)\">\n\n            <ng-template let-model=\"model\" let-template=\"template\">\n              <div [ngSwitch]=\"model.inputType\">\n                <div *ngSwitchCase=\"'section'\">\n                   <ngx-section class=\"shadow\" [sectionTitle]=\"model.name\">\n                     <ngx-dnd-container\n                       dropZone=\"builder-target\"\n                       [model]=\"model.children\"\n                       [removeOnSpill]=\"true\"\n                       [template]=\"template\"\n                       [droppableItemClass]=\"droppableItemClass\"\n                       (drag)=\"log($event)\"\n                       (drop)=\"log($event)\"\n                       (over)=\"log($event)\"\n                       (out)=\"log($event)\"\n                       (remove)=\"log($event)\">\n                     </ngx-dnd-container>\n                   </ngx-section>\n                </div>\n                <div *ngSwitchDefault>\n                  <ngx-input\n                    [type]=\"model.inputType\"\n                    [hint]=\"model.name\"\n                    [autofocus]=\"false\"\n                    [ngModel]=\"model.data\">\n                  </ngx-input>\n                </div>\n              </div>\n            </ng-template>\n          </ngx-dnd-container>\n        </div>\n        <div fxFlex>\n          <h3>Model</h3>\n          <pre><code>{{targetBuilderTools | json}}</code></pre>\n        </div>\n      </div>\n      <i>View code <a href=\"https://github.com/swimlane/ngx-dnd/blob/master/demo/app.component.html#L357\">here</a></i>\n      <br /><i>Open console to see events</i>\n    </ngx-section>\n\n  </div>\n</main>\n"
 
 /***/ }),
 
@@ -69139,8 +69139,18 @@ var ContainerComponent = (function () {
         this.remove = new core_1.EventEmitter();
         this.cancel = new core_1.EventEmitter();
     }
+    Object.defineProperty(ContainerComponent.prototype, "dropZones", {
+        get: function () {
+            return this._dropZones || this._defaultZones;
+        },
+        set: function (val) {
+            this._dropZones = val;
+        },
+        enumerable: true,
+        configurable: true
+    });
     ContainerComponent.prototype.ngOnInit = function () {
-        this.dropZones = this.dropZones || [this.dropZone];
+        this._defaultZones = [this.dropZone];
     };
     ContainerComponent.prototype.ngAfterViewInit = function () {
         var _this = this;
@@ -69175,8 +69185,9 @@ __decorate([
 ], ContainerComponent.prototype, "dropZone", void 0);
 __decorate([
     core_1.Input(),
-    __metadata("design:type", Array)
-], ContainerComponent.prototype, "dropZones", void 0);
+    __metadata("design:type", Object),
+    __metadata("design:paramtypes", [Object])
+], ContainerComponent.prototype, "dropZones", null);
 __decorate([
     core_1.Input(),
     core_1.ContentChild(core_1.TemplateRef),
@@ -69220,9 +69231,6 @@ ContainerComponent = __decorate([
     })
 ], ContainerComponent);
 exports.ContainerComponent = ContainerComponent;
-function functor(maybeFunction) {
-    return typeof maybeFunction === 'function' ? maybeFunction : function () { return maybeFunction; };
-}
 
 
 /***/ }),
@@ -69295,9 +69303,59 @@ var ItemComponent = (function () {
     function ItemComponent(container, draggableDirective) {
         this.container = container;
         this.draggableDirective = draggableDirective;
-        this.copy = false;
-        this.removeOnSpill = false;
+        this._copy = false;
+        this._removeOnSpill = false;
     }
+    Object.defineProperty(ItemComponent.prototype, "dropZone", {
+        get: function () {
+            return this._dropZone || this.container.dropZone;
+        },
+        set: function (val) {
+            this._dropZone = val;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ItemComponent.prototype, "dropZones", {
+        get: function () {
+            return this._dropZones || this.container.dropZones;
+        },
+        set: function (val) {
+            this._dropZones = val;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ItemComponent.prototype, "droppableItemClass", {
+        get: function () {
+            return this._droppableItemClass || this.container.droppableItemClass;
+        },
+        set: function (val) {
+            this._droppableItemClass = val;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ItemComponent.prototype, "removeOnSpill", {
+        get: function () {
+            return typeof this._removeOnSpill === 'boolean' ? this._removeOnSpill : this.container.removeOnSpill;
+        },
+        set: function (val) {
+            this._removeOnSpill = val;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ItemComponent.prototype, "copy", {
+        get: function () {
+            return typeof this._copy === 'boolean' ? this._copy : this.container.copy;
+        },
+        set: function (val) {
+            this._copy = val;
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(ItemComponent.prototype, "hasHandle", {
         get: function () {
             return this.draggableDirective.hasHandle;
@@ -69315,13 +69373,17 @@ var ItemComponent = (function () {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(ItemComponent.prototype, "type", {
+        get: function () {
+            if (Array.isArray(this.model)) {
+                return 'array';
+            }
+            return typeof this.model;
+        },
+        enumerable: true,
+        configurable: true
+    });
     ItemComponent.prototype.ngOnInit = function () {
-        this.type = getType(this.model);
-        this.dropZone = this.dropZone || this.container.dropZone;
-        this.dropZones = this.dropZones || this.container.dropZones;
-        this.droppableItemClass = this.droppableItemClass || this.container.droppableItemClass;
-        this.removeOnSpill = typeof this.removeOnSpill === 'boolean' ? this.removeOnSpill : this.container.removeOnSpill;
-        this.copy = typeof this.copy === 'boolean' ? this.copy : this.container.copy;
         this.data = {
             model: this.model,
             type: this.type,
@@ -69337,24 +69399,29 @@ __decorate([
 ], ItemComponent.prototype, "model", void 0);
 __decorate([
     core_1.Input(),
-    __metadata("design:type", Object)
-], ItemComponent.prototype, "copy", void 0);
+    __metadata("design:type", Object),
+    __metadata("design:paramtypes", [Object])
+], ItemComponent.prototype, "dropZone", null);
 __decorate([
     core_1.Input(),
-    __metadata("design:type", Object)
-], ItemComponent.prototype, "removeOnSpill", void 0);
+    __metadata("design:type", Object),
+    __metadata("design:paramtypes", [Object])
+], ItemComponent.prototype, "dropZones", null);
 __decorate([
     core_1.Input(),
-    __metadata("design:type", Object)
-], ItemComponent.prototype, "droppableItemClass", void 0);
+    __metadata("design:type", Object),
+    __metadata("design:paramtypes", [Object])
+], ItemComponent.prototype, "droppableItemClass", null);
 __decorate([
     core_1.Input(),
-    __metadata("design:type", Object)
-], ItemComponent.prototype, "dropZone", void 0);
+    __metadata("design:type", Object),
+    __metadata("design:paramtypes", [Object])
+], ItemComponent.prototype, "removeOnSpill", null);
 __decorate([
     core_1.Input(),
-    __metadata("design:type", Object)
-], ItemComponent.prototype, "dropZones", void 0);
+    __metadata("design:type", Object),
+    __metadata("design:paramtypes", [Object])
+], ItemComponent.prototype, "copy", null);
 __decorate([
     core_1.HostBinding('class.has-handle'),
     __metadata("design:type", Object),
@@ -69376,12 +69443,6 @@ ItemComponent = __decorate([
         _2.DraggableDirective])
 ], ItemComponent);
 exports.ItemComponent = ItemComponent;
-function getType(item) {
-    if (Array.isArray(item)) {
-        return 'array';
-    }
-    return typeof item;
-}
 
 
 /***/ }),
@@ -69465,7 +69526,6 @@ var DraggableDirective = (function () {
         this.el = el;
         this.drakesService = drakesService;
         this.droppableDirective = droppableDirective;
-        // @Input() hasHandle = false;
         /*
         ContentChildren doesn't get children created with NgTemplateOutlet
         See https://github.com/angular/angular/issues/14842
@@ -69477,11 +69537,27 @@ var DraggableDirective = (function () {
         this.drag = new core_1.EventEmitter();
         this.dragDelay = 200; // milliseconds
         this.draggable = false;
-        this.element = el.nativeElement;
     }
+    Object.defineProperty(DraggableDirective.prototype, "dropZones", {
+        get: function () {
+            return this._dropZones || this.ngxDraggable || this._parentDropzones;
+        },
+        set: function (val) {
+            this._dropZones = val;
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(DraggableDirective.prototype, "hasHandle", {
         get: function () {
             return !!this.handles.length;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(DraggableDirective.prototype, "element", {
+        get: function () {
+            return this.el.nativeElement;
         },
         enumerable: true,
         configurable: true
@@ -69504,7 +69580,7 @@ var DraggableDirective = (function () {
         this.draggable = false;
     };
     DraggableDirective.prototype.ngOnInit = function () {
-        this.dropZones = this.dropZones || this.ngxDraggable || [this.droppableDirective.dropZone];
+        this._parentDropzones = [this.droppableDirective.dropZone];
         this.drakesService.registerDraggable(this);
         this.updateElements();
     };
@@ -69551,8 +69627,9 @@ __decorate([
 ], DraggableDirective.prototype, "model", void 0);
 __decorate([
     core_1.Input(),
-    __metadata("design:type", Array)
-], DraggableDirective.prototype, "dropZones", void 0);
+    __metadata("design:type", Object),
+    __metadata("design:paramtypes", [Object])
+], DraggableDirective.prototype, "dropZones", null);
 __decorate([
     core_1.Output(),
     __metadata("design:type", core_1.EventEmitter)
@@ -69623,18 +69700,32 @@ var DroppableDirective = (function () {
         this.drakesService = drakesService;
         this.copy = false;
         this.removeOnSpill = false;
-        // @Input() dragulaOptions: any;
-        // @Input() ngxDroppable: string;
         this.drop = new core_1.EventEmitter();
         this.drag = new core_1.EventEmitter();
         this.over = new core_1.EventEmitter();
         this.out = new core_1.EventEmitter();
         this.remove = new core_1.EventEmitter();
         this.cancel = new core_1.EventEmitter();
-        this.container = el.nativeElement;
     }
+    Object.defineProperty(DroppableDirective.prototype, "container", {
+        get: function () {
+            return this.el.nativeElement;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(DroppableDirective.prototype, "dropZone", {
+        get: function () {
+            return this._dropZone || this.ngxDroppable || this.defaultZone;
+        },
+        set: function (val) {
+            this._dropZone = val;
+        },
+        enumerable: true,
+        configurable: true
+    });
     DroppableDirective.prototype.ngOnInit = function () {
-        this.dropZone = this.dropZone || this.ngxDroppable || "@@DefaultDropZone-" + getNextId() + "@@";
+        this.defaultZone = "@@DefaultDropZone-" + getNextId() + "@@";
         this.drakesService.register(this);
     };
     DroppableDirective.prototype.ngAfterViewInit = function () {
@@ -69666,10 +69757,6 @@ __decorate([
 __decorate([
     core_1.Input(),
     __metadata("design:type", Object)
-], DroppableDirective.prototype, "dropZone", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
 ], DroppableDirective.prototype, "ngxDroppable", void 0);
 __decorate([
     core_1.Output(),
@@ -69695,6 +69782,11 @@ __decorate([
     core_1.Output(),
     __metadata("design:type", core_1.EventEmitter)
 ], DroppableDirective.prototype, "cancel", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Object),
+    __metadata("design:paramtypes", [Object])
+], DroppableDirective.prototype, "dropZone", null);
 DroppableDirective = __decorate([
     core_1.Directive({ selector: '[ngxDroppable]' }),
     __metadata("design:paramtypes", [core_1.ElementRef,
