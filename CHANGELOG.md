@@ -2,11 +2,14 @@ CHANGELOG
 =========
 
 ## HEAD (Unreleased)
+_(none)_
+
+--------------------
+
+## 2.2.0 (2017-07-18)
 * Support strings as droppableItemClass
 * Improved component reactivity
 * Feature: add moves input to ngxDraggable and ContainerComponent
-
---------------------
 
 ## 2.1.2 (2017-05-26)
 * bugfix: removed browser animation module from NgxDnDModule
