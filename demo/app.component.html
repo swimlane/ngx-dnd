@@ -17,9 +17,6 @@
               <div class="ngx-dnd-item" ngxDraggable>Item 2</div>
               <div class="ngx-dnd-item" ngxDraggable>Item 3</div>
             </div>
-
-            <!-- ngx-dnd-container [model]="['Item 1', 'Item 2', 'Item 3']">
-            </ngx-dnd-container -->
           </div>
         </div>
         <div fxFlex="50%">
@@ -37,6 +34,32 @@
       </div>
     </ngx-section>
 
+    <ngx-section class="shadow" sectionTitle="Sortable - No model - Disabled Item">
+      <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
+        <div fxFlex="50%">
+          <div class='wrapper'>
+            <div class="ngx-dnd-container" ngxDroppable>
+              <div class="ngx-dnd-item move-disabled" ngxDraggable [moves]="false">Item 1 - Move Disabled</div>
+              <div class="ngx-dnd-item" ngxDraggable>Item 2</div>
+              <div class="ngx-dnd-item" ngxDraggable>Item 3</div>
+            </div>
+
+          </div>
+        </div>
+        <div fxFlex="50%">
+          <h3>Using Directives</h3>
+          <pre><code ngNonBindable><![CDATA[<div class="ngx-dnd-container" ngxDroppable>
+  <div class="ngx-dnd-item move-disabled" ngxDraggable [moves]="false">Item 1 - Move Disabled</div>
+  <div class="ngx-dnd-item" ngxDraggable>Item 2</div>
+  <div class="ngx-dnd-item" ngxDraggable>Item 3</div>
+</div>]]></code></pre>
+
+          <h3>Using Components</h3>
+          <pre><code ngNonBindable><![CDATA[<ngx-dnd-container [moves]="canMove" [model]="['Item 1 - Move Disabled', 'Item 2', 'Item 3']"></ngx-dnd-container>]]></code></pre>
+        </div>
+      </div>
+    </ngx-section>
+
     <ngx-section class="shadow" sectionTitle="Simple Sortable - from array model">
       <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
         <div fxFlex="50%">
@@ -44,10 +67,6 @@
             <div class="ngx-dnd-container" ngxDroppable [model]="orderableList">
               <div class="ngx-dnd-item" ngxDraggable *ngFor="let item of orderableList" [model]="item">{{item}}</div>
             </div>
-
-            <!-- ngx-dnd-container
-              [model]="orderableList">
-            </ngx-dnd-container -->
           </div>
         </div>
         <div fxFlex="20%">
@@ -84,14 +103,6 @@
                 {{item}}
               </div>
             </div>
-
-            <!-- ngx-dnd-container
-              [model]="orderableList"
-              <ng-template let-model="model">
-                <i class="icon icon-dots-vert" ngxDragHandle></i>
-                {{model}}
-              </ng-template>
-            </ngx-dnd-container -->
           </div>
         </div>
         <div fxFlex="20%">
@@ -164,16 +175,6 @@
               <div class="ngx-dnd-item" ngxDraggable>Item 2b</div>
               <div class="ngx-dnd-item" ngxDraggable>Item 3b</div>
             </div>
-
-            <!-- ngx-dnd-container
-              [model]="['Item 1a', 'Item 2b', 'Item 3c']"
-              dropZone="example-two">
-            </ngx-dnd-container>
-            <ngx-dnd-container
-              [model]="['Item 1a', 'Item 2b', 'Item 3c']"
-              dropZone="example-two">
-            </ngx-dnd-container -->
-
           </div>
         </div>
         <div fxFlex="50%">
@@ -217,8 +218,6 @@
               <div class="ngx-dnd-item" ngxDraggable>Item 2b</div>
               <div class="ngx-dnd-item" ngxDraggable>Item 3b</div>
             </div>
-
-            <!-- todo -->
           </div>
         </div>
         <div fxFlex="50%">
@@ -244,8 +243,6 @@
             <ngx-dnd-container
               [model]="orderableLists">
             </ngx-dnd-container>
-
-            <!-- todo -->
           </div>
         </div>
         <div fxFlex="25%">
@@ -268,8 +265,6 @@
             <ngx-dnd-container
               [model]="nestedLists">
             </ngx-dnd-container>
-
-            <!-- todo -->
           </div>
         </div>
         <div fxFlex="25%">
@@ -480,7 +475,7 @@
           <pre><code>{{targetBuilderTools | json}}</code></pre>
         </div>
       </div>
-      <i>View code <a href="https://github.com/swimlane/ngx-dnd/blob/master/demo/app.component.html#L357">here</a></i>
+      <i>View code <a href="https://github.com/swimlane/ngx-dnd/blob/master/demo/app.component.html#L413">here</a></i>
       <br /><i>Open console to see events</i>
     </ngx-section>
 

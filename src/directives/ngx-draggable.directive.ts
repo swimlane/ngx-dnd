@@ -23,12 +23,15 @@ export class DraggableDirective implements OnInit, OnDestroy {
   @Input() model: any;
 
   @Input()
-  get dropZones() {
+  get dropZones(): any {
     return this._dropZones || this.ngxDraggable || this._parentDropzones;
   }
-  set dropZones(val) {
+  set dropZones(val: any) {
     this._dropZones = val;
   }
+
+  @Input('moves')
+  _moves: boolean = true;
 
   /*
   ContentChildren doesn't get children created with NgTemplateOutlet
@@ -38,7 +41,7 @@ export class DraggableDirective implements OnInit, OnDestroy {
   @ContentChildren(DragHandleDirective, {descendants: true})
   handlesList: QueryList<DragHandleDirective>; */
 
-  handles = [];
+  handles: any[] = [];
 
   get hasHandle() {
     return !!this.handles.length;
@@ -48,10 +51,11 @@ export class DraggableDirective implements OnInit, OnDestroy {
   drag: EventEmitter<any> = new EventEmitter<any>();
 
   dragDelay: number = 200; // milliseconds
-  draggable: boolean = false;
+  dragDelayed: boolean = true;
+  
   touchTimeout: any;
 
-  get element() {
+  get element(): any {
     return this.el.nativeElement;
   }
 
@@ -67,7 +71,7 @@ export class DraggableDirective implements OnInit, OnDestroy {
   // From: https://github.com/bevacqua/dragula/issues/289#issuecomment-277143172
   @HostListener('touchmove', ['$event'])
   onMove(e: Event) {
-    if (!this.draggable) {
+    if (!this._moves || this.dragDelayed) {
       e.stopPropagation();
       clearTimeout(this.touchTimeout);
     }
@@ -75,33 +79,41 @@ export class DraggableDirective implements OnInit, OnDestroy {
 
   @HostListener('touchstart', ['$event'])
   onDown(e: Event) {
-    this.touchTimeout = setTimeout(() => {
-      this.draggable = true;
-    }, this.dragDelay);
+    if (this._moves) {
+      this.touchTimeout = setTimeout(() => {
+        this.dragDelayed = false;
+      }, this.dragDelay);
+    }
   }
 
   @HostListener('touchend', ['$event'])
   onUp(e: Event) {
-    clearTimeout(<number>this.touchTimeout);
-    this.draggable = false;
+    if (this._moves) {
+      clearTimeout(<number>this.touchTimeout);
+      this.dragDelayed = true;
+    }
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.update();
+  }
+
+  update(): void {
     this._parentDropzones = [this.droppableDirective.dropZone];
     this.drakesService.registerDraggable(this);
     this.updateElements();
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.drakesService.removeDraggable(this);
   }
 
-  updateElements() {
+  updateElements(): void {
     const nativeElement = this.el.nativeElement;
-    const handles = nativeElement.querySelectorAll('[ngxdraghandle]');
-    this.handles = Array.from(handles).filter(h => findFirstDraggableParent(h) === nativeElement);
+    const handles: NodeList = nativeElement.querySelectorAll('[ngxdraghandle]');
+    this.handles = Array.from(handles).filter((h: any) => findFirstDraggableParent(h) === nativeElement);
     
-    function findFirstDraggableParent(c) {
+    function findFirstDraggableParent(c: any) {
       while(c.parentNode) {
         c = c.parentNode;
         if (c.hasAttribute && c.hasAttribute('ngxdraggable')) {
@@ -111,19 +123,27 @@ export class DraggableDirective implements OnInit, OnDestroy {
     }
   }
 
-  moves(source, handle, sibling) {
+  canMove(source?: any, handle?: any, sibling?: any): boolean {
+    if (typeof this._moves === 'boolean') return this._moves;
+    if (typeof this._moves === 'function') return this._moves(this.model, source, handle, sibling);
+    return true;
+  }
+
+  moves(source: any, handle: any, sibling: any): boolean {
+    if (!this.canMove(source, handle, sibling)) return false;
+
     return this.hasHandle ?
       this.handles.some(h => handelFor(handle, h)) :
       true;
 
-    function handelFor(c, p) {
+    function handelFor(c: any, p: any) {
       if (c === p) return true;
       while((c = c.parentNode) && c !== p);  // tslint:disable-line
       return !!c;
     }
   }
 
-  ngDoCheck() {
+  ngDoCheck(): void {
     this.updateElements();
   }
 }

@@ -7,7 +7,7 @@
   border: 1px solid lightblue;
   display: block;
 
-  &:not(.has-handle),
+  &:not(.has-handle):not(.move-disabled),
   &.has-handle [ngxdraghandle],
   &.has-handle [ngxDragHandle] {
     cursor: move;

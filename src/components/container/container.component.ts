@@ -48,6 +48,9 @@ export class ContainerComponent implements OnInit, AfterViewInit {
     this._dropZones = val;
   }
 
+  @Input()
+  moves: (model: any, source: any, handle: any, sibling: any) => boolean;
+
   // @Input() classes: any = {};
   // @Input() dragulaOptions: any;
 
@@ -85,11 +88,11 @@ export class ContainerComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.droppable.drag.subscribe(v => this.drag.emit(v));
-    this.droppable.drop.subscribe(v => this.drop.emit(v));
-    this.droppable.over.subscribe(v => this.over.emit(v));
-    this.droppable.out.subscribe(v => this.out.emit(v));
-    this.droppable.remove.subscribe(v => this.remove.emit(v));
-    this.droppable.cancel.subscribe(v => this.cancel.emit(v));
+    this.droppable.drag.subscribe((v: any) => this.drag.emit(v));
+    this.droppable.drop.subscribe((v: any) => this.drop.emit(v));
+    this.droppable.over.subscribe((v: any) => this.over.emit(v));
+    this.droppable.out.subscribe((v: any) => this.out.emit(v));
+    this.droppable.remove.subscribe((v: any) => this.remove.emit(v));
+    this.droppable.cancel.subscribe((v: any) => this.cancel.emit(v));
   }
 }

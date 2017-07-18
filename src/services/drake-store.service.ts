@@ -45,7 +45,7 @@ export class DrakeStoreService {
   }
 
   createDrakeOptions() {
-    const accepts = (el, target, source, sibling) => {
+    const accepts = (el: any, target: any, source: any, sibling: any) => {
       if (el.contains(target)) {
         return false;
       }
@@ -57,7 +57,7 @@ export class DrakeStoreService {
       return true;
     };
 
-    const copy = (el, source) => {
+    const copy = (el: any, source: any) => {
       const sourceComponent = this.droppableMap.get(source);
       if (sourceComponent) {
         return sourceComponent.copy;
@@ -65,7 +65,7 @@ export class DrakeStoreService {
       return false;
     };
 
-    const moves = (el, source, handle, sibling) => {
+    const moves = (el: any, source: any, handle: any, sibling: any) => {
       const elementComponent = this.draggableMap.get(el);
       if (elementComponent) {
         return elementComponent.moves(source, handle, sibling);
