@@ -35,6 +35,69 @@ export class AppComponent {
     },
   ];
 
+  topics = [
+    {
+      title: 'Item title 1',
+      content: 'some fake random content ' + Math.random(),
+      children: [
+        {
+          title: 'Item title 3',
+          content: 'some fake random content ' + Math.random(),
+          children: []
+        }, {
+          title: 'Item title 4',
+          content: 'some fake random content ' + Math.random(),
+          children: [
+            {
+              title: 'Item title 7',
+              content: 'some fake random content ' + Math.random(),
+              children: [
+                {
+                  title: 'Item title 8',
+                  content: 'some fake random content ' + Math.random(),
+                  children: []
+                }, {
+                  title: 'Item title 9',
+                  content: 'some fake random content ' + Math.random(),
+                  children: []
+                }
+              ]
+            }, {
+              title: 'Item title 10',
+              content: 'some fake random content ' + Math.random(),
+              children: [
+                {
+                  title: 'Item title 11',
+                  content: 'some fake random content ' + Math.random(),
+                  children: []
+                }, {
+                  title: 'Item title 12',
+                  content: 'some fake random content ' + Math.random(),
+                  children: []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      title: 'Item title 2',
+      content: 'some fake random content ' + Math.random(),
+      children: [
+        {
+          title: 'Item title 5',
+          content: 'some fake random content ' + Math.random(),
+          children: []
+        }, {
+          title: 'Item title 6',
+          content: 'some fake random content ' + Math.random(),
+          children: []
+        }
+      ]
+    }
+  ];
+
   sourceItems = [
     { label: 'Item 1' },
     { label: 'Item 2' },

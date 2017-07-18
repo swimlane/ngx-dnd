@@ -280,6 +280,66 @@
       </div>
     </ngx-section>
 
+    <ngx-section class="shadow" sectionTitle="Nested Sortable - recursive">
+      <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
+        <div fxFlex="50%">
+          <div class='wrapper'>
+
+            <ngx-dnd-container fxFlex
+              [model]="topics"
+              [template]="itemInnerTemplate"
+              dropZone="dropZone"
+              [removeOnSpill]="false">
+              <ng-template #itemInnerTemplate let-topic="model">
+                <ng-container *ngTemplateOutlet="itemNestableTemplate; context: { topic: topic }">
+                </ng-container>
+              </ng-template>
+            </ngx-dnd-container>
+
+            <ng-template #itemNestableTemplate let-topic="topic">
+        
+              <ng-container *ngTemplateOutlet="itemTemplate; context: { topic: topic }">
+              </ng-container>
+
+              <ngx-dnd-container
+                *ngIf="topic.children"
+                [model]="topic.children"
+                [template]="itemInnerTemplate"
+                dropZone="dropZone"
+                [removeOnSpill]="false">
+                <ng-template #itemInnerTemplate let-topic="model">
+                  <ng-container *ngTemplateOutlet="itemNestableTemplate; context: { topic: topic }">
+                  </ng-container>
+                </ng-template>
+              </ngx-dnd-container>
+
+            </ng-template>
+
+            <ng-template #itemTemplate let-topic="topic">
+              <div fxLayout="row" fxLayoutAlign="end center" ngxDragHandle>
+
+                <div fxFlex fxFlexAlign="start center">
+                  <span>{{topic.title}}</span>
+                </div>
+
+                <div fxFlex fxFlexAlign="start center">
+                  <span>{{topic.content}}</span>
+                </div>
+
+              </div>
+            </ng-template>
+
+          </div>
+        </div>
+
+        <div fxFlex="50%">
+          <h3>Model</h3>
+          <code><pre>topics = {{topics | json}}</pre></code>
+        </div>
+
+      </div>
+    </ngx-section>
+
     <ngx-section class="shadow" sectionTitle="Restricted Drag-and-Drop - copy and remove on spill">
       <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
         <div fxFlex="25%">
