@@ -28,8 +28,8 @@ import { DraggableDirective } from '../../directives/';
 @Component({
   selector: 'ngx-dnd-item',
   templateUrl: 'item.component.html',
-  encapsulation: ViewEncapsulation.None,
   styleUrls: ['./item.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ItemComponent implements OnInit {
   @Input() model: any;

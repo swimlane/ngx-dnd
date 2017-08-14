@@ -29,6 +29,10 @@
   "exclude": [
     "node_modules"
   ],
+  "include": [
+    "src/**/**.ts",
+    "demo/**/**.ts"
+  ],
   "compileOnSave": false,
   "buildOnSave": false,
   "awesomeTypescriptLoaderOptions": {

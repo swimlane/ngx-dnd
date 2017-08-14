@@ -4,9 +4,9 @@ declare var APP_VERSION: string;
 
 @Component({
   selector: 'app',
-  encapsulation: ViewEncapsulation.None,
   styleUrls: ['./app.component.scss'],
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
+  encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
   version = APP_VERSION;
