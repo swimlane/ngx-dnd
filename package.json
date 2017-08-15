@@ -28,7 +28,7 @@
     "start": "webpack-dev-server",
     "start:hmr": "webpack-dev-server --env.HMR",
     "release": "npm-run-all build:release",
-    "np": "npm run package && np",
+    "np": "npm run package && np --yolo",
     "package": "npm-run-all -s clean package:aot build:package package:replace build:sass copy:html package:minify",
     "package:ts": "tsc --outDir release",
     "package:aot": "ngc -p tsconfig-aot.json",
