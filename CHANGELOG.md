@@ -6,6 +6,9 @@ _(none)_
 
 --------------------
 
+## 3.0.0 (2017-08-15)
+_(none)_
+
 ## 2.2.0 (2017-07-18)
 * Support strings as droppableItemClass
 * Improved component reactivity
