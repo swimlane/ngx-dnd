@@ -8,3 +8,5 @@ coverage/
 release/
 .idea
 .vscode
+
+*.tgz

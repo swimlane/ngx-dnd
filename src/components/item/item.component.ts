@@ -27,7 +27,7 @@ import { DraggableDirective } from '../../directives/';
  */
 @Component({
   selector: 'ngx-dnd-item',
-  templateUrl: 'item.component.html',
+  templateUrl: './item.component.html',
   styleUrls: ['./item.component.scss'],
   encapsulation: ViewEncapsulation.None
 })

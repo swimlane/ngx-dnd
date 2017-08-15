@@ -61,19 +61,7 @@ module.exports = function(env) {
         banner: banner,
         raw: true,
         entryOnly: true
-      }),
-      /*
-      new ngtools.AotPlugin({
-        tsConfigPath: 'tsconfig-aot.json',
-        baseDir: dir(),
-        entryModule: dir('ngx-dnd.module') + '#NgxDnDModule'
-      }),
-      new CleanWebpackPlugin(['release'], {
-        root: dir(),
-        verbose: false,
-        dry: false
       })
-      */
     ]
   });
 

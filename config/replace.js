@@ -13,3 +13,11 @@ replace({
   recursive: true,
   silent: false
 });
+
+replace({
+  regex: '.scss',
+  replacement: '.css',
+  paths: ['./release'],
+  recursive: true,
+  silent: false
+});

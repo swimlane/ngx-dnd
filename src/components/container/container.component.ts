@@ -28,7 +28,7 @@ function getNextId() {
  */
 @Component({
   selector: 'ngx-dnd-container',
-  templateUrl: 'container.component.html',
+  templateUrl: './container.component.html',
   styleUrls: ['./container.component.scss'],
   encapsulation: ViewEncapsulation.None
 })

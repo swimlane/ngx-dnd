@@ -27,3 +27,8 @@ interface Drake {
 
 declare module 'dragula';
 declare module '@swimlane/ngx-ui';
+
+declare module '*.html' {
+  const value: any;
+  export default value;
+}
