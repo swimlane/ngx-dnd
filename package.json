@@ -113,6 +113,7 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^2.0.4",
     "node-sass": "^4.5.3",
+    "np": "^2.16.0",
     "npm-check": "^5.4.5",
     "npm-run-all": "^4.0.1",
     "postcss": "^5.2.11",
