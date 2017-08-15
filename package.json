@@ -133,7 +133,7 @@
     "typescript": "^2.4.2",
     "uglify-js": "^2.8.12",
     "url-loader": "^0.5.7",
-    "webpack": "^3.3.0",
+    "webpack": "^3.5.4",
     "webpack-combine-loaders": "^2.0.3",
     "webpack-dev-server": "^2.7.1",
     "webpack-merge": "^4.1.0",
