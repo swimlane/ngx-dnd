@@ -3,8 +3,11 @@ CHANGELOG
 
 ## HEAD (Unreleased)
 _(none)_
-
 --------------------
+
+## 3.1.0 (2017-11-2)
+
+* Support for Angular 5
 
 ## 3.0.0 (2017-08-15)
 _(none)_
