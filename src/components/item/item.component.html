@@ -13,11 +13,9 @@
   </ng-container>
 
   <ng-container *ngSwitchCase="'object'">
-    <ng-template
-      *ngIf="container.template"
-      [ngTemplateOutlet]="container.template"
-      [ngOutletContext]="data">
-    </ng-template>
+    <ng-container *ngIf="container.template">   
+		  <ng-container *ngTemplateOutlet="container.template; context: data"></ng-container>
+	  </ng-container>
     <ng-container *ngIf="!container.template">
       <div
         class="ngx-dnd-content">
@@ -40,6 +38,9 @@
   </ng-container>
 
   <ng-container *ngSwitchDefault>
+    <ng-container *ngIf="container.template">   
+      <ng-container *ngTemplateOutlet="container.template; context: data"></ng-container>
+    </ng-container>
     <ng-template
       *ngIf="container.template"
       [ngTemplateOutlet]="container.template"
