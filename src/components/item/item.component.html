@@ -16,7 +16,7 @@
     <ng-template
       *ngIf="container.template"
       [ngTemplateOutlet]="container.template"
-      [ngOutletContext]="data">
+      [ngTemplateOutletContext]="data">
     </ng-template>
     <ng-container *ngIf="!container.template">
       <div
@@ -43,7 +43,7 @@
     <ng-template
       *ngIf="container.template"
       [ngTemplateOutlet]="container.template"
-      [ngOutletContext]="data">
+      [ngTemplateOutletContext]="data">
     </ng-template>
     <div
       *ngIf="!container.template"
