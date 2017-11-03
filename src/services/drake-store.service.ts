@@ -171,7 +171,7 @@ export class DrakeStoreService {
         if (dragIndex > -1) {
           if (el.parentNode !== source) {
             // add element back, let angular remove it
-            source.append(el);
+            source.appendChild(el);
           }
           sourceModel.splice(dragIndex, 1);
         }
