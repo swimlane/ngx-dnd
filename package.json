@@ -8,7 +8,7 @@
     "release"
   ],
   "scripts": {
-    "check": "npm-check --skip-unused",
+    "check": "npm-check --skip-unused ",
     "test": "npm run lint && karma start",
     "test:watch": "npm run test -- --auto-watch --no-single-run",
     "lint": "tslint \"./src/{,**/}*.ts\" \"./demo/{,**/}*.ts\"",
