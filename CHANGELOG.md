@@ -1,4 +1,4 @@
-CHANGELOG
+CHANGELOG 
 =========
 
 ## HEAD (Unreleased)
