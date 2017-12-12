@@ -1,7 +1,5 @@
 const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CheckerPlugin } = require('awesome-typescript-loader');
 
 const commonConfig = require('./webpack.common');
@@ -31,7 +29,8 @@ module.exports = function(env) {
       ]
     },
     entry: {
-      'index': './src/index.ts'
+      'bundle/ngx-dnd.umd': './release/lib/index.js',
+      'bundle/ngx-dnd.umd.min': './release/lib/index.js'
     },
     output: {
       path: dir('release'),
@@ -61,6 +60,13 @@ module.exports = function(env) {
         banner: banner,
         raw: true,
         entryOnly: true
+      }),
+      new webpack.optimize.UglifyJsPlugin({
+        include: /\.min\.js$/,
+        minimize: true,
+        sourceMap: {
+
+        }
       })
     ]
   });

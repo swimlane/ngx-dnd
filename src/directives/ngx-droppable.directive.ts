@@ -3,13 +3,11 @@ import {
   Input,
   Output,
   OnInit,
-  OnChanges,
   OnDestroy,
   AfterViewInit,
   ElementRef,
   EventEmitter,
-  SimpleChange,
-  Renderer
+  Renderer2
 } from '@angular/core';
 
 import { DrakeStoreService } from '../services/drake-store.service';
@@ -70,7 +68,7 @@ export class DroppableDirective implements OnInit, OnDestroy, AfterViewInit {
 
   constructor(
     private el: ElementRef,
-    private renderer: Renderer,
+    private renderer: Renderer2,
     private drakesService: DrakeStoreService
   ) { }
 
@@ -81,10 +79,10 @@ export class DroppableDirective implements OnInit, OnDestroy, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.over.subscribe((ev: any) => {
-      this.renderer.setElementClass(this.container, 'gu-over', true);
+      this.renderer.addClass(this.container, 'gu-over');
     });
     this.out.subscribe((ev: any) => {
-      this.renderer.setElementClass(this.container, 'gu-over', false);
+      this.renderer.removeClass(this.container, 'gu-over');
     });
   }
 

@@ -5,6 +5,15 @@ CHANGELOG
 _(none)_
 --------------------
 
+## 4.0.0 (2017-12-13)
+#### Feature:
+* Replaced deprecated angular Renderer to Renderer2
+* Use @types for dragula
+* Updated dependencies
+* Added inline
+* Added webpack uglify plugin
+* Changed release structure
+
 ## 3.1.0 (2017-11-2)
 
 * Support for Angular 5

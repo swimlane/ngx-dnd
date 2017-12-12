@@ -1,7 +1,6 @@
 import {
   Directive, ElementRef, HostListener, Input, Output,
-  EventEmitter, OnDestroy, OnInit, QueryList,
-  ContentChildren, ViewChildren, TemplateRef
+  EventEmitter, OnDestroy, OnInit
 } from '@angular/core';
 
 import { DragHandleDirective } from './ngx-drag-handle.directive';
