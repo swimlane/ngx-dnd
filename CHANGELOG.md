@@ -2,7 +2,10 @@ CHANGELOG
 =========
 
 ## HEAD (Unreleased)
-_(none)_
+* Fix draging between containers
+* Updated README to state importing styles
+* Bumped ngx-ui for ng 5.0 support in the demo
+
 --------------------
 
 ## 4.0.0 (2017-12-13)

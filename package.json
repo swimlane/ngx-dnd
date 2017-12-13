@@ -5,6 +5,9 @@
   "main": "./release/bundle/ngx-dnd.umd.js",
   "module": "./release/lib/index.js",
   "typings": "./release/lib/index.d.ts",
+ "files": [
+    "release"
+  ],
   "scripts": {
     "check": "npm-check --skip-unused ",
     "test": "npm run lint && karma start",
