@@ -1,5 +1,5 @@
 {
-  "name": "@wandererin/ngx-dnd",
+  "name": "@swimlane/ngx-dnd",
   "version": "4.1.0",
   "description": "Drag and Drop for Angular2 and beyond!",
   "main": "./release/bundle/ngx-dnd.umd.js",
