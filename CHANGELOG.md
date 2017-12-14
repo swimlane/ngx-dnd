@@ -8,8 +8,11 @@ CHANGELOG
 
 --------------------
 
+## 4.1.0 (2017-12-15)
+ * Added css file 
+
 ## 4.0.0 (2017-12-13)
-#### Feature:
+
 * Replaced deprecated angular Renderer to Renderer2
 * Use @types for dragula
 * Updated dependencies

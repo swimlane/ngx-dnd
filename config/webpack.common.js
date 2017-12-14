@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const { ENV, IS_PRODUCTION, IS_DEV, APP_VERSION, TRAVIS, dir } = require('./helpers');
 const path = require('path');
@@ -43,6 +44,10 @@ module.exports = function(options = {}) {
         {
           test: /\.css/,
           loaders: [
+            ExtractTextPlugin.extract({
+              fallback: "style-loader",
+              loader: 'css-loader'
+            }),
             'to-string-loader',
             'css-loader',
             'postcss-loader?sourceMap',
@@ -51,6 +56,10 @@ module.exports = function(options = {}) {
         {
           test: /\.scss$/,
           loaders: [
+            ExtractTextPlugin.extract({
+              fallback: 'style-loader',
+              loader: 'css-loader'
+            }),
             'to-string-loader',
             'css-loader',
             'postcss-loader?sourceMap',
@@ -78,9 +87,13 @@ module.exports = function(options = {}) {
             resourcePath: 'src'
           },
           postcss: function() {
-            return [require('autoprefixer') ];
+            return [ autoprefixer ];
           }
         }
+      }),
+      new ExtractTextPlugin({
+        filename: '[name].css',
+        allChunks: true
       })
     ]
   };
