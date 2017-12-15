@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { DraggableDirective, DroppableDirective, DragHandleDirective } from './directives';
-import { ContainerComponent, ItemComponent } from './components';
-import { DrakeStoreService } from './services';
+import {DraggableDirective, DragHandleDirective, DroppableDirective} from './directives';
+import {ContainerComponent, ItemComponent} from './components';
+import {DrakeStoreService} from './services';
 
 const components = [ContainerComponent, ItemComponent];
 const directives = [DraggableDirective, DroppableDirective, DragHandleDirective];
@@ -20,6 +20,8 @@ const directives = [DraggableDirective, DroppableDirective, DragHandleDirective]
     ...components,
     ...directives
   ],
-  providers: [DrakeStoreService]
+  providers: [DrakeStoreService],
+  entryComponents: [components]
 })
-export class NgxDnDModule {}
+export class NgxDnDModule {
+}

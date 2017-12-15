@@ -1,12 +1,13 @@
-import { Injectable, EventEmitter, Renderer } from '@angular/core';
+import {Injectable} from '@angular/core';
 
-import * as dragula from 'dragula';
-import { DroppableDirective } from '../directives/ngx-droppable.directive';
-import { DraggableDirective } from '../directives/ngx-draggable.directive';
+import {DroppableDirective} from '../directives/ngx-droppable.directive';
+import {DraggableDirective} from '../directives/ngx-draggable.directive';
+import {DragulaOptions, Drake} from 'dragula';
+import dragula = require('dragula');
 
 /**
  * Central service that handles all events
- * 
+ *
  * @export
  * @class DrakeStoreService
  */
@@ -14,8 +15,8 @@ import { DraggableDirective } from '../directives/ngx-draggable.directive';
 export class DrakeStoreService {
   private droppableMap = new WeakMap<any, DroppableDirective>();
   private draggableMap = new WeakMap<any, DraggableDirective>();
-  private dragulaOptions: any = {};
-  private drake: any;
+  private dragulaOptions: DragulaOptions = {};
+  private drake: Drake;
 
   constructor() {
     this.dragulaOptions = this.createDrakeOptions();
@@ -44,7 +45,7 @@ export class DrakeStoreService {
     this.draggableMap.delete(draggable.element);
   }
 
-  createDrakeOptions() {
+  createDrakeOptions(): DragulaOptions {
     const accepts = (el: any, target: any, source: any, sibling: any) => {
       if (el.contains(target)) {
         return false;
@@ -73,7 +74,7 @@ export class DrakeStoreService {
       return true;
     };
 
-    return {accepts, copy, moves, revertOnSpill: true};
+    return {accepts, copy, moves, revertOnSpill: true} as any;
   }
 
   registerEvents(): void {
@@ -132,7 +133,7 @@ export class DrakeStoreService {
             if (dragIndex > -1 && sourceModel && target === source) {
               sourceModel.splice(dropIndex, 0, sourceModel.splice(dragIndex, 1)[0]);
             } else {
-              
+
               if (el.parentNode === target) {
                 target.removeChild(el);
               }

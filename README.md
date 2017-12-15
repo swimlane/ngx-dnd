@@ -151,7 +151,7 @@ To use ngx-dnd in your project install it via [npm](https://www.npmjs.com/packag
 
 * `npm i @swimlane/ngx-dnd --save`
 * Add `NgxDnDModule` to your application module
-* If using directives you will need to BYO styles or include `@swimlane/ng-dnd/release/index.css`.
+* If using directives you will need to BYO styles or include `@swimlane/ng-dnd/release/lib/ngx-dnd.css`.
 
 ## Development
 

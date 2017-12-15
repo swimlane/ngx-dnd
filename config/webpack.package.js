@@ -1,21 +1,21 @@
 const webpack = require('webpack');
 const webpackMerge = require('webpack-merge');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CheckerPlugin } = require('awesome-typescript-loader');
+const {CheckerPlugin} = require('awesome-typescript-loader');
+const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const commonConfig = require('./webpack.common');
-const { ENV, dir, APP_VERSION } = require('./helpers');
+const {ENV, dir, APP_VERSION} = require('./helpers');
 
 const banner =
-`/**
+  `/**
  * @swimlane/ngx-dnd v${APP_VERSION} (https://github.com/swimlane/ngx-dnd)
  * Copyright 2017
  * Licensed under MIT
  */`;
 
-module.exports = function(env) {
-  return webpackMerge(commonConfig({ env: ENV }), {
+module.exports = function (env) {
+  return webpackMerge(commonConfig({env: ENV}), {
     devtool: 'source-map',
     module: {
       exprContextCritical: false,
@@ -31,13 +31,14 @@ module.exports = function(env) {
       ]
     },
     entry: {
-      'index': './src/index.ts'
+      'bundle/ngx-dnd.umd': './release/lib/index.js',
+      'bundle/ngx-dnd.umd.min': './release/lib/index.js'
     },
     output: {
       path: dir('release'),
       libraryTarget: 'umd',
       library: 'ngx-dnd',
-      umdNamedDefine: true
+      umdNamedDefine: true,
     },
     externals: {
       '@angular/platform-browser-dynamic': '@angular/platform-browser-dynamic',
@@ -61,6 +62,13 @@ module.exports = function(env) {
         banner: banner,
         raw: true,
         entryOnly: true
+      }),
+      new webpack.optimize.UglifyJsPlugin({
+        include: /\.min\.js$/,
+        minimize: true,
+        sourceMap: {
+
+        }
       })
     ]
   });

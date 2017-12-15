@@ -1,4 +1,4 @@
-CHANGELOG
+CHANGELOG 
 =========
 
 ## HEAD (Unreleased)
@@ -7,6 +7,18 @@ CHANGELOG
 * Bumped ngx-ui for ng 5.0 support in the demo
 
 --------------------
+
+## 4.1.0 (2017-12-15)
+ * Added css file 
+
+## 4.0.0 (2017-12-13)
+
+* Replaced deprecated angular Renderer to Renderer2
+* Use @types for dragula
+* Updated dependencies
+* Added inline
+* Added webpack uglify plugin
+* Changed release structure
 
 ## 3.1.0 (2017-11-2)
 

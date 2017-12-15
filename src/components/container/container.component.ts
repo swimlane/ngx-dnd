@@ -1,17 +1,17 @@
 import {
-  Component,
-  OnInit,
   AfterViewInit,
-  Input,
-  Output,
-  ViewEncapsulation,
+  Component,
   ContentChild,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
   TemplateRef,
   ViewChild,
-  EventEmitter,
+  ViewEncapsulation,
 } from '@angular/core';
 
-import { DroppableDirective } from '../../directives';
+import {DroppableDirective} from '../../directives';
 
 let i = 0;
 function getNextId() {
@@ -88,6 +88,7 @@ export class ContainerComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
+
     this.droppable.drag.subscribe((v: any) => this.drag.emit(v));
     this.droppable.drop.subscribe((v: any) => this.drop.emit(v));
     this.droppable.over.subscribe((v: any) => this.over.emit(v));
