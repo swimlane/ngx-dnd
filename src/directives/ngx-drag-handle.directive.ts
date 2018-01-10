@@ -1,7 +1,5 @@
 import {
-  Directive, ElementRef, HostListener, Input, Output,
-  EventEmitter, OnDestroy, OnInit, QueryList,
-  ContentChildren, ViewChildren, TemplateRef
+  Directive
 } from '@angular/core';
 
 /**

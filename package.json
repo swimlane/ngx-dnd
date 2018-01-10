@@ -143,6 +143,7 @@
     "zone.js": "^0.8.16"
   },
   "dependencies": {
+    "@types/dragula": "^2.1.32",
     "dragula": "^3.7.2"
   }
 }

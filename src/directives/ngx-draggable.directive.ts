@@ -1,10 +1,8 @@
 import {
   Directive, ElementRef, HostListener, Input, Output,
-  EventEmitter, OnDestroy, OnInit, QueryList,
-  ContentChildren, ViewChildren, TemplateRef
+  EventEmitter, OnDestroy, OnInit
 } from '@angular/core';
 
-import { DragHandleDirective } from './ngx-drag-handle.directive';
 import { DroppableDirective } from './ngx-droppable.directive';
 import { DrakeStoreService } from '../services/drake-store.service';
 
@@ -78,7 +76,7 @@ export class DraggableDirective implements OnInit, OnDestroy {
   }
 
   @HostListener('touchstart', ['$event'])
-  onDown(e: Event) {
+  onDown() {
     if (this._moves) {
       this.touchTimeout = setTimeout(() => {
         this.dragDelayed = false;
@@ -87,7 +85,7 @@ export class DraggableDirective implements OnInit, OnDestroy {
   }
 
   @HostListener('touchend', ['$event'])
-  onUp(e: Event) {
+  onUp() {
     if (this._moves) {
       clearTimeout(<number>this.touchTimeout);
       this.dragDelayed = true;

@@ -20,7 +20,9 @@
     "suppressImplicitAnyIndexErrors": true,
     "outDir": "dist",
     "declarationDir": "release",
-    "lib": ["es7", "dom"]
+    "lib": ["es7", "dom"],
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
   },
   "files": [
     "src/declarations.d.ts",

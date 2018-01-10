@@ -1,4 +1,4 @@
-import { Injectable, EventEmitter, Renderer } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 import * as dragula from 'dragula';
 import { DroppableDirective } from '../directives/ngx-droppable.directive';
@@ -14,8 +14,8 @@ import { DraggableDirective } from '../directives/ngx-draggable.directive';
 export class DrakeStoreService {
   private droppableMap = new WeakMap<any, DroppableDirective>();
   private draggableMap = new WeakMap<any, DraggableDirective>();
-  private dragulaOptions: any = {};
-  private drake: any;
+  private dragulaOptions: dragula.DragulaOptions;
+  private drake: dragula.Drake;
 
   constructor() {
     this.dragulaOptions = this.createDrakeOptions();
@@ -44,8 +44,8 @@ export class DrakeStoreService {
     this.draggableMap.delete(draggable.element);
   }
 
-  createDrakeOptions() {
-    const accepts = (el: any, target: any, source: any, sibling: any) => {
+  createDrakeOptions(): dragula.DragulaOptions {
+    const accepts = (el: any, target: any /*, source: any, sibling: any */) => {
       if (el.contains(target)) {
         return false;
       }
@@ -57,7 +57,7 @@ export class DrakeStoreService {
       return true;
     };
 
-    const copy = (el: any, source: any) => {
+    const copy = (_: any, source: any) => {
       const sourceComponent = this.droppableMap.get(source);
       if (sourceComponent) {
         return sourceComponent.copy;
@@ -65,7 +65,7 @@ export class DrakeStoreService {
       return false;
     };
 
-    const moves = (el: any, source: any, handle: any, sibling: any) => {
+    const moves = (el?: any, source?: any, handle?: any, sibling?: any) => {
       const elementComponent = this.draggableMap.get(el);
       if (elementComponent) {
         return elementComponent.moves(source, handle, sibling);

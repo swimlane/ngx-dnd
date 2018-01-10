@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, Inject } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 declare var APP_VERSION: string;
 
