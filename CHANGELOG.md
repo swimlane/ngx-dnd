@@ -6,6 +6,9 @@ _(none)_
 
 --------------------
 
+## 3.1.2 (2018-01-19)
+_(none)_
+
 ## 3.1.1 (2017-12-04)
 * Fix draging between containers
 * Updated README to state importing styles

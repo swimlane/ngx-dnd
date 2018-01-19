@@ -1,6 +1,6 @@
 {
   "name": "@swimlane/ngx-dnd",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "description": "Drag and Drop for Angular2 and beyond!",
   "main": "release/index.js",
   "typings": "release/index.d.ts",
