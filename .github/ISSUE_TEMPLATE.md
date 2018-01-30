@@ -2,7 +2,7 @@
 ```
 [ ] bug report => Search github for a similar issue or PR before submitting
 [ ] feature request
-[ ] support request => Sorry, will will not be able to answer every support request.  Please consider other venues for support requests
+[ ] support request => Sorry, we will not be able to answer every support request.  Please consider other venues for support requests
 ```
 
 **Current behavior**
