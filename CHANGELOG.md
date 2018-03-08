@@ -2,12 +2,12 @@ CHANGELOG
 =========
 
 ## HEAD (Unreleased)
-* Fixed AOT issue
+* Feature: make the index available in the template for ngx-dnd-containter component
 
 --------------------
 
 ## 3.1.2 (2018-01-19)
-_(none)_
+* Fixed AOT issue
 
 ## 3.1.1 (2017-12-04)
 * Fix draging between containers

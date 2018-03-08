@@ -7,7 +7,7 @@
   [removeOnSpill]="removeOnSpill"
   class='ngx-dnd-container'>
   <ng-container *ngIf="model">
-    <ng-container *ngFor="let item of model">
+    <ng-container *ngFor="let item of model; let i = index">
       <ngx-dnd-item
         ngxDraggable
         [model]="item"
@@ -16,7 +16,8 @@
         [copy]="copy"
         [moves]="moves"
         [removeOnSpill]="removeOnSpill"
-        [droppableItemClass]="droppableItemClass">
+        [droppableItemClass]="droppableItemClass"
+        [index]="i">
       </ngx-dnd-item>
     </ng-container>
   </ng-container>
