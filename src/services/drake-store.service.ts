@@ -118,6 +118,7 @@ export class DrakeStoreService {
       if (this.droppableMap.has(target)) {
         const targetComponent = this.droppableMap.get(target);
         let dropElmModel = draggedItem;
+        let dropIndex = undefined;
 
         if (this.droppableMap.has(source)) {
           const sourceComponent = this.droppableMap.get(source);
@@ -125,7 +126,7 @@ export class DrakeStoreService {
           const sourceModel = sourceComponent.model;
           const targetModel = targetComponent.model;
 
-          const dropIndex = Array.prototype.indexOf.call(target.children, el);
+          dropIndex = Array.prototype.indexOf.call(target.children, el);
           const dragIndex = (sourceModel && draggedItem) ? sourceModel.indexOf(draggedItem) : -1;
 
           if (dropIndex > -1 && targetModel) {
@@ -156,7 +157,8 @@ export class DrakeStoreService {
           type: 'drop',
           el,
           source,
-          value: dropElmModel
+          value: dropElmModel,
+          dropIndex: dropIndex
         });
       }
     });
