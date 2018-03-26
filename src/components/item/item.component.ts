@@ -67,11 +67,20 @@ export class ItemComponent implements OnInit {
     this._copy = val;
   }
 
+  @Input()
+  set index(val: number) {
+    this._index = val;
+    if (this.data) {
+      this.data.index = val;
+    }
+  };
+
   _copy = false;
   _dropZone: any;
   _dropZones: any;
   _droppableItemClass: any;
   _removeOnSpill = false;
+  _index: number;
   data: any;
 
   get hasHandle(): boolean {
@@ -115,7 +124,8 @@ export class ItemComponent implements OnInit {
       model: this.model,
       type: this.type,
       dropZone: this.dropZone,
-      template: this.container.template
+      template: this.container.template,
+      index: this._index
     };
   }
 }
