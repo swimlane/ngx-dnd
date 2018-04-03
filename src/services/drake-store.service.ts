@@ -73,7 +73,7 @@ export class DrakeStoreService {
       return true;
     };
 
-    return {accepts, copy, moves, revertOnSpill: true};
+    return {accepts, copy, moves, revertOnSpill: true, direction: 'vertical'};
   }
 
   registerEvents(): void {
@@ -115,52 +115,65 @@ export class DrakeStoreService {
     });
 
     this.drake.on('drop', (el: any, target: any, source: any) => {
-      if (this.droppableMap.has(target)) {
-        const targetComponent = this.droppableMap.get(target);
-        let dropElmModel = draggedItem;
-        let dropIndex = undefined;
+      const targetComponent = this.droppableMap.get(target);
+      
+      if (!targetComponent) { // not a target, abort
+        return;
+      }
 
-        if (this.droppableMap.has(source)) {
-          const sourceComponent = this.droppableMap.get(source);
+      let dropElmModel = draggedItem;
+      const dropIndex = Array.prototype.indexOf.call(target.children, el);
 
-          const sourceModel = sourceComponent.model;
-          const targetModel = targetComponent.model;
+      if (dropIndex < 0) { // dropIndex is bad... cancel
+        this.drake.cancel(true);
+        return;
+      }
 
-          dropIndex = Array.prototype.indexOf.call(target.children, el);
-          const dragIndex = (sourceModel && draggedItem) ? sourceModel.indexOf(draggedItem) : -1;
+      const sourceComponent = this.droppableMap.get(source);
 
-          if (dropIndex > -1 && targetModel) {
-            if (dragIndex > -1 && sourceModel && target === source) {
-              sourceModel.splice(dropIndex, 0, sourceModel.splice(dragIndex, 1)[0]);
-            } else {
-              
-              if (el.parentNode === target) {
-                target.removeChild(el);
-              }
+      if (sourceComponent) {
+        const sourceModel = sourceComponent.model;
+        const targetModel = targetComponent.model;
 
-              const copy = !sourceModel || (dragElm !== el);
-              if (copy) {
-                dropElmModel = JSON.parse(JSON.stringify(dropElmModel));
-              } else {
-                if (el.parentNode !== source) {
-                  // add element back, let angular remove it
-                  source.appendChild(el);
-                }
-                sourceModel.splice(dragIndex, 1);
-              }
-              targetModel.splice(dropIndex, 0, dropElmModel);
-            }
-          }
+        const hasDragModel = !!(sourceModel && draggedItem);
+        const dragIndex = hasDragModel ? sourceModel.indexOf(draggedItem) : -1;
+        if (hasDragModel && dragIndex < 0) { // dragIndex is bad... cancel
+          this.drake.cancel(true);
+          return;
         }
 
-        targetComponent.drop.emit({
-          type: 'drop',
-          el,
-          source,
-          value: dropElmModel,
-          dropIndex: dropIndex
-        });
+        if (targetModel) {
+          const reorder = dragIndex > -1 && sourceModel && target === source;
+          const copy = !sourceModel || (dragElm !== el);
+          if (reorder) {
+            sourceModel.splice(dropIndex, 0, sourceModel.splice(dragIndex, 1)[0]);
+          } else {
+            if (el.parentNode === target) {
+              target.removeChild(el);
+            }
+
+            if (copy) {
+              dropElmModel = JSON.parse(JSON.stringify(dropElmModel));
+            } else {
+              if (el.parentNode !== source) {
+                // add element back, let angular remove it
+                this.drake.cancel(true);
+              }
+              sourceModel.splice(dragIndex, 1);
+            }
+            targetModel.splice(dropIndex, 0, dropElmModel);
+          }
+        }
       }
+
+      targetComponent.drop.emit({
+        type: 'drop',
+        el,
+        source,
+        value: dropElmModel,
+        dropIndex
+      });
+
     });
 
     this.drake.on('remove', (el: any, container: any, source: any) => {
