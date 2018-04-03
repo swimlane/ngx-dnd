@@ -2,9 +2,12 @@ CHANGELOG
 =========
 
 ## HEAD (Unreleased)
-* Fixed AOT issue
+_(none)_
 
 --------------------
+
+## 3.2.0 (2018-04-03)
+* Fixed AOT issue
 
 ## 3.1.2 (2018-01-19)
 _(none)_
