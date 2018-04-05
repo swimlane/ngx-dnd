@@ -10,3 +10,8 @@ release/
 .vscode
 
 *.tgz
+
+cypress/videos
+cypress/support
+cypress/plugins
+
