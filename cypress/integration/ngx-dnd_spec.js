@@ -1,7 +1,7 @@
 
 describe('Demo', () => {
   beforeEach(function(){
-    cy.visit('http://localhost:9998/');
+    cy.visit('http://localhost:9999/');
   });
 
   it('.should() - assert that <title> is correct', () => {
