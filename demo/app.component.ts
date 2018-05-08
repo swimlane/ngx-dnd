@@ -56,7 +56,7 @@ export class AppComponent {
   targetNestedItems: any[] = [];
 
   sourceBuilderTools = [
-    { name: 'Section', children: [], inputType: 'section', icon: 'section', class: 'wide' },
+    { name: 'Section', children: [] as any[], inputType: 'section', icon: 'section', class: 'wide' },
     { name: 'A String', inputType: 'string', icon: 'field-text', class: 'half' },
     { name: 'A Number', inputType: 'number', icon: 'field-numeric', class: 'half' }
   ];

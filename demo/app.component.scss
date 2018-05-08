@@ -177,3 +177,8 @@ ngx-section pre {
   font-size: 0.7em;
   cursor: move;
 }
+
+.ngx-icon.ngx-section {
+  display: inline-block;
+  margin-bottom: 0;
+}
