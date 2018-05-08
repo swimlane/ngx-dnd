@@ -107,7 +107,7 @@
     "html-webpack-plugin": "^2.26.0",
     "istanbul-instrumenter-loader": "^1.2.0",
     "node-sass": "^4.5.3",
-    "np": "^2.16.0",
+    "np": "^2.20.1",
     "npm-check": "^5.4.5",
     "npm-run-all": "^4.0.1",
     "postcss": "^5.2.11",
