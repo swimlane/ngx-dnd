@@ -2,9 +2,12 @@ CHANGELOG
 =========
 
 ## HEAD (Unreleased)
-* Add Angular v6.0 support
+_(none)_
 
 --------------------
+
+## 4.0.0 (2018-05-08)
+* Add Angular v6.0 support
 
 ## 3.2.0 (2018-04-03)
 * Fixed AOT issue
