@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import * as dragula from 'dragula';
+import * as dragula from '@swimlane/dragula';
 import { DroppableDirective } from '../directives/ngx-droppable.directive';
 import { DraggableDirective } from '../directives/ngx-draggable.directive';
 
