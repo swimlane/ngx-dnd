@@ -20,7 +20,7 @@
 **Please tell us about your environment:**
 <!-- Operating system, IDE, package manager, HTTP server, ... -->
 
-* **ngx-charts version:** x.x.x
+* **ngx-dnd version:** x.x.x
 <!-- Check whether this is still an issue in the most recent ngx-charts version -->
 
 * **Angular version:** 2.x.x
