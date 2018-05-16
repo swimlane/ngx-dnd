@@ -89,6 +89,7 @@ This component is effectively equivalent to:
   <div
     class="ngx-dnd-item"
     ngxDraggable
+    [model]="item"
     *ngFor="let item of orderableLists">{{item}}</div>
 </div>
 ```
