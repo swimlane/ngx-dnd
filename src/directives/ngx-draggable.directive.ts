@@ -76,7 +76,7 @@ export class DraggableDirective implements OnInit, OnDestroy {
   }
 
   @HostListener('touchstart', ['$event'])
-  onDown() {
+  onDown(e: Event) {
     if (this._moves) {
       this.touchTimeout = setTimeout(() => {
         this.dragDelayed = false;
@@ -85,7 +85,7 @@ export class DraggableDirective implements OnInit, OnDestroy {
   }
 
   @HostListener('touchend', ['$event'])
-  onUp() {
+  onUp(e: Event) {
     if (this._moves) {
       clearTimeout(<number>this.touchTimeout);
       this.dragDelayed = true;
