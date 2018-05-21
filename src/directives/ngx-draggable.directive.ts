@@ -8,7 +8,7 @@ import { DrakeStoreService } from '../services/drake-store.service';
 
 /**
  * Adds properties and events to draggable elements
- * 
+ *
  * @export
  * @class DraggableDirective
  * @implements {OnInit}
@@ -35,7 +35,7 @@ export class DraggableDirective implements OnInit, OnDestroy {
   ContentChildren doesn't get children created with NgTemplateOutlet
   See https://github.com/angular/angular/issues/14842
   Implemented via updateElements method
-  
+
   @ContentChildren(DragHandleDirective, {descendants: true})
   handlesList: QueryList<DragHandleDirective>; */
 
@@ -50,7 +50,7 @@ export class DraggableDirective implements OnInit, OnDestroy {
 
   dragDelay: number = 200; // milliseconds
   dragDelayed: boolean = true;
-  
+
   touchTimeout: any;
 
   get element(): any {
@@ -75,8 +75,8 @@ export class DraggableDirective implements OnInit, OnDestroy {
     }
   }
 
-  @HostListener('touchstart', ['$event'])
-  onDown(e: Event) {
+  @HostListener('touchstart')
+  onDown() {
     if (this._moves) {
       this.touchTimeout = setTimeout(() => {
         this.dragDelayed = false;
@@ -84,8 +84,8 @@ export class DraggableDirective implements OnInit, OnDestroy {
     }
   }
 
-  @HostListener('touchend', ['$event'])
-  onUp(e: Event) {
+  @HostListener('touchend')
+  onUp() {
     if (this._moves) {
       clearTimeout(<number>this.touchTimeout);
       this.dragDelayed = true;
@@ -110,7 +110,7 @@ export class DraggableDirective implements OnInit, OnDestroy {
     const nativeElement = this.el.nativeElement;
     const handles: NodeList = nativeElement.querySelectorAll('[ngxdraghandle]');
     this.handles = Array.from(handles).filter((h: any) => findFirstDraggableParent(h) === nativeElement);
-    
+
     function findFirstDraggableParent(c: any) {
       while(c.parentNode) {
         c = c.parentNode;
