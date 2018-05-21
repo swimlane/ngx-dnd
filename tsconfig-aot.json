@@ -42,6 +42,7 @@
     "genDir": "release/",
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
+    "fullTemplateTypeCheck": true,
     "annotationsAs": "decorators"
   }
 }
