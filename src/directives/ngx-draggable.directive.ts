@@ -29,7 +29,7 @@ export class DraggableDirective implements OnInit, OnDestroy {
   }
 
   @Input('moves')
-  _moves: boolean = true;
+  _moves: boolean | ((...args: any[]) => any) = true;
 
   /*
   ContentChildren doesn't get children created with NgTemplateOutlet

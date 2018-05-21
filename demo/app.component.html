@@ -1,4 +1,4 @@
-<main fxLayout="row" fxLayoutWrap="nowrap" fxFill>
+<main fxLayout="row nowrap" fxFill>
   <!-- div class="nav-col" fxFlex="20%">
     <h1>
       Ngx-<strong>dnd</strong>
@@ -9,7 +9,7 @@
   <div class="field" fxFlex="100%">
 
     <ngx-section class="shadow" sectionTitle="Sortable - No model">
-      <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
+      <div fxLayout="row nowrap" fxFill>
         <div fxFlex="50%">
           <div class='wrapper'>
             <div class="ngx-dnd-container" ngxDroppable>
@@ -35,7 +35,7 @@
     </ngx-section>
 
     <ngx-section class="shadow" sectionTitle="Sortable - No model - Disabled Item">
-      <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
+      <div fxLayout="row nowrap" fxFill>
         <div fxFlex="50%">
           <div class='wrapper'>
             <div class="ngx-dnd-container" ngxDroppable>
@@ -61,7 +61,7 @@
     </ngx-section>
 
     <ngx-section class="shadow" sectionTitle="Simple Sortable - from array model">
-      <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
+      <div fxLayout="row nowrap" fxFill>
         <div fxFlex="50%">
           <div class='wrapper'>
             <div class="ngx-dnd-container" ngxDroppable [model]="orderableList">
@@ -94,7 +94,7 @@
     </ngx-section>
 
     <ngx-section class="shadow" sectionTitle="Simple Sortable - with drag handle">
-      <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
+      <div fxLayout="row nowrap" fxFill>
         <div fxFlex="50%">
           <div class='wrapper'>
             <div class="ngx-dnd-container" ngxDroppable [model]="orderableList" dropZone="a">
@@ -134,23 +134,23 @@
     </ngx-section>
 
     <ngx-section class="shadow" sectionTitle="Orderable - With fxLayout">
-      <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
-        <div fxFlex="50%">
+      <div fxLayout="row nowrap" fxFill>
+        <div [fxFlex]="'50%'">
           <div class='wrapper'>
 
-            <div class="ngx-dnd-container" fxLayout="row" fxLayoutWrap="wrap" ngxDroppable>
-              <div fxFlex="45" class="ngx-dnd-item" ngxDraggable>Item 1</div>
-              <div fxFlex="45" class="ngx-dnd-item" ngxDraggable>Item 2</div>
-              <div fxFlex="20" class="ngx-dnd-item" ngxDraggable>Item 3</div>
-              <div fxFlex="20" class="ngx-dnd-item" ngxDraggable>Item 4</div>
-              <div fxFlex="20" class="ngx-dnd-item" ngxDraggable>Item 5</div>
+            <div class="ngx-dnd-container" fxLayout="row wrap" ngxDroppable>
+              <div fxFlex="1 1 45%" class="ngx-dnd-item" ngxDraggable>Item 1</div>
+              <div fxFlex="1 1 45%" class="ngx-dnd-item" ngxDraggable>Item 2</div>
+              <div fxFlex="1 1 20%" class="ngx-dnd-item" ngxDraggable>Item 3</div>
+              <div fxFlex="1 1 20%" class="ngx-dnd-item" ngxDraggable>Item 4</div>
+              <div fxFlex="1 1 20%" class="ngx-dnd-item" ngxDraggable>Item 5</div>
             </div>
 
           </div>
         </div>
         <div fxFlex="50%">
           <h3>Using Directives</h3>
-          <pre><code ngNonBindable><![CDATA[<div class="ngx-dnd-container" fxLayout="row" fxLayoutWrap="wrap">
+          <pre><code ngNonBindable><![CDATA[<div class="ngx-dnd-container" fxLayout="row wrap">
   <div fxFlex="45" class="ngx-dnd-item">Item 1</div>
   <div fxFlex="45" class="ngx-dnd-item">Item 2</div>
   <div fxFlex="20" class="ngx-dnd-item">Item 3</div>
@@ -162,7 +162,7 @@
     </ngx-section>
 
     <ngx-section class="shadow" sectionTitle="Simple Drag-and-Drop - No model">
-      <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
+      <div fxLayout="row nowrap" fxFill>
         <div fxFlex="50%">
           <div class='wrapper'>
             <div class="ngx-dnd-container" ngxDroppable="example-two">
@@ -205,7 +205,7 @@
 
 
     <ngx-section class="shadow" sectionTitle="Restricted Drag-and-Drop - No model">
-      <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
+      <div fxLayout="row nowrap" fxFill>
         <div fxFlex="50%">
           <div class='wrapper'>
             <div class="ngx-dnd-container" ngxDroppable>
@@ -237,7 +237,7 @@
     </ngx-section>
 
     <ngx-section class="shadow" sectionTitle="Nested Sortable">
-      <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
+      <div fxLayout="row nowrap" fxFill>
         <div fxFlex="50%">
           <div class='wrapper'>
             <ngx-dnd-container
@@ -259,7 +259,7 @@
     </ngx-section>
 
     <ngx-section class="shadow" sectionTitle="Nested Sortable - containers">
-      <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
+      <div fxLayout="row nowrap" fxFill>
         <div fxFlex="50%">
           <div class='wrapper'>
             <ngx-dnd-container
@@ -281,7 +281,7 @@
     </ngx-section>
 
     <ngx-section class="shadow" sectionTitle="Restricted Drag-and-Drop - copy and remove on spill">
-      <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
+      <div fxLayout="row nowrap" fxFill>
         <div fxFlex="25%">
           <h4>Source</h4>
             <ngx-dnd-container
@@ -319,7 +319,7 @@
     </ngx-section>
 
     <ngx-section class="shadow" sectionTitle="Nested Restricted Drag-and-Drop - with remove on spill">
-      <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
+      <div fxLayout="row nowrap" fxFill>
         <div fxFlex="25%">
           <h4>Source</h4>
           <ngx-dnd-container
@@ -357,7 +357,7 @@
     </ngx-section>
 
     <ngx-section class="shadow" sectionTitle="Restricted Drag-and-Drop - multiple containers">
-      <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
+      <div fxLayout="row nowrap" fxFill>
         <div fxFlex="25%">
           <h4>Source</h4>
             <ngx-dnd-container
@@ -406,7 +406,7 @@
     </ngx-section>
 
     <ngx-section class="shadow builder" sectionTitle="Builder Demo">
-      <div fxLayout="row" fxLayoutWrap="nowrap" fxFill>
+      <div fxLayout="row nowrap" fxFill>
         <div class="builder-source" fxFlex="20%">
           <h4>Source</h4>
 
@@ -454,7 +454,8 @@
                        (drop)="log($event)"
                        (over)="log($event)"
                        (out)="log($event)"
-                       (remove)="log($event)">
+                       (remove)="log($event)"
+                       (cancel)="log($event)">
                      </ngx-dnd-container>
                    </ngx-section>
                 </div>

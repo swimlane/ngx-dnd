@@ -2,7 +2,7 @@
 ```
 [ ] bug report => Search github for a similar issue or PR before submitting
 [ ] feature request
-[ ] support request => Sorry, will will not be able to answer every support request.  Please consider other venues for support requests
+[ ] support request => Sorry, we will not be able to answer every support request.  Please consider other venues for support requests
 ```
 
 **Current behavior**
@@ -20,7 +20,7 @@
 **Please tell us about your environment:**
 <!-- Operating system, IDE, package manager, HTTP server, ... -->
 
-* **ngx-charts version:** x.x.x
+* **ngx-dnd version:** x.x.x
 <!-- Check whether this is still an issue in the most recent ngx-charts version -->
 
 * **Angular version:** 2.x.x
