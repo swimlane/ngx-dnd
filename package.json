@@ -125,7 +125,7 @@
     "tslint": "^5.6.0",
     "tslint-config-swimlane": "^3.0.2",
     "tslint-loader": "^3.3.0",
-    "typescript": "^2.7.2",
+    "typescript": "2.7.2",
     "uglify-js": "^2.8.12",
     "url-loader": "^0.5.7",
     "webpack": "3.5.4",
