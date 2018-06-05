@@ -1,0 +1,20 @@
+{
+  "name": "@swimlane/ngx-dnd",
+  "description": "Drag and Drop for Angular2 and beyond!",
+  "version": "4.0.2",
+  "scripts": {
+    "changelog": "chg release -y",
+    "postversion": "git push --tags",
+    "prepublish": "ng build @swimlane/ngx-dnd --prod"
+  },
+  "peerDependencies": {
+    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
+  },
+  "devDependencies": {
+    "@swimlane/dragula": "^3.7.3",
+    "@types/dragula": "^2.1.33",
+    "chg": "^0.3.3",
+    "np": "^3.0.1"
+  }
+}
