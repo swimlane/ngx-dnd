@@ -8,10 +8,10 @@
     "build:package": "ng build @swimlane/ngx-dnd",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
+    "e2e": "npm run cy:run",
     "prettier": "prettier --write \"**/*.{js,ts}\"",
-    "prepublishOnly":
-      "echo \"This is the workspace -- you probably meant run 'npm publish' from projects/swimlane/ngx-dnd.\" && exit 1",
+    "cy:run": "cypress run",
+    "prepublishOnly": "echo \"This is the workspace -- you probably meant run 'npm publish' from projects/swimlane/ngx-dnd.\" && exit 1",
     "preversion": "echo \"This is the workspace -- you probably meant to run 'npm version' from projects/swimlane/ngx-dnd.\" && exit 1"
   },
   "private": true,
@@ -46,6 +46,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^8.9.5",
     "codelyzer": "~4.2.1",
+    "cypress": "^3.0.1",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~1.7.1",
