@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "prettier": "prettier --write \"**/*.{js,ts}\"",
-    "prepublish":
+    "prepublishOnly":
       "echo \"This is the workspace -- you probably meant run 'npm publish' from projects/swimlane/ngx-dnd.\" && exit 1",
     "preversion": "echo \"This is the workspace -- you probably meant to run 'npm version' from projects/swimlane/ngx-dnd.\" && exit 1"
   },
