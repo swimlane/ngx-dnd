@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "npm run build:package && ng serve",
     "build": "npm run build:package && ng build",
     "build:package": "ng build @swimlane/ngx-dnd",
     "test": "ng test",
