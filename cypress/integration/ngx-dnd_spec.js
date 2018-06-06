@@ -1,3 +1,5 @@
+/* global cy */
+
 describe('Demo', () => {
   beforeEach(function() {
     cy.visit('http://localhost:4200/');
