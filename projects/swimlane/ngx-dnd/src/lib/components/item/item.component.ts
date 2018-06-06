@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ViewEncapsulation, HostBinding } from '@angular/core';
 
-import { ContainerComponent } from '../';
-import { DraggableDirective } from '../../directives/';
+import { ContainerComponent } from '../container/container.component';
+import { DraggableDirective } from '../../directives/ngx-draggable.directive';
 
 /**
  * Component that allows nested ngxDroppable and ngxDraggables

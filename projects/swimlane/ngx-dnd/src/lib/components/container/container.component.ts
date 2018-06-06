@@ -11,7 +11,7 @@ import {
   EventEmitter
 } from '@angular/core';
 
-import { DroppableDirective } from '../../directives';
+import { DroppableDirective } from '../../directives/ngx-droppable.directive';
 
 let i = 0;
 function getNextId() {
