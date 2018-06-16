@@ -1,7 +1,7 @@
 /* global cy */
 
 describe('Demo', () => {
-  beforeEach(function() {
+  before(function() {
     cy.visit('http://localhost:4200/');
   });
 
@@ -78,15 +78,15 @@ describe('Demo', () => {
           .get('@container')
           .find('.ngx-dnd-item')
           .last()
-          .as('item3')
-          .contains('Item 3');
+          .as('item1')
+          .contains('Item 1');
 
-        dragAndDrop('@item3', '@container', 'topLeft');
+        dragAndDrop('@item1', '@container', 'topLeft');
 
         cy
           .get('@container')
           .find('.ngx-dnd-item')
-          .should(matchOrder(['Item 3', 'Item 1', 'Item 2']));
+          .should(matchOrder(['Item 1', 'Item 2', 'Item 3']));
       });
     });
 
@@ -198,17 +198,17 @@ describe('Demo', () => {
           .get('@container')
           .find('.ngx-dnd-item')
           .last()
-          .as('item3')
-          .contains('Item 3');
+          .as('item1')
+          .contains('Item 1');
 
-        dragAndDrop('@item3', '@container', 'topLeft');
+        dragAndDrop('@item1', '@container', 'topLeft');
 
         cy
           .get('@container')
           .find('.ngx-dnd-item')
-          .should(matchOrder(['Item 3', 'Item 1', 'Item 2']));
+          .should(matchOrder(['Item 1', 'Item 2', 'Item 3']));
 
-        cy.get('@model').contains('orderableList = [\n  "Item 3",\n  "Item 1",\n  "Item 2"\n]');
+        cy.get('@model').contains('orderableList = [\n  "Item 1",\n  "Item 2",\n  "Item 3"\n]');
       });
     });
 
@@ -330,15 +330,15 @@ describe('Demo', () => {
           .get('@container')
           .find('.ngx-dnd-item')
           .last()
-          .as('item5')
-          .contains('Item 5');
+          .as('item1')
+          .contains('Item 1');
 
-        dragAndDrop('@item5', '@container', 'topLeft');
+        dragAndDrop('@item1', '@container', 'topLeft');
 
         cy
           .get('@container')
           .find('.ngx-dnd-item')
-          .should(matchOrder(['Item 5', 'Item 1', 'Item 2', 'Item 3', 'Item 4']));
+          .should(matchOrder(['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5']));
       });
     });
   });
@@ -401,21 +401,21 @@ describe('Demo', () => {
         cy
           .get('@containerB')
           .find('.ngx-dnd-item')
-          .last()
-          .as('item5')
-          .contains('Item 3b');
+          .first()
+          .as('item1b')
+          .contains('Item 1b');
 
-        dragAndDrop('@item5', '@containerA', 'topLeft');
+        dragAndDrop('@item1b', '@containerA', 'topLeft');
 
         cy
           .get('@containerA')
           .find('.ngx-dnd-item')
-          .should(matchOrder(['Item 3b', 'Item 1a', 'Item 2a', 'Item 3a']));
+          .should(matchOrder(['Item 1b', 'Item 2a', 'Item 3a']));
 
         cy
           .get('@containerB')
           .find('.ngx-dnd-item')
-          .should(matchOrder(['Item 1b', 'Item 2b']));
+          .should(matchOrder(['Item 2b', 'Item 3b', 'Item 1a']));
       });
     });
 
@@ -476,21 +476,21 @@ describe('Demo', () => {
         cy
           .get('@containerB')
           .find('.ngx-dnd-item')
-          .last()
-          .as('item5')
-          .contains('Item 3b');
+          .first()
+          .as('item1b')
+          .contains('Item 1b');
 
-        dragAndDrop('@item5', '@containerA', 'topLeft');
+        dragAndDrop('@item1b', '@containerA', 'topLeft');
 
         cy
           .get('@containerA')
           .find('.ngx-dnd-item')
-          .should(matchOrder(['Item 1a', 'Item 2a', 'Item 3a']));
+          .should(matchOrder(['Item 2a', 'Item 3a']));
 
         cy
           .get('@containerB')
           .find('.ngx-dnd-item')
-          .should(matchOrder(['Item 1b', 'Item 2b', 'Item 3b']));
+          .should(matchOrder(['Item 1b', 'Item 2b', 'Item 3b', 'Item 1a']));
       });
     });
   });
@@ -570,7 +570,7 @@ describe('Demo', () => {
       cy
         .get('@target')
         .find('.ngx-dnd-item')
-        .should(matchOrder(['Section']));
+        .should(matchOrder(['Section', 'A String']));
 
       cy
         .get('@target')
@@ -579,12 +579,6 @@ describe('Demo', () => {
         .as('targetSectionContainer');
 
       dragAndDrop('@sourceNumber', '@targetSectionContainer', 'topLeft');
-
-      cy
-        .get('@target')
-        .find('> .ngx-dnd-item')
-        .should('has.length', 1)
-        .contains('Section');
 
       cy
         .get('@targetSectionContainer')
