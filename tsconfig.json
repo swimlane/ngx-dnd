@@ -1,47 +1,18 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
     "moduleResolution": "node",
-    "declaration": true,
-    "noEmitHelpers": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "sourceMap": true,
-    "pretty": true,
-    "allowUnreachableCode": true,
-    "allowUnusedLabels": true,
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noImplicitUseStrict": false,
-    "noFallthroughCasesInSwitch": false,
-    "allowSyntheticDefaultImports": true,
-    "suppressExcessPropertyErrors": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "outDir": "dist",
-    "declarationDir": "release",
-    "lib": ["es7", "dom"],
-    "noUnusedLocals": true,
-    "noUnusedParameters": true
-  },
-  "files": [
-    "src/declarations.d.ts",
-    "src/index.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ],
-  "include": [
-    "src/**/**.ts",
-    "demo/**/**.ts"
-  ],
-  "compileOnSave": false,
-  "buildOnSave": false,
-  "awesomeTypescriptLoaderOptions": {
-    "forkChecker": false
-  },
-  "angularCompilerOptions": {
-    "genDir": "release/",
-    "skipMetadataEmit": false
+    "target": "es5",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom"],
+    "paths": {
+      "@swimlane/ngx-dnd": ["dist/swimlane/ngx-dnd"]
+    }
   }
 }

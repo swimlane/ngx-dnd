@@ -2,7 +2,7 @@
 
 ## HEAD (Unreleased)
 
-* Port to Angular CLI 6
+_(none)_
 
 ---
 
