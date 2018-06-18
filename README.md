@@ -185,17 +185,9 @@ This project uses [sindresorhus/np](https://github.com/sindresorhus/np), a bette
 
 * `rm -rf node_modules`
 * `npm i`
-* `npm test`
-* update version in `package.json`
-* Update CHANGELOG.md:
-  * move entries in the `## HEAD (Unreleased)` section below the horizontal rule, under a new header with the version number.
-  * ensure all entries are approprate.
-  * Leave a single `* _(none)_` entry in the `## HEAD (Unreleased)` section.
-* `git commit -am {VERSION NUMBER}`
-* `git tag {VERSION NUMBER}`
+* `npm version {version_number}`
 * `git push --tags`
-* `npm run package`
-* `npm publish`
+* `npm run publish:lib`
 
 </details>
 
