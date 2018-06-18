@@ -1,6 +1,6 @@
 {
   "name": "ngx-dnd",
-  "version": "0.0.0",
+  "version": "5.0.0",
   "scripts": {
     "ng": "ng",
     "build": "ng build",
@@ -18,10 +18,10 @@
     "version": "npm run changelog",
     "postversion": "cpx CHANGELOG.md ./projects/swimlane/ngx-dnd",
     "prepublish:lib": "npm-run-all build:prod:lib test:single",
-    "publish:lib": "cd dist/swimlane/ngx-dnd && npm pack",
+    "publish:lib": "cd dist/swimlane/ngx-dnd && npm publish --tag next",
     "build:lib": "ng build @swimlane/ngx-dnd",
     "build:prod:lib": "ng build --prod @swimlane/ngx-dnd",
-    "package:lib": "cd dist/swimlane/ngx-dnd && npm pack",
+    "pack:lib": "cd dist/swimlane/ngx-dnd && npm pack",
     "prepublishOnly": "echo \"This is the workspace -- you probably meant run 'npm run lib:prepublish && npm run lib:publish' from dist/swimlane/ngx-dnd.\" && exit 1"
   },
   "private": true,
