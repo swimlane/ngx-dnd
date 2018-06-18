@@ -1,9 +1,12 @@
 # CHANGELOG
 
 ## HEAD (Unreleased)
-* Port to Angular CLI 6
+_(none)_
 
 --------------------
+
+## 5.0.0 (2018-06-18)
+* Port to Angular CLI 6
 
 ## 4.0.2 (2018-05-23)
 
