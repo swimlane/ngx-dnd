@@ -15,7 +15,7 @@
     "prettier": "prettier --write \"**/*.{js,ts}\"",
     "changelog": "chg release -y && git add -A CHANGELOG.md",
     "setMetadata": "ts-node ./tools/set-metadata.ts",
-    "preversion": "npm run test:single",
+    "preversion": "npm-run-all build:prod:lib test:single",
     "version": "npm run changelog",
     "postversion": "cpx CHANGELOG.md ./projects/swimlane/ngx-dnd && npm run setMetadata",
     "prepublish:lib": "npm-run-all build:prod:lib test:single",
