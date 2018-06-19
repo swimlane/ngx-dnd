@@ -34,7 +34,7 @@ _(none)_
 
 ## 3.1.1 (2017-12-04)
 
-* Fix draging between containers
+* Fix dragging between containers
 * Updated README to state importing styles
 * Bumped ngx-ui for ng 5.0 support in the demo
 

@@ -8,7 +8,7 @@ import { environment } from '../environments/environment';
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
-  version = environment.APP_VERSION;
+  version = environment.APP_VERSION.replace(/\"/g, '');
 
   theme = 'dark';
 
