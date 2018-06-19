@@ -64,23 +64,6 @@
             "browserTarget": "ngx-dnd:build"
           }
         },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.spec.json",
-            "karmaConfig": "src/karma.conf.js",
-            "styles": [
-              "src/styles.css"
-            ],
-            "scripts": [],
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ]
-          }
-        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
@@ -111,14 +94,6 @@
             "production": {
               "project": "projects/swimlane/ngx-dnd/ng-package.prod.json"
             }
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/swimlane/ngx-dnd/src/test.ts",
-            "tsConfig": "projects/swimlane/ngx-dnd/tsconfig.spec.json",
-            "karmaConfig": "projects/swimlane/ngx-dnd/karma.conf.js"
           }
         },
         "lint": {
