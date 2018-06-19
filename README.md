@@ -13,6 +13,14 @@ _Note: This project is under heavy construction. As such, the API may change dra
 * Touch support
 * Templating
 
+## Install
+
+To use ngx-dnd in your project install it via [npm](https://www.npmjs.com/package/@swimlane/ngx-dnd):
+
+* `npm i @swimlane/ngx-dnd @swimlane/dragula --save`
+* Add `NgxDnDModule` to your application module
+* If using directives you will need to BYO styles or include `@swimlane/ngx-dnd/release/index.css`.
+
 ## Quick intro and examples
 
 ### Directives
@@ -135,14 +143,6 @@ nestedLists = [
 ```
 
 See [https://swimlane.github.io/ngx-dnd/](https://swimlane.github.io/ngx-dnd/) for more lives examples. Demo code is at [https://github.com/swimlane/ngx-dnd/tree/master/demo](https://github.com/swimlane/ngx-dnd/tree/master/demo).
-
-## Install
-
-To use ngx-dnd in your project install it via [npm](https://www.npmjs.com/package/@swimlane/ngx-dnd):
-
-* `npm i @swimlane/ngx-dnd --save`
-* Add `NgxDnDModule` to your application module
-* If using directives you will need to BYO styles or include `@swimlane/ngx-dnd/release/index.css`.
 
 ## Development
 
