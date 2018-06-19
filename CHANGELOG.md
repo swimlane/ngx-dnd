@@ -1,10 +1,13 @@
 # CHANGELOG
 
 ## HEAD (Unreleased)
-* Fix: re-added CSS fields to release
-* Chore: now including SCSS files in release
+_(none)_
 
 --------------------
+
+## 5.0.1 (2018-06-19)
+* Fix: re-added CSS fields to release
+* Chore: now including SCSS files in release
 
 ## 5.0.0 (2018-06-18)
 * Chore: Port to Angular CLI 6
