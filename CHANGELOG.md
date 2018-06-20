@@ -1,9 +1,12 @@
 # CHANGELOG
 
 ## HEAD (Unreleased)
-* Release latest version
+_(none)_
 
 --------------------
+
+## 5.0.2 (2018-06-20)
+* Release latest version
 
 ## 5.0.1 (2018-06-19)
 * Fix: re-added CSS fields to release
