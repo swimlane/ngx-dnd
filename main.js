@@ -995,7 +995,7 @@ var NgxDnDModule = /** @class */ (function () {
 /*! exports provided: name, description, version, peerDependencies, repository, keywords, license, bugs, homepage, default */
 /***/ (function(module) {
 
-module.exports = {"name":"@swimlane/ngx-dnd","description":"Drag and Drop for Angular2 and beyond!","version":"5.0.5","peerDependencies":{"@angular/common":"^6.0.0-rc.0 || ^6.0.0","@angular/core":"^6.0.0-rc.0 || ^6.0.0","@swimlane/dragula":"^3.7.3","@types/dragula":"^2.1.33"},"repository":{"type":"git","url":"git+https://github.com/swimlane/ngx-dnd.git"},"keywords":["angular2","angular4","angular5","dnd","drag","drop","angular"],"license":"MIT","bugs":{"url":"https://github.com/swimlane/ngx-dnd/issues"},"homepage":"https://github.com/swimlane/ngx-dnd#readme"};
+module.exports = {"name":"@swimlane/ngx-dnd","description":"Drag and Drop for Angular2 and beyond!","version":"5.0.6","peerDependencies":{"@angular/common":"^6.0.0-rc.0 || ^6.0.0","@angular/core":"^6.0.0-rc.0 || ^6.0.0","@swimlane/dragula":"^3.7.3","@types/dragula":"^2.1.33"},"repository":{"type":"git","url":"git+https://github.com/swimlane/ngx-dnd.git"},"keywords":["angular2","angular4","angular5","dnd","drag","drop","angular"],"license":"MIT","bugs":{"url":"https://github.com/swimlane/ngx-dnd/issues"},"homepage":"https://github.com/swimlane/ngx-dnd#readme"};
 
 /***/ }),
 
