@@ -1,9 +1,12 @@
 # CHANGELOG
 
 ## HEAD (Unreleased)
-* Publish for metadata
+_(none)_
 
 --------------------
+
+## 5.0.3 (2018-06-20)
+* Publish for metadata
 
 ## 5.0.2 (2018-06-20)
 * Release latest version

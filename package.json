@@ -1,6 +1,6 @@
 {
   "name": "ngx-dnd",
-  "version": "5.0.2",
+  "version": "5.0.3",
   "description": "Drag and Drop for Angular2 and beyond!",
   "scripts": {
     "ng": "ng",
