@@ -995,7 +995,7 @@ var NgxDnDModule = /** @class */ (function () {
 /*! exports provided: name, description, version, peerDependencies, default */
 /***/ (function(module) {
 
-module.exports = {"name":"@swimlane/ngx-dnd","description":"Drag and Drop for Angular2 and beyond!","version":"5.0.1","peerDependencies":{"@angular/common":"^6.0.0-rc.0 || ^6.0.0","@angular/core":"^6.0.0-rc.0 || ^6.0.0","@swimlane/dragula":"^3.7.3","@types/dragula":"^2.1.33"}};
+module.exports = {"name":"@swimlane/ngx-dnd","description":"Drag and Drop for Angular2 and beyond!","version":"5.0.2","peerDependencies":{"@angular/common":"^6.0.0-rc.0 || ^6.0.0","@angular/core":"^6.0.0-rc.0 || ^6.0.0","@swimlane/dragula":"^3.7.3","@types/dragula":"^2.1.33"}};
 
 /***/ }),
 
