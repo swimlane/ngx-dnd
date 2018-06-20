@@ -1,9 +1,12 @@
 # CHANGELOG
 
 ## HEAD (Unreleased)
-* Add support files to published resources
+_(none)_
 
 --------------------
+
+## 5.0.4 (2018-06-20)
+* Add support files to published resources
 
 ## 5.0.3 (2018-06-20)
 * Publish for metadata
