@@ -1,6 +1,7 @@
 {
   "name": "ngx-dnd",
   "version": "5.0.2",
+  "description": "Drag and Drop for Angular2 and beyond!",
   "scripts": {
     "ng": "ng",
     "build": "ng build",
@@ -81,5 +82,26 @@
     "tslint-config-prettier": "^1.13.0",
     "tslint-config-swimlane": "^3.0.4",
     "typescript": "~2.7.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swimlane/ngx-dnd.git"
+  },
+  "keywords": [
+    "angular2",
+    "angular4",
+    "angular5",
+    "dnd",
+    "drag",
+    "drop",
+    "angular"
+  ],
+  "authors": [
+    "Jayson Harshbarger"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/swimlane/ngx-dnd/issues"
+  },
+  "homepage": "https://github.com/swimlane/ngx-dnd#readme"
 }

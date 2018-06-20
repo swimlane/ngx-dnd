@@ -185,6 +185,7 @@ This project uses [sindresorhus/np](https://github.com/sindresorhus/np), a bette
 
 * `rm -rf node_modules`
 * `npm i`
+* Verify change-log
 * `npm version {version_number}`
 * `git push --tags`
 * `npm run publish:lib`

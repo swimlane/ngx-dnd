@@ -1,7 +1,7 @@
 # CHANGELOG
 
 ## HEAD (Unreleased)
-_(none)_
+* Publish for metadata
 
 --------------------
 
