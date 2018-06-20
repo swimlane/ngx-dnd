@@ -5,6 +5,9 @@ _(none)_
 
 --------------------
 
+## 5.0.6 (2018-06-20)
+_(none)_
+
 ## 5.0.5 (2018-06-20)
 * Add support files to published resources (again, really)
 
