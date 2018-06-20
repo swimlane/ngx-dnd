@@ -28,7 +28,7 @@
     "build:lib": "ng build @swimlane/ngx-dnd",
     "postbuild:lib": "npm-run-all copyFiles scss-bundle scss-build",
     "build:lib:prod": "ng build --prod @swimlane/ngx-dnd",
-    "postbuild:lib:prod": "npm-run-all scss-bundle scss-build",
+    "postbuild:lib:prod": "npm-run-all copyFiles scss-bundle scss-build",
     "pack:lib": "cd dist/swimlane/ngx-dnd && npm pack",
     "deploy": "npm run build && angular-cli-ghpages --dir ./dist/ngx-dnd/",
     "publish": "npm-run-all publish:lib deploy",
