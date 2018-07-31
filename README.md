@@ -1,4 +1,4 @@
-# ngx-dnd [![Codacy Badge](https://api.codacy.com/project/badge/Grade/06120385a7c84f18801b7b7c36e9fc82)](https://www.codacy.com/app/hypercubed/ngx-dnd?utm_source=github.com&utm_medium=referral&utm_content=swimlane/ngx-dnd&utm_campaign=Badge_Grade)
+# ngx-dnd [![Codacy Badge](https://api.codacy.com/project/badge/Grade/06120385a7c84f18801b7b7c36e9fc82)](https://www.codacy.com/app/hypercubed/ngx-dnd?utm_source=github.com&utm_medium=referral&utm_content=swimlane/ngx-dnd&utm_campaign=Badge_Grade) [![npm downloads](https://img.shields.io/npm/dm/@swimlane/ngx-dnd.svg)](https://npmjs.org/@swimlane/ngx-dnd)
 
 🕶 Drag, Drop and Sorting Library for Angular4 and beyond!
 
