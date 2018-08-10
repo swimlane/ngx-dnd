@@ -25,7 +25,7 @@ import { NgxDnDModule } from '@swimlane/ngx-dnd';
     FormsModule,
     FlexLayoutModule,
     NgxUIModule,
-    NgxDnDModule
+    NgxDnDModule.forRoot()
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent]

@@ -18,7 +18,7 @@ _Note: This project is under heavy construction. As such, the API may change dra
 To use ngx-dnd in your project install it via [npm](https://www.npmjs.com/package/@swimlane/ngx-dnd):
 
 * `npm i @swimlane/ngx-dnd @swimlane/dragula --save`
-* Add `NgxDnDModule` to your application module
+* Add `NgxDnDModule.forRoot()` to your application module
 * If using directives you will need to BYO styles or include `@swimlane/ngx-dnd/release/index.css`.
 
 ## Quick intro and examples

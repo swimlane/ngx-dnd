@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { DraggableDirective } from './directives/ngx-draggable.directive';
@@ -15,6 +15,12 @@ const directives = [DraggableDirective, DroppableDirective, DragHandleDirective]
   imports: [CommonModule],
   declarations: [...components, ...directives],
   exports: [...components, ...directives],
-  providers: [DrakeStoreService]
 })
-export class NgxDnDModule {}
+export class NgxDnDModule {
+  public static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: NgxDnDModule,
+      providers: [DrakeStoreService]
+    }
+  }
+}
