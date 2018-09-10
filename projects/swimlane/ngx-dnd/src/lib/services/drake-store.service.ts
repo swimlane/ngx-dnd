@@ -12,7 +12,7 @@ const dragula = dragulaNamespace;
  *
  * @export
  */
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class DrakeStoreService {
   private droppableMap = new WeakMap<any, DroppableDirective>();
   private draggableMap = new WeakMap<any, DraggableDirective>();
