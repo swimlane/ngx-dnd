@@ -1,9 +1,12 @@
 # CHANGELOG
 
 ## HEAD (Unreleased)
-* Provide service in root
+_(none)_
 
 --------------------
+
+## 5.1.0 (2018-09-10)
+* Provide service in root
 
 ## 5.0.6 (2018-06-20)
 _(none)_
