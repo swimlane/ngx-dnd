@@ -1,39 +1,32 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
-import { CommonModule, APP_BASE_HREF } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { Location, LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { NgxDnDModule } from '@swimlane/ngx-dnd';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { NgxUIModule } from '@swimlane/ngx-ui';
-import '@swimlane/ngx-ui/release/index.css';
+import { DocspaCoreModule } from '@swimlane/docspa-core';
 
 import { AppComponent } from './app.component';
-import { NgxDnDModule } from '@swimlane/ngx-dnd';
+
+import { config } from '../docspa.config';
+import { BuilderModule } from './builder/builder.module';
 
 @NgModule({
-  providers: [
-    {
-      provide: APP_BASE_HREF,
-      useFactory: getBaseLocation
-    }
+  declarations: [
+    AppComponent
   ],
   imports: [
-    CommonModule,
     BrowserModule,
-    BrowserAnimationsModule,
-    FormsModule,
+    DocspaCoreModule.forRoot(config),
+    NgxDnDModule,
     FlexLayoutModule,
-    NgxUIModule,
-    NgxDnDModule
+    BuilderModule
   ],
-  declarations: [AppComponent],
+  providers: [
+    Location,
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
-
-export function getBaseLocation() {
-  const paths: string[] = location.pathname.split('/').splice(1, 1);
-  const basePath: string = (paths && paths[0]) || '';
-  return '/' + basePath;
+export class AppModule {
 }

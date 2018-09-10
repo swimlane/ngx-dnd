@@ -1,184 +1,21 @@
-html, body {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: 'RobotoDraft', 'Roboto', 'Helvetica Neue, Helvetica, Arial', sans-serif;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 1.4rem;
-  line-height: 2rem;
-  letter-spacing: 0.01rem;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-
-  min-height: 100vh;
-  color: #666;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-$color-bg-darkest: #13141b;
-$color-bg-darker: #1b1e27;
-$color-bg-dark: #232837;
-$color-bg-light: #455066;
-$color-bg-lighter: #5b6882;
-
-/**
-  * Text
-  */
-$color-text-dark: #72809b;
-$color-text-med-dark: #919db5;
-$color-text-med: #a8b2c7;
-$color-text-med-light: #d9dce1;
-$color-text-light: #f0f1f6;
-$color-text-lighter: #fff;
-
-.dark {
-  $color-bg-darkest: #13141b;
-  $color-bg-darker: #1b1e27;
-  $color-bg-dark: #232837;
-  $color-bg-light: #455066;
-  $color-bg-lighter: #5b6882;
-
-  /**
-    * Text
-    */
-  $color-text-dark: #72809b;
-  $color-text-med-dark: #919db5;
-  $color-text-med: #a8b2c7;
-  $color-text-med-light: #d9dce1;
-  $color-text-light: #f0f1f6;
-  $color-text-lighter: #fff;
-}
-
-.field {
-  color: $color-text-lighter;
-  background: $color-bg-darker;
-  padding: 20px;
-}
-
-.no-margin {
-  margin: 0 !important;
-}
-
-/**
- * Navigation
- */
-.nav-col {
-  color: $color-text-lighter;
-  background: $color-bg-lighter;
-
-  a {
-    color: $color-text-lighter;
-  }
-
-  h1 {
-    display: block;
-    // height: 50px;
-    background: $color-bg-lighter;
-    padding: 0 15px;
-    line-height: 50px;
-    margin: 0;
-  }
-
-  nav {
-    margin: 20px 15px;
-
-    li {
-      padding: .1rem 0;
-    }
-
-    ul ul {
-      padding-left:10px;
-      padding-bottom:10px;
-      font-size: .9em;
-    }
-
-    a {
-      color: #fff;
-      text-decoration: none;
-    }
-  }
-}
-
-.wrapper {
-  width: 100%;
-  padding: 0 30px;
-}
-
-ngx-section pre {
-  width: 90%;
-}
-
-.builder {
-  .ngx-dnd-item {
-    font-size: 16px;
-  }
-
-  .builder-source .ngx-dnd-container {
-    border: none;
-    padding: 5px;
-  }
-
-  .builder-target {
-
-    .ngx-input {
-      margin: 0;
-      .ngx-input-wrap {
-        margin: 0;
-      }
-    }
-
-    .ngx-dnd-container {
-      justify-content: space-between;
-      flex-flow: row wrap;
-      display: flex;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      box-sizing: border-box;
-
-      border: 2px dotted transparent;
-
-      .gu-unselectable &, &.gu-over, &.gu-over .ngx-dnd-container {
-        border: 2px dotted orange;
-      }
-
-      .ngx-dnd-item {
-        margin: 5px 1%;
-        border: 1px solid transparent;
-
-        flex: 1 1 100%;
-        box-sizing: border-box;
-        -webkit-box-flex: 1;
-        max-width: 100%;
-
-        &.half {
-          flex: 1 1 48%;
-          box-sizing: border-box;
-          -webkit-box-flex: 1;
-          max-width: 48%;
-        }
-      }
-
-      .ngx-dnd-item.gu-transit,
-      .ngx-dnd-item:hover  {
-        border: 1px solid #1786e9
-      }
-    }
-  }
-}
+// @import '@swimlane/ngx-dnd/release/index.scss';
 
 [ngxDragHandle].icon {
   font-size: 0.7em;
   cursor: move;
 }
 
-.ngx-icon.ngx-section {
-  display: inline-block;
-  margin-bottom: 0;
+.markdown-section h1 a, .markdown-section h2 a, .markdown-section h3 a, .markdown-section h4 a, .markdown-section h5 a, .markdown-section h6 a {
+  opacity: 1 !important;
+
+  > .icon {
+    transition: opacity .25s ease-in-out;
+    opacity: 0;
+  }
+}
+
+.markdown-section h1:hover a, .markdown-section h2:hover a, .markdown-section h3:hover a, .markdown-section h4:hover a, .markdown-section h5:hover a, .markdown-section h6:hover a {
+  > .icon {
+    opacity: 0.6;
+  }
 }

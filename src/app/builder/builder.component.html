@@ -1,0 +1,70 @@
+
+<div class="builder-container">
+  <div class="builder-source">
+    <h4>Source</h4>
+
+    <ngx-dnd-container
+      class="root-container"
+      [model]="sourceBuilderTools"
+      [dropZones]="['builder-target']"
+      [copy]="true"
+      [droppableItemClass]="droppableItemClass"
+      (drag)="builderDrag($event)">
+
+      <ng-template let-item="model">
+        <i [class]="item.icon"></i>
+        {{item.name}}
+      </ng-template>
+    </ngx-dnd-container>
+
+  </div>
+  <div class="builder-target">
+    <h4>Target</h4>
+
+    <ngx-dnd-container
+      class="root-container"
+      [model]="targetBuilderTools"
+      dropZone="builder-target"
+      [removeOnSpill]="true"
+      [droppableItemClass]="droppableItemClass"
+      (drag)="log($event)"
+      (drop)="log($event)"
+      (over)="log($event)"
+      (out)="log($event)"
+      (remove)="log($event)">
+
+      <ng-template let-model="model" let-template="template">
+        <div [ngSwitch]="model.inputType">
+          <div *ngSwitchCase="'section'">
+            <div class="shadow">
+              {{model.name}}
+              <ngx-dnd-container
+                dropZone="builder-target"
+                [model]="model.children"
+                [removeOnSpill]="true"
+                [template]="template"
+                [droppableItemClass]="droppableItemClass"
+                (drag)="log($event)"
+                (drop)="log($event)"
+                (over)="log($event)"
+                (out)="log($event)"
+                (remove)="log($event)"
+                (cancel)="log($event)">
+              </ngx-dnd-container>
+            </div>
+          </div>
+          <div *ngSwitchDefault>
+            <label>{{model.name}}</label>
+            <input [attr.type]="model.inputType" [ngModel]="model.data">
+          </div>
+        </div>
+      </ng-template>
+    </ngx-dnd-container>
+  </div>
+</div>
+<div>
+  <h3>Model</h3>
+  <pre><code>{{targetBuilderTools | json}}</code></pre>
+</div>
+
+

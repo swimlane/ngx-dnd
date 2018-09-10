@@ -1,0 +1,94 @@
+app-builder {
+  .builder-container {
+    display: flex;
+
+    .builder-source, .builder-target {
+      flex: 1 1 50%;
+      box-sizing: border-box;
+      max-width: 50%;
+    }
+  }
+
+  .ngx-dnd-item {
+    font-size: 16px;
+  }
+
+  .builder-source .ngx-dnd-container {
+    border: none;
+    background-color: lightgrey;
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  .builder-target {
+    .ngx-input {
+      margin: 0;
+      .ngx-input-wrap {
+        margin: 0;
+      }
+    }
+
+    > * > .ngx-dnd-container {
+      min-height: 400px;
+    }
+
+    .ngx-dnd-container {
+      justify-content: space-between;
+      flex-flow: row wrap;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      box-sizing: border-box;
+
+      border: 1px dashed lightgrey;
+      background-color: white;
+      
+      padding: 0;
+      min-height: 60px;
+
+      .gu-unselectable &, &.gu-over, &.gu-over .ngx-dnd-container {
+        border: 1px dashed orange;
+      }
+
+      .ngx-dnd-item {
+        margin: 5px 1%;
+        border: 1px solid transparent;
+
+        flex: 1 1 100%;
+        box-sizing: border-box;
+        -webkit-box-flex: 1;
+        max-width: 100%;
+        
+        &.half {
+          flex: 1 1 48%;
+          box-sizing: border-box;
+          -webkit-box-flex: 1;
+          max-width: 48%;
+          max-height: 60px;
+          padding: 0 5px 5px 5px;
+        }
+
+        label {
+          font-size: 0.6em;
+          margin-left: 0.2em;
+        }
+
+        input {
+          width: 100%;
+          padding: .5em .6em;
+          display: inline-block;
+          border: 1px solid #ccc;
+          box-shadow: inset 0 1px 3px #ddd;
+          border-radius: 4px;
+          vertical-align: middle;
+          box-sizing: border-box;
+        }
+      }
+
+      .ngx-dnd-item.gu-transit,
+      .ngx-dnd-item:hover  {
+        border: 1px solid #1786e9
+      }
+    }
+  }
+}
