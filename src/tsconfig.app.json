@@ -3,7 +3,15 @@
   "compilerOptions": {
     "outDir": "../out-tsc/app",
     "types": ["node"],
-    "module": "es2015"
+    "module": "es2015",
+    "paths": {
+      "@swimlane/ngx-dnd": [
+        "projects/swimlane/ngx-dnd/src/public_api"
+      ],
+      "@swimlane/ngx-dnd/*": [
+        "projects/swimlane/ngx-dnd/src/*"
+      ]
+    }
   },
   "exclude": [
     "src/test.ts",

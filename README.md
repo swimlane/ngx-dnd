@@ -1,8 +1,10 @@
-# ngx-dnd [![Codacy Badge](https://api.codacy.com/project/badge/Grade/06120385a7c84f18801b7b7c36e9fc82)](https://www.codacy.com/app/hypercubed/ngx-dnd?utm_source=github.com&utm_medium=referral&utm_content=swimlane/ngx-dnd&utm_campaign=Badge_Grade) [![npm downloads](https://img.shields.io/npm/dm/@swimlane/ngx-dnd.svg)](https://npmjs.org/@swimlane/ngx-dnd)
+# ngx-dnd
 
-🕶 Drag, Drop and Sorting Library for Angular4 and beyond!
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/06120385a7c84f18801b7b7c36e9fc82)](https://www.codacy.com/app/hypercubed/ngx-dnd?utm_source=github.com&utm_medium=referral&utm_content=swimlane/ngx-dnd&utm_campaign=Badge_Grade) [![npm downloads](https://img.shields.io/npm/dm/@swimlane/ngx-dnd.svg)](https://npmjs.org/@swimlane/ngx-dnd)
 
-_Note: This project is under heavy construction. As such, the API may change dramatically between major releases and documentation is lacking._
+🕶 Drag, Drop and Sorting Library for Angular6 and beyond!
+
+_Note: The drag-and-drop directives in [angular/cdk](https://material.angular.io/cdk/drag-drop/overview) are great.  Use that if you don't need nested DnD containers.  We are investigating using angular/cdk directives internally_
 
 ## Features
 
@@ -17,9 +19,16 @@ _Note: This project is under heavy construction. As such, the API may change dra
 
 To use ngx-dnd in your project install it via [npm](https://www.npmjs.com/package/@swimlane/ngx-dnd):
 
-* `npm i @swimlane/ngx-dnd @swimlane/dragula --save`
+* `npm i @swimlane/ngx-dnd @swimlane/dragula @types/dragula --save`
 * Add `NgxDnDModule` to your application module
 * If using directives you will need to BYO styles or include `@swimlane/ngx-dnd/release/index.css`.
+* You may need to add the following to your `polyfills.ts` file:
+
+```js
+if (typeof window['global'] === 'undefined') {
+  window['global'] = window;
+}
+```
 
 ## Quick intro and examples
 
@@ -54,9 +63,9 @@ Give multiple containers the same `dropZone` name to allow drag-and-drop between
 
 ```html
 <div class="ngx-dnd-container" ngxDroppable>
-  <div class="ngx-dnd-item" ngxDraggable="['example-target']">Item 1a</div>
-  <div class="ngx-dnd-item" ngxDraggable="['example-target']">Item 2a</div>
-  <div class="ngx-dnd-item" ngxDraggable="['example-target']">Item 3a</div>
+  <div class="ngx-dnd-item" [ngxDraggable]="['example-target']">Item 1a</div>
+  <div class="ngx-dnd-item" [ngxDraggable]="['example-target']">Item 2a</div>
+  <div class="ngx-dnd-item" [ngxDraggable]="['example-target']">Item 3a</div>
 </div>
 <div class="ngx-dnd-container" ngxDroppable="example-target">
   <div class="ngx-dnd-item" ngxDraggable>Item 1b</div>
