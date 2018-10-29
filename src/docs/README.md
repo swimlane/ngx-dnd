@@ -174,7 +174,9 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-## [CHANGELOG](https://github.com/swimlane/ngx-dnd/blob/master/CHANGELOG.md)
+## Changelog
+
+[Changelog](https://github.com/swimlane/ngx-dnd/blob/master/CHANGELOG.md)
 
 This project uses [heff/chg](https://github.com/heff/chg), a simple changelog/release history manager. When contributing to this project please add change notes (manually or using the [heff/chg](https://github.com/heff/chg) cli) to the `## HEAD (Unreleased)` section.
 
