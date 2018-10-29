@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Location, LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { NgxDnDModule } from '@swimlane/ngx-dnd';
-import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { DocspaCoreModule } from '@swimlane/docspa-core';
 
@@ -19,7 +18,6 @@ import { BuilderModule } from './builder/builder.module';
     BrowserModule,
     DocspaCoreModule.forRoot(config),
     NgxDnDModule,
-    FlexLayoutModule,
     BuilderModule
   ],
   providers: [
