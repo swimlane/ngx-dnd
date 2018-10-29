@@ -187,8 +187,6 @@ This project uses [heff/chg](https://github.com/heff/chg), a simple changelog/re
 
 ## Release
 
-This project uses [sindresorhus/np](https://github.com/sindresorhus/np), a better `npm publish`. To publish a new version to npm, first ensure all entries in the `## HEAD (Unreleased)` section of the changelog are appropriate, commit changes, and push changes to github (if not already done). Then use `npm run np` to launch an interactive UI that will guide you through publishing a new version. `sindresorhus/np` and `heff/chg` will perform various pre-publish checks, run tests, bump the version number, update the changelog, then publish to npm and push to github.
-
 <details>
   <summary>Manual process</summary>
 
