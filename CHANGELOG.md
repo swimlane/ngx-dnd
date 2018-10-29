@@ -1,9 +1,12 @@
 # CHANGELOG
 
 ## HEAD (Unreleased)
-* Angular version 7
+_(none)_
 
 --------------------
+
+## 6.0.0 (2018-10-29)
+* Angular version 7
 
 ## 5.1.0 (2018-09-10)
 * Provide service in root
