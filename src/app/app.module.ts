@@ -17,7 +17,7 @@ import { BuilderModule } from './builder/builder.module';
   imports: [
     BrowserModule,
     DocspaCoreModule.forRoot(config),
-    NgxDnDModule,
+    NgxDnDModule.forRoot(),
     BuilderModule
   ],
   providers: [
