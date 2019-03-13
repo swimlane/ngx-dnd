@@ -20,7 +20,7 @@ _Note: The drag-and-drop directives in [angular/cdk](https://material.angular.io
 To use ngx-dnd in your project install it via [npm](https://www.npmjs.com/package/@swimlane/ngx-dnd):
 
 * `npm i @swimlane/ngx-dnd @swimlane/dragula @types/dragula --save`
-* Add `NgxDnDModule` to your application module
+* Add `NgxDnDModule.forRoot()` to your application module.
 * If using directives you will need to BYO styles or include `@swimlane/ngx-dnd/release/index.css`.
 * You may need to add the following to your `polyfills.ts` file:
 

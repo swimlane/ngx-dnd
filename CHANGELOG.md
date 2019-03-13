@@ -1,7 +1,7 @@
 # CHANGELOG
 
 ## HEAD (Unreleased)
-_(none)_
+* Breaking: use `NgxDnDModule.forRoot()` in your module imports.
 
 --------------------
 
