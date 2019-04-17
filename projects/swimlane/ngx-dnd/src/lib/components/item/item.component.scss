@@ -1,4 +1,5 @@
 
+.ngx-dnd-box,
 .ngx-dnd-item {
   margin: 10px;
   padding: 10px;
@@ -23,6 +24,14 @@
   &:hover {
     border: 1px solid blue;
   }
+}
+
+.ngx-dnd-box {
+  height: 40px;
+  width: 40px;
+  line-height: 20px;
+  text-align: center;
+  float: left;
 }
 
 .gu-mirror {

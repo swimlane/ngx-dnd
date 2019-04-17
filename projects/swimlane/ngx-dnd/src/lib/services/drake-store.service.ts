@@ -19,13 +19,13 @@ export class DrakeStoreService {
   private dragulaOptions: dragulaNamespace.DragulaOptions;
   private drake: dragulaNamespace.Drake;
 
-  constructor() {
-    this.dragulaOptions = this.createDrakeOptions();
-    this.drake = dragula([], this.dragulaOptions);
-    this.registerEvents();
-  }
+  constructor() { }
 
   register(droppable: DroppableDirective) {
+    this.dragulaOptions = { ...this.createDrakeOptions(), 'direction': droppable.direction };
+    this.drake = dragula([], this.dragulaOptions);
+    this.registerEvents();
+
     this.droppableMap.set(droppable.container, droppable);
     this.drake.containers.push(droppable.container);
   }

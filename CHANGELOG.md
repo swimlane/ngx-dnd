@@ -2,6 +2,7 @@
 
 ## HEAD (Unreleased)
 * Breaking: use `NgxDnDModule.forRoot()` in your module imports.
+* Add `direction` as an option on `ngx-dnd-container`.
 
 --------------------
 
