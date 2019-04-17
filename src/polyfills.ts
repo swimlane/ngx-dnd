@@ -90,3 +90,7 @@ import * as process from 'process';
 
 // smoothscroll.polyfill();
 window['process'] = process;
+
+if (typeof window['global'] === 'undefined') {
+  window['global'] = window;
+}
