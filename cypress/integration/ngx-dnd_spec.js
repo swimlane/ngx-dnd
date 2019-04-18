@@ -2,12 +2,12 @@
 
 describe('Demo', () => {
   const dragAndDrop = (fromElement, toElement, location = 'bottomRight') => {
-    return cy
+    cy
       .get(fromElement)
       .should('be.visible')
       .first()
-      .trigger('mousedown', { which: 1 })
-      .get(toElement)
+      .trigger('mousedown', { which: 1 });
+    cy.get(toElement)
       .should('be.visible')
       .trigger('mousemove', location)
       .trigger('mouseup');
@@ -299,7 +299,7 @@ describe('Demo', () => {
           .get('@containerB')
           .find('.ngx-dnd-item')
           .should(matchOrder(['Item 1b', 'Item 2b', 'Item 3b']));
-      });
+      }); 
 
       it('should drag from first container to second', () => {
         cy

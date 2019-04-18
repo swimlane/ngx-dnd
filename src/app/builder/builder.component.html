@@ -9,7 +9,8 @@
       [dropZones]="['builder-target']"
       [copy]="true"
       [droppableItemClass]="droppableItemClass"
-      (drag)="builderDrag($event)">
+      (drag)="builderDrag($event)"
+      direction="mixed">
 
       <ng-template let-item="model">
         <i [class]="item.icon"></i>
@@ -31,7 +32,8 @@
       (drop)="log($event)"
       (over)="log($event)"
       (out)="log($event)"
-      (remove)="log($event)">
+      (remove)="log($event)"
+      direction="mixed">
 
       <ng-template let-model="model" let-template="template">
         <div [ngSwitch]="model.inputType">
@@ -49,7 +51,8 @@
                 (over)="log($event)"
                 (out)="log($event)"
                 (remove)="log($event)"
-                (cancel)="log($event)">
+                (cancel)="log($event)"
+                direction="mixed">
               </ngx-dnd-container>
             </div>
           </div>

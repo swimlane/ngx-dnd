@@ -53,7 +53,7 @@
     "@stackblitz/sdk": "^1.2.0",
     "@swimlane/docspa-core": "^2.0.0",
     "@swimlane/docspa-remark-preset": "^2.0.0",
-    "@swimlane/dragula": "^3.7.3",
+    "@swimlane/dragula": "^3.8.0",
     "@types/dragula": "^2.1.33",
     "@webcomponents/custom-elements": "^1.2.0",
     "core-js": "^2.5.4",

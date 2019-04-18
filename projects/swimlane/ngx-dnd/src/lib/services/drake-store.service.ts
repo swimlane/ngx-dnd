@@ -19,13 +19,13 @@ export class DrakeStoreService {
   private dragulaOptions: dragulaNamespace.DragulaOptions;
   private drake: dragulaNamespace.Drake;
 
-  constructor() { }
+  constructor() {
+    this.dragulaOptions = this.createDrakeOptions();
+    this.drake = dragula([], this.dragulaOptions);
+    this.registerEvents();    
+  }
 
   register(droppable: DroppableDirective) {
-    this.dragulaOptions = { ...this.createDrakeOptions(), 'direction': droppable.direction };
-    this.drake = dragula([], this.dragulaOptions);
-    this.registerEvents();
-
     this.droppableMap.set(droppable.container, droppable);
     this.drake.containers.push(droppable.container);
   }
@@ -75,7 +75,12 @@ export class DrakeStoreService {
       return true;
     };
 
-    return { accepts, copy, moves, revertOnSpill: true, direction: 'vertical' };
+    const direction: any = (el: any, target: any, source: any) => {
+      const targetComponent = this.droppableMap.get(target);
+      return targetComponent.direction || 'vertical';
+    };
+
+    return { accepts, copy, moves, revertOnSpill: true, direction };
   }
 
   registerEvents(): void {
