@@ -4,9 +4,7 @@
   "version": "6.0.0",
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0 || ^7.0.0",
-    "@angular/core": "^6.0.0-rc.0 || ^6.0.0 || ^7.0.0",
-    "@swimlane/dragula": "^3.7.3",
-    "@types/dragula": "^2.1.33"
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0 || ^7.0.0"
   },
   "repository": {
     "type": "git",
@@ -25,5 +23,9 @@
   "bugs": {
     "url": "https://github.com/swimlane/ngx-dnd/issues"
   },
-  "homepage": "https://github.com/swimlane/ngx-dnd#readme"
+  "homepage": "https://github.com/swimlane/ngx-dnd#readme",
+  "dependencies": {
+    "@swimlane/dragula": "^3.8.0",
+    "@types/dragula": "^2.1.34"
+  }
 }

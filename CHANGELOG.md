@@ -3,6 +3,8 @@
 ## HEAD (Unreleased)
 * Breaking: use `NgxDnDModule.forRoot()` in your module imports.
 * Add `direction` as an option on `ngx-dnd-container`.
+* Bump `@swimlnae/dragula` to support `direction`.
+* Make `@swimlane/dragula` and `@type/dragula` a dep of `@swimlane/ngx-dnd`
 
 --------------------
 
