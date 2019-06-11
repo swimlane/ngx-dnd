@@ -51,11 +51,11 @@ export class ContainerComponent implements OnInit, AfterViewInit {
   // @Input() dragulaOptions: any;
 
   @Input()
-  @ContentChild(TemplateRef)
+  @ContentChild(TemplateRef, { static: true })
   template: TemplateRef<any>;
 
   @Input()
-  @ViewChild(DroppableDirective)
+  @ViewChild(DroppableDirective, { static: true })
   droppable: any;
 
   @Output() drop: EventEmitter<any> = new EventEmitter<any>();
