@@ -1,9 +1,12 @@
 # CHANGELOG
 
 ## HEAD (Unreleased)
-* Angular version 8
+_(none)_
 
 --------------------
+
+## 8.0.0 (2019-06-11)
+* Angular version 8
 
 ## 7.0.0 (2019-04-18)
 * Breaking: use `NgxDnDModule.forRoot()` in your module imports.
