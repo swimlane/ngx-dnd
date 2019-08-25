@@ -54,7 +54,6 @@ export class ContainerComponent implements OnInit, AfterViewInit {
   @ContentChild(TemplateRef, { static: true })
   template: TemplateRef<any>;
 
-  @Input()
   @ViewChild(DroppableDirective, { static: true })
   droppable: any;
 
