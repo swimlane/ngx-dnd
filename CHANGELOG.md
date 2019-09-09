@@ -1,9 +1,12 @@
 # CHANGELOG
 
 ## HEAD (Unreleased)
-* Compat with Angular Ivy
+_(none)_
 
 --------------------
+
+## 8.1.0 (2019-09-09)
+* Compat with Angular Ivy
 
 ## 8.0.0 (2019-06-11)
 * Angular version 8
