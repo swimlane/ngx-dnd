@@ -43,7 +43,7 @@ describe('Demo', () => {
           .as('container');
       });
 
-      it('Intial State', () => {
+      it('Initial State', () => {
         cy.get('@container').find('.ngx-dnd-item');
         cy
           .get('@container')
@@ -98,7 +98,7 @@ describe('Demo', () => {
           .as('container');
       });
 
-      it('Intial State', () => {
+      it('Initial State', () => {
         cy.get('@container').find('.ngx-dnd-item');
         cy
           .get('@container')
@@ -156,7 +156,7 @@ describe('Demo', () => {
           .as('model');
       });
 
-      it('Intial State', () => {
+      it('Initial State', () => {
         cy.get('@container').find('.ngx-dnd-item');
         cy
           .get('@container')
@@ -216,7 +216,7 @@ describe('Demo', () => {
           .as('container');
       });
 
-      it('Intial State', () => {
+      it('Initial State', () => {
         cy.get('@container').find('.ngx-dnd-item');
         cy
           .get('@container')
@@ -289,7 +289,7 @@ describe('Demo', () => {
           .as('containerB');
       });
 
-      it('Intial State', () => {
+      it('Initial State', () => {
         cy
           .get('@containerA')
           .find('.ngx-dnd-item')
@@ -299,7 +299,7 @@ describe('Demo', () => {
           .get('@containerB')
           .find('.ngx-dnd-item')
           .should(matchOrder(['Item 1b', 'Item 2b', 'Item 3b']));
-      }); 
+      });
 
       it('should drag from first container to second', () => {
         cy
@@ -363,7 +363,7 @@ describe('Demo', () => {
           .as('containerB');
       });
 
-      it('Intial State', () => {
+      it('Initial State', () => {
         cy
           .get('@containerA')
           .find('.ngx-dnd-item')
@@ -460,7 +460,7 @@ describe('Demo', () => {
         .contains('Number');
     });
 
-    it('Intial State', () => {
+    it('Initial State', () => {
       cy
         .get('@source')
         .find('.ngx-dnd-item')

@@ -50,11 +50,18 @@ export class ContainerComponent implements OnInit, AfterViewInit {
   // @Input() classes: any = {};
   // @Input() dragulaOptions: any;
 
-  @Input()
+  @Input('template')
+  set templateInput(template: TemplateRef<any>) {
+    this.template = template;
+  }
+
   @ContentChild(TemplateRef, { static: true })
+  set templateChild(template: TemplateRef<any>) {
+    this.template = template;
+  }
+
   template: TemplateRef<any>;
 
-  @Input()
   @ViewChild(DroppableDirective, { static: true })
   droppable: any;
 
