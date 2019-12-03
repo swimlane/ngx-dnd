@@ -78,6 +78,7 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
+import '@ungap/global-this';
 
 // Used for browsers with partially native support of Custom Elements
 import '@webcomponents/custom-elements/src/native-shim';
@@ -92,5 +93,5 @@ import * as process from 'process';
 window['process'] = process;
 
 if (typeof window['global'] === 'undefined') {
-  window['global'] = window;
+  window['global'] = globalThis as any;
 }

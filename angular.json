@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/ngx-dnd",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -31,6 +32,12 @@
           },
           "configurations": {
             "production": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -95,7 +102,8 @@
           "configurations": {
             "production": {
               "project": "projects/swimlane/ngx-dnd/ng-package.prod.json"
-            }
+            ,              "tsConfig": "projects/swimlane/ngx-dnd/tsconfig.lib.prod.json"
+}
           }
         },
         "lint": {
