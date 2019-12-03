@@ -52,7 +52,7 @@
     "@ngx-loading-bar/core": "^2.2.0",
     "@ngx-loading-bar/http-client": "^2.2.0",
     "@stackblitz/sdk": "^1.2.0",
-    "@swimlane/docspa-core": "^4.0.1",
+    "@swimlane/docspa-core": "^4.2.0",
     "@swimlane/docspa-remark-preset": "^2.0.1",
     "@swimlane/dragula": "^3.8.0",
     "@types/dragula": "^2.1.33",
