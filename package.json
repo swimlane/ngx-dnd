@@ -64,7 +64,7 @@
     "process": "^0.11.10",
     "quick-lru": "^1.1.0",
     "remark-inline-links": "^3.1.1",
-    "rxjs": "^6.5.3",
+    "rxjs": "^6.5.4",
     "smoothscroll-polyfill": "^0.4.3",
     "tslib": "^1.10.0",
     "url-resolve": "^1.0.0",
