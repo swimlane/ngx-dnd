@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { CommonModule, Location, LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { CommonModule, Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { NgxDnDModule } from '@swimlane/ngx-dnd';
 
 import {
@@ -21,6 +21,7 @@ import { AppComponent } from './app.component';
 import { config } from '../docspa.config';
 import { environment } from '../environments/environment';
 import { BuilderModule } from './builder/builder.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { BuilderModule } from './builder/builder.module';
     CommonModule,
     BrowserModule,
     BuilderModule,
-    LoadingBarModule.forRoot(),
+    LoadingBarModule,
     LoadingBarHttpClientModule,
     LoggerModule.forRoot({ level: NgxLoggerLevel.WARN }),
     DocspaCoreModule.forRoot(config, environment),
@@ -46,11 +47,12 @@ import { BuilderModule } from './builder/builder.module';
     }),
     DocsifyPluginsModule.forRoot({
       plugins: []
-    })
+    }),
+    AppRoutingModule
   ],
   providers: [
     Location,
-    { provide: LocationStrategy, useClass: HashLocationStrategy }
+    { provide: LocationStrategy, useClass: PathLocationStrategy }
   ],
   bootstrap: [AppComponent]
 })
