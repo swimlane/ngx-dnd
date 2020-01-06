@@ -26,7 +26,8 @@
               "src/.nojekyll"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "projects/swimlane/ngx-dnd/src/lib/ngx-dnd.scss"
             ],
             "scripts": []
           },

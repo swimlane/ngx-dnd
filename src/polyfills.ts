@@ -40,6 +40,12 @@
 /** IE10 and IE11 requires the following for the Reflect API. */
 import 'core-js/es6/reflect';
 
+// Used for browsers with partially native support of Custom Elements
+import '@webcomponents/custom-elements/src/native-shim';
+
+// Used for browsers without a native support of Custom Elements
+import '@webcomponents/custom-elements/custom-elements.min';
+
 
 /** Evergreen browsers require these. **/
 // Used for reflect-metadata in JIT. If you use AOT (and only Angular decorators), you can remove.
@@ -80,18 +86,6 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
  */
 import '@ungap/global-this';
 
-// Used for browsers with partially native support of Custom Elements
-import '@webcomponents/custom-elements/src/native-shim';
-
-// Used for browsers without a native support of Custom Elements
-import '@webcomponents/custom-elements/custom-elements.min';
-
-// import smoothscroll from 'smoothscroll-polyfill';
-import * as process from 'process';
-
-// smoothscroll.polyfill();
-window['process'] = process;
-
-if (typeof window['global'] === 'undefined') {
-  window['global'] = globalThis as any;
-}
+window['global'] = globalThis as any;
+window['process'] = window['process'] || require('process/browser');
+window['Buffer'] = window['Buffer'] || require('buffer').Buffer;

@@ -9,6 +9,9 @@
       ],
       "@swimlane/ngx-dnd/*": [
         "projects/swimlane/ngx-dnd/src/*"
+      ],
+      "@swimlane/ngx-dnd/release/*": [
+        "projects/swimlane/ngx-dnd/src/lib/*"
       ]
     }
   },
