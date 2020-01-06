@@ -1,4 +1,4 @@
-<h1><a class="app-name-link" href="">ngx-dnd</a></h1>
+<h1><a class="app-name-link" href="">ngx-dnd</a> <md-env var="APP_VERSION"></md-env></h1>
 
 <md-toc-search paths="/,/components/container,/components/item,/directives/droppableDirective,/directives/draggableDirective,/directives/dragHandleDirective"></md-toc>
 
