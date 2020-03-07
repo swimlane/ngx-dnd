@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { CommonModule, Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { NgxDnDModule } from '@swimlane/ngx-dnd';
 
 import {
@@ -49,10 +49,6 @@ import { AppRoutingModule } from './app-routing.module';
       plugins: []
     }),
     AppRoutingModule
-  ],
-  providers: [
-    Location,
-    { provide: LocationStrategy, useClass: PathLocationStrategy }
   ],
   bootstrap: [AppComponent]
 })
