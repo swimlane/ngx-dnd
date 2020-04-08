@@ -10,7 +10,7 @@
     "serve": "ng serve",
     "start": "npm-run-all serve",
     "start:prod": "npm-run-all build:lib:prod serve",
-    "test": "npm run cy:run",
+    "test": "npm run lint && npm run cy:run",
     "test:ci": "start-server-and-test serve http-get://localhost:4200 cy:run",
     "cy:run": "cypress run --browser chrome",
     "cy:open": "cypress open",
@@ -97,6 +97,7 @@
     "ts-node": "~5.0.1",
     "tslint": "^6.1.1",
     "tslint-config-prettier": "^1.18.0",
+    "tslint-config-security": "^1.16.0",
     "tslint-config-swimlane": "^5.0.0",
     "typescript": "~3.6.4"
   },
