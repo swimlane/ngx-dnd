@@ -4,13 +4,13 @@ import { Component, ViewEncapsulation } from '@angular/core';
   selector: 'app-builder',
   templateUrl: './builder.component.html',
   styleUrls: ['./builder.component.scss'],
-  encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.None
 })
 export class BuilderComponent {
   sourceBuilderTools = [
     { name: 'Section', children: [] as any[], inputType: 'section', icon: 'far fa-square', class: 'wide' },
     { name: 'String', inputType: 'string', icon: 'fas fa-language', class: 'half' },
-    { name: 'Number', inputType: 'number', icon: 'fas fa-hashtag', class: 'half' },
+    { name: 'Number', inputType: 'number', icon: 'fas fa-hashtag', class: 'half' }
   ];
   targetBuilderTools: any[] = [];
 

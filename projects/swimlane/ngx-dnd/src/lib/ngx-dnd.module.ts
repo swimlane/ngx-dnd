@@ -19,8 +19,9 @@ const directives = [DraggableDirective, DroppableDirective, DragHandleDirective]
 })
 export class NgxDnDModule {
   static forRoot(): ModuleWithProviders {
-  return {
-    ngModule: NgxDnDModule,
-    providers: [ DrakeStoreService ]
-  };
-}}
+    return {
+      ngModule: NgxDnDModule,
+      providers: [DrakeStoreService]
+    };
+  }
+}

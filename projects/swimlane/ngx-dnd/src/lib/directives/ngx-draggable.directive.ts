@@ -121,7 +121,7 @@ export class DraggableDirective implements OnInit, OnDestroy {
   moves(source: any, handle: any, sibling: any): boolean {
     if (!this.canMove(source, handle, sibling)) return false;
 
-    return this.hasHandle ? this.handles.some(h => handelFor(handle, h)) : true;
+    return this.hasHandle ? this.handles.some((h) => handelFor(handle, h)) : true;
 
     function handelFor(c: any, p: any) {
       if (c === p) return true;

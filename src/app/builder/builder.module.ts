@@ -6,17 +6,8 @@ import { FormsModule } from '@angular/forms';
 import { BuilderComponent } from './builder.component';
 
 @NgModule({
-  imports: [
-    NgxDnDModule,
-    CommonModule,
-    FormsModule
-  ],
-  declarations: [
-    BuilderComponent
-  ],
-  exports: [
-    BuilderComponent,
-  ]
+  imports: [NgxDnDModule, CommonModule, FormsModule],
+  declarations: [BuilderComponent],
+  exports: [BuilderComponent]
 })
-export class BuilderModule {
-}
+export class BuilderModule {}
