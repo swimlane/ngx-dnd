@@ -1,4 +1,6 @@
 {
-  "entry": "projects/swimlane/ngx-dnd/src/lib/ngx-dnd.scss",
-  "dest": "dist/swimlane/ngx-dnd/release/index.scss"
+  "bundlerOptions": {
+    "entryFile": "projects/swimlane/ngx-dnd/src/lib/ngx-dnd.scss",
+    "outFile": "dist/swimlane/ngx-dnd/release/index.scss"
+  }
 }
