@@ -28,4 +28,4 @@ install:
   - npm run build:lib:prod
 
 script:
-  - npm run test:ci
+  - npm run ci
