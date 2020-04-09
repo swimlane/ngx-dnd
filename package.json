@@ -77,7 +77,7 @@
     "@angular/cli": "^9.1.1",
     "@angular/compiler-cli": "^9.1.1",
     "@angular/language-service": "^9.1.1",
-    "@swimlane/prettier-config-swimlane": "^2.0.0",
+    "@swimlane/prettier-config-swimlane": "^3.0.1",
     "@types/jasmine": "^3.5.10",
     "@types/jasminewd2": "~2.0.3",
     "@types/mdast": "^3.0.3",
