@@ -1,4 +1,4 @@
-/* global cy */
+/* global cy, Cypress */
 
 describe('Demo', () => {
   const dragAndDrop = (fromElement, toElement, location = 'bottomRight') => {
