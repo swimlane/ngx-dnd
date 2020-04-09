@@ -25,7 +25,7 @@ before_install:
 install:
   - npm ci
   - npm run build
-  - npm run build:lib
+  - npm run build:lib:prod
 
 script:
   - npm run test:ci
