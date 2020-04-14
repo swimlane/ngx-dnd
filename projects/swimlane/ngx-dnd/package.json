@@ -1,7 +1,7 @@
 {
   "name": "@swimlane/ngx-dnd",
   "description": "Drag and Drop for Angular2 and beyond!",
-  "version": "8.1.0",
+  "version": "8.1.1",
   "peerDependencies": {
     "@angular/common": "^8.0.0",
     "@angular/core": "^8.0.0"

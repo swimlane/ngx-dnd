@@ -30,12 +30,12 @@
     "scss-bundle": "scss-bundle -c ./projects/swimlane/ngx-dnd/scss-bundle.config.json",
     "scss-build": "node-sass ./projects/swimlane/ngx-dnd/src/lib/ngx-dnd.scss ./dist/swimlane/ngx-dnd/release/index.css",
     "copyFiles": "cpx \"./{CHANGELOG.md,README.md,LICENSE}\" ./dist/swimlane/ngx-dnd",
-    "prepublish:lib": "npm-run-all build:lib:prod test",
+    "prepublish:lib": "run-s ci build:lib:prod",
     "publish:lib": "cd dist/swimlane/ngx-dnd && npm publish",
     "prepack:lib": "npm run build:lib:prod",
     "pack:lib": "cd dist/swimlane/ngx-dnd && npm pack",
     "publish": "npm-run-all publish:lib deploy",
-    "prepublishOnly": "echo \"This is the workspace -- you probably meant run 'npm run lib:prepublish'.\" && exit 1"
+    "prepublishOnly": "echo \"This is the workspace -- you probably meant run 'npm run publish'.\" && exit 1"
   },
   "private": true,
   "dependencies": {
