@@ -5,20 +5,10 @@ import { getProjects } from './utils';
 
 async function main() {
   const ngxsJson = require('../package.json');
-  const keysToCopy = [
-    'version',
-    'repository',
-    'keywords',
-    'author',
-    'contributors',
-    'license',
-    'bugs',
-    'homepage'
-  ];
+  const keysToCopy = ['version', 'repository', 'keywords', 'author', 'contributors', 'license', 'bugs', 'homepage'];
 
   const packages = getProjects();
   for (const pack of packages) {
-    
     const packPath = `${pack.path}/package.json`;
     const packPackage = require(packPath);
 

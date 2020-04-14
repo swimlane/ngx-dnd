@@ -1,9 +1,11 @@
 {
-  "rulesDirectory": [
-    "node_modules/codelyzer"
-  ],
-  "extends": [
-    "tslint-config-swimlane/base",
-    "tslint-config-prettier"
-  ]
+  "rulesDirectory": ["node_modules/codelyzer"],
+  "extends": ["codelyzer", "tslint-config-swimlane/base", "tslint-config-prettier"],
+  "rules": {
+    "no-implicit-dependencies": [false, "dev"],
+    "no-any": false,
+    "typedef": true,
+    "no-floating-promises": false,
+    "array-type": [true, "array-simple"]
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-builder',
@@ -6,8 +6,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./builder.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class BuilderComponent implements OnInit {
-
+export class BuilderComponent {
   sourceBuilderTools = [
     { name: 'Section', children: [] as any[], inputType: 'section', icon: 'far fa-square', class: 'wide' },
     { name: 'String', inputType: 'string', icon: 'fas fa-language', class: 'half' },
@@ -15,21 +14,11 @@ export class BuilderComponent implements OnInit {
   ];
   targetBuilderTools: any[] = [];
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
   droppableItemClass = (item: any) => `${item.class} ${item.inputType}`;
 
   builderDrag(e: any) {
     const item = e.value;
-    item.data =
-      item.inputType === 'number'
-        ? (Math.random() * 100) | 0
-        : Math.random()
-            .toString(36)
-            .substring(20);
+    item.data = item.inputType === 'number' ? (Math.random() * 100) | 0 : Math.random().toString(36).substring(20);
   }
 
   log(e: any) {
@@ -39,5 +28,4 @@ export class BuilderComponent implements OnInit {
   canMove(e: any): boolean {
     return e.indexOf('Disabled') === -1;
   }
-
 }

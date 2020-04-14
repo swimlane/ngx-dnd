@@ -22,7 +22,7 @@ export class DrakeStoreService {
   constructor() {
     this.dragulaOptions = this.createDrakeOptions();
     this.drake = dragula([], this.dragulaOptions);
-    this.registerEvents();    
+    this.registerEvents();
   }
 
   register(droppable: DroppableDirective) {

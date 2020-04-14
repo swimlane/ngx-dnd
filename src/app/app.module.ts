@@ -24,9 +24,7 @@ import { BuilderModule } from './builder/builder.module';
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     CommonModule,
     BrowserModule,
@@ -39,11 +37,7 @@ import { AppRoutingModule } from './app-routing.module';
     NgxDnDModule.forRoot(),
     MarkdownElementsModule.forRoot(),
     RuntimeContentModule.forRoot({
-      imports: [
-        CommonModule,
-        NgxDnDModule,
-        BuilderModule
-      ]
+      imports: [CommonModule, NgxDnDModule, BuilderModule]
     }),
     DocsifyPluginsModule.forRoot({
       plugins: []
@@ -52,5 +46,4 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule {}
