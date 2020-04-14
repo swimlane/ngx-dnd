@@ -2,9 +2,13 @@
 
 ## HEAD (Unreleased)
 
-- Update deps
+_(none)_
 
 ---
+
+## 8.1.1 (2020-04-14)
+
+- Update deps
 
 ## 8.1.0 (2019-09-09)
 
