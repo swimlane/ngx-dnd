@@ -23,7 +23,7 @@
     "prettier": "prettier --write \"**/*.{js,ts}\"",
     "prettier:ci": "prettier --check \"**/*.{js,ts}\"",
     "changelog": "chg release -y && git add -A CHANGELOG.md",
-    "setMetadata": "ts-node ./tools/set-metadata.ts",
+    "setMetadata": "node ./tools/set-metadata.js",
     "preversion": "npm-run-all build:lib:prod test",
     "version": "npm run changelog",
     "postversion": "npm run setMetadata",
