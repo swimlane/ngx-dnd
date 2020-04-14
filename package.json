@@ -14,7 +14,7 @@
     "serve": "ng serve",
     "start": "npm-run-all serve",
     "start:prod": "npm-run-all build:lib:prod serve",
-    "test": "run-s lint && cy:run",
+    "test": "run-s lint cy:run",
     "cy:run": "cypress run --browser chrome",
     "cy:open": "cypress open",
     "cy:ci": "start-server-and-test serve http-get://localhost:4200 cy:run",
