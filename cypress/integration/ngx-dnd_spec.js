@@ -6,8 +6,8 @@ describe('Demo', () => {
     cy.get(toElement).should('be.visible').trigger('mousemove', location).trigger('mouseup');
   };
 
-  const matchOrder = (order) => {
-    return ($p) => {
+  const matchOrder = order => {
+    return $p => {
       const texts = $p.map((i, el) => Cypress.$(el).text().trim()).get();
       expect(texts).to.deep.eq(order);
     };

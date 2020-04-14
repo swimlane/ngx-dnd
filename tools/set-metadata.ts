@@ -18,7 +18,7 @@ async function main() {
     }
 
     // save the package file after we have updated the keys and peerDependencies
-    await writeFile(packPath, JSON.stringify(packPackage, null, 2), (err) => {
+    await writeFile(packPath, JSON.stringify(packPackage, null, 2), err => {
       if (err) {
         console.error('Write failed!');
       }
