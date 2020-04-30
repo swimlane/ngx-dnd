@@ -7,7 +7,7 @@ import { DragHandleDirective } from './directives/ngx-drag-handle.directive';
 import { ContainerComponent } from './components/container/container.component';
 import { ItemComponent } from './components/item/item.component';
 import { DrakeStoreService } from './services/drake-store.service';
-import { ModuleWithProviders } from '@angular/compiler/src/core';
+import { core } from '@angular/compiler';
 
 const components = [ContainerComponent, ItemComponent];
 const directives = [DraggableDirective, DroppableDirective, DragHandleDirective];
@@ -18,7 +18,7 @@ const directives = [DraggableDirective, DroppableDirective, DragHandleDirective]
   exports: [...components, ...directives]
 })
 export class NgxDnDModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): core.ModuleWithProviders {
     return {
       ngModule: NgxDnDModule,
       providers: [DrakeStoreService]
