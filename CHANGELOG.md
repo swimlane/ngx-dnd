@@ -4,6 +4,8 @@
 
 _(none)_
 
+- Resolve Angular Ivy deep link warning
+
 ---
 
 ## 8.1.1 (2020-04-14)
