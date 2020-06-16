@@ -2,8 +2,6 @@
 
 ## HEAD (Unreleased)
 
-_(none)_
-
 - Resolve Angular Ivy deep link warning
 
 ---
