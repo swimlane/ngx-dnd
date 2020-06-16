@@ -2,9 +2,13 @@
 
 ## HEAD (Unreleased)
 
-- Resolve Angular Ivy deep link warning
+_(none)_
 
 ---
+
+## 8.1.2 (2020-06-16)
+
+- Resolve Angular Ivy deep link warning
 
 ## 8.1.1 (2020-04-14)
 
