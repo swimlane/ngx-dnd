@@ -4,25 +4,25 @@
 
 🕶 Drag, Drop and Sorting Library for Angular6 and beyond!
 
-_Note: The drag-and-drop directives in [angular/cdk](https://material.angular.io/cdk/drag-drop/overview) are great.  Use that if you don't need nested DnD containers.  We are investigating using angular/cdk directives internally_
+_Note: The drag-and-drop directives in [angular/cdk](https://material.angular.io/cdk/drag-drop/overview) are great. Use that if you don't need nested DnD containers. We are investigating using angular/cdk directives internally_
 
 ## Features
 
-* Drag and Drop
-* Sorting
-* Events (drag, drop, over, out)
-* Nesting
-* Touch support
-* Templating
+- Drag and Drop
+- Sorting
+- Events (drag, drop, over, out)
+- Nesting
+- Touch support
+- Templating
 
 ## Install
 
 To use ngx-dnd in your project install it via [npm](https://www.npmjs.com/package/@swimlane/ngx-dnd):
 
-* `npm i @swimlane/ngx-dnd @swimlane/dragula @types/dragula --save`
-* Add `NgxDnDModule.forRoot()` to your application module.
-* If using directives you will need to BYO styles or include `@swimlane/ngx-dnd/release/index.css`.
-* You may need to add the following to your `polyfills.ts` file:
+- `npm i @swimlane/ngx-dnd @swimlane/dragula @types/dragula --save`
+- Add `NgxDnDModule.forRoot()` to your application module.
+- If using directives you will need to BYO styles or include `@swimlane/ngx-dnd/release/index.css`.
+- You may need to add the following to your `polyfills.ts` file:
 
 ```js
 if (typeof window['global'] === 'undefined') {
@@ -79,33 +79,28 @@ Give multiple containers the same `dropZone` name to allow drag-and-drop between
 `ngx-dnd` provides a set of helper components that encapsulates the directives mentioned and adds capability for data driven structures. In general you should prefer directives to components.
 
 ```js
-orderableLists = [['Item 1a', 'Item 2a', 'Item 3a'], ['Item 1b', 'Item 2b', 'Item 3b']];
+orderableLists = [
+  ['Item 1a', 'Item 2a', 'Item 3a'],
+  ['Item 1b', 'Item 2b', 'Item 3b']
+];
 ```
 
 ```html
-<ngx-dnd-container
-  [model]="orderableLists">
-</ngx-dnd-container>
+<ngx-dnd-container [model]="orderableLists"> </ngx-dnd-container>
 ```
 
 This component is effectively equivalent to:
 
 ```html
 <div class="ngx-dnd-container" ngxDroppable [model]="orderableLists">
-  <div
-    class="ngx-dnd-item"
-    ngxDraggable
-    [model]="item"
-    *ngFor="let item of orderableLists">{{item}}</div>
+  <div class="ngx-dnd-item" ngxDraggable [model]="item" *ngFor="let item of orderableLists">{{item}}</div>
 </div>
 ```
 
 Including nested containers:
 
 ```html
-<ngx-dnd-container
-  [model]="nestedLists">
-</ngx-dnd-container>
+<ngx-dnd-container [model]="nestedLists"> </ngx-dnd-container>
 ```
 
 ```js
@@ -155,11 +150,11 @@ See [https://swimlane.github.io/ngx-dnd/](https://swimlane.github.io/ngx-dnd/) f
 
 ## Development
 
-* `git clone git@github.com:swimlane/ngx-dnd.git`
-* `cd ngx-dnd`
-* `ng build @swimlane/ngx-dnd`
-* `ng serve`
-* Browse to [http://localhost:4200](http://localhost:4200)
+- `git clone git@github.com:swimlane/ngx-dnd.git`
+- `cd ngx-dnd`
+- `ng build @swimlane/ngx-dnd`
+- `ng serve`
+- Browse to [http://localhost:4200](http://localhost:4200)
 
 ### Development server
 
@@ -190,12 +185,12 @@ This project uses [heff/chg](https://github.com/heff/chg), a simple changelog/re
 <details>
   <summary>Manual process</summary>
 
-* `rm -rf node_modules`
-* `npm i`
-* Verify change-log
-* `npm version {version_number}`
-* `git push --tags`
-* `npm run publish:lib`
+- `rm -rf node_modules`
+- `npm i`
+- Verify change-log
+- `npm version [<newversion> | major | minor | patch]`
+- `git push --tags`
+- `npm run publish:lib`
 
 </details>
 
