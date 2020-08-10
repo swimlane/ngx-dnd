@@ -2,7 +2,7 @@
 
 ## HEAD (Unreleased)
 
-_(none)_
+- Angular version 10
 
 ---
 
