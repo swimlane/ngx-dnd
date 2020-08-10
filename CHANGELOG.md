@@ -2,9 +2,13 @@
 
 ## HEAD (Unreleased)
 
-- Angular version 10
+_(none)_
 
 ---
+
+## 8.2.0 (2020-08-10)
+
+- Angular version 10
 
 ## 8.1.2 (2020-06-16)
 

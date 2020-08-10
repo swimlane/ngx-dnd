@@ -184,10 +184,10 @@ This project uses [heff/chg](https://github.com/heff/chg), a simple changelog/re
 
 - Checkout master (`git checkout master`)
 - Pull master (`git pull`)
-- Clean (Optional)
+- Clean and test (Optional)
   - Run `rm -rf node_modules`
   - Run `npm i`
-- Run tests (`npm test`)
+  - Run tests (`npm test:ci`)
 - Examine CHANGELOG.md to determine next version (X.Y.Z)
 - Run `git checkout -b release/X.Y.Z`
 - Update version using `npm version [<newversion> | major | minor | patch]`

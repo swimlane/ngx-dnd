@@ -1,6 +1,6 @@
 {
   "name": "ngx-dnd",
-  "version": "8.1.2",
+  "version": "8.2.0",
   "description": "Drag and Drop for Angular2 and beyond!",
   "scripts": {
     "ng": "ng",
@@ -27,7 +27,7 @@
     "setMetadata": "node ./tools/set-metadata.js",
     "preversion": "npm-run-all build:lib:prod ci",
     "version": "npm run changelog",
-    "postversion": "npm run setMetadata",
+    "postversion": "npm run setMetadata && git add -A . && git commit --amend --no-edit",
     "scss-bundle": "scss-bundle -c ./projects/swimlane/ngx-dnd/scss-bundle.config.json",
     "scss-build": "node-sass ./projects/swimlane/ngx-dnd/src/lib/ngx-dnd.scss ./dist/swimlane/ngx-dnd/release/index.css",
     "copyFiles": "cpx \"./{CHANGELOG.md,README.md,LICENSE}\" ./dist/swimlane/ngx-dnd",
