@@ -3,8 +3,8 @@
   "description": "Drag and Drop for Angular2 and beyond!",
   "version": "8.1.2",
   "peerDependencies": {
-    "@angular/common": "^8.0.0",
-    "@angular/core": "^8.0.0"
+    "@angular/common": "^8.0.0 || ^9.0.0 || ^10.0.0",
+    "@angular/core": "^8.0.0 || ^9.0.0 || ^10.0.0"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
   "homepage": "https://github.com/swimlane/ngx-dnd#readme",
   "dependencies": {
     "@swimlane/dragula": "^3.8.0",
-    "@types/dragula": "^2.1.34"
+    "@types/dragula": "^2.1.34",
+    "tslib": "^2.0.0"
   }
 }
