@@ -2,8 +2,8 @@
 
 describe('Demo', () => {
   const dragAndDrop = (fromElement, toElement, location = 'bottomRight') => {
-    cy.get(fromElement).should('be.visible').first().trigger('mousedown', { which: 1 });
-    cy.get(toElement).should('be.visible').trigger('mousemove', location).trigger('mouseup');
+    cy.get(fromElement).first().trigger('mousedown', { which: 1 });
+    cy.get(toElement).trigger('mousemove', location).trigger('mouseup');
   };
 
   const matchOrder = order => {
