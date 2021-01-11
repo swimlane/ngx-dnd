@@ -19,17 +19,49 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets",
-              "src/docs",
-              "src/.nojekyll"
-            ],
-            "styles": [
-              "src/styles.css",
-              "projects/swimlane/ngx-dnd/src/lib/ngx-dnd.scss"
-            ],
-            "scripts": []
+            "assets": ["src/favicon.ico", "src/assets", "src/docs", "src/.nojekyll"],
+            "styles": ["src/styles.css", "projects/swimlane/ngx-dnd/src/lib/ngx-dnd.scss"],
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "remark-frontmatter",
+              "remark-slug",
+              "unist-util-visit-parents",
+              "trough",
+              "gemoji",
+              "unherit",
+              "remark-parse",
+              "js-yaml",
+              "string-width",
+              "mdast-util-to-hast",
+              "hast-util-to-html",
+              "hast-util-raw",
+              "unified",
+              "github-slugger",
+              "crossvent",
+              "contra/emitter",
+              "rehype-stringify",
+              "mdast-util-to-markdown",
+              "unist-util-map",
+              "unist-util-find-after",
+              "rehype-parse",
+              "unist-util-visit",
+              "vfile-reporter",
+              "remark-html-emoji-image",
+              "remark-gemoji-to-emoji",
+              "remark-stringify",
+              "mdast-util-toc",
+              "rehype-raw",
+              "remark-rehype",
+              "@rigor789/remark-autolink-headings",
+              "remark-attr",
+              "remark-parse-yaml",
+              "tapable",
+              "remark-sectionize",
+              "remark-math",
+              "remark-html-katex",
+              "vfile",
+              "@swimlane/dragula"
+            ]
           },
           "configurations": {
             "production": {
@@ -48,7 +80,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": false,
               "extractLicenses": true,
@@ -77,13 +108,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "src/tsconfig.app.json",
-              "src/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["src/tsconfig.app.json", "src/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         },
         "deploy": {
@@ -99,7 +125,7 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/swimlane/ngx-dnd/tsconfig.lib.json",
             "project": "projects/swimlane/ngx-dnd/ng-package.json"
@@ -114,13 +140,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "projects/swimlane/ngx-dnd/tsconfig.lib.json",
-              "projects/swimlane/ngx-dnd/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["projects/swimlane/ngx-dnd/tsconfig.lib.json", "projects/swimlane/ngx-dnd/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }

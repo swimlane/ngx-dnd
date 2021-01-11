@@ -6,7 +6,7 @@ import { DocSPACoreComponent, LocationWithSlashes } from '@swimlane/docspa-core'
 const routes: Routes = [{ path: '**', component: DocSPACoreComponent }];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
   exports: [RouterModule],
   providers: [
     { provide: Location, useClass: LocationWithSlashes },
