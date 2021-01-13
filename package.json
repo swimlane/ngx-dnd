@@ -84,7 +84,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/mdast": "^3.0.3",
     "@types/node": "^13.1.4",
-    "angular-cli-ghpages": "^0.6.2",
+    "angular-cli-ghpages": "^1.0.0-rc.1",
     "chg": "^0.4.0",
     "codelyzer": "^6.0.0",
     "cpx": "^1.5.0",
