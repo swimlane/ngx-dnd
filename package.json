@@ -1,6 +1,6 @@
 {
   "name": "ngx-dnd",
-  "version": "8.2.0",
+  "version": "9.0.0",
   "description": "Drag and Drop for Angular2 and beyond!",
   "scripts": {
     "ng": "ng",
@@ -92,6 +92,7 @@
     "cypress": "^6.2.0",
     "husky": "^4.2.4",
     "ng-packagr": "^11.0.3",
+    "node-sass": "^5.0.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.0.4",
     "pretty-quick": "^2.0.1",
