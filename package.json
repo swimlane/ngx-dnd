@@ -89,7 +89,7 @@
     "codelyzer": "^6.0.0",
     "cpx": "^1.5.0",
     "cross-env": "^7.0.2",
-    "cypress": "^6.8.0",
+    "cypress": "^7.1.0",
     "husky": "^4.2.4",
     "ng-packagr": "^11.0.3",
     "node-sass": "^5.0.0",
