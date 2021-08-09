@@ -2,7 +2,7 @@ describe('Demo', () => {
   const dragAndDrop = (fromElement, toElement, location = 'bottomRight') => {
     cy.get(fromElement).first().trigger('mousedown', { which: 1 });
     cy.get(toElement)
-      .trigger('mousemove', (location as any) as Cypress.TriggerOptions)
+      .trigger('mousemove', location as any as Cypress.TriggerOptions)
       .trigger('mouseup');
   };
 

@@ -8,11 +8,11 @@
 
 ### Inputs
 
-| Prop                                             | Description |
-| ------------------------------------------------ | ----------- |
-| `copy: boolean`                                  |
+| Prop                        | Description        |
+| --------------------------- | ------------------ |
+| `copy: boolean`             |
 | `droppableItemClass: string | ((o: any) => any)` |
-| `dropZone: string`                               |
-| `dropZones: string[]`                            |
-| `model: any`                                     |
-| `removeOnSpill: boolean`                         |
+| `dropZone: string`          |
+| `dropZones: string[]`       |
+| `model: any`                |
+| `removeOnSpill: boolean`    |
