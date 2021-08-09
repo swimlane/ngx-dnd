@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 section.cover {
-  background: linear-gradient(to left bottom, hsl(28, 100%, 85%) 0%,hsl(149, 100%, 85%) 100%);
+  background: linear-gradient(to left bottom, hsl(28, 100%, 85%) 0%, hsl(149, 100%, 85%) 100%);
 }
 
 section.content footer {

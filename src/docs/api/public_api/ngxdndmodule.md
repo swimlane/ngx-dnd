@@ -3,4 +3,5 @@
 ```typescript
 class NgxDnDModule
 ```
-[ClassDeclaration-0]: ngxdndmodule.md#ngxdndmodule
+
+[classdeclaration-0]: ngxdndmodule.md#ngxdndmodule

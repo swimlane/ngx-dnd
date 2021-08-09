@@ -1,4 +1,3 @@
-
 .ngx-dnd-container {
   background-color: rgba(255, 255, 255, 0.2);
   border: 2px solid red;
@@ -31,17 +30,17 @@
 
 .no-select {
   -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none;   /* Chrome/Safari/Opera */
-  -khtml-user-select: none;    /* Konqueror */
-  -moz-user-select: none;      /* Firefox */
-  -ms-user-select: none;       /* IE/Edge */
-  user-select: none;           /* non-prefixed version, currently
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE/Edge */
+  user-select: none; /* non-prefixed version, currently
                                   not supported by any browser */
 }
 
-.clearfix::after { 
-  content: " ";
-  display: block; 
-  height: 0; 
+.clearfix::after {
+  content: ' ';
+  display: block;
+  height: 0;
   clear: both;
 }

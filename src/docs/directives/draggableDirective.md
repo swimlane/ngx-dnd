@@ -4,18 +4,18 @@
 
 ## Inputs
 
-| Prop                               | Description |
-| ---------------------------------- | ----------- |
-| `dropZones: string[]`              |
-| `model: any`                       |
-| `moves: boolean = true`            |
-| `ngxDraggable: strings[]`          |
+| Prop                      | Description |
+| ------------------------- | ----------- |
+| `dropZones: string[]`     |
+| `model: any`              |
+| `moves: boolean = true`   |
+| `ngxDraggable: strings[]` |
 
 ## Outputs
 
-| Name                        | Description |
-| --------------------------- | ----------- |
-| `drag: EventEmitter<any>`   |
+| Name                      | Description |
+| ------------------------- | ----------- |
+| `drag: EventEmitter<any>` |
 
 ## Examples
 

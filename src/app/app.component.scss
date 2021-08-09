@@ -5,16 +5,26 @@
   cursor: move;
 }
 
-.markdown-section h1 a, .markdown-section h2 a, .markdown-section h3 a, .markdown-section h4 a, .markdown-section h5 a, .markdown-section h6 a {
+.markdown-section h1 a,
+.markdown-section h2 a,
+.markdown-section h3 a,
+.markdown-section h4 a,
+.markdown-section h5 a,
+.markdown-section h6 a {
   opacity: 1 !important;
 
   > .icon {
-    transition: opacity .25s ease-in-out;
+    transition: opacity 0.25s ease-in-out;
     opacity: 0;
   }
 }
 
-.markdown-section h1:hover a, .markdown-section h2:hover a, .markdown-section h3:hover a, .markdown-section h4:hover a, .markdown-section h5:hover a, .markdown-section h6:hover a {
+.markdown-section h1:hover a,
+.markdown-section h2:hover a,
+.markdown-section h3:hover a,
+.markdown-section h4:hover a,
+.markdown-section h5:hover a,
+.markdown-section h6:hover a {
   > .icon {
     opacity: 0.6;
   }

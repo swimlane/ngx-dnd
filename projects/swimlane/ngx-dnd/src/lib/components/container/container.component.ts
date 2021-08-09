@@ -50,6 +50,7 @@ export class ContainerComponent implements OnInit, AfterViewInit {
   // @Input() classes: any = {};
   // @Input() dragulaOptions: any;
 
+  // eslint-disable-next-line @angular-eslint/no-input-rename
   @Input('template')
   set templateInput(template: TemplateRef<any>) {
     this.template = template;

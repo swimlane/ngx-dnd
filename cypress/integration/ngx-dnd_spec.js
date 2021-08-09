@@ -1,5 +1,3 @@
-/* global cy, Cypress */
-
 describe('Demo', () => {
   const dragAndDrop = (fromElement, toElement, location = 'bottomRight') => {
     cy.get(fromElement).first().trigger('mousedown', { which: 1 });

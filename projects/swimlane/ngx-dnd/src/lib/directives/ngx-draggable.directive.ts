@@ -1,4 +1,14 @@
-import { Directive, ElementRef, HostListener, Input, Output, EventEmitter, OnDestroy, OnInit } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  HostListener,
+  Input,
+  Output,
+  EventEmitter,
+  OnDestroy,
+  OnInit,
+  DoCheck
+} from '@angular/core';
 
 import { DroppableDirective } from './ngx-droppable.directive';
 import { DrakeStoreService } from '../services/drake-store.service';
@@ -9,7 +19,7 @@ import { DrakeStoreService } from '../services/drake-store.service';
  * @export
  */
 @Directive({ selector: '[ngxDraggable]' })
-export class DraggableDirective implements OnInit, OnDestroy {
+export class DraggableDirective implements OnInit, OnDestroy, DoCheck {
   @Input() ngxDraggable: string[];
   @Input() model: any;
 
@@ -21,6 +31,7 @@ export class DraggableDirective implements OnInit, OnDestroy {
     this._dropZones = val;
   }
 
+  // eslint-disable-next-line @angular-eslint/no-input-rename
   @Input('moves') _moves: boolean | ((...args: any[]) => any) = true;
 
   /*
@@ -39,8 +50,8 @@ export class DraggableDirective implements OnInit, OnDestroy {
 
   @Output() drag: EventEmitter<any> = new EventEmitter<any>();
 
-  dragDelay: number = 200; // milliseconds
-  dragDelayed: boolean = true;
+  dragDelay = 200; // milliseconds
+  dragDelayed = true;
 
   touchTimeout: any;
 

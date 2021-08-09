@@ -1,1 +1,1 @@
-* [<i class="fab fa-github"></i>](https://github.com/swimlane/ngx-dnd)
+- [<i class="fab fa-github"></i>](https://github.com/swimlane/ngx-dnd)

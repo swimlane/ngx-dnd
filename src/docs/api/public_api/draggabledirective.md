@@ -1,34 +1,34 @@
 # Table of contents
 
-* [DraggableDirective][ClassDeclaration-1]
-    * Constructor
-        * [constructor()][Constructor-0]
-    * Methods
-        * [onMove(e)][MethodDeclaration-0]
-        * [onDown()][MethodDeclaration-1]
-        * [onUp()][MethodDeclaration-2]
-        * [ngOnInit()][MethodDeclaration-3]
-        * [update()][MethodDeclaration-4]
-        * [ngOnDestroy()][MethodDeclaration-5]
-        * [updateElements()][MethodDeclaration-6]
-        * [canMove(source, handle, sibling)][MethodDeclaration-7]
-        * [moves(source, handle, sibling)][MethodDeclaration-8]
-        * [ngDoCheck()][MethodDeclaration-9]
-    * Properties
-        * [ngxDraggable][PropertyDeclaration-0]
-        * [model][PropertyDeclaration-1]
-        * [dropZones][GetAccessor-0]
-        * [dropZones][SetAccessor-0]
-        * [_moves][PropertyDeclaration-2]
-        * [handles][PropertyDeclaration-3]
-        * [hasHandle][GetAccessor-1]
-        * [drag][PropertyDeclaration-4]
-        * [dragDelay][PropertyDeclaration-5]
-        * [dragDelayed][PropertyDeclaration-6]
-        * [touchTimeout][PropertyDeclaration-7]
-        * [element][GetAccessor-2]
-        * [_dropZones][PropertyDeclaration-8]
-        * [_parentDropzones][PropertyDeclaration-9]
+- [DraggableDirective][classdeclaration-1]
+  - Constructor
+    - [constructor()][constructor-0]
+  - Methods
+    - [onMove(e)][methoddeclaration-0]
+    - [onDown()][methoddeclaration-1]
+    - [onUp()][methoddeclaration-2]
+    - [ngOnInit()][methoddeclaration-3]
+    - [update()][methoddeclaration-4]
+    - [ngOnDestroy()][methoddeclaration-5]
+    - [updateElements()][methoddeclaration-6]
+    - [canMove(source, handle, sibling)][methoddeclaration-7]
+    - [moves(source, handle, sibling)][methoddeclaration-8]
+    - [ngDoCheck()][methoddeclaration-9]
+  - Properties
+    - [ngxDraggable][propertydeclaration-0]
+    - [model][propertydeclaration-1]
+    - [dropZones][getaccessor-0]
+    - [dropZones][setaccessor-0]
+    - [\_moves][propertydeclaration-2]
+    - [handles][propertydeclaration-3]
+    - [hasHandle][getaccessor-1]
+    - [drag][propertydeclaration-4]
+    - [dragDelay][propertydeclaration-5]
+    - [dragDelayed][propertydeclaration-6]
+    - [touchTimeout][propertydeclaration-7]
+    - [element][getaccessor-2]
+    - [\_dropZones][propertydeclaration-8]
+    - [\_parentDropzones][propertydeclaration-9]
 
 # DraggableDirective
 
@@ -37,6 +37,7 @@ Adds properties and events to draggable elements
 ```typescript
 class DraggableDirective implements OnInit, OnDestroy
 ```
+
 ## Constructor
 
 ### constructor()
@@ -63,7 +64,7 @@ public onMove(e: Event): void;
 
 void
 
-----------
+---
 
 ### onDown()
 
@@ -75,7 +76,7 @@ public onDown(): void;
 
 void
 
-----------
+---
 
 ### onUp()
 
@@ -87,7 +88,7 @@ public onUp(): void;
 
 void
 
-----------
+---
 
 ### ngOnInit()
 
@@ -99,7 +100,7 @@ public ngOnInit(): void;
 
 void
 
-----------
+---
 
 ### update()
 
@@ -111,7 +112,7 @@ public update(): void;
 
 void
 
-----------
+---
 
 ### ngOnDestroy()
 
@@ -123,7 +124,7 @@ public ngOnDestroy(): void;
 
 void
 
-----------
+---
 
 ### updateElements()
 
@@ -135,7 +136,7 @@ public updateElements(): void;
 
 void
 
-----------
+---
 
 ### canMove(source, handle, sibling)
 
@@ -155,7 +156,7 @@ public canMove(source?: any, handle?: any, sibling?: any): boolean;
 
 boolean
 
-----------
+---
 
 ### moves(source, handle, sibling)
 
@@ -175,7 +176,7 @@ public moves(source: any, handle: any, sibling: any): boolean;
 
 boolean
 
-----------
+---
 
 ### ngDoCheck()
 
@@ -199,7 +200,7 @@ public ngxDraggable: string[];
 
 string[]
 
-----------
+---
 
 ### model
 
@@ -211,7 +212,7 @@ public model: any;
 
 any
 
-----------
+---
 
 ### dropZones
 
@@ -223,7 +224,7 @@ public get dropZones: any;
 
 any
 
-----------
+---
 
 ### dropZones
 
@@ -235,9 +236,9 @@ public set dropZones: any;
 
 any
 
-----------
+---
 
-### _moves
+### \_moves
 
 ```typescript
 public _moves: boolean | ((args: any[]) => any);
@@ -247,7 +248,7 @@ public _moves: boolean | ((args: any[]) => any);
 
 boolean | ((args: any[]) => any)
 
-----------
+---
 
 ### handles
 
@@ -259,7 +260,7 @@ public handles: any[];
 
 any[]
 
-----------
+---
 
 ### hasHandle
 
@@ -271,7 +272,7 @@ public get hasHandle: boolean;
 
 boolean
 
-----------
+---
 
 ### drag
 
@@ -283,7 +284,7 @@ public drag: EventEmitter<any>;
 
 EventEmitter<any>
 
-----------
+---
 
 ### dragDelay
 
@@ -295,7 +296,7 @@ public dragDelay: number;
 
 number
 
-----------
+---
 
 ### dragDelayed
 
@@ -307,7 +308,7 @@ public dragDelayed: boolean;
 
 boolean
 
-----------
+---
 
 ### touchTimeout
 
@@ -319,7 +320,7 @@ public touchTimeout: any;
 
 any
 
-----------
+---
 
 ### element
 
@@ -331,9 +332,9 @@ public get element: any;
 
 any
 
-----------
+---
 
-### _dropZones
+### \_dropZones
 
 ```typescript
 public _dropZones: string[];
@@ -343,9 +344,9 @@ public _dropZones: string[];
 
 string[]
 
-----------
+---
 
-### _parentDropzones
+### \_parentDropzones
 
 ```typescript
 public _parentDropzones: string[];
@@ -355,29 +356,29 @@ public _parentDropzones: string[];
 
 string[]
 
-[ClassDeclaration-1]: draggabledirective.md#draggabledirective
-[Constructor-0]: draggabledirective.md#constructor
-[MethodDeclaration-0]: draggabledirective.md#onmovee
-[MethodDeclaration-1]: draggabledirective.md#ondown
-[MethodDeclaration-2]: draggabledirective.md#onup
-[MethodDeclaration-3]: draggabledirective.md#ngoninit
-[MethodDeclaration-4]: draggabledirective.md#update
-[MethodDeclaration-5]: draggabledirective.md#ngondestroy
-[MethodDeclaration-6]: draggabledirective.md#updateelements
-[MethodDeclaration-7]: draggabledirective.md#canmovesource-handle-sibling
-[MethodDeclaration-8]: draggabledirective.md#movessource-handle-sibling
-[MethodDeclaration-9]: draggabledirective.md#ngdocheck
-[PropertyDeclaration-0]: draggabledirective.md#ngxdraggable
-[PropertyDeclaration-1]: draggabledirective.md#model
-[GetAccessor-0]: draggabledirective.md#dropzones
-[SetAccessor-0]: draggabledirective.md#dropzones
-[PropertyDeclaration-2]: draggabledirective.md#_moves
-[PropertyDeclaration-3]: draggabledirective.md#handles
-[GetAccessor-1]: draggabledirective.md#hashandle
-[PropertyDeclaration-4]: draggabledirective.md#drag
-[PropertyDeclaration-5]: draggabledirective.md#dragdelay
-[PropertyDeclaration-6]: draggabledirective.md#dragdelayed
-[PropertyDeclaration-7]: draggabledirective.md#touchtimeout
-[GetAccessor-2]: draggabledirective.md#element
-[PropertyDeclaration-8]: draggabledirective.md#_dropzones
-[PropertyDeclaration-9]: draggabledirective.md#_parentdropzones
+[classdeclaration-1]: draggabledirective.md#draggabledirective
+[constructor-0]: draggabledirective.md#constructor
+[methoddeclaration-0]: draggabledirective.md#onmovee
+[methoddeclaration-1]: draggabledirective.md#ondown
+[methoddeclaration-2]: draggabledirective.md#onup
+[methoddeclaration-3]: draggabledirective.md#ngoninit
+[methoddeclaration-4]: draggabledirective.md#update
+[methoddeclaration-5]: draggabledirective.md#ngondestroy
+[methoddeclaration-6]: draggabledirective.md#updateelements
+[methoddeclaration-7]: draggabledirective.md#canmovesource-handle-sibling
+[methoddeclaration-8]: draggabledirective.md#movessource-handle-sibling
+[methoddeclaration-9]: draggabledirective.md#ngdocheck
+[propertydeclaration-0]: draggabledirective.md#ngxdraggable
+[propertydeclaration-1]: draggabledirective.md#model
+[getaccessor-0]: draggabledirective.md#dropzones
+[setaccessor-0]: draggabledirective.md#dropzones
+[propertydeclaration-2]: draggabledirective.md#_moves
+[propertydeclaration-3]: draggabledirective.md#handles
+[getaccessor-1]: draggabledirective.md#hashandle
+[propertydeclaration-4]: draggabledirective.md#drag
+[propertydeclaration-5]: draggabledirective.md#dragdelay
+[propertydeclaration-6]: draggabledirective.md#dragdelayed
+[propertydeclaration-7]: draggabledirective.md#touchtimeout
+[getaccessor-2]: draggabledirective.md#element
+[propertydeclaration-8]: draggabledirective.md#_dropzones
+[propertydeclaration-9]: draggabledirective.md#_parentdropzones

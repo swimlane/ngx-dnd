@@ -2,7 +2,8 @@ app-builder {
   .builder-container {
     display: flex;
 
-    .builder-source, .builder-target {
+    .builder-source,
+    .builder-target {
       flex: 1 1 50%;
       box-sizing: border-box;
       max-width: 50%;
@@ -42,11 +43,13 @@ app-builder {
 
       border: 1px dashed lightgrey;
       background-color: white;
-      
+
       padding: 0;
       min-height: 60px;
 
-      .gu-unselectable &, &.gu-over, &.gu-over .ngx-dnd-container {
+      .gu-unselectable &,
+      &.gu-over,
+      &.gu-over .ngx-dnd-container {
         border: 1px dashed orange;
       }
 
@@ -58,7 +61,7 @@ app-builder {
         box-sizing: border-box;
         -webkit-box-flex: 1;
         max-width: 100%;
-        
+
         &.half {
           flex: 1 1 48%;
           box-sizing: border-box;
@@ -75,7 +78,7 @@ app-builder {
 
         input {
           width: 100%;
-          padding: .5em .6em;
+          padding: 0.5em 0.6em;
           display: inline-block;
           border: 1px solid #ccc;
           box-shadow: inset 0 1px 3px #ddd;
@@ -86,8 +89,8 @@ app-builder {
       }
 
       .ngx-dnd-item.gu-transit,
-      .ngx-dnd-item:hover  {
-        border: 1px solid #1786e9
+      .ngx-dnd-item:hover {
+        border: 1px solid #1786e9;
       }
     }
   }

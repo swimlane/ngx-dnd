@@ -1,6 +1,6 @@
 # `DroppableDirective`
 
-`	[ngxDroppable]` makes the container droppable and children draggable.
+`[ngxDroppable]` makes the container droppable and children draggable.
 
 ## Inputs
 

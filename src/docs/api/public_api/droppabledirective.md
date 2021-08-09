@@ -1,28 +1,28 @@
 # Table of contents
 
-* [DroppableDirective][ClassDeclaration-2]
-    * Constructor
-        * [constructor()][Constructor-1]
-    * Methods
-        * [ngOnInit()][MethodDeclaration-10]
-        * [ngAfterViewInit()][MethodDeclaration-11]
-        * [ngOnDestroy()][MethodDeclaration-12]
-    * Properties
-        * [model][PropertyDeclaration-10]
-        * [copy][PropertyDeclaration-11]
-        * [removeOnSpill][PropertyDeclaration-12]
-        * [ngxDroppable][PropertyDeclaration-13]
-        * [drop][PropertyDeclaration-14]
-        * [drag][PropertyDeclaration-15]
-        * [over][PropertyDeclaration-16]
-        * [out][PropertyDeclaration-17]
-        * [remove][PropertyDeclaration-18]
-        * [cancel][PropertyDeclaration-19]
-        * [container][GetAccessor-3]
-        * [dropZone][GetAccessor-4]
-        * [dropZone][SetAccessor-1]
-        * [defaultZone][PropertyDeclaration-20]
-        * [_dropZone][PropertyDeclaration-21]
+- [DroppableDirective][classdeclaration-2]
+  - Constructor
+    - [constructor()][constructor-1]
+  - Methods
+    - [ngOnInit()][methoddeclaration-10]
+    - [ngAfterViewInit()][methoddeclaration-11]
+    - [ngOnDestroy()][methoddeclaration-12]
+  - Properties
+    - [model][propertydeclaration-10]
+    - [copy][propertydeclaration-11]
+    - [removeOnSpill][propertydeclaration-12]
+    - [ngxDroppable][propertydeclaration-13]
+    - [drop][propertydeclaration-14]
+    - [drag][propertydeclaration-15]
+    - [over][propertydeclaration-16]
+    - [out][propertydeclaration-17]
+    - [remove][propertydeclaration-18]
+    - [cancel][propertydeclaration-19]
+    - [container][getaccessor-3]
+    - [dropZone][getaccessor-4]
+    - [dropZone][setaccessor-1]
+    - [defaultZone][propertydeclaration-20]
+    - [\_dropZone][propertydeclaration-21]
 
 # DroppableDirective
 
@@ -31,6 +31,7 @@ Makes the container droppable and children draggable.
 ```typescript
 class DroppableDirective implements OnInit, OnDestroy, AfterViewInit
 ```
+
 ## Constructor
 
 ### constructor()
@@ -51,7 +52,7 @@ public ngOnInit(): void;
 
 void
 
-----------
+---
 
 ### ngAfterViewInit()
 
@@ -63,7 +64,7 @@ public ngAfterViewInit(): void;
 
 void
 
-----------
+---
 
 ### ngOnDestroy()
 
@@ -87,7 +88,7 @@ public model: any;
 
 any
 
-----------
+---
 
 ### copy
 
@@ -99,7 +100,7 @@ public copy: boolean;
 
 boolean
 
-----------
+---
 
 ### removeOnSpill
 
@@ -111,7 +112,7 @@ public removeOnSpill: boolean;
 
 boolean
 
-----------
+---
 
 ### ngxDroppable
 
@@ -123,7 +124,7 @@ public ngxDroppable: string;
 
 string
 
-----------
+---
 
 ### drop
 
@@ -135,7 +136,7 @@ public drop: EventEmitter<any>;
 
 EventEmitter<any>
 
-----------
+---
 
 ### drag
 
@@ -147,7 +148,7 @@ public drag: EventEmitter<any>;
 
 EventEmitter<any>
 
-----------
+---
 
 ### over
 
@@ -159,7 +160,7 @@ public over: EventEmitter<any>;
 
 EventEmitter<any>
 
-----------
+---
 
 ### out
 
@@ -171,7 +172,7 @@ public out: EventEmitter<any>;
 
 EventEmitter<any>
 
-----------
+---
 
 ### remove
 
@@ -183,7 +184,7 @@ public remove: EventEmitter<any>;
 
 EventEmitter<any>
 
-----------
+---
 
 ### cancel
 
@@ -195,7 +196,7 @@ public cancel: EventEmitter<any>;
 
 EventEmitter<any>
 
-----------
+---
 
 ### container
 
@@ -207,7 +208,7 @@ public get container: any;
 
 any
 
-----------
+---
 
 ### dropZone
 
@@ -219,7 +220,7 @@ public get dropZone: string;
 
 string
 
-----------
+---
 
 ### dropZone
 
@@ -231,7 +232,7 @@ public set dropZone: string;
 
 string
 
-----------
+---
 
 ### defaultZone
 
@@ -243,9 +244,9 @@ public defaultZone: string;
 
 string
 
-----------
+---
 
-### _dropZone
+### \_dropZone
 
 ```typescript
 public _dropZone: string;
@@ -255,23 +256,23 @@ public _dropZone: string;
 
 string
 
-[ClassDeclaration-2]: droppabledirective.md#droppabledirective
-[Constructor-1]: droppabledirective.md#constructor
-[MethodDeclaration-10]: droppabledirective.md#ngoninit
-[MethodDeclaration-11]: droppabledirective.md#ngafterviewinit
-[MethodDeclaration-12]: droppabledirective.md#ngondestroy
-[PropertyDeclaration-10]: droppabledirective.md#model
-[PropertyDeclaration-11]: droppabledirective.md#copy
-[PropertyDeclaration-12]: droppabledirective.md#removeonspill
-[PropertyDeclaration-13]: droppabledirective.md#ngxdroppable
-[PropertyDeclaration-14]: droppabledirective.md#drop
-[PropertyDeclaration-15]: droppabledirective.md#drag
-[PropertyDeclaration-16]: droppabledirective.md#over
-[PropertyDeclaration-17]: droppabledirective.md#out
-[PropertyDeclaration-18]: droppabledirective.md#remove
-[PropertyDeclaration-19]: droppabledirective.md#cancel
-[GetAccessor-3]: droppabledirective.md#container
-[GetAccessor-4]: droppabledirective.md#dropzone
-[SetAccessor-1]: droppabledirective.md#dropzone
-[PropertyDeclaration-20]: droppabledirective.md#defaultzone
-[PropertyDeclaration-21]: droppabledirective.md#_dropzone
+[classdeclaration-2]: droppabledirective.md#droppabledirective
+[constructor-1]: droppabledirective.md#constructor
+[methoddeclaration-10]: droppabledirective.md#ngoninit
+[methoddeclaration-11]: droppabledirective.md#ngafterviewinit
+[methoddeclaration-12]: droppabledirective.md#ngondestroy
+[propertydeclaration-10]: droppabledirective.md#model
+[propertydeclaration-11]: droppabledirective.md#copy
+[propertydeclaration-12]: droppabledirective.md#removeonspill
+[propertydeclaration-13]: droppabledirective.md#ngxdroppable
+[propertydeclaration-14]: droppabledirective.md#drop
+[propertydeclaration-15]: droppabledirective.md#drag
+[propertydeclaration-16]: droppabledirective.md#over
+[propertydeclaration-17]: droppabledirective.md#out
+[propertydeclaration-18]: droppabledirective.md#remove
+[propertydeclaration-19]: droppabledirective.md#cancel
+[getaccessor-3]: droppabledirective.md#container
+[getaccessor-4]: droppabledirective.md#dropzone
+[setaccessor-1]: droppabledirective.md#dropzone
+[propertydeclaration-20]: droppabledirective.md#defaultzone
+[propertydeclaration-21]: droppabledirective.md#_dropzone

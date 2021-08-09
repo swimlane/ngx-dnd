@@ -1,4 +1,4 @@
-const pkg = require('../../projects/swimlane/ngx-dnd/package.json');
+import pkg from '../../projects/swimlane/ngx-dnd/package.json';
 
 export const environment = {
   production: true,

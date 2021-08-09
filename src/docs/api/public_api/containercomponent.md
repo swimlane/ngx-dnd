@@ -1,28 +1,28 @@
 # Table of contents
 
-* [ContainerComponent][ClassDeclaration-5]
-    * Methods
-        * [ngOnInit()][MethodDeclaration-13]
-        * [ngAfterViewInit()][MethodDeclaration-14]
-    * Properties
-        * [model][PropertyDeclaration-29]
-        * [copy][PropertyDeclaration-30]
-        * [removeOnSpill][PropertyDeclaration-31]
-        * [droppableItemClass][PropertyDeclaration-32]
-        * [dropZone][PropertyDeclaration-33]
-        * [dropZones][GetAccessor-14]
-        * [dropZones][SetAccessor-7]
-        * [moves][PropertyDeclaration-34]
-        * [template][PropertyDeclaration-35]
-        * [droppable][PropertyDeclaration-36]
-        * [drop][PropertyDeclaration-37]
-        * [drag][PropertyDeclaration-38]
-        * [over][PropertyDeclaration-39]
-        * [out][PropertyDeclaration-40]
-        * [remove][PropertyDeclaration-41]
-        * [cancel][PropertyDeclaration-42]
-        * [_dropZones][PropertyDeclaration-43]
-        * [_defaultZones][PropertyDeclaration-44]
+- [ContainerComponent][classdeclaration-5]
+  - Methods
+    - [ngOnInit()][methoddeclaration-13]
+    - [ngAfterViewInit()][methoddeclaration-14]
+  - Properties
+    - [model][propertydeclaration-29]
+    - [copy][propertydeclaration-30]
+    - [removeOnSpill][propertydeclaration-31]
+    - [droppableItemClass][propertydeclaration-32]
+    - [dropZone][propertydeclaration-33]
+    - [dropZones][getaccessor-14]
+    - [dropZones][setaccessor-7]
+    - [moves][propertydeclaration-34]
+    - [template][propertydeclaration-35]
+    - [droppable][propertydeclaration-36]
+    - [drop][propertydeclaration-37]
+    - [drag][propertydeclaration-38]
+    - [over][propertydeclaration-39]
+    - [out][propertydeclaration-40]
+    - [remove][propertydeclaration-41]
+    - [cancel][propertydeclaration-42]
+    - [\_dropZones][propertydeclaration-43]
+    - [\_defaultZones][propertydeclaration-44]
 
 # ContainerComponent
 
@@ -31,6 +31,7 @@ Component that allows nested ngxDroppable and ngxDraggables
 ```typescript
 class ContainerComponent implements OnInit, AfterViewInit
 ```
+
 ## Methods
 
 ### ngOnInit()
@@ -43,7 +44,7 @@ public ngOnInit(): void;
 
 void
 
-----------
+---
 
 ### ngAfterViewInit()
 
@@ -67,7 +68,7 @@ public model: any;
 
 any
 
-----------
+---
 
 ### copy
 
@@ -79,7 +80,7 @@ public copy: boolean;
 
 boolean
 
-----------
+---
 
 ### removeOnSpill
 
@@ -91,7 +92,7 @@ public removeOnSpill: boolean;
 
 boolean
 
-----------
+---
 
 ### droppableItemClass
 
@@ -103,7 +104,7 @@ public droppableItemClass: string | ((o: any) => any);
 
 string | ((o: any) => any)
 
-----------
+---
 
 ### dropZone
 
@@ -115,7 +116,7 @@ public dropZone: string;
 
 string
 
-----------
+---
 
 ### dropZones
 
@@ -127,7 +128,7 @@ public get dropZones: string[];
 
 string[]
 
-----------
+---
 
 ### dropZones
 
@@ -139,7 +140,7 @@ public set dropZones: string[];
 
 string[]
 
-----------
+---
 
 ### moves
 
@@ -151,7 +152,7 @@ public moves: (model: any, source: any, handle: any, sibling: any) => boolean;
 
 (model: any, source: any, handle: any, sibling: any) => boolean
 
-----------
+---
 
 ### template
 
@@ -163,7 +164,7 @@ public template: TemplateRef<any>;
 
 TemplateRef<any>
 
-----------
+---
 
 ### droppable
 
@@ -175,7 +176,7 @@ public droppable: any;
 
 any
 
-----------
+---
 
 ### drop
 
@@ -187,7 +188,7 @@ public drop: EventEmitter<any>;
 
 EventEmitter<any>
 
-----------
+---
 
 ### drag
 
@@ -199,7 +200,7 @@ public drag: EventEmitter<any>;
 
 EventEmitter<any>
 
-----------
+---
 
 ### over
 
@@ -211,7 +212,7 @@ public over: EventEmitter<any>;
 
 EventEmitter<any>
 
-----------
+---
 
 ### out
 
@@ -223,7 +224,7 @@ public out: EventEmitter<any>;
 
 EventEmitter<any>
 
-----------
+---
 
 ### remove
 
@@ -235,7 +236,7 @@ public remove: EventEmitter<any>;
 
 EventEmitter<any>
 
-----------
+---
 
 ### cancel
 
@@ -247,9 +248,9 @@ public cancel: EventEmitter<any>;
 
 EventEmitter<any>
 
-----------
+---
 
-### _dropZones
+### \_dropZones
 
 ```typescript
 public _dropZones: string[];
@@ -259,9 +260,9 @@ public _dropZones: string[];
 
 string[]
 
-----------
+---
 
-### _defaultZones
+### \_defaultZones
 
 ```typescript
 public _defaultZones: string[];
@@ -271,24 +272,24 @@ public _defaultZones: string[];
 
 string[]
 
-[ClassDeclaration-5]: containercomponent.md#containercomponent
-[MethodDeclaration-13]: containercomponent.md#ngoninit
-[MethodDeclaration-14]: containercomponent.md#ngafterviewinit
-[PropertyDeclaration-29]: containercomponent.md#model
-[PropertyDeclaration-30]: containercomponent.md#copy
-[PropertyDeclaration-31]: containercomponent.md#removeonspill
-[PropertyDeclaration-32]: containercomponent.md#droppableitemclass
-[PropertyDeclaration-33]: containercomponent.md#dropzone
-[GetAccessor-14]: containercomponent.md#dropzones
-[SetAccessor-7]: containercomponent.md#dropzones
-[PropertyDeclaration-34]: containercomponent.md#moves
-[PropertyDeclaration-35]: containercomponent.md#template
-[PropertyDeclaration-36]: containercomponent.md#droppable
-[PropertyDeclaration-37]: containercomponent.md#drop
-[PropertyDeclaration-38]: containercomponent.md#drag
-[PropertyDeclaration-39]: containercomponent.md#over
-[PropertyDeclaration-40]: containercomponent.md#out
-[PropertyDeclaration-41]: containercomponent.md#remove
-[PropertyDeclaration-42]: containercomponent.md#cancel
-[PropertyDeclaration-43]: containercomponent.md#_dropzones
-[PropertyDeclaration-44]: containercomponent.md#_defaultzones
+[classdeclaration-5]: containercomponent.md#containercomponent
+[methoddeclaration-13]: containercomponent.md#ngoninit
+[methoddeclaration-14]: containercomponent.md#ngafterviewinit
+[propertydeclaration-29]: containercomponent.md#model
+[propertydeclaration-30]: containercomponent.md#copy
+[propertydeclaration-31]: containercomponent.md#removeonspill
+[propertydeclaration-32]: containercomponent.md#droppableitemclass
+[propertydeclaration-33]: containercomponent.md#dropzone
+[getaccessor-14]: containercomponent.md#dropzones
+[setaccessor-7]: containercomponent.md#dropzones
+[propertydeclaration-34]: containercomponent.md#moves
+[propertydeclaration-35]: containercomponent.md#template
+[propertydeclaration-36]: containercomponent.md#droppable
+[propertydeclaration-37]: containercomponent.md#drop
+[propertydeclaration-38]: containercomponent.md#drag
+[propertydeclaration-39]: containercomponent.md#over
+[propertydeclaration-40]: containercomponent.md#out
+[propertydeclaration-41]: containercomponent.md#remove
+[propertydeclaration-42]: containercomponent.md#cancel
+[propertydeclaration-43]: containercomponent.md#_dropzones
+[propertydeclaration-44]: containercomponent.md#_defaultzones

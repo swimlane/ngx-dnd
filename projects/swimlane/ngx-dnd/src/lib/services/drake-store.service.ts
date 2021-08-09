@@ -75,7 +75,7 @@ export class DrakeStoreService {
       return true;
     };
 
-    const direction: any = (el: any, target: any, source: any) => {
+    const direction: any = (el: any, target: any, _source: any) => {
       const targetComponent = this.droppableMap.get(target);
       return targetComponent.direction || 'vertical';
     };

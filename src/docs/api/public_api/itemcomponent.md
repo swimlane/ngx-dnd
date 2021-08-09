@@ -1,32 +1,32 @@
 # Table of contents
 
-* [ItemComponent][ClassDeclaration-4]
-    * Constructor
-        * [constructor(container, draggableDirective)][Constructor-2]
-    * Methods
-        * [ngOnInit()][MethodDeclaration-15]
-    * Properties
-        * [model][PropertyDeclaration-22]
-        * [dropZone][GetAccessor-5]
-        * [dropZone][SetAccessor-2]
-        * [dropZones][GetAccessor-6]
-        * [dropZones][SetAccessor-3]
-        * [droppableItemClass][GetAccessor-7]
-        * [droppableItemClass][SetAccessor-4]
-        * [removeOnSpill][GetAccessor-8]
-        * [removeOnSpill][SetAccessor-5]
-        * [copy][GetAccessor-9]
-        * [copy][SetAccessor-6]
-        * [_copy][PropertyDeclaration-23]
-        * [_dropZone][PropertyDeclaration-24]
-        * [_dropZones][PropertyDeclaration-25]
-        * [_droppableItemClass][PropertyDeclaration-26]
-        * [_removeOnSpill][PropertyDeclaration-27]
-        * [data][PropertyDeclaration-28]
-        * [hasHandle][GetAccessor-10]
-        * [moveDisabled][GetAccessor-11]
-        * [classString][GetAccessor-12]
-        * [type][GetAccessor-13]
+- [ItemComponent][classdeclaration-4]
+  - Constructor
+    - [constructor(container, draggableDirective)][constructor-2]
+  - Methods
+    - [ngOnInit()][methoddeclaration-15]
+  - Properties
+    - [model][propertydeclaration-22]
+    - [dropZone][getaccessor-5]
+    - [dropZone][setaccessor-2]
+    - [dropZones][getaccessor-6]
+    - [dropZones][setaccessor-3]
+    - [droppableItemClass][getaccessor-7]
+    - [droppableItemClass][setaccessor-4]
+    - [removeOnSpill][getaccessor-8]
+    - [removeOnSpill][setaccessor-5]
+    - [copy][getaccessor-9]
+    - [copy][setaccessor-6]
+    - [\_copy][propertydeclaration-23]
+    - [\_dropZone][propertydeclaration-24]
+    - [\_dropZones][propertydeclaration-25]
+    - [\_droppableItemClass][propertydeclaration-26]
+    - [\_removeOnSpill][propertydeclaration-27]
+    - [data][propertydeclaration-28]
+    - [hasHandle][getaccessor-10]
+    - [moveDisabled][getaccessor-11]
+    - [classString][getaccessor-12]
+    - [type][getaccessor-13]
 
 # ItemComponent
 
@@ -37,6 +37,7 @@ Outside a ngx-dnd-container use ngxDroppable
 ```typescript
 class ItemComponent implements OnInit
 ```
+
 ## Constructor
 
 ### constructor(container, draggableDirective)
@@ -49,8 +50,8 @@ public constructor(container: ContainerComponent, draggableDirective: DraggableD
 
 | Name               | Type                                     |
 | ------------------ | ---------------------------------------- |
-| container          | [ContainerComponent][ClassDeclaration-5] |
-| draggableDirective | [DraggableDirective][ClassDeclaration-1] |
+| container          | [ContainerComponent][classdeclaration-5] |
+| draggableDirective | [DraggableDirective][classdeclaration-1] |
 
 ## Methods
 
@@ -76,7 +77,7 @@ public model: any;
 
 any
 
-----------
+---
 
 ### dropZone
 
@@ -88,7 +89,7 @@ public get dropZone: any;
 
 any
 
-----------
+---
 
 ### dropZone
 
@@ -100,7 +101,7 @@ public set dropZone: any;
 
 any
 
-----------
+---
 
 ### dropZones
 
@@ -112,7 +113,7 @@ public get dropZones: any;
 
 any
 
-----------
+---
 
 ### dropZones
 
@@ -124,7 +125,7 @@ public set dropZones: any;
 
 any
 
-----------
+---
 
 ### droppableItemClass
 
@@ -136,7 +137,7 @@ public get droppableItemClass: any;
 
 any
 
-----------
+---
 
 ### droppableItemClass
 
@@ -148,7 +149,7 @@ public set droppableItemClass: any;
 
 any
 
-----------
+---
 
 ### removeOnSpill
 
@@ -160,7 +161,7 @@ public get removeOnSpill: boolean;
 
 boolean
 
-----------
+---
 
 ### removeOnSpill
 
@@ -172,7 +173,7 @@ public set removeOnSpill: boolean;
 
 boolean
 
-----------
+---
 
 ### copy
 
@@ -184,7 +185,7 @@ public get copy: boolean;
 
 boolean
 
-----------
+---
 
 ### copy
 
@@ -196,9 +197,9 @@ public set copy: boolean;
 
 boolean
 
-----------
+---
 
-### _copy
+### \_copy
 
 ```typescript
 public _copy: boolean;
@@ -208,9 +209,9 @@ public _copy: boolean;
 
 boolean
 
-----------
+---
 
-### _dropZone
+### \_dropZone
 
 ```typescript
 public _dropZone: any;
@@ -220,9 +221,9 @@ public _dropZone: any;
 
 any
 
-----------
+---
 
-### _dropZones
+### \_dropZones
 
 ```typescript
 public _dropZones: any;
@@ -232,9 +233,9 @@ public _dropZones: any;
 
 any
 
-----------
+---
 
-### _droppableItemClass
+### \_droppableItemClass
 
 ```typescript
 public _droppableItemClass: any;
@@ -244,9 +245,9 @@ public _droppableItemClass: any;
 
 any
 
-----------
+---
 
-### _removeOnSpill
+### \_removeOnSpill
 
 ```typescript
 public _removeOnSpill: boolean;
@@ -256,7 +257,7 @@ public _removeOnSpill: boolean;
 
 boolean
 
-----------
+---
 
 ### data
 
@@ -268,7 +269,7 @@ public data: any;
 
 any
 
-----------
+---
 
 ### hasHandle
 
@@ -280,7 +281,7 @@ public get hasHandle: boolean;
 
 boolean
 
-----------
+---
 
 ### moveDisabled
 
@@ -292,7 +293,7 @@ public get moveDisabled: boolean;
 
 boolean
 
-----------
+---
 
 ### classString
 
@@ -304,7 +305,7 @@ public get classString: string;
 
 string
 
-----------
+---
 
 ### type
 
@@ -316,29 +317,29 @@ public get type: "string" | "number" | "boolean" | "symbol" | "undefined" | "obj
 
 "string" | "number" | "boolean" | "symbol" | "undefined" | "object" | "function" | "array"
 
-[ClassDeclaration-4]: itemcomponent.md#itemcomponent
-[Constructor-2]: itemcomponent.md#constructorcontainer-draggabledirective
-[ClassDeclaration-5]: containercomponent.md#containercomponent
-[ClassDeclaration-1]: draggabledirective.md#draggabledirective
-[MethodDeclaration-15]: itemcomponent.md#ngoninit
-[PropertyDeclaration-22]: itemcomponent.md#model
-[GetAccessor-5]: itemcomponent.md#dropzone
-[SetAccessor-2]: itemcomponent.md#dropzone
-[GetAccessor-6]: itemcomponent.md#dropzones
-[SetAccessor-3]: itemcomponent.md#dropzones
-[GetAccessor-7]: itemcomponent.md#droppableitemclass
-[SetAccessor-4]: itemcomponent.md#droppableitemclass
-[GetAccessor-8]: itemcomponent.md#removeonspill
-[SetAccessor-5]: itemcomponent.md#removeonspill
-[GetAccessor-9]: itemcomponent.md#copy
-[SetAccessor-6]: itemcomponent.md#copy
-[PropertyDeclaration-23]: itemcomponent.md#_copy
-[PropertyDeclaration-24]: itemcomponent.md#_dropzone
-[PropertyDeclaration-25]: itemcomponent.md#_dropzones
-[PropertyDeclaration-26]: itemcomponent.md#_droppableitemclass
-[PropertyDeclaration-27]: itemcomponent.md#_removeonspill
-[PropertyDeclaration-28]: itemcomponent.md#data
-[GetAccessor-10]: itemcomponent.md#hashandle
-[GetAccessor-11]: itemcomponent.md#movedisabled
-[GetAccessor-12]: itemcomponent.md#classstring
-[GetAccessor-13]: itemcomponent.md#type
+[classdeclaration-4]: itemcomponent.md#itemcomponent
+[constructor-2]: itemcomponent.md#constructorcontainer-draggabledirective
+[classdeclaration-5]: containercomponent.md#containercomponent
+[classdeclaration-1]: draggabledirective.md#draggabledirective
+[methoddeclaration-15]: itemcomponent.md#ngoninit
+[propertydeclaration-22]: itemcomponent.md#model
+[getaccessor-5]: itemcomponent.md#dropzone
+[setaccessor-2]: itemcomponent.md#dropzone
+[getaccessor-6]: itemcomponent.md#dropzones
+[setaccessor-3]: itemcomponent.md#dropzones
+[getaccessor-7]: itemcomponent.md#droppableitemclass
+[setaccessor-4]: itemcomponent.md#droppableitemclass
+[getaccessor-8]: itemcomponent.md#removeonspill
+[setaccessor-5]: itemcomponent.md#removeonspill
+[getaccessor-9]: itemcomponent.md#copy
+[setaccessor-6]: itemcomponent.md#copy
+[propertydeclaration-23]: itemcomponent.md#_copy
+[propertydeclaration-24]: itemcomponent.md#_dropzone
+[propertydeclaration-25]: itemcomponent.md#_dropzones
+[propertydeclaration-26]: itemcomponent.md#_droppableitemclass
+[propertydeclaration-27]: itemcomponent.md#_removeonspill
+[propertydeclaration-28]: itemcomponent.md#data
+[getaccessor-10]: itemcomponent.md#hashandle
+[getaccessor-11]: itemcomponent.md#movedisabled
+[getaccessor-12]: itemcomponent.md#classstring
+[getaccessor-13]: itemcomponent.md#type

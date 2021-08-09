@@ -33,19 +33,8 @@
 ## Copy and remove on spill
 
 ```html { playground context='{ "sourceItems": ["Item 1a", "Item 2a", "Item 3a"], "targetItemsA": [], "targetItemsB": [] }' }
-<ngx-dnd-container
-  [model]="sourceItems"
-  [copy]="true"
-  [dropZones]="['multiple-target-a', 'multiple-target-b']">
+<ngx-dnd-container [model]="sourceItems" [copy]="true" [dropZones]="['multiple-target-a', 'multiple-target-b']">
 </ngx-dnd-container>
-<ngx-dnd-container
-  [model]="targetItemsA"
-  dropZone="multiple-target-a"
-  [removeOnSpill]="true">
-</ngx-dnd-container>
-<ngx-dnd-container
-  [model]="targetItemsB"
-  dropZone="multiple-target-b"
-  [removeOnSpill]="true">
-</ngx-dnd-container>
+<ngx-dnd-container [model]="targetItemsA" dropZone="multiple-target-a" [removeOnSpill]="true"> </ngx-dnd-container>
+<ngx-dnd-container [model]="targetItemsB" dropZone="multiple-target-b" [removeOnSpill]="true"> </ngx-dnd-container>
 ```
