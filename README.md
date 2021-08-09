@@ -146,7 +146,7 @@ nestedLists = [
 ];
 ```
 
-See [https://swimlane.github.io/ngx-dnd/](https://swimlane.github.io/ngx-dnd/) for more lives examples. Demo code is at [https://github.com/swimlane/ngx-dnd/tree/master/demo](https://github.com/swimlane/ngx-dnd/tree/master/demo).
+See [https://swimlane.github.io/ngx-dnd/](https://swimlane.github.io/ngx-dnd/) for more lives examples. Demo code is at [https://github.com/swimlane/ngx-dnd/tree/master/src/](https://github.com/swimlane/ngx-dnd/tree/master/src/).
 
 ## Development
 
