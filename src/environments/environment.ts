@@ -6,7 +6,7 @@ const pkg = require('../../projects/swimlane/ngx-dnd/package.json');
 
 export const environment = {
   production: false,
-  APP_VERSION: pkg.version
+  appVersion: pkg.version
 };
 
 /*
