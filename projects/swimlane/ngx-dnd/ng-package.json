@@ -5,5 +5,5 @@
   "lib": {
     "entryFile": "src/public_api.ts"
   },
-  "whitelistedNonPeerDependencies": ["@swimlane/dragula", "@types/dragula"]
+  "allowedNonPeerDependencies": ["@swimlane/dragula", "@types/dragula"]
 }
