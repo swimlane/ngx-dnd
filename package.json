@@ -105,7 +105,7 @@
     "eslint-plugin-security": "^1.4.0",
     "husky": "^4.2.4",
     "ng-packagr": "^13.1.2",
-    "node-sass": "^5.0.0",
+    "node-sass": "^7.0.1",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.5.1",
     "prettier-eslint": "^13.0.0",
