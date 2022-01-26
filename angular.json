@@ -61,13 +61,7 @@
               "remark-html-katex",
               "vfile",
               "@swimlane/dragula"
-            ],
-            "vendorChunk": true,
-            "extractLicenses": false,
-            "buildOptimizer": false,
-            "sourceMap": true,
-            "optimization": false,
-            "namedChunks": true
+            ]
           },
           "configurations": {
             "production": {
@@ -87,11 +81,12 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
+              "aot": false,
               "extractLicenses": true,
-              "vendorChunk": false
+              "vendorChunk": false,
+              "buildOptimizer": false
             }
-          },
-          "defaultConfiguration": ""
+          }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -108,6 +103,13 @@
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "ngx-dnd:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["src/tsconfig.app.json", "src/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         },
         "deploy": {
@@ -133,6 +135,13 @@
               "project": "projects/swimlane/ngx-dnd/ng-package.prod.json",
               "tsConfig": "projects/swimlane/ngx-dnd/tsconfig.lib.prod.json"
             }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["projects/swimlane/ngx-dnd/tsconfig.lib.json", "projects/swimlane/ngx-dnd/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
