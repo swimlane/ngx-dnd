@@ -104,7 +104,7 @@
     "eslint-plugin-prefer-arrow": "latest",
     "eslint-plugin-react": "latest",
     "eslint-plugin-security": "^1.4.0",
-    "husky": "^4.2.4",
+    "husky": "^4.3.8",
     "ng-packagr": "^13.1.2",
     "node-sass": "^7.0.1",
     "npm-run-all": "^4.1.5",
