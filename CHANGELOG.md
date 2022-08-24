@@ -2,7 +2,7 @@
 
 ## HEAD (Unreleased)
 
-- Bump to Cypress version 10.6.0
+_(none)_
 
 ## 9.0.0 (2021-03-30)
 
