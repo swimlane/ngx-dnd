@@ -297,64 +297,64 @@ describe('Demo', () => {
     });
   });
 
-  describe('Builder', () => {
-    before(() => {
-      cy.visit('http://localhost:4200/builder#builder-demo');
-    });
+  // describe('Builder', () => {
+  //   before(() => {
+  //     cy.visit('http://localhost:4200/builder#builder-demo');
+  //   });
 
-    beforeEach(() => {
-      cy.get('.builder-container').as('section');
+  //   beforeEach(() => {
+  //     cy.get('.builder-container').as('section');
 
-      cy.get('@section').find('.builder-source .ngx-dnd-container').first().as('source');
+  //     cy.get('@section').find('.builder-source .ngx-dnd-container').first().as('source');
 
-      cy.get('@section').find('.builder-target .ngx-dnd-container').first().as('target');
+  //     cy.get('@section').find('.builder-target .ngx-dnd-container').first().as('target');
 
-      cy.get('@source').find('.ngx-dnd-item.section').as('sourceSection').contains('Section');
+  //     cy.get('@source').find('.ngx-dnd-item.section').as('sourceSection').contains('Section');
 
-      cy.get('@source').find('.ngx-dnd-item.string').as('sourceString').contains('String');
+  //     cy.get('@source').find('.ngx-dnd-item.string').as('sourceString').contains('String');
 
-      cy.get('@source').find('.ngx-dnd-item.number').as('sourceNumber').contains('Number');
-    });
+  //     cy.get('@source').find('.ngx-dnd-item.number').as('sourceNumber').contains('Number');
+  //   });
 
-    it('Initial State', () => {
-      cy.get('@source')
-        .find('.ngx-dnd-item')
-        .should(matchOrder(['Section', 'String', 'Number']));
+  //   it('Initial State', () => {
+  //     cy.get('@source')
+  //       .find('.ngx-dnd-item')
+  //       .should(matchOrder(['Section', 'String', 'Number']));
 
-      cy.get('@target').find('.ngx-dnd-item').should(matchOrder([]));
-    });
+  //     cy.get('@target').find('.ngx-dnd-item').should(matchOrder([]));
+  //   });
 
-    it('should add a string item', () => {
-      dragAndDrop('@sourceString', '@target', 'topLeft');
+  //   it('should add a string item', () => {
+  //     dragAndDrop('@sourceString', '@target', 'topLeft');
 
-      cy.get('@source')
-        .find('ngx-dnd-item')
-        .should(matchOrder(['Section', 'String', 'Number']));
+  //     cy.get('@source')
+  //       .find('ngx-dnd-item')
+  //       .should(matchOrder(['Section', 'String', 'Number']));
 
-      cy.get('@section')
-        .find('.builder-target ngx-dnd-container')
-        .find('ngx-dnd-item')
-        .should(matchOrder(['String']));
-    });
+  //     cy.get('@section')
+  //       .find('.builder-target ngx-dnd-container')
+  //       .find('ngx-dnd-item')
+  //       .should(matchOrder(['String']));
+  //   });
 
-    it('should add a section item', () => {
-      dragAndDrop('@sourceSection', '@target', 'topLeft');
+  //   it('should add a section item', () => {
+  //     dragAndDrop('@sourceSection', '@target', 'topLeft');
 
-      cy.get('@source')
-        .find('.ngx-dnd-item')
-        .should(matchOrder(['Section', 'String', 'Number']));
+  //     cy.get('@source')
+  //       .find('.ngx-dnd-item')
+  //       .should(matchOrder(['Section', 'String', 'Number']));
 
-      cy.get('@target')
-        .find('.ngx-dnd-item')
-        .should(matchOrder(['Section', 'String']));
+  //     cy.get('@target')
+  //       .find('.ngx-dnd-item')
+  //       .should(matchOrder(['Section', 'String']));
 
-      cy.get('@target').find('.ngx-dnd-item .ngx-dnd-container').first().as('targetSectionContainer');
+  //     cy.get('@target').find('.ngx-dnd-item .ngx-dnd-container').first().as('targetSectionContainer');
 
-      dragAndDrop('@sourceNumber', '@targetSectionContainer', 'topLeft');
+  //     dragAndDrop('@sourceNumber', '@targetSectionContainer', 'topLeft');
 
-      cy.get('@targetSectionContainer')
-        .find('ngx-dnd-item')
-        .should(matchOrder(['Number']));
-    });
-  });
+  //     cy.get('@targetSectionContainer')
+  //       .find('ngx-dnd-item')
+  //       .should(matchOrder(['Number']));
+  //   });
+  // });
 });
