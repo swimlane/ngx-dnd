@@ -73,7 +73,7 @@
     "zone.js": "~0.14.7"
   },
   "devDependencies": {
-    "@angular-builders/custom-webpack": "17.0.0",
+    "@angular-builders/custom-webpack": "^18.0.0",
     "@angular-devkit/build-angular": "18.0.3",
     "@angular-devkit/core": "18.0.3",
     "@angular-devkit/schematics": "18.0.3",
@@ -153,5 +153,8 @@
   "sideEffects": false,
   "volta": {
     "node": "18.20.4"
+  },
+  "resolutions": {
+    "typescript": "5.4.5"
   }
 }
