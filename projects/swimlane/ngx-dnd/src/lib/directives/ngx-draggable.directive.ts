@@ -8,7 +8,10 @@ import { DrakeStoreService } from '../services/drake-store.service';
  *
  * @export
  */
-@Directive({ selector: '[ngxDraggable]' })
+@Directive({
+  selector: '[ngxDraggable]',
+  standalone: false
+})
 export class DraggableDirective implements OnInit, OnDestroy {
   @Input() ngxDraggable: string[];
   @Input() model: any;

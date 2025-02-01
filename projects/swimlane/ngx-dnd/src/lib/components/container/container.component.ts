@@ -27,7 +27,8 @@ function getNextId() {
   selector: 'ngx-dnd-container',
   templateUrl: './container.component.html',
   styleUrls: ['./container.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  standalone: false
 })
 export class ContainerComponent implements OnInit, AfterViewInit {
   @Input() model: any;

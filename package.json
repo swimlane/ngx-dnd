@@ -40,15 +40,15 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "18.0.3",
-    "@angular/common": "18.0.3",
-    "@angular/compiler": "18.0.3",
-    "@angular/core": "18.0.3",
-    "@angular/elements": "18.0.3",
-    "@angular/forms": "18.0.3",
-    "@angular/platform-browser": "18.0.3",
-    "@angular/platform-browser-dynamic": "18.0.3",
-    "@angular/router": "18.0.3",
+    "@angular/animations": "19.1.4",
+    "@angular/common": "19.1.4",
+    "@angular/compiler": "19.1.4",
+    "@angular/core": "19.1.4",
+    "@angular/elements": "19.1.4",
+    "@angular/forms": "19.1.4",
+    "@angular/platform-browser": "19.1.4",
+    "@angular/platform-browser-dynamic": "19.1.4",
+    "@angular/router": "19.1.4",
     "@ngx-loading-bar/core": "^6.0.0",
     "@ngx-loading-bar/http-client": "^6.0.0",
     "@stackblitz/sdk": "^1.2.0",
@@ -70,21 +70,20 @@
     "tslib": "2.4.0",
     "url-resolve": "^1.0.0",
     "vfile-reporter": "^6.0.0",
-    "zone.js": "~0.14.7"
+    "zone.js": "~0.15.0"
   },
   "devDependencies": {
-    "@angular-builders/custom-webpack": "^18.0.0",
-    "@angular-devkit/build-angular": "18.0.3",
-    "@angular-devkit/core": "18.0.3",
-    "@angular-devkit/schematics": "18.0.3",
-    "@angular-eslint/builder": "18.0.0",
-    "@angular-eslint/eslint-plugin": "18.0.0",
-    "@angular-eslint/eslint-plugin-template": "18.0.0",
-    "@angular-eslint/schematics": "18.0.0",
-    "@angular-eslint/template-parser": "18.0.0",
+    "@angular-devkit/architect": "^0.1901.5",
+    "@angular-devkit/build-angular": "~19.1.5",
+    "@angular-devkit/build-ng-packagr": "0.1002.0",
+    "@angular-eslint/builder": "~18.2.0",
+    "@angular-eslint/eslint-plugin": "^18.4.0",
+    "@angular-eslint/eslint-plugin-template": "^18.4.0",
+    "@angular-eslint/schematics": "~18.2.0",
+    "@angular-eslint/template-parser": "^18.4.0",
     "@angular/cli": "^19.1.5",
-    "@angular/compiler-cli": "18.0.0",
-    "@angular/language-service": "18.0.3",
+    "@angular/compiler-cli": "19.1.4",
+    "@angular/language-service": "19.1.4",
     "@swimlane/eslint-config": "^2.0.0",
     "@swimlane/prettier-config-swimlane": "^3.0.2",
     "@types/jasmine": "~3.6.0",
@@ -119,7 +118,7 @@
     "tslint-config-prettier": "^1.18.0",
     "tslint-config-security": "^1.16.0",
     "tslint-config-swimlane": "^5.0.0",
-    "typescript": "5.4.5"
+    "typescript": "5.7.3"
   },
   "repository": {
     "type": "git",
@@ -153,8 +152,5 @@
   "sideEffects": false,
   "volta": {
     "node": "18.20.4"
-  },
-  "resolutions": {
-    "typescript": "5.4.5"
   }
 }

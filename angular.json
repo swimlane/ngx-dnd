@@ -3,8 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "cli": {
-    "analytics": false,
-    "defaultCollection": "@angular-eslint/schematics"
+    "analytics": false
   },
   "projects": {
     "ngx-dnd": {
@@ -102,18 +101,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ngx-dnd:build"
+            "buildTarget": "ngx-dnd:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ngx-dnd:build:production"
+              "buildTarget": "ngx-dnd:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngx-dnd:build"
+            "buildTarget": "ngx-dnd:build"
           }
         },
         "deploy": {
@@ -149,6 +148,5 @@
         }
       }
     }
-  },
-  "defaultProject": "ngx-dnd"
+  }
 }

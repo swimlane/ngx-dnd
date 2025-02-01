@@ -1,19 +1,16 @@
 {
   "name": "@swimlane/ngx-dnd",
   "description": "Drag and Drop for Angular2 and beyond!",
-  "version": "9.0.1-beta.3",
+  "version": "10.0.0-alpha.0",
   "peerDependencies": {
-    "@angular/common": "^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0 || ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0",
-    "@angular/core": "^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0 || ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0"
+    "@angular/common": "^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0",
+    "@angular/core": "^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/swimlane/ngx-dnd.git"
   },
   "keywords": [
-    "angular2",
-    "angular4",
-    "angular5",
     "dnd",
     "drag",
     "drop",
