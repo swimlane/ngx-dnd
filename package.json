@@ -1,6 +1,6 @@
 {
   "name": "ngx-dnd",
-  "version": "9.0.1-beta.4",
+  "version": "0.0.0",
   "description": "Drag and Drop for Angular2 and beyond!",
   "scripts": {
     "ng": "ng",
@@ -32,7 +32,7 @@
     "scss-build": "node-sass ./projects/swimlane/ngx-dnd/src/lib/ngx-dnd.scss ./dist/swimlane/ngx-dnd/release/index.css",
     "copyFiles": "cpx \"./{CHANGELOG.md,README.md,LICENSE}\" ./dist/swimlane/ngx-dnd",
     "prepublish:lib": "run-s ci build:lib:prod",
-    "publish:lib": "cd dist/swimlane/ngx-dnd && npm publish --ignore-scripts --tag beta",
+    "publish:lib": "cd dist/swimlane/ngx-dnd && npm publish --ignore-scripts --tag alpha",
     "prepack:lib": "npm run build:lib:prod",
     "pack:lib": "cd dist/swimlane/ngx-dnd && npm pack",
     "publish": "npm-run-all publish:lib deploy",
@@ -52,8 +52,8 @@
     "@ngx-loading-bar/core": "^6.0.0",
     "@ngx-loading-bar/http-client": "^6.0.0",
     "@stackblitz/sdk": "^1.2.0",
-    "@swimlane/docspa-core": "^8.0.1",
-    "@swimlane/docspa-remark-preset": "^6.0.0",
+    "@swimlane/docspa-core": "^8.0.3",
+    "@swimlane/docspa-remark-preset": "^1.0.1",
     "@swimlane/dragula": "^3.8.0",
     "@types/dragula": "^2.1.33",
     "@ungap/global-this": "^0.3.1",
@@ -73,8 +73,8 @@
     "zone.js": "~0.14.7"
   },
   "devDependencies": {
-    "@angular-builders/custom-webpack": "17.0.0",
-    "@angular-devkit/build-angular": "18.0.3",
+    "@angular-builders/custom-webpack": "18.0.0",
+    "@angular-devkit/build-angular": "^18.2.14",
     "@angular-devkit/core": "18.0.3",
     "@angular-devkit/schematics": "18.0.3",
     "@angular-eslint/builder": "18.0.0",
@@ -95,9 +95,9 @@
     "@typescript-eslint/parser": "6.18.1",
     "angular-cli-ghpages": "^1.0.0",
     "chg": "^0.4.0",
-    "cpx": "^1.5.0",
+    "cpx": "^1.2.1",
     "cross-env": "^7.0.2",
-    "cypress": "^10.6.0",
+    "cypress": "^14.0.3",
     "eslint": "^8.6.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-import": "latest",
@@ -108,7 +108,7 @@
     "husky": "^4.2.4",
     "ng-packagr": "18.0.0",
     "node-polyfill-webpack-plugin": "^4.0.0",
-    "node-sass": "^7.0.1",
+    "node-sass": "^9.0.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.5.1",
     "prettier-eslint": "^13.0.0",
@@ -119,7 +119,8 @@
     "tslint-config-prettier": "^1.18.0",
     "tslint-config-security": "^1.16.0",
     "tslint-config-swimlane": "^5.0.0",
-    "typescript": "5.4.5"
+    "typescript": "^5.4.5",
+    "unified": "^11.0.5"
   },
   "repository": {
     "type": "git",
