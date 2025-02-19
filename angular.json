@@ -3,6 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "cli": {
+    "analytics": false,
     "defaultCollection": "@angular-eslint/schematics"
   },
   "projects": {
@@ -14,9 +15,11 @@
       "schematics": {},
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
-            "aot": false,
+            "customWebpackConfig": {
+              "path": "./webpack.config.js"
+            },
             "outputPath": "dist/ngx-dnd",
             "index": "src/index.html",
             "main": "src/main.ts",

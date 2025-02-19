@@ -2,7 +2,7 @@
 
 ## HEAD (Unreleased)
 
-- Bump to Cypress version 10.6.0
+- Support Angular 17-19
 
 ## 9.0.0 (2021-03-30)
 
