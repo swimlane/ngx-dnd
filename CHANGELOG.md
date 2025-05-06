@@ -2,6 +2,8 @@
 
 ## HEAD (Unreleased)
 
+## 10.0.0 (2025-05-06)
+
 - Support Angular 17-19
 
 ## 9.0.0 (2021-03-30)
