@@ -2,7 +2,8 @@
 
 ## HEAD (Unreleased)
 
-- Angular version 19
+- Added support for Angular 20
+- Removed support for Angular 17 and earlier versions
 
 ## 9.0.0 (2021-03-30)
 
