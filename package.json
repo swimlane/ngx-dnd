@@ -148,6 +148,6 @@
   },
   "sideEffects": false,
   "volta": {
-    "node": "20.19.0"
+    "node": "22.16.0"
   }
 }

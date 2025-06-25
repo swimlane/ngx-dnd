@@ -9,7 +9,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          node-version: 20.19
+          node-version: 22.16
 
       - name: Install
         uses: bahmutov/npm-install@v1
