@@ -16,8 +16,11 @@ overrides:
       - plugin:@angular-eslint/template/process-inline-templates
       - prettier
     rules:
+      '@angular-eslint/prefer-standalone': off
+      '@angular-eslint/prefer-inject': off
       '@typescript-eslint/no-explicit-any': off
       '@typescript-eslint/no-var-requires': off
+      '@typescript-eslint/no-require-imports': off
   - files:
       - '*.html'
     extends:

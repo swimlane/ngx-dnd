@@ -1,45 +1,35 @@
-<ng-container [ngSwitch]="type">
-  <ng-container *ngSwitchCase="'array'">
-    <ngx-dnd-container
-      [model]="model"
-      [template]="container.template"
-      [dropZone]="dropZone"
-      [dropZones]="dropZones"
-      [removeOnSpill]="removeOnSpill"
-      [droppableItemClass]="droppableItemClass"
-      [copy]="copy"
-    >
-    </ngx-dnd-container>
-  </ng-container>
-
-  <ng-container *ngSwitchCase="'object'">
-    <ng-template *ngIf="container.template" [ngTemplateOutlet]="container.template" [ngTemplateOutletContext]="data">
-    </ng-template>
-    <ng-container *ngIf="!container.template">
-      <div class="ngx-dnd-content">
-        {{ model.label }}
-      </div>
-      <ngx-dnd-container
-        *ngIf="model.children"
-        [model]="model.children"
-        [template]="container.template"
-        [dropZone]="dropZone"
-        [dropZones]="dropZones"
-        [removeOnSpill]="removeOnSpill"
-        [droppableItemClass]="droppableItemClass"
-        [copy]="copy"
-      >
-      </ngx-dnd-container>
-    </ng-container>
-  </ng-container>
-
-  <ng-container *ngSwitchCase="'undefined'"> </ng-container>
-
-  <ng-container *ngSwitchDefault>
-    <ng-template *ngIf="container.template" [ngTemplateOutlet]="container.template" [ngTemplateOutletContext]="data">
-    </ng-template>
-    <div *ngIf="!container.template" class="ngx-dnd-content">
-      {{ model }}
-    </div>
-  </ng-container>
-</ng-container>
+@switch (type) { @case ('array') {
+<ngx-dnd-container
+  [model]="model"
+  [template]="container.template"
+  [dropZone]="dropZone"
+  [dropZones]="dropZones"
+  [removeOnSpill]="removeOnSpill"
+  [droppableItemClass]="droppableItemClass"
+  [copy]="copy"
+>
+</ngx-dnd-container>
+} @case ('object') { @if (container.template) {
+<ng-template [ngTemplateOutlet]="container.template" [ngTemplateOutletContext]="data"> </ng-template>
+} @if (!container.template) {
+<div class="ngx-dnd-content">
+  {{ model.label }}
+</div>
+@if (model.children) {
+<ngx-dnd-container
+  [model]="model.children"
+  [template]="container.template"
+  [dropZone]="dropZone"
+  [dropZones]="dropZones"
+  [removeOnSpill]="removeOnSpill"
+  [droppableItemClass]="droppableItemClass"
+  [copy]="copy"
+>
+</ngx-dnd-container>
+} } } @case ('undefined') { } @default { @if (container.template) {
+<ng-template [ngTemplateOutlet]="container.template" [ngTemplateOutletContext]="data"> </ng-template>
+} @if (!container.template) {
+<div class="ngx-dnd-content">
+  {{ model }}
+</div>
+} } }

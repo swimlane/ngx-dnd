@@ -3,8 +3,8 @@
   "description": "Drag and Drop for Angular2 and beyond!",
   "version": "10.0.0-alpha.0",
   "peerDependencies": {
-    "@angular/common": "^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0",
-    "@angular/core": "^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0"
+    "@angular/common": "18.x || 19.x || 20.x",
+    "@angular/core": "18.x || 19.x || 20.x"
   },
   "repository": {
     "type": "git",

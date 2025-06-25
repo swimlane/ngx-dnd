@@ -1,4 +1,3 @@
-
 <div class="builder-container">
   <div class="builder-source">
     <h4>Source</h4>
@@ -10,14 +9,13 @@
       [copy]="true"
       [droppableItemClass]="droppableItemClass"
       (drag)="builderDrag($event)"
-      direction="mixed">
-
+      direction="mixed"
+    >
       <ng-template let-item="model">
         <i [class]="item.icon"></i>
-        {{item.name}}
+        {{ item.name }}
       </ng-template>
     </ngx-dnd-container>
-
   </div>
   <div class="builder-target">
     <h4>Target</h4>
@@ -33,13 +31,14 @@
       (over)="log($event)"
       (out)="log($event)"
       (remove)="log($event)"
-      direction="mixed">
-
+      direction="mixed"
+    >
       <ng-template let-model="model" let-template="template">
-        <div [ngSwitch]="model.inputType">
-          <div *ngSwitchCase="'section'">
+        <div>
+          @switch (model.inputType) { @case ('section') {
+          <div>
             <div class="shadow">
-              {{model.name}}
+              {{ model.name }}
               <ngx-dnd-container
                 dropZone="builder-target"
                 [model]="model.children"
@@ -52,14 +51,17 @@
                 (out)="log($event)"
                 (remove)="log($event)"
                 (cancel)="log($event)"
-                direction="mixed">
+                direction="mixed"
+              >
               </ngx-dnd-container>
             </div>
           </div>
-          <div *ngSwitchDefault>
-            <label>{{model.name}}</label>
-            <input [attr.type]="model.inputType" [ngModel]="model.data">
+          } @default {
+          <div>
+            <label>{{ model.name }}</label>
+            <input [attr.type]="model.inputType" [ngModel]="model.data" />
           </div>
+          } }
         </div>
       </ng-template>
     </ngx-dnd-container>
@@ -69,5 +71,3 @@
   <h3>Model</h3>
   <pre><code>{{targetBuilderTools | json}}</code></pre>
 </div>
-
-
