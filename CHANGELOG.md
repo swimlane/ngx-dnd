@@ -2,6 +2,8 @@
 
 ## HEAD (Unreleased)
 
+## 11.0.0 (2025-08-20)
+
 - Added support for Angular 20
 - Removed support for Angular 17 and earlier versions
 
