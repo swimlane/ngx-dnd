@@ -6,6 +6,10 @@ const config: StorybookConfig = {
   framework: {
     name: '@storybook/angular',
     options: {}
+  },
+  typescript: {
+    check: false,
+    skipCompiler: true
   }
 };
 

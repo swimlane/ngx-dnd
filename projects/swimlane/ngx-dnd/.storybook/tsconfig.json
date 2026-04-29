@@ -1,4 +1,10 @@
 {
   "extends": "../tsconfig.storybook.json",
-  "include": ["./**/*.ts"]
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true
+  },
+  "exclude": ["../src/**/test.ts", "../src/**/*.spec.ts"],
+  "include": ["../src/**/*.stories.*", "./preview.ts", "./manager.ts"],
+  "files": ["./typings.d.ts"]
 }
