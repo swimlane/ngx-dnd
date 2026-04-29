@@ -1,0 +1,13 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "baseUrl": "../../../",
+    "moduleResolution": "bundler",
+    "skipLibCheck": true,
+    "types": ["node"]
+  },
+  "include": ["src/**/*.ts", ".storybook/*.ts"],
+  "exclude": ["src/test.ts", "**/*.spec.ts"]
+}

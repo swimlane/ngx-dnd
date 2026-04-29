@@ -5,6 +5,8 @@ extends:
 overrides:
   - files:
       - '*.ts'
+      - '!projects/swimlane/ngx-dnd/src/**/*.stories.ts'
+      - '!projects/swimlane/ngx-dnd/.storybook/**/*.ts'
     parser: '@typescript-eslint/parser'
     parserOptions:
       project:
@@ -14,6 +16,24 @@ overrides:
       - '@swimlane/eslint-config/typescript'
       - plugin:@angular-eslint/recommended
       - plugin:@angular-eslint/template/process-inline-templates
+      - prettier
+    rules:
+      '@angular-eslint/prefer-standalone': off
+      '@angular-eslint/prefer-inject': off
+      '@typescript-eslint/no-explicit-any': off
+      '@typescript-eslint/no-var-requires': off
+      '@typescript-eslint/no-require-imports': off
+  - files:
+      - 'projects/swimlane/ngx-dnd/src/**/*.stories.ts'
+      - 'projects/swimlane/ngx-dnd/.storybook/**/*.ts'
+    parser: '@typescript-eslint/parser'
+    parserOptions:
+      project:
+        - projects/swimlane/ngx-dnd/tsconfig.storybook.json
+      createDefaultProgram: true
+    extends:
+      - '@swimlane/eslint-config/typescript'
+      - plugin:@angular-eslint/recommended
       - prettier
     rules:
       '@angular-eslint/prefer-standalone': off
