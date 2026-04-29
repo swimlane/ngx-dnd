@@ -1,0 +1,40 @@
+{
+  "title": "DroppableDirective",
+  "blocks": [
+    {
+      "type": "p",
+      "html": "<code>[ngxDroppable]</code> makes the container droppable and children draggable."
+    },
+    {
+      "type": "h2",
+      "text": "Inputs"
+    },
+    {
+      "type": "table",
+      "headers": ["Prop", "Description"],
+      "rows": [
+        ["<code>copy: boolean = false</code>", ""],
+        ["<code>dropZone: string</code>", ""],
+        ["<code>model: any</code>", ""],
+        ["<code>removeOnSpill: boolean</code>", ""],
+        ["<code>ngxDroppable: strings</code>", ""]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Outputs"
+    },
+    {
+      "type": "table",
+      "headers": ["Name", "Description"],
+      "rows": [
+        ["<code>cancel: EventEmitter&lt;any&gt;</code>", ""],
+        ["<code>drag: EventEmitter&lt;any&gt;</code>", ""],
+        ["<code>drop: EventEmitter&lt;any&gt;</code>", ""],
+        ["<code>out: EventEmitter&lt;any&gt;</code>", ""],
+        ["<code>over: EventEmitter&lt;any&gt;</code>", ""],
+        ["<code>remove: EventEmitter&lt;any&gt;</code>", ""]
+      ]
+    }
+  ]
+}

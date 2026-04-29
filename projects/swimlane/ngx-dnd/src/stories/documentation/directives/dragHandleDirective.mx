@@ -1,0 +1,9 @@
+{
+  "title": "DragHandleDirective",
+  "blocks": [
+    {
+      "type": "p",
+      "html": "<code>[ngxDragHandle]</code> adds properties and events to drag handle elements."
+    }
+  ]
+}

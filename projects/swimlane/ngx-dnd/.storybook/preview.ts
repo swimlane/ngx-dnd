@@ -8,8 +8,21 @@ const preview: Preview = {
         date: /Date$/
       }
     },
-    docs: {
-      toc: true
+    options: {
+      storySort: (a, b) => {
+        const titleA = a.title ?? '';
+        const titleB = b.title ?? '';
+        const root = t => t.split('/')[0] ?? '';
+        const rank = t => {
+          const r = root(t);
+          if (r === 'Introduction') return 0;
+          if (r === 'Documentation' || r === 'Examples') return 1;
+          return 2;
+        };
+        const d = rank(titleA) - rank(titleB);
+        if (d !== 0) return d;
+        return titleA.localeCompare(titleB, undefined, { numeric: true });
+      }
     }
   }
 };

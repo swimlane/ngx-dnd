@@ -1,18 +1,7 @@
 # `ItemComponent`
 
-## Overview
+Full documentation (overview and API) for this component is maintained in Storybook:
 
-`<ngx-dnd-item>`...
+**Documentation → Components → ItemComponent → Overview**
 
-## API
-
-### Inputs
-
-| Prop                               | Description |
-| ---------------------------------- | ----------- |
-| `copy: boolean`                    |
-| `droppableItemClass: string | ((o: any) => any)` |
-| `dropZone: string`                 |
-| `dropZones: string[]`              |
-| `model: any`                       |
-| `removeOnSpill: boolean`           |
+Source: `projects/swimlane/ngx-dnd/src/stories/documentation/item-component.mx` (structured content rendered by `ItemComponentDocComponent`).

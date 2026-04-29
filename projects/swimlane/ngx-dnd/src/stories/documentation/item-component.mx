@@ -1,0 +1,54 @@
+{
+  "title": "ItemComponent",
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Overview"
+    },
+    {
+      "type": "p",
+      "html": "The <code>&lt;ngx-dnd-item&gt;</code> component supports nested <code>ngxDroppable</code> and <code>ngxDraggable</code> regions. Use it inside an <code>&lt;ngx-dnd-container&gt;</code>; outside a container, use <code>ngxDroppable</code> instead."
+    },
+    {
+      "type": "h2",
+      "text": "API"
+    },
+    {
+      "type": "h3",
+      "text": "Inputs"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Prop",
+        "Description"
+      ],
+      "rows": [
+        [
+          "<code>model: any</code>",
+          "Data model for this item."
+        ],
+        [
+          "<code>copy: boolean</code>",
+          "Defaults to the parent container&rsquo;s <code>copy</code> when unset."
+        ],
+        [
+          "<code>droppableItemClass: string | ((model: any) => any)</code>",
+          "CSS class(es) for the item; defaults to the container&rsquo;s value."
+        ],
+        [
+          "<code>dropZone: any</code>",
+          "Drop zone id; defaults to the container&rsquo;s <code>dropZone</code>."
+        ],
+        [
+          "<code>dropZones: any</code>",
+          "Drop zone list; defaults to the container&rsquo;s <code>dropZones</code>."
+        ],
+        [
+          "<code>removeOnSpill: boolean</code>",
+          "Whether removing outside the bounds removes the item; defaults to the container."
+        ]
+      ]
+    }
+  ]
+}
