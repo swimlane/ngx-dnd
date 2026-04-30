@@ -187,7 +187,7 @@ This project uses [heff/chg](https://github.com/heff/chg), a simple changelog/re
 - Clean and test (Optional)
   - Run `rm -rf node_modules`
   - Run `npm i`
-  - Run tests (`npm run test:ci`)
+  - Run tests (`npm run test:release`)
 - Examine CHANGELOG.md to determine next version (X.Y.Z)
 - Run `git checkout -b release/X.Y.Z`
 - Update version using `npm version [<newversion> | major | minor | patch]`
