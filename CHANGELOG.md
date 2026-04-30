@@ -2,6 +2,13 @@
 
 ## HEAD (Unreleased)
 
+## 12.0.0-alpha.0 (2026-04-30)
+
+- Added support for Angular 21
+- Replaced docSpa with storybook
+- Removed support for Angular 18
+- Updated cypress tests to run against storybook
+
 ## 11.0.0 (2025-08-20)
 
 - Added support for Angular 20
