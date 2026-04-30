@@ -18,7 +18,7 @@
     "cy:run": "cypress run --browser electron",
     "cy:run:chrome": "cypress run --browser chrome",
     "cy:open": "cypress open",
-    "cy:ci": "start-server-and-test start http-get://localhost:6006 cy:run",
+    "cy:ci": "start-server-and-test start http-get://localhost:6006 cy:run:chrome",
     "lint": "ng lint @swimlane/ngx-dnd",
     "ci": "run-s lint prettier:ci cy:ci",
     "prettier": "prettier --write \"**/*.{js,ts,html}\"",
