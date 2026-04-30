@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { moduleMetadata } from '@storybook/angular';
 
-import { BuilderModule } from '@ngx-dnd-demo/builder';
+import { BuilderModule } from '../builder-demo/builder.module';
 
 import { NgxDnDModule } from '../../public_api';
 
 import { EXAMPLE_STORY_LAYOUT_STYLES, exampleStoryLayoutTemplate } from './example-story-layout';
 
-/** From src/docs/builder.md — live demo is `app-builder` from the demo app. */
+/** Builder demo module lives alongside Storybook (vendored from the legacy demo app). */
 const builderDemoTemplate = `<app-builder></app-builder>`;
 
 const meta: Meta = {
