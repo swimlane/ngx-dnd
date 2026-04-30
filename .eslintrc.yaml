@@ -23,6 +23,12 @@ overrides:
       '@typescript-eslint/no-explicit-any': off
       '@typescript-eslint/no-var-requires': off
       '@typescript-eslint/no-require-imports': off
+      '@angular-eslint/no-output-native': off
+      '@angular-eslint/no-input-rename': off
+  - files:
+      - 'projects/swimlane/ngx-dnd/src/lib/declarations.d.ts'
+    rules:
+      no-var: off
   - files:
       - 'projects/swimlane/ngx-dnd/src/**/*.stories.ts'
       - 'projects/swimlane/ngx-dnd/.storybook/**/*.ts'

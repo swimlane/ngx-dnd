@@ -118,12 +118,6 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {}
-        },
-        "lint": {
-          "builder": "@angular-eslint/builder:lint",
-          "options": {
-            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
-          }
         }
       }
     },
@@ -166,6 +160,12 @@
             "compodoc": false,
             "outputDir": "dist/storybook/ngx-dnd",
             "styles": ["projects/swimlane/ngx-dnd/src/lib/ngx-dnd.scss"]
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["projects/swimlane/ngx-dnd/**/*.ts"]
           }
         }
       }
