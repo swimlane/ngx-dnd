@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 /**
  * Open a story in the Storybook preview iframe (matches ids in dist/storybook/.../index.json).
  */

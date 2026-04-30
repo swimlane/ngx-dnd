@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 /** Story ids from Storybook manifest (see `dist/storybook/ngx-dnd/index.json` after build). */
 export const SB = {
   sortablesNoModel: 'examples-sortables--no-model',
