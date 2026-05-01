@@ -1,0 +1,78 @@
+.container-component-doc {
+  max-width: 52rem;
+  padding: 1rem 1.25rem 2rem;
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 1.55;
+  color: #1a1a1a;
+}
+
+.container-component-doc__title {
+  margin: 0 0 0.75rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.container-component-doc__p {
+  margin: 0 0 0.85rem;
+}
+
+.container-component-doc__h2 {
+  margin: 1.35rem 0 0.65rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-bottom: 1px solid #e8e8e8;
+  padding-bottom: 0.25rem;
+}
+
+.container-component-doc__h3 {
+  margin: 1rem 0 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.container-component-doc__table-wrap {
+  margin: 0 0 1rem;
+  overflow: auto;
+}
+
+.container-component-doc__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.container-component-doc__table th,
+.container-component-doc__table td {
+  padding: 0.5rem 0.65rem;
+  border: 1px solid #e1e4e8;
+  text-align: left;
+  vertical-align: top;
+}
+
+.container-component-doc__table th {
+  background: #f6f8fa;
+  font-weight: 600;
+}
+
+.container-component-doc__pre {
+  margin: 0 0 1rem;
+  padding: 0.85rem 1rem;
+  overflow: auto;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  background: #f6f8fa;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+}
+
+.container-component-doc code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.container-component-doc__p code,
+.container-component-doc__table code {
+  padding: 0.1em 0.35em;
+  font-size: 0.9em;
+  background: #f0f0f0;
+  border-radius: 4px;
+}

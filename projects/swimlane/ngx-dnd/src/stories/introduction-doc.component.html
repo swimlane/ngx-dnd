@@ -1,0 +1,33 @@
+<article class="introduction-doc">
+  <h1 class="introduction-doc__title">{{ doc.title }}</h1>
+
+  @for (block of doc.blocks; track $index) { @switch (block.type) { @case ('badges') {
+  <p class="introduction-doc__badges">
+    @for (b of block.items; track b.href) {
+    <a [href]="b.href" target="_blank" rel="noopener noreferrer">
+      <img [src]="b.src" [alt]="b.alt" />
+    </a>
+    }
+  </p>
+  } @case ('p') {
+  <p class="introduction-doc__p" [innerHTML]="block.html"></p>
+  } @case ('h2') {
+  <h2 class="introduction-doc__h2">{{ block.text }}</h2>
+  } @case ('h3') {
+  <h3 class="introduction-doc__h3">{{ block.text }}</h3>
+  } @case ('ul') {
+  <ul class="introduction-doc__list">
+    @for (item of block.items; track $index) {
+    <li [innerHTML]="item"></li>
+    }
+  </ul>
+  } @case ('ol') {
+  <ol class="introduction-doc__list introduction-doc__list--ordered">
+    @for (item of block.items; track $index) {
+    <li [innerHTML]="item"></li>
+    }
+  </ol>
+  } @case ('code') {
+  <pre class="introduction-doc__pre"><code [class]="'language-' + block.language">{{ block.code }}</code></pre>
+  } } }
+</article>

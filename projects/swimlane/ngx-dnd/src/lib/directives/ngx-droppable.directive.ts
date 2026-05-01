@@ -22,7 +22,10 @@ function getNextId() {
  *
  * @export
  */
-@Directive({ selector: '[ngxDroppable]' })
+@Directive({
+  selector: '[ngxDroppable]',
+  standalone: false
+})
 export class DroppableDirective implements OnInit, OnDestroy, AfterViewInit {
   @Input() model: any;
   @Input() copy = false;

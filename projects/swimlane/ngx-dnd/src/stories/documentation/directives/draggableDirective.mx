@@ -1,0 +1,32 @@
+{
+  "title": "DraggableDirective",
+  "blocks": [
+    {
+      "type": "p",
+      "html": "<code>[ngxDraggable]</code> adds properties and events to draggable elements."
+    },
+    {
+      "type": "h2",
+      "text": "Inputs"
+    },
+    {
+      "type": "table",
+      "headers": ["Prop", "Description"],
+      "rows": [
+        ["<code>dropZones: string[]</code>", ""],
+        ["<code>model: any</code>", ""],
+        ["<code>moves: boolean = true</code>", ""],
+        ["<code>ngxDraggable: strings[]</code>", ""]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Outputs"
+    },
+    {
+      "type": "table",
+      "headers": ["Name", "Description"],
+      "rows": [["<code>drag: EventEmitter&lt;any&gt;</code>", ""]]
+    }
+  ]
+}

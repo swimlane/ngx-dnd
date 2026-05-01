@@ -1,0 +1,107 @@
+{
+  "title": "ContainerComponent",
+  "blocks": [
+    {
+      "type": "h2",
+      "text": "Overview"
+    },
+    {
+      "type": "p",
+      "html": "The <code>&lt;ngx-dnd-container&gt;</code> component provides a container for draggable items."
+    },
+    {
+      "type": "h2",
+      "text": "API"
+    },
+    {
+      "type": "h3",
+      "text": "Inputs"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Prop",
+        "Description"
+      ],
+      "rows": [
+        [
+          "<code>model: any</code>",
+          ""
+        ],
+        [
+          "<code>copy: boolean = false</code>",
+          ""
+        ],
+        [
+          "<code>removeOnSpill: boolean = false</code>",
+          ""
+        ],
+        [
+          "<code>droppableItemClass: string | ((o: any) => any)</code>",
+          ""
+        ],
+        [
+          "<code>dropZone: any</code>",
+          ""
+        ],
+        [
+          "<code>dropZones: any</code>",
+          ""
+        ],
+        [
+          "<code>moves: (model: any, source: any, handle: any, sibling: any) => boolean</code>",
+          ""
+        ],
+        [
+          "<code>template: TemplateRef&lt;any&gt;</code>",
+          ""
+        ],
+        [
+          "<code>droppable: any</code>",
+          ""
+        ],
+        [
+          "<code>direction: 'vertical' | 'horizontal' | 'mixed' = 'vertical'</code>",
+          ""
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Outputs"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Name",
+        "Description"
+      ],
+      "rows": [
+        [
+          "<code>drop: EventEmitter&lt;any&gt;</code>",
+          ""
+        ],
+        [
+          "<code>drag: EventEmitter&lt;any&gt;</code>",
+          ""
+        ],
+        [
+          "<code>over: EventEmitter&lt;any&gt;</code>",
+          ""
+        ],
+        [
+          "<code>out: EventEmitter&lt;any&gt;</code>",
+          ""
+        ],
+        [
+          "<code>remove: EventEmitter&lt;any&gt;</code>",
+          ""
+        ],
+        [
+          "<code>cancel: EventEmitter&lt;any&gt;</code>",
+          ""
+        ]
+      ]
+    }
+  ]
+}

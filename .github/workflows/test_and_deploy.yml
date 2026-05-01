@@ -8,8 +8,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: 12.x
+          node-version: '22.16'
+          cache: npm
 
       - name: Install
         uses: bahmutov/npm-install@v1
@@ -22,6 +26,12 @@ jobs:
         env:
           CI: true
 
+      - name: Build Storybook
+        run: |
+          npm run build:storybook
+        env:
+          CI: true
+
       - name: Test
         run: |
           npm run ci --if-present
@@ -29,9 +39,12 @@ jobs:
           CI: true
 
       - name: Prepare and deploy
-        run: |
-          npm run deploy --if-present -- --name="Swimlane" --email="swimlane-devops@swimlane.com"
         if: ${{ github.ref == 'refs/heads/master' }}
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: ./dist/storybook/ngx-dnd
+          clean: true
         env:
           CI: true
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}

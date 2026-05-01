@@ -1,0 +1,81 @@
+.introduction-doc {
+  max-width: 52rem;
+  padding: 1rem 1.25rem 2rem;
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 1.55;
+  color: #1a1a1a;
+}
+
+.introduction-doc__title {
+  margin: 0 0 0.75rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.introduction-doc__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  align-items: center;
+  margin: 0 0 1rem;
+
+  a {
+    line-height: 0;
+  }
+
+  img {
+    display: block;
+    height: 20px;
+    width: auto;
+  }
+}
+
+.introduction-doc__p {
+  margin: 0 0 0.85rem;
+}
+
+.introduction-doc__h2 {
+  margin: 1.35rem 0 0.65rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-bottom: 1px solid #e8e8e8;
+  padding-bottom: 0.25rem;
+}
+
+.introduction-doc__h3 {
+  margin: 1rem 0 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.introduction-doc__list {
+  margin: 0 0 0.85rem;
+  padding-left: 1.35rem;
+
+  li {
+    margin-bottom: 0.35rem;
+  }
+}
+
+.introduction-doc__pre {
+  margin: 0 0 1rem;
+  padding: 0.85rem 1rem;
+  overflow: auto;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  background: #f6f8fa;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+}
+
+.introduction-doc code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.introduction-doc__p code,
+.introduction-doc__list code {
+  padding: 0.1em 0.35em;
+  font-size: 0.9em;
+  background: #f0f0f0;
+  border-radius: 4px;
+}

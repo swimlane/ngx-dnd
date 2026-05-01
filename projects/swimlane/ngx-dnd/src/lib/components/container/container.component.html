@@ -5,20 +5,21 @@
   [copy]="copy"
   [ngClass]="{ 'gu-empty': !model?.length }"
   [removeOnSpill]="removeOnSpill"
-  class='ngx-dnd-container'>
-  <ng-container *ngIf="model">
-    <ng-container *ngFor="let item of model">
-      <ngx-dnd-item
-        ngxDraggable
-        [model]="item"
-        [dropZone]="dropZone"
-        [dropZones]="dropZones"
-        [copy]="copy"
-        [moves]="moves"
-        [removeOnSpill]="removeOnSpill"
-        [droppableItemClass]="droppableItemClass">
-      </ngx-dnd-item>
-    </ng-container>
-  </ng-container>
-  <ng-content *ngIf="!model"></ng-content>
+  class="ngx-dnd-container"
+>
+  @if (model) { @for (item of model; track item) {
+  <ngx-dnd-item
+    ngxDraggable
+    [model]="item"
+    [dropZone]="dropZone"
+    [dropZones]="dropZones"
+    [copy]="copy"
+    [moves]="moves"
+    [removeOnSpill]="removeOnSpill"
+    [droppableItemClass]="droppableItemClass"
+  >
+  </ngx-dnd-item>
+  } } @if (!model) {
+  <ng-content></ng-content>
+  }
 </div>

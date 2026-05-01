@@ -1,4 +1,14 @@
-import { Directive, ElementRef, HostListener, Input, Output, EventEmitter, OnDestroy, OnInit } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  HostListener,
+  Input,
+  Output,
+  EventEmitter,
+  OnDestroy,
+  OnInit,
+  DoCheck
+} from '@angular/core';
 
 import { DroppableDirective } from './ngx-droppable.directive';
 import { DrakeStoreService } from '../services/drake-store.service';
@@ -8,8 +18,11 @@ import { DrakeStoreService } from '../services/drake-store.service';
  *
  * @export
  */
-@Directive({ selector: '[ngxDraggable]' })
-export class DraggableDirective implements OnInit, OnDestroy {
+@Directive({
+  selector: '[ngxDraggable]',
+  standalone: false
+})
+export class DraggableDirective implements OnInit, OnDestroy, DoCheck {
   @Input() ngxDraggable: string[];
   @Input() model: any;
 

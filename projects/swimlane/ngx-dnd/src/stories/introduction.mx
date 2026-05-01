@@ -1,0 +1,219 @@
+{
+  "title": "ngx-dnd",
+  "blocks": [
+    {
+      "type": "p",
+      "html": "🕶 Drag, Drop and Sorting Library for Angular6 and beyond!"
+    },
+    {
+      "type": "p",
+      "html": "<em>Note:</em> The drag-and-drop directives in <a href=\"https://material.angular.io/cdk/drag-drop/overview\" target=\"_blank\" rel=\"noopener noreferrer\">angular/cdk</a> are great. Use that if you don't need nested DnD containers. We are investigating using angular/cdk directives internally."
+    },
+    {
+      "type": "h2",
+      "text": "Features"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Drag and Drop",
+        "Sorting",
+        "Events (drag, drop, over, out)",
+        "Nesting",
+        "Touch support",
+        "Templating"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Install"
+    },
+    {
+      "type": "p",
+      "html": "To use ngx-dnd in your project install it via <a href=\"https://www.npmjs.com/package/@swimlane/ngx-dnd\" target=\"_blank\" rel=\"noopener noreferrer\">npm</a>:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<code>npm i @swimlane/ngx-dnd @swimlane/dragula @types/dragula --save</code>",
+        "Add <code>NgxDnDModule.forRoot()</code> to your application module.",
+        "If using directives you will need to BYO styles or include <code>@swimlane/ngx-dnd/release/index.css</code>.",
+        "You may need to add the following to your <code>polyfills.ts</code> file:"
+      ]
+    },
+    {
+      "type": "code",
+      "language": "js",
+      "code": "if (typeof window['global'] === 'undefined') {\n  window['global'] = window;\n}"
+    },
+    {
+      "type": "h2",
+      "text": "Quick intro and examples"
+    },
+    {
+      "type": "h3",
+      "text": "Directives"
+    },
+    {
+      "type": "p",
+      "html": "<code>ngx-dnd</code> provides a base set of directives to enable drag-and-drop. By default all children of a <code>ngxDroppable</code> element may be dragged and dropped. Add the <code>ngxDraggable</code> to restrict drag-and-drop to the parent container. In general prefer using the base directives to the help components introduced later."
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "code": "<div class=\"ngx-dnd-container\" ngxDroppable>\n  <div class=\"ngx-dnd-item\" ngxDraggable>Item 1</div>\n  <div class=\"ngx-dnd-item\" ngxDraggable>Item 2</div>\n  <div class=\"ngx-dnd-item\" ngxDraggable>Item 3</div>\n</div>"
+    },
+    {
+      "type": "p",
+      "html": "Give multiple containers the same <code>dropZone</code> name to allow drag-and-drop between these containers."
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "code": "<div class=\"ngx-dnd-container\" ngxDroppable=\"example\">\n  <div class=\"ngx-dnd-item\" ngxDraggable>Item 1a</div>\n  <div class=\"ngx-dnd-item\" ngxDraggable>Item 2a</div>\n  <div class=\"ngx-dnd-item\" ngxDraggable>Item 3a</div>\n</div>\n<div class=\"ngx-dnd-container\" ngxDroppable=\"example\">\n  <div class=\"ngx-dnd-item\" ngxDraggable>Item 1b</div>\n  <div class=\"ngx-dnd-item\" ngxDraggable>Item 2b</div>\n  <div class=\"ngx-dnd-item\" ngxDraggable>Item 3b</div>\n</div>"
+    },
+    {
+      "type": "p",
+      "html": "<code>ngxDraggable</code> items can be restricted to specific containers:"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "code": "<div class=\"ngx-dnd-container\" ngxDroppable>\n  <div class=\"ngx-dnd-item\" [ngxDraggable]=\"['example-target']\">Item 1a</div>\n  <div class=\"ngx-dnd-item\" [ngxDraggable]=\"['example-target']\">Item 2a</div>\n  <div class=\"ngx-dnd-item\" [ngxDraggable]=\"['example-target']\">Item 3a</div>\n</div>\n<div class=\"ngx-dnd-container\" ngxDroppable=\"example-target\">\n  <div class=\"ngx-dnd-item\" ngxDraggable>Item 1b</div>\n  <div class=\"ngx-dnd-item\" ngxDraggable>Item 2b</div>\n  <div class=\"ngx-dnd-item\" ngxDraggable>Item 3b</div>\n</div>"
+    },
+    {
+      "type": "h3",
+      "text": "Components"
+    },
+    {
+      "type": "p",
+      "html": "<code>ngx-dnd</code> provides a set of helper components that encapsulates the directives mentioned and adds capability for data driven structures. In general you should prefer directives to components."
+    },
+    {
+      "type": "code",
+      "language": "js",
+      "code": "orderableLists = [\n  ['Item 1a', 'Item 2a', 'Item 3a'],\n  ['Item 1b', 'Item 2b', 'Item 3b']\n];"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "code": "<ngx-dnd-container [model]=\"orderableLists\"> </ngx-dnd-container>"
+    },
+    {
+      "type": "p",
+      "html": "This component is effectively equivalent to:"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "code": "<div class=\"ngx-dnd-container\" ngxDroppable [model]=\"orderableLists\">\n  <div class=\"ngx-dnd-item\" ngxDraggable [model]=\"item\" *ngFor=\"let item of orderableLists\">{{item}}</div>\n</div>"
+    },
+    {
+      "type": "p",
+      "html": "Including nested containers:"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "code": "<ngx-dnd-container [model]=\"nestedLists\"> </ngx-dnd-container>"
+    },
+    {
+      "type": "code",
+      "language": "js",
+      "code": "nestedLists = [\n  {\n    label: 'Item 1',\n    children: []\n  },\n  {\n    label: 'Item 2',\n    children: [\n      {\n        label: 'Item 2a',\n        children: []\n      },\n      {\n        label: 'Item 2b',\n        children: []\n      },\n      {\n        label: 'Item 2c',\n        children: []\n      }\n    ]\n  },\n  {\n    label: 'Item 3',\n    children: [\n      {\n        label: 'Item 3a',\n        children: []\n      },\n      {\n        label: 'Item 3b',\n        children: []\n      },\n      {\n        label: 'Item 3c',\n        children: []\n      }\n    ]\n  }\n];"
+    },
+    {
+      "type": "p",
+      "html": "See <a href=\"https://swimlane.github.io/ngx-dnd/\" target=\"_blank\" rel=\"noopener noreferrer\">https://swimlane.github.io/ngx-dnd/</a> for more lives examples. Demo code is at <a href=\"https://github.com/swimlane/ngx-dnd/tree/master/src/\" target=\"_blank\" rel=\"noopener noreferrer\">https://github.com/swimlane/ngx-dnd/tree/master/src/</a>."
+    },
+    {
+      "type": "h2",
+      "text": "Development"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<code>git clone git@github.com:swimlane/ngx-dnd.git</code>",
+        "<code>cd ngx-dnd</code>",
+        "<code>ng build @swimlane/ngx-dnd</code>",
+        "<code>ng serve</code>",
+        "Browse to <a href=\"http://localhost:4200\" target=\"_blank\" rel=\"noopener noreferrer\">http://localhost:4200</a>"
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Development server"
+    },
+    {
+      "type": "p",
+      "html": "Run <code>ng serve</code> for a dev server. Navigate to <code>http://localhost:4200/</code>. The app will automatically reload if you change any of the source files."
+    },
+    {
+      "type": "h3",
+      "text": "Build"
+    },
+    {
+      "type": "p",
+      "html": "Run <code>ng build</code> to build the project. The build artifacts will be stored in the <code>dist/</code> directory. Use the <code>--prod</code> flag for a production build."
+    },
+    {
+      "type": "h3",
+      "text": "Running unit tests"
+    },
+    {
+      "type": "p",
+      "html": "Run <code>ng test</code> to execute the unit tests via <a href=\"https://karma-runner.github.io\" target=\"_blank\" rel=\"noopener noreferrer\">Karma</a>."
+    },
+    {
+      "type": "h3",
+      "text": "Running end-to-end tests"
+    },
+    {
+      "type": "p",
+      "html": "Run <code>ng e2e</code> to execute the end-to-end tests via <a href=\"http://www.protractortest.org/\" target=\"_blank\" rel=\"noopener noreferrer\">Protractor</a>."
+    },
+    {
+      "type": "h3",
+      "text": "Further help"
+    },
+    {
+      "type": "p",
+      "html": "To get more help on the Angular CLI use <code>ng help</code> or go check out the <a href=\"https://github.com/angular/angular-cli/blob/master/README.md\" target=\"_blank\" rel=\"noopener noreferrer\">Angular CLI README</a>."
+    },
+    {
+      "type": "h2",
+      "text": "CHANGELOG"
+    },
+    {
+      "type": "p",
+      "html": "See <a href=\"https://github.com/swimlane/ngx-dnd/blob/master/CHANGELOG.md\" target=\"_blank\" rel=\"noopener noreferrer\">CHANGELOG.md</a>. This project uses <a href=\"https://github.com/heff/chg\" target=\"_blank\" rel=\"noopener noreferrer\">heff/chg</a>, a simple changelog/release history manager. When contributing to this project please add change notes (manually or using the <a href=\"https://github.com/heff/chg\" target=\"_blank\" rel=\"noopener noreferrer\">heff/chg</a> cli) to the <code>## HEAD (Unreleased)</code> section."
+    },
+    {
+      "type": "h2",
+      "text": "Release"
+    },
+    {
+      "type": "ol",
+      "items": [
+        "Checkout master (<code>git checkout master</code>)",
+        "Pull master (<code>git pull</code>)",
+        "Clean and test (Optional): run <code>rm -rf node_modules</code>, <code>npm i</code>, tests (<code>npm run test:ci</code>)",
+        "Examine CHANGELOG.md to determine next version (X.Y.Z)",
+        "Run <code>git checkout -b release/X.Y.Z</code>",
+        "Update version using <code>npm version [&lt;newversion&gt; | major | minor | patch]</code> — this will update <code>package.json</code> versions and <code>changelog.md</code>.",
+        "Run <code>git push origin HEAD --tags</code>",
+        "Run <code>npm run publish:lib</code>",
+        "Run <code>npm run deploy</code>",
+        "Submit PR"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Credits"
+    },
+    {
+      "type": "p",
+      "html": "<code>ngx-dnd</code> is a <a href=\"http://swimlane.com\" target=\"_blank\" rel=\"noopener noreferrer\">Swimlane</a> open-source project; we believe in giving back to the open-source community by sharing some of the projects we build for our application. Swimlane is an automated cyber security operations and incident response platform that enables cyber security teams to leverage threat intelligence, speed up incident response and automate security operations."
+    }
+  ]
+}

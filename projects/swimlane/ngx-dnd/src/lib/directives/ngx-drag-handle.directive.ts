@@ -5,5 +5,8 @@ import { Directive } from '@angular/core';
  *
  * @export
  */
-@Directive({ selector: '[ngxDragHandle]' })
+@Directive({
+  selector: '[ngxDragHandle]',
+  standalone: false
+})
 export class DragHandleDirective {}

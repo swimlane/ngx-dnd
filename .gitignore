@@ -31,6 +31,7 @@ node_modules/
 /coverage
 /libpeerconnection.log
 npm-debug.log
+/.yarn
 yarn-error.log
 testem.log
 /typings
@@ -42,6 +43,5 @@ Thumbs.db
 
 # Cypress
 cypress/videos
-cypress/support
 cypress/plugins
 cypress/screenshots
