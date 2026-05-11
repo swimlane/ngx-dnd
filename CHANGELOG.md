@@ -2,7 +2,7 @@
 
 ## HEAD (Unreleased)
 
-## 12.0.0-alpha.0 (2026-04-30)
+## 12.0.0-alpha.0 (2026-05-05)
 
 - Added support for Angular 21
 - Replaced docSpa with storybook
