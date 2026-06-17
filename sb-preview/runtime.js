@@ -10,7 +10,11 @@ var __require = /* @__PURE__ */ ((x) => typeof require < "u" ? require : typeof 
   throw Error('Dynamic require of "' + x + '" is not supported');
 });
 var __commonJS = (cb, mod) => function() {
-  return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+  try {
+    return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+  } catch (e) {
+    throw mod = 0, e;
+  }
 };
 var __export = (target, all) => {
   for (var name in all)
@@ -29,6 +33,17 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
   isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: !0 }) : target,
   mod
 ));
+
+// ../../node_modules/picocolors/picocolors.browser.js
+var require_picocolors_browser = __commonJS({
+  "../../node_modules/picocolors/picocolors.browser.js"(exports, module2) {
+    var x = String, create = function() {
+      return { isColorSupported: !1, reset: x, bold: x, dim: x, italic: x, underline: x, inverse: x, hidden: x, strikethrough: x, black: x, red: x, green: x, yellow: x, blue: x, magenta: x, cyan: x, white: x, gray: x, bgBlack: x, bgRed: x, bgGreen: x, bgYellow: x, bgBlue: x, bgMagenta: x, bgCyan: x, bgWhite: x, blackBright: x, redBright: x, greenBright: x, yellowBright: x, blueBright: x, magentaBright: x, cyanBright: x, whiteBright: x, bgBlackBright: x, bgRedBright: x, bgGreenBright: x, bgYellowBright: x, bgBlueBright: x, bgMagentaBright: x, bgCyanBright: x, bgWhiteBright: x };
+    };
+    module2.exports = create();
+    module2.exports.createColors = create;
+  }
+});
 
 // ../../node_modules/@ngard/tiny-isequal/index.js
 var require_tiny_isequal = __commonJS({
@@ -6543,17 +6558,6 @@ var require_lib = __commonJS({
   }
 });
 
-// ../../node_modules/picocolors/picocolors.browser.js
-var require_picocolors_browser = __commonJS({
-  "../../node_modules/picocolors/picocolors.browser.js"(exports, module2) {
-    var x = String, create = function() {
-      return { isColorSupported: !1, reset: x, bold: x, dim: x, italic: x, underline: x, inverse: x, hidden: x, strikethrough: x, black: x, red: x, green: x, yellow: x, blue: x, magenta: x, cyan: x, white: x, gray: x, bgBlack: x, bgRed: x, bgGreen: x, bgYellow: x, bgBlue: x, bgMagenta: x, bgCyan: x, bgWhite: x, blackBright: x, redBright: x, greenBright: x, yellowBright: x, blueBright: x, magentaBright: x, cyanBright: x, whiteBright: x, bgBlackBright: x, bgRedBright: x, bgGreenBright: x, bgYellowBright: x, bgBlueBright: x, bgMagentaBright: x, bgCyanBright: x, bgWhiteBright: x };
-    };
-    module2.exports = create();
-    module2.exports.createColors = create;
-  }
-});
-
 // ../../node_modules/css.escape/css.escape.js
 var require_css_escape = __commonJS({
   "../../node_modules/css.escape/css.escape.js"(exports, module2) {
@@ -11485,6 +11489,9 @@ var require_browser_dtector_umd_min = __commonJS({
 // src/core-events/index.ts
 var core_events_exports = {};
 __export(core_events_exports, {
+  AI_PROMPT_NUDGE: () => AI_PROMPT_NUDGE,
+  AI_SETUP_ANALYTICS_REQUEST: () => AI_SETUP_ANALYTICS_REQUEST,
+  AI_SETUP_ANALYTICS_RESPONSE: () => AI_SETUP_ANALYTICS_RESPONSE,
   ARGTYPES_INFO_REQUEST: () => ARGTYPES_INFO_REQUEST,
   ARGTYPES_INFO_RESPONSE: () => ARGTYPES_INFO_RESPONSE,
   CHANNEL_CREATED: () => CHANNEL_CREATED,
@@ -11528,8 +11535,7 @@ __export(core_events_exports, {
   SHARED_STATE_CHANGED: () => SHARED_STATE_CHANGED,
   SHARED_STATE_SET: () => SHARED_STATE_SET,
   SHARE_ISOLATE_MODE: () => SHARE_ISOLATE_MODE,
-  SHARE_POPOVER_OPENED: () => SHARE_POPOVER_OPENED,
-  SHARE_STORY_LINK: () => SHARE_STORY_LINK,
+  SIDEBAR_FILTER_CHANGED: () => SIDEBAR_FILTER_CHANGED,
   STORIES_COLLAPSE_ALL: () => STORIES_COLLAPSE_ALL,
   STORIES_EXPAND_ALL: () => STORIES_EXPAND_ALL,
   STORY_ARGS_UPDATED: () => STORY_ARGS_UPDATED,
@@ -11553,7 +11559,7 @@ __export(core_events_exports, {
   UPDATE_STORY_ARGS: () => UPDATE_STORY_ARGS,
   default: () => core_events_default
 });
-var events = /* @__PURE__ */ ((events2) => (events2.CHANNEL_WS_DISCONNECT = "channelWSDisconnect", events2.CHANNEL_CREATED = "channelCreated", events2.CONFIG_ERROR = "configError", events2.STORY_INDEX_INVALIDATED = "storyIndexInvalidated", events2.STORY_SPECIFIED = "storySpecified", events2.SET_CONFIG = "setConfig", events2.SET_STORIES = "setStories", events2.SET_INDEX = "setIndex", events2.SET_CURRENT_STORY = "setCurrentStory", events2.CURRENT_STORY_WAS_SET = "currentStoryWasSet", events2.FORCE_RE_RENDER = "forceReRender", events2.FORCE_REMOUNT = "forceRemount", events2.PRELOAD_ENTRIES = "preloadStories", events2.STORY_PREPARED = "storyPrepared", events2.DOCS_PREPARED = "docsPrepared", events2.STORY_CHANGED = "storyChanged", events2.STORY_UNCHANGED = "storyUnchanged", events2.STORY_RENDERED = "storyRendered", events2.STORY_FINISHED = "storyFinished", events2.STORY_MISSING = "storyMissing", events2.STORY_ERRORED = "storyErrored", events2.STORY_THREW_EXCEPTION = "storyThrewException", events2.STORY_RENDER_PHASE_CHANGED = "storyRenderPhaseChanged", events2.STORY_HOT_UPDATED = "storyHotUpdated", events2.PLAY_FUNCTION_THREW_EXCEPTION = "playFunctionThrewException", events2.UNHANDLED_ERRORS_WHILE_PLAYING = "unhandledErrorsWhilePlaying", events2.UPDATE_STORY_ARGS = "updateStoryArgs", events2.STORY_ARGS_UPDATED = "storyArgsUpdated", events2.RESET_STORY_ARGS = "resetStoryArgs", events2.SET_FILTER = "setFilter", events2.SET_GLOBALS = "setGlobals", events2.UPDATE_GLOBALS = "updateGlobals", events2.GLOBALS_UPDATED = "globalsUpdated", events2.REGISTER_SUBSCRIPTION = "registerSubscription", events2.PREVIEW_INITIALIZED = "previewInitialized", events2.PREVIEW_KEYDOWN = "previewKeydown", events2.PREVIEW_BUILDER_PROGRESS = "preview_builder_progress", events2.SELECT_STORY = "selectStory", events2.STORIES_COLLAPSE_ALL = "storiesCollapseAll", events2.STORIES_EXPAND_ALL = "storiesExpandAll", events2.DOCS_RENDERED = "docsRendered", events2.SHARED_STATE_CHANGED = "sharedStateChanged", events2.SHARED_STATE_SET = "sharedStateSet", events2.NAVIGATE_URL = "navigateUrl", events2.UPDATE_QUERY_PARAMS = "updateQueryParams", events2.REQUEST_WHATS_NEW_DATA = "requestWhatsNewData", events2.RESULT_WHATS_NEW_DATA = "resultWhatsNewData", events2.SET_WHATS_NEW_CACHE = "setWhatsNewCache", events2.TOGGLE_WHATS_NEW_NOTIFICATIONS = "toggleWhatsNewNotifications", events2.TELEMETRY_ERROR = "telemetryError", events2.FILE_COMPONENT_SEARCH_REQUEST = "fileComponentSearchRequest", events2.FILE_COMPONENT_SEARCH_RESPONSE = "fileComponentSearchResponse", events2.SAVE_STORY_REQUEST = "saveStoryRequest", events2.SAVE_STORY_RESPONSE = "saveStoryResponse", events2.ARGTYPES_INFO_REQUEST = "argtypesInfoRequest", events2.ARGTYPES_INFO_RESPONSE = "argtypesInfoResponse", events2.CREATE_NEW_STORYFILE_REQUEST = "createNewStoryfileRequest", events2.CREATE_NEW_STORYFILE_RESPONSE = "createNewStoryfileResponse", events2.GHOST_STORIES_REQUEST = "ghostStoriesRequest", events2.GHOST_STORIES_RESPONSE = "ghostStoriesResponse", events2.OPEN_IN_EDITOR_REQUEST = "openInEditorRequest", events2.OPEN_IN_EDITOR_RESPONSE = "openInEditorResponse", events2.MANAGER_INERT_ATTRIBUTE_CHANGED = "managerInertAttributeChanged", events2.SHARE_STORY_LINK = "shareStoryLink", events2.SHARE_ISOLATE_MODE = "shareIsolateMode", events2.SHARE_POPOVER_OPENED = "sharePopoverOpened", events2))(events || {}), core_events_default = events, {
+var events = /* @__PURE__ */ ((events2) => (events2.CHANNEL_WS_DISCONNECT = "channelWSDisconnect", events2.CHANNEL_CREATED = "channelCreated", events2.CONFIG_ERROR = "configError", events2.STORY_INDEX_INVALIDATED = "storyIndexInvalidated", events2.STORY_SPECIFIED = "storySpecified", events2.SET_CONFIG = "setConfig", events2.SET_STORIES = "setStories", events2.SET_INDEX = "setIndex", events2.SET_CURRENT_STORY = "setCurrentStory", events2.CURRENT_STORY_WAS_SET = "currentStoryWasSet", events2.FORCE_RE_RENDER = "forceReRender", events2.FORCE_REMOUNT = "forceRemount", events2.PRELOAD_ENTRIES = "preloadStories", events2.STORY_PREPARED = "storyPrepared", events2.DOCS_PREPARED = "docsPrepared", events2.STORY_CHANGED = "storyChanged", events2.STORY_UNCHANGED = "storyUnchanged", events2.STORY_RENDERED = "storyRendered", events2.STORY_FINISHED = "storyFinished", events2.STORY_MISSING = "storyMissing", events2.STORY_ERRORED = "storyErrored", events2.STORY_THREW_EXCEPTION = "storyThrewException", events2.STORY_RENDER_PHASE_CHANGED = "storyRenderPhaseChanged", events2.STORY_HOT_UPDATED = "storyHotUpdated", events2.PLAY_FUNCTION_THREW_EXCEPTION = "playFunctionThrewException", events2.UNHANDLED_ERRORS_WHILE_PLAYING = "unhandledErrorsWhilePlaying", events2.UPDATE_STORY_ARGS = "updateStoryArgs", events2.STORY_ARGS_UPDATED = "storyArgsUpdated", events2.RESET_STORY_ARGS = "resetStoryArgs", events2.SET_FILTER = "setFilter", events2.SET_GLOBALS = "setGlobals", events2.UPDATE_GLOBALS = "updateGlobals", events2.GLOBALS_UPDATED = "globalsUpdated", events2.REGISTER_SUBSCRIPTION = "registerSubscription", events2.PREVIEW_INITIALIZED = "previewInitialized", events2.PREVIEW_KEYDOWN = "previewKeydown", events2.PREVIEW_BUILDER_PROGRESS = "preview_builder_progress", events2.SELECT_STORY = "selectStory", events2.STORIES_COLLAPSE_ALL = "storiesCollapseAll", events2.STORIES_EXPAND_ALL = "storiesExpandAll", events2.DOCS_RENDERED = "docsRendered", events2.SHARED_STATE_CHANGED = "sharedStateChanged", events2.SHARED_STATE_SET = "sharedStateSet", events2.NAVIGATE_URL = "navigateUrl", events2.UPDATE_QUERY_PARAMS = "updateQueryParams", events2.REQUEST_WHATS_NEW_DATA = "requestWhatsNewData", events2.RESULT_WHATS_NEW_DATA = "resultWhatsNewData", events2.SET_WHATS_NEW_CACHE = "setWhatsNewCache", events2.TOGGLE_WHATS_NEW_NOTIFICATIONS = "toggleWhatsNewNotifications", events2.TELEMETRY_ERROR = "telemetryError", events2.FILE_COMPONENT_SEARCH_REQUEST = "fileComponentSearchRequest", events2.FILE_COMPONENT_SEARCH_RESPONSE = "fileComponentSearchResponse", events2.SAVE_STORY_REQUEST = "saveStoryRequest", events2.SAVE_STORY_RESPONSE = "saveStoryResponse", events2.ARGTYPES_INFO_REQUEST = "argtypesInfoRequest", events2.ARGTYPES_INFO_RESPONSE = "argtypesInfoResponse", events2.CREATE_NEW_STORYFILE_REQUEST = "createNewStoryfileRequest", events2.CREATE_NEW_STORYFILE_RESPONSE = "createNewStoryfileResponse", events2.GHOST_STORIES_REQUEST = "ghostStoriesRequest", events2.GHOST_STORIES_RESPONSE = "ghostStoriesResponse", events2.AI_SETUP_ANALYTICS_RESPONSE = "aiSetupAnalyticsResponse", events2.AI_SETUP_ANALYTICS_REQUEST = "aiSetupAnalyticsRequest", events2.OPEN_IN_EDITOR_REQUEST = "openInEditorRequest", events2.OPEN_IN_EDITOR_RESPONSE = "openInEditorResponse", events2.MANAGER_INERT_ATTRIBUTE_CHANGED = "managerInertAttributeChanged", events2.SHARE_ISOLATE_MODE = "shareIsolateMode", events2.AI_PROMPT_NUDGE = "aiPromptNudge", events2.SIDEBAR_FILTER_CHANGED = "sidebarFilterChanged", events2))(events || {}), core_events_default = events, {
   CHANNEL_WS_DISCONNECT,
   CHANNEL_CREATED,
   CONFIG_ERROR,
@@ -11614,12 +11620,14 @@ var events = /* @__PURE__ */ ((events2) => (events2.CHANNEL_WS_DISCONNECT = "cha
   ARGTYPES_INFO_RESPONSE,
   GHOST_STORIES_REQUEST,
   GHOST_STORIES_RESPONSE,
+  AI_SETUP_ANALYTICS_RESPONSE,
+  AI_SETUP_ANALYTICS_REQUEST,
   OPEN_IN_EDITOR_REQUEST,
   OPEN_IN_EDITOR_RESPONSE,
   MANAGER_INERT_ATTRIBUTE_CHANGED,
-  SHARE_STORY_LINK,
   SHARE_ISOLATE_MODE,
-  SHARE_POPOVER_OPENED
+  AI_PROMPT_NUDGE,
+  SIDEBAR_FILTER_CHANGED
 } = events;
 
 // ../../node_modules/@storybook/global/dist/index.mjs
@@ -11988,12 +11996,7 @@ var CHANNEL_EVENT_PREFIX = "UNIVERSAL_STORE:", ProgressState = {
           this.state = event.payload, this.emitToListeners(setStateEvent, eventInfo);
           break;
       }
-    switch (event.type) {
-      case _UniversalStore.InternalEventType.SET_STATE:
-        this.debug("handleChannelEvents: Setting state", { event }), this.state = event.payload.state;
-        break;
-    }
-    this.emitToListeners(event, { actor: eventInfo.actor });
+    event.type === _UniversalStore.InternalEventType.SET_STATE && (this.debug("handleChannelEvents: Setting state", { event }), this.state = event.payload.state), this.emitToListeners(event, { actor: eventInfo.actor });
   }
   debug(message, data) {
     this.debugging && console.debug(
@@ -12355,7 +12358,7 @@ var require_es_object_atoms = __commonJS2({
         return !1;
       if (typeof Symbol.iterator == "symbol")
         return !0;
-      var obj = {}, sym = Symbol("test"), symObj = Object(sym);
+      var obj = {}, sym = /* @__PURE__ */ Symbol("test"), symObj = Object(sym);
       if (typeof sym == "string" || Object.prototype.toString.call(sym) !== "[object Symbol]" || Object.prototype.toString.call(symObj) !== "[object Symbol]")
         return !1;
       var symVal = 42;
@@ -12383,7 +12386,7 @@ var require_es_object_atoms = __commonJS2({
     "use strict";
     var origSymbol = typeof Symbol < "u" && Symbol, hasSymbolSham = require_shams();
     module2.exports = function() {
-      return typeof origSymbol != "function" || typeof Symbol != "function" || typeof origSymbol("foo") != "symbol" || typeof Symbol("bar") != "symbol" ? !1 : hasSymbolSham();
+      return typeof origSymbol != "function" || typeof Symbol != "function" || typeof origSymbol("foo") != "symbol" || typeof /* @__PURE__ */ Symbol("bar") != "symbol" ? !1 : hasSymbolSham();
     };
   }
 }), require_Reflect_getPrototypeOf = __commonJS2({
@@ -13535,6 +13538,7 @@ __export(preview_errors_exports, {
   ElementA11yParameterError: () => ElementA11yParameterError,
   EmptyIndexError: () => EmptyIndexError,
   ImplicitActionsDuringRendering: () => ImplicitActionsDuringRendering,
+  InvalidBlockOfPropError: () => InvalidBlockOfPropError,
   MdxFileWithNoCsfReferencesError: () => MdxFileWithNoCsfReferencesError,
   MissingRenderToCanvasError: () => MissingRenderToCanvasError,
   MissingStoryAfterHmrError: () => MissingStoryAfterHmrError,
@@ -13572,7 +13576,10 @@ function appendErrorRef(url) {
 }
 var StorybookError = class _StorybookError extends Error {
   constructor(props) {
-    super(_StorybookError.getFullMessage(props));
+    super(
+      _StorybookError.getFullMessage(props),
+      props.cause === void 0 ? void 0 : { cause: props.cause }
+    );
     /**
      * Data associated with the error. Used to provide additional information in the error message or
      * to be passed to telemetry.
@@ -13930,6 +13937,15 @@ This is deprecated and won't work in Storybook 8 anymore.
     });
     this.data = data;
   }
+}, InvalidBlockOfPropError = class extends StorybookError {
+  constructor() {
+    super({
+      name: "InvalidBlockOfPropError",
+      category: "BLOCKS" /* BLOCKS */,
+      code: 1,
+      message: "Unexpected `of={undefined}`, did you mistype a CSF file reference?"
+    });
+  }
 }, UnsupportedViewportDimensionError = class extends StorybookError {
   constructor(data) {
     super({
@@ -13965,6 +13981,7 @@ This is deprecated and won't work in Storybook 8 anymore.
 var types_exports = {};
 __export(types_exports, {
   Addon_TypesEnum: () => Addon_TypesEnum,
+  CHANGE_DETECTION_STATUS_TYPE_ID: () => CHANGE_DETECTION_STATUS_TYPE_ID,
   CoreWebpackCompiler: () => CoreWebpackCompiler,
   Feature: () => Feature,
   SupportedBuilder: () => SupportedBuilder,
@@ -13977,10 +13994,16 @@ __export(types_exports, {
 var Addon_TypesEnum = /* @__PURE__ */ ((Addon_TypesEnum2) => (Addon_TypesEnum2.TAB = "tab", Addon_TypesEnum2.PANEL = "panel", Addon_TypesEnum2.TOOL = "tool", Addon_TypesEnum2.TOOLEXTRA = "toolextra", Addon_TypesEnum2.PREVIEW = "preview", Addon_TypesEnum2.experimental_PAGE = "page", Addon_TypesEnum2.experimental_TEST_PROVIDER = "test-provider", Addon_TypesEnum2))(Addon_TypesEnum || {});
 
 // src/types/modules/frameworks.ts
-var SupportedFramework = /* @__PURE__ */ ((SupportedFramework2) => (SupportedFramework2.ANGULAR = "angular", SupportedFramework2.EMBER = "ember", SupportedFramework2.HTML_VITE = "html-vite", SupportedFramework2.NEXTJS = "nextjs", SupportedFramework2.NEXTJS_VITE = "nextjs-vite", SupportedFramework2.PREACT_VITE = "preact-vite", SupportedFramework2.REACT_NATIVE_WEB_VITE = "react-native-web-vite", SupportedFramework2.REACT_VITE = "react-vite", SupportedFramework2.REACT_WEBPACK5 = "react-webpack5", SupportedFramework2.SERVER_WEBPACK5 = "server-webpack5", SupportedFramework2.SVELTE_VITE = "svelte-vite", SupportedFramework2.SVELTEKIT = "sveltekit", SupportedFramework2.VUE3_VITE = "vue3-vite", SupportedFramework2.WEB_COMPONENTS_VITE = "web-components-vite", SupportedFramework2.HTML_RSBUILD = "html-rsbuild", SupportedFramework2.NUXT = "nuxt", SupportedFramework2.QWIK = "qwik", SupportedFramework2.REACT_RSBUILD = "react-rsbuild", SupportedFramework2.SOLID = "solid", SupportedFramework2.VUE3_RSBUILD = "vue3-rsbuild", SupportedFramework2.WEB_COMPONENTS_RSBUILD = "web-components-rsbuild", SupportedFramework2))(SupportedFramework || {});
+var SupportedFramework = /* @__PURE__ */ ((SupportedFramework2) => (SupportedFramework2.ANGULAR = "angular", SupportedFramework2.EMBER = "ember", SupportedFramework2.HTML_VITE = "html-vite", SupportedFramework2.NEXTJS = "nextjs", SupportedFramework2.NEXTJS_VITE = "nextjs-vite", SupportedFramework2.PREACT_VITE = "preact-vite", SupportedFramework2.REACT_NATIVE_WEB_VITE = "react-native-web-vite", SupportedFramework2.REACT_VITE = "react-vite", SupportedFramework2.REACT_WEBPACK5 = "react-webpack5", SupportedFramework2.SERVER_WEBPACK5 = "server-webpack5", SupportedFramework2.SVELTE_VITE = "svelte-vite", SupportedFramework2.SVELTEKIT = "sveltekit", SupportedFramework2.TANSTACK_REACT = "tanstack-react", SupportedFramework2.VUE3_VITE = "vue3-vite", SupportedFramework2.WEB_COMPONENTS_VITE = "web-components-vite", SupportedFramework2.HTML_RSBUILD = "html-rsbuild", SupportedFramework2.NUXT = "nuxt", SupportedFramework2.QWIK = "qwik", SupportedFramework2.REACT_RSBUILD = "react-rsbuild", SupportedFramework2.SOLID = "solid", SupportedFramework2.VUE3_RSBUILD = "vue3-rsbuild", SupportedFramework2.WEB_COMPONENTS_RSBUILD = "web-components-rsbuild", SupportedFramework2))(SupportedFramework || {});
 
 // src/types/modules/renderers.ts
 var SupportedRenderer = /* @__PURE__ */ ((SupportedRenderer2) => (SupportedRenderer2.REACT = "react", SupportedRenderer2.REACT_NATIVE = "react-native", SupportedRenderer2.VUE3 = "vue3", SupportedRenderer2.ANGULAR = "angular", SupportedRenderer2.EMBER = "ember", SupportedRenderer2.PREACT = "preact", SupportedRenderer2.SVELTE = "svelte", SupportedRenderer2.QWIK = "qwik", SupportedRenderer2.HTML = "html", SupportedRenderer2.WEB_COMPONENTS = "web-components", SupportedRenderer2.SERVER = "server", SupportedRenderer2.SOLID = "solid", SupportedRenderer2.NUXT = "nuxt", SupportedRenderer2))(SupportedRenderer || {});
+
+// src/server-errors.ts
+var import_picocolors = __toESM(require_picocolors_browser(), 1);
+
+// src/shared/status-store/index.ts
+var CHANGE_DETECTION_STATUS_TYPE_ID = "storybook/change-detection";
 
 // src/types/modules/webpack.ts
 var CoreWebpackCompiler = /* @__PURE__ */ ((CoreWebpackCompiler2) => (CoreWebpackCompiler2.Babel = "babel", CoreWebpackCompiler2.SWC = "swc", CoreWebpackCompiler2))(CoreWebpackCompiler || {});
@@ -13989,7 +14012,7 @@ var CoreWebpackCompiler = /* @__PURE__ */ ((CoreWebpackCompiler2) => (CoreWebpac
 var SupportedBuilder = /* @__PURE__ */ ((SupportedBuilder2) => (SupportedBuilder2.WEBPACK5 = "webpack5", SupportedBuilder2.VITE = "vite", SupportedBuilder2.RSBUILD = "rsbuild", SupportedBuilder2))(SupportedBuilder || {});
 
 // src/types/modules/features.ts
-var Feature = /* @__PURE__ */ ((Feature2) => (Feature2.DOCS = "docs", Feature2.TEST = "test", Feature2.ONBOARDING = "onboarding", Feature2.A11Y = "a11y", Feature2))(Feature || {});
+var Feature = /* @__PURE__ */ ((Feature2) => (Feature2.DOCS = "docs", Feature2.TEST = "test", Feature2.ONBOARDING = "onboarding", Feature2.A11Y = "a11y", Feature2.AI = "ai", Feature2))(Feature || {});
 
 // src/types/modules/languages.ts
 var SupportedLanguage = /* @__PURE__ */ ((SupportedLanguage2) => (SupportedLanguage2.JAVASCRIPT = "javascript", SupportedLanguage2.TYPESCRIPT = "typescript", SupportedLanguage2))(SupportedLanguage || {});
@@ -14727,7 +14750,7 @@ function printObjectProperties(val, config4, indentation, depth, refs, printer2)
   }
   return result;
 }
-var asymmetricMatcher = typeof Symbol == "function" && Symbol.for ? Symbol.for("jest.asymmetricMatcher") : 1267621, SPACE$2 = " ", serialize$5 = (val, config4, indentation, depth, refs, printer2) => {
+var asymmetricMatcher = typeof Symbol == "function" && Symbol.for ? /* @__PURE__ */ Symbol.for("jest.asymmetricMatcher") : 1267621, SPACE$2 = " ", serialize$5 = (val, config4, indentation, depth, refs, printer2) => {
   let stringedValue = val.toString();
   if (stringedValue === "ArrayContaining" || stringedValue === "ArrayNotContaining")
     return ++depth > config4.maxDepth ? `[${stringedValue}]` : `${stringedValue + SPACE$2}[${printListItems(val.sample, config4, indentation, depth, refs, printer2)}]`;
@@ -14864,7 +14887,7 @@ var hasRequiredReactIs_production;
 function requireReactIs_production() {
   if (hasRequiredReactIs_production) return reactIs_production;
   hasRequiredReactIs_production = 1;
-  var REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy"), REACT_VIEW_TRANSITION_TYPE = Symbol.for("react.view_transition"), REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference");
+  var REACT_ELEMENT_TYPE = /* @__PURE__ */ Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = /* @__PURE__ */ Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = /* @__PURE__ */ Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = /* @__PURE__ */ Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = /* @__PURE__ */ Symbol.for("react.profiler"), REACT_CONSUMER_TYPE = /* @__PURE__ */ Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = /* @__PURE__ */ Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = /* @__PURE__ */ Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = /* @__PURE__ */ Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = /* @__PURE__ */ Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = /* @__PURE__ */ Symbol.for("react.memo"), REACT_LAZY_TYPE = /* @__PURE__ */ Symbol.for("react.lazy"), REACT_VIEW_TRANSITION_TYPE = /* @__PURE__ */ Symbol.for("react.view_transition"), REACT_CLIENT_REFERENCE = /* @__PURE__ */ Symbol.for("react.client.reference");
   function typeOf(object) {
     if (typeof object == "object" && object !== null) {
       var $$typeof = object.$$typeof;
@@ -14936,8 +14959,8 @@ var hasRequiredReactIs_production_min;
 function requireReactIs_production_min() {
   if (hasRequiredReactIs_production_min) return reactIs_production_min;
   hasRequiredReactIs_production_min = 1;
-  var b = Symbol.for("react.element"), c = Symbol.for("react.portal"), d = Symbol.for("react.fragment"), e = Symbol.for("react.strict_mode"), f4 = Symbol.for("react.profiler"), g2 = Symbol.for("react.provider"), h3 = Symbol.for("react.context"), k = Symbol.for("react.server_context"), l = Symbol.for("react.forward_ref"), m3 = Symbol.for("react.suspense"), n = Symbol.for("react.suspense_list"), p3 = Symbol.for("react.memo"), q = Symbol.for("react.lazy"), t = Symbol.for("react.offscreen"), u2;
-  u2 = Symbol.for("react.module.reference");
+  var b = /* @__PURE__ */ Symbol.for("react.element"), c = /* @__PURE__ */ Symbol.for("react.portal"), d = /* @__PURE__ */ Symbol.for("react.fragment"), e = /* @__PURE__ */ Symbol.for("react.strict_mode"), f4 = /* @__PURE__ */ Symbol.for("react.profiler"), g2 = /* @__PURE__ */ Symbol.for("react.provider"), h3 = /* @__PURE__ */ Symbol.for("react.context"), k = /* @__PURE__ */ Symbol.for("react.server_context"), l = /* @__PURE__ */ Symbol.for("react.forward_ref"), m3 = /* @__PURE__ */ Symbol.for("react.suspense"), n = /* @__PURE__ */ Symbol.for("react.suspense_list"), p3 = /* @__PURE__ */ Symbol.for("react.memo"), q = /* @__PURE__ */ Symbol.for("react.lazy"), t = /* @__PURE__ */ Symbol.for("react.offscreen"), u2;
+  u2 = /* @__PURE__ */ Symbol.for("react.module.reference");
   function v(a3) {
     if (typeof a3 == "object" && a3 !== null) {
       var r = a3.$$typeof;
@@ -15066,7 +15089,7 @@ function getPropKeys$1(element) {
 var serialize$1 = (element, config4, indentation, depth, refs, printer2) => ++depth > config4.maxDepth ? printElementAsLeaf(getType(element), config4) : printElement(getType(element), printProps(getPropKeys$1(element), element.props, config4, indentation + config4.indent, depth, refs, printer2), printChildren(getChildren(element.props.children), config4, indentation + config4.indent, depth, refs, printer2), config4, indentation), test$1 = (val) => val != null && ReactIs.isElement(val), plugin$1 = {
   serialize: serialize$1,
   test: test$1
-}, testSymbol = typeof Symbol == "function" && Symbol.for ? Symbol.for("react.test.json") : 245830487;
+}, testSymbol = typeof Symbol == "function" && Symbol.for ? /* @__PURE__ */ Symbol.for("react.test.json") : 245830487;
 function getPropKeys(object) {
   let { props } = object;
   return props ? Object.keys(props).filter((key) => props[key] !== void 0).sort() : [];
@@ -15604,7 +15627,7 @@ function inspectHTML(element, options) {
 }
 
 // ../../node_modules/loupe/lib/index.js
-var symbolsSupported = typeof Symbol == "function" && typeof Symbol.for == "function", chaiInspect = symbolsSupported ? Symbol.for("chai/inspect") : "@@chai/inspect", nodeInspect = Symbol.for("nodejs.util.inspect.custom"), constructorMap = /* @__PURE__ */ new WeakMap(), stringTagMap = {}, baseTypesMap = {
+var symbolsSupported = typeof Symbol == "function" && typeof Symbol.for == "function", chaiInspect = symbolsSupported ? /* @__PURE__ */ Symbol.for("chai/inspect") : "@@chai/inspect", nodeInspect = /* @__PURE__ */ Symbol.for("nodejs.util.inspect.custom"), constructorMap = /* @__PURE__ */ new WeakMap(), stringTagMap = {}, baseTypesMap = {
   undefined: (value, options) => options.stylize("undefined", "undefined"),
   null: (value, options) => options.stylize("null", "null"),
   boolean: (value, options) => options.stylize(String(value), "boolean"),
@@ -16639,7 +16662,7 @@ function diff(a3, b, options) {
     return "";
   let aType = getType3(a3), expectedType = aType, omitDifference = !1;
   if (aType === "object" && typeof a3.asymmetricMatch == "function") {
-    if (a3.$$typeof !== Symbol.for("jest.asymmetricMatcher") || typeof a3.getExpectedType != "function")
+    if (a3.$$typeof !== /* @__PURE__ */ Symbol.for("jest.asymmetricMatcher") || typeof a3.getExpectedType != "function")
       return;
     expectedType = a3.getExpectedType(), omitDifference = expectedType === "string";
   }
@@ -17731,7 +17754,7 @@ function inspectHTML2(element, options) {
   return children && children.length > truncate22 && (children = `${truncator2}(${element.children.length})`), `${head}${propertyContents}${headClose}${children}${tail}`;
 }
 __name(inspectHTML2, "inspectHTML");
-var symbolsSupported2 = typeof Symbol == "function" && typeof Symbol.for == "function", chaiInspect2 = symbolsSupported2 ? Symbol.for("chai/inspect") : "@@chai/inspect", nodeInspect2 = Symbol.for("nodejs.util.inspect.custom"), constructorMap2 = /* @__PURE__ */ new WeakMap(), stringTagMap2 = {}, baseTypesMap2 = {
+var symbolsSupported2 = typeof Symbol == "function" && typeof Symbol.for == "function", chaiInspect2 = symbolsSupported2 ? /* @__PURE__ */ Symbol.for("chai/inspect") : "@@chai/inspect", nodeInspect2 = /* @__PURE__ */ Symbol.for("nodejs.util.inspect.custom"), constructorMap2 = /* @__PURE__ */ new WeakMap(), stringTagMap2 = {}, baseTypesMap2 = {
   undefined: __name((value, options) => options.stylize("undefined", "undefined"), "undefined"),
   null: __name((value, options) => options.stylize("null", "null"), "null"),
   boolean: __name((value, options) => options.stylize(String(value), "boolean"), "boolean"),
@@ -21126,12 +21149,9 @@ function isControl(node) {
 function hasAbstractRole(node, role) {
   if (!isElement(node))
     return !1;
-  switch (role) {
-    case "range":
-      return hasAnyConcreteRoles(node, ["meter", "progressbar", "scrollbar", "slider", "spinbutton"]);
-    default:
-      throw new TypeError("No knowledge about abstract role '".concat(role, "'. This is likely a bug :("));
-  }
+  if (role === "range")
+    return hasAnyConcreteRoles(node, ["meter", "progressbar", "scrollbar", "slider", "spinbutton"]);
+  throw new TypeError("No knowledge about abstract role '".concat(role, "'. This is likely a bug :("));
 }
 function querySelectorAllSubtree(element, selectors) {
   var elements = arrayFrom(element.querySelectorAll(selectors));
@@ -21454,7 +21474,7 @@ function computeAccessibleName(root2) {
 }
 
 // ../../node_modules/@testing-library/jest-dom/dist/matchers-35e4d3bd.mjs
-var import_aria_query = __toESM(require_lib(), 1), import_picocolors = __toESM(require_picocolors_browser(), 1), import_css = __toESM(require_css_escape(), 1), GenericTypeError = class extends Error {
+var import_aria_query = __toESM(require_lib(), 1), import_picocolors2 = __toESM(require_picocolors_browser(), 1), import_css = __toESM(require_css_escape(), 1), GenericTypeError = class extends Error {
   constructor(expectedString, received, matcherFn, context) {
     super(), Error.captureStackTrace && Error.captureStackTrace(this, matcherFn);
     let withType = "";
@@ -22043,7 +22063,7 @@ function expectedDiff(diffFn, expected, computedStyles) {
     (obj, prop) => Object.assign(obj, { [prop]: computedStyles.getPropertyValue(prop) }),
     {}
   );
-  return diffFn(printoutStyles(expected), printoutStyles(received)).replace(`${import_picocolors.default.red("+ Received")}
+  return diffFn(printoutStyles(expected), printoutStyles(received)).replace(`${import_picocolors2.default.red("+ Received")}
 `, "");
 }
 function toHaveStyle(htmlElement, css) {
@@ -22107,12 +22127,7 @@ function getMultiElementValue(elements) {
 function getFormValue(container, name) {
   let elements = [...container.querySelectorAll(`[name="${(0, import_css.default)(name)}"]`)];
   if (elements.length !== 0)
-    switch (elements.length) {
-      case 1:
-        return getSingleElementValue(elements[0]);
-      default:
-        return getMultiElementValue(elements);
-    }
+    return elements.length === 1 ? getSingleElementValue(elements[0]) : getMultiElementValue(elements);
 }
 function getPureName(name) {
   return /\[\]$/.test(name) ? name.slice(0, -2) : name;
@@ -22734,7 +22749,7 @@ var extensions = Object.freeze({
 
 // ../../node_modules/@testing-library/jest-dom/dist/matchers.mjs
 var import_redent2 = __toESM(require_redent(), 1);
-var import_aria_query2 = __toESM(require_lib(), 1), import_picocolors2 = __toESM(require_picocolors_browser(), 1), import_css2 = __toESM(require_css_escape(), 1);
+var import_aria_query2 = __toESM(require_lib(), 1), import_picocolors3 = __toESM(require_picocolors_browser(), 1), import_css2 = __toESM(require_css_escape(), 1);
 
 // ../../node_modules/@vitest/utils/dist/index.js
 var jsTokens_1, hasRequiredJsTokens;
@@ -23023,7 +23038,6 @@ var jsTokensExports = requireJsTokens(), jsTokens = getDefaultExportFromCjs2(jsT
     "yield"
   ]
 }, keywords = new Set(reservedWords.keyword), reservedWordsStrictSet = new Set(reservedWords.strict);
-var SAFE_TIMERS_SYMBOL = Symbol("vitest:SAFE_TIMERS");
 
 // ../../node_modules/@vitest/expect/node_modules/tinyrainbow/dist/chunk-BVHSVHOK.js
 var f2 = {
@@ -23127,7 +23141,7 @@ function define2(obj, key, descriptor) {
 function defineValue(obj, key, value) {
   define2(obj, key, { value, configurable: !0, writable: !0 });
 }
-var SYMBOL_STATE = Symbol.for("tinyspy:spy"), spies = /* @__PURE__ */ new Set(), reset = (state3) => {
+var SYMBOL_STATE = /* @__PURE__ */ Symbol.for("tinyspy:spy"), spies = /* @__PURE__ */ new Set(), reset = (state3) => {
   state3.called = !1, state3.callCount = 0, state3.calls = [], state3.results = [], state3.resolves = [], state3.next = [];
 }, defineState = (spy2) => (define2(spy2, SYMBOL_STATE, {
   value: { reset: () => reset(spy2[SYMBOL_STATE]) }
@@ -23355,7 +23369,7 @@ function getDescriptor2(obj, method) {
 }
 
 // ../../node_modules/@vitest/expect/dist/index.js
-var MATCHERS_OBJECT = Symbol.for("matchers-object"), JEST_MATCHERS_OBJECT = Symbol.for("$$jest-matchers-object-storybook"), GLOBAL_EXPECT = Symbol.for("expect-global"), ASYMMETRIC_MATCHERS_OBJECT = Symbol.for("asymmetric-matchers-object"), customMatchers = {
+var MATCHERS_OBJECT = /* @__PURE__ */ Symbol.for("matchers-object"), JEST_MATCHERS_OBJECT = /* @__PURE__ */ Symbol.for("$$jest-matchers-object-storybook"), GLOBAL_EXPECT = /* @__PURE__ */ Symbol.for("expect-global"), ASYMMETRIC_MATCHERS_OBJECT = /* @__PURE__ */ Symbol.for("asymmetric-matchers-object"), customMatchers = {
   toSatisfy(actual, expected, message) {
     let { printReceived: printReceived3, printExpected: printExpected3, matcherHint: matcherHint2 } = this.utils, pass = expected(actual);
     return {
@@ -23759,7 +23773,7 @@ function setState(state3, expect4) {
 }
 var AsymmetricMatcher3 = class {
   // should have "jest" to be compatible with its ecosystem
-  $$typeof = Symbol.for("jest.asymmetricMatcher");
+  $$typeof = /* @__PURE__ */ Symbol.for("jest.asymmetricMatcher");
   constructor(sample, inverse = !1) {
     this.sample = sample, this.inverse = inverse;
   }
@@ -23779,7 +23793,7 @@ var AsymmetricMatcher3 = class {
     };
   }
 };
-AsymmetricMatcher3.prototype[Symbol.for("chai/inspect")] = function(options) {
+AsymmetricMatcher3.prototype[/* @__PURE__ */ Symbol.for("chai/inspect")] = function(options) {
   let result = stringify2(this, options.depth, { min: !0 });
   return result.length <= options.truncate ? result : `${this.toString()}{\u2026}`;
 };
@@ -24559,7 +24573,7 @@ Object.defineProperty(globalThis, GLOBAL_EXPECT, {
 function f3(e, t, n) {
   Object.defineProperty(e, t, n);
 }
-var u = Symbol.for("tinyspy:spy");
+var u = /* @__PURE__ */ Symbol.for("tinyspy:spy");
 var P = (e) => {
   e.called = !1, e.callCount = 0, e.calls = [], e.results = [], e.resolves = [], e.next = [];
 }, K = (e) => (f3(e, u, { value: { reset: () => P(e[u]) } }), e[u]), T = (e) => e[u] || K(e);
@@ -24567,7 +24581,9 @@ var P = (e) => {
 // src/test/spy.ts
 var moduleMockSpies = globalThis.__STORYBOOK_MODULE_MOCK_SPIES__ ??= /* @__PURE__ */ new Set(), listeners = /* @__PURE__ */ new Set();
 function onMockCall(callback) {
-  return listeners.add(callback), () => void listeners.delete(callback);
+  return listeners.add(callback), () => {
+    listeners.delete(callback);
+  };
 }
 var spyOn2 = (...args) => {
   let mock = spyOn(...args);
@@ -25040,12 +25056,9 @@ function isControl2(node) {
 function hasAbstractRole2(node, role) {
   if (!isElement2(node))
     return !1;
-  switch (role) {
-    case "range":
-      return hasAnyConcreteRoles2(node, ["meter", "progressbar", "scrollbar", "slider", "spinbutton"]);
-    default:
-      throw new TypeError("No knowledge about abstract role '".concat(role, "'. This is likely a bug :("));
-  }
+  if (role === "range")
+    return hasAnyConcreteRoles2(node, ["meter", "progressbar", "scrollbar", "slider", "spinbutton"]);
+  throw new TypeError("No knowledge about abstract role '".concat(role, "'. This is likely a bug :("));
 }
 function querySelectorAllSubtree2(element, selectors) {
   var elements = arrayFrom2(element.querySelectorAll(selectors));
@@ -25426,10 +25439,10 @@ function createDOMElementFilter(filterNode) {
     }
   };
 }
-var picocolors = null, readFileSync = null, codeFrameColumns = null;
+var picocolors2 = null, readFileSync = null, codeFrameColumns = null;
 try {
   let nodeRequire = module && module.require;
-  readFileSync = nodeRequire.call(module, "fs").readFileSync, codeFrameColumns = nodeRequire.call(module, "@babel/code-frame").codeFrameColumns, picocolors = nodeRequire.call(module, "picocolors");
+  readFileSync = nodeRequire.call(module, "fs").readFileSync, codeFrameColumns = nodeRequire.call(module, "@babel/code-frame").codeFrameColumns, picocolors2 = nodeRequire.call(module, "picocolors");
 } catch {
 }
 function getCodeFrame(frame) {
@@ -25448,7 +25461,7 @@ function getCodeFrame(frame) {
     highlightCode: !0,
     linesBelow: 0
   });
-  return picocolors.dim(frameLocation) + `
+  return picocolors2.dim(frameLocation) + `
 ` + codeFrame + `
 `;
 }
@@ -27552,7 +27565,7 @@ function createClipboardItem(window2, ...blobs) {
     }
   }(dataMap);
 }
-var ClipboardStubControl = Symbol("Manage ClipboardSub");
+var ClipboardStubControl = /* @__PURE__ */ Symbol("Manage ClipboardSub");
 function createClipboardStub(window2, control) {
   return Object.assign(new class extends window2.EventTarget {
     async read() {
@@ -27802,7 +27815,7 @@ behavior.click = (event, target, instance) => {
 };
 
 // ../../node_modules/@testing-library/user-event/dist/esm/document/UI.js
-var UIValue = Symbol("Displayed value in UI"), UISelection = Symbol("Displayed selection in UI"), InitialValue = Symbol("Initial value to compare on blur");
+var UIValue = /* @__PURE__ */ Symbol("Displayed value in UI"), UISelection = /* @__PURE__ */ Symbol("Displayed selection in UI"), InitialValue = /* @__PURE__ */ Symbol("Initial value to compare on blur");
 function isUIValue(value) {
   return typeof value == "object" && UIValue in value;
 }
@@ -27984,7 +27997,7 @@ function getDescendant(node, direction) {
 }
 
 // ../../node_modules/@testing-library/user-event/dist/esm/document/trackValue.js
-var TrackChanges = Symbol("Track programmatic changes for React workaround");
+var TrackChanges = /* @__PURE__ */ Symbol("Track programmatic changes for React workaround");
 function isReact17Element(element) {
   return Object.getOwnPropertyNames(element).some((k) => k.startsWith("__react")) && getWindow(element).REACT_VERSION === 17;
 }
@@ -28934,7 +28947,7 @@ function dispatchDOMEvent(target, type5, init2) {
 }
 
 // ../../node_modules/@testing-library/user-event/dist/esm/document/patchFocus.js
-var patched = Symbol("patched focus/blur methods");
+var patched = /* @__PURE__ */ Symbol("patched focus/blur methods");
 function patchFocus(HTMLElement2) {
   if (HTMLElement2.prototype[patched])
     return;
@@ -28963,7 +28976,7 @@ function patchFocus(HTMLElement2) {
     let blurred = getActiveTarget(this.ownerDocument);
     if (blurred === this)
       return;
-    let thisCall = Symbol("focus call");
+    let thisCall = /* @__PURE__ */ Symbol("focus call");
     activeCall = thisCall, blurred && (blur.call(blurred), dispatchDOMEvent(blurred, "blur", {
       relatedTarget: this
     }), dispatchDOMEvent(blurred, "focusout", {
@@ -28980,7 +28993,7 @@ function patchFocus(HTMLElement2) {
     let blurred = getActiveTarget(this.ownerDocument);
     if (blurred !== this)
       return;
-    activeCall = Symbol("blur call"), blur.call(this), dispatchDOMEvent(blurred, "blur", {
+    activeCall = /* @__PURE__ */ Symbol("blur call"), blur.call(this), dispatchDOMEvent(blurred, "blur", {
       relatedTarget: null
     }), dispatchDOMEvent(blurred, "focusout", {
       relatedTarget: null
@@ -28993,7 +29006,7 @@ function getActiveTarget(document7) {
 }
 
 // ../../node_modules/@testing-library/user-event/dist/esm/document/interceptor.js
-var Interceptor = Symbol("Interceptor for programmatical calls");
+var Interceptor = /* @__PURE__ */ Symbol("Interceptor for programmatical calls");
 function prepareInterceptor(element, propName, interceptorImpl) {
   let prototypeDescriptor = Object.getOwnPropertyDescriptor(element.constructor.prototype, propName), objectDescriptor = Object.getOwnPropertyDescriptor(element, propName), target = prototypeDescriptor?.set ? "set" : "value";
   if (typeof prototypeDescriptor?.[target] != "function" || prototypeDescriptor[target][Interceptor])
@@ -29065,7 +29078,7 @@ function prepareRangeTextInterceptor(element) {
 }
 
 // ../../node_modules/@testing-library/user-event/dist/esm/document/prepareDocument.js
-var isPrepared = Symbol("Node prepared with document state workarounds");
+var isPrepared = /* @__PURE__ */ Symbol("Node prepared with document state workarounds");
 function prepareDocument(document7) {
   document7[isPrepared] || (document7.addEventListener("focus", (e) => {
     let el = e.target;
@@ -29801,7 +29814,7 @@ function closestPointerEventsDeclaration(element) {
       };
   }
 }
-var PointerEventsCheck = Symbol("Last check for pointer-events");
+var PointerEventsCheck = /* @__PURE__ */ Symbol("Last check for pointer-events");
 function checkPointerEvents(instance, element) {
   let lastCheck = element[PointerEventsCheck];
   if (!(instance.config.pointerEventsCheck !== PointerEventsCheckLevel.Never && (!lastCheck || hasBitFlag(instance.config.pointerEventsCheck, PointerEventsCheckLevel.EachApiCall) && lastCheck[ApiLevel.Call] !== getLevelRef(instance, ApiLevel.Call) || hasBitFlag(instance.config.pointerEventsCheck, PointerEventsCheckLevel.EachTrigger) && lastCheck[ApiLevel.Trigger] !== getLevelRef(instance, ApiLevel.Trigger))))
@@ -30393,7 +30406,7 @@ async function type3(element, text, { skipClick = this.config.skipClick, skipAut
 }
 
 // ../../node_modules/@testing-library/user-event/dist/esm/utils/edit/setFiles.js
-var fakeFiles = Symbol("files and value properties are mocked");
+var fakeFiles = /* @__PURE__ */ Symbol("files and value properties are mocked");
 function restoreProperty(obj, prop, descriptor) {
   descriptor ? Object.defineProperty(obj, prop, descriptor) : delete obj[prop];
 }
@@ -30931,7 +30944,7 @@ var isEmptyRender = (element) => {
   return !(rect.width > 0 && rect.height > 0 && style.visibility !== "hidden" && Number(style.opacity) > 0 && style.display !== "none");
 }, afterEach = async ({ reporting, canvasElement, globals }) => {
   try {
-    if (!globals.ghostStories)
+    if (!globals.renderAnalysis?.enabled)
       return;
     let emptyRender = isEmptyRender(canvasElement.firstElementChild ?? canvasElement);
     emptyRender && reporting.addReport({
@@ -31019,7 +31032,7 @@ var svgElements = "svg,path,rect,circle,line,polyline,polygon,ellipse,text".spli
     menu: Array.isArray(menu) ? menu.every(Array.isArray) ? menu : [menu] : void 0
   };
 }, isFunction2 = (obj) => obj instanceof Function, state = /* @__PURE__ */ new Map(), listeners2 = /* @__PURE__ */ new Map(), teardowns = /* @__PURE__ */ new Map(), useStore = (initialValue2) => {
-  let key = Symbol();
+  let key = /* @__PURE__ */ Symbol();
   return listeners2.set(key, []), state.set(key, initialValue2), { get: () => state.get(key), set: (update) => {
     let current = state.get(key), next = isFunction2(update) ? update(current) : update;
     next !== current && (state.set(key, next), listeners2.get(key)?.forEach((listener) => {
@@ -32376,6 +32389,10 @@ var initialGlobals4 = {
 });
 
 // src/csf/core-annotations.ts
+var CORE_ANNOTATIONS_COMPOSED = /* @__PURE__ */ Symbol.for("storybook.internal.composedWithCoreAnnotations");
+function hasCoreAnnotations(annotations) {
+  return annotations != null && typeof annotations == "object" && annotations[CORE_ANNOTATIONS_COMPOSED] === !0;
+}
 function getCoreAnnotations() {
   return [
     // @ts-expect-error CJS fallback
@@ -32616,7 +32633,7 @@ function isEqual2(a3, b) {
 }
 
 // src/preview-api/modules/store/args.ts
-var INCOMPATIBLE = Symbol("incompatible"), map = (arg, argType) => {
+var INCOMPATIBLE = /* @__PURE__ */ Symbol("incompatible"), map = (arg, argType) => {
   let type5 = argType.type;
   if (arg == null || !type5 || argType.mapping)
     return arg;
@@ -32684,7 +32701,7 @@ var INCOMPATIBLE = Symbol("incompatible"), map = (arg, argType) => {
     return allowArg();
   let field = isArray3 ? `${key}[${invalidIndex}]` : key, supportedOptions = options.map((opt) => typeof opt == "string" ? `'${opt}'` : String(opt)).join(", ");
   return once.warn(`Received illegal value for '${field}'. Supported options: ${supportedOptions}`), acc;
-}, {}), DEEPLY_EQUAL = Symbol("Deeply equal"), deepDiff = (value, update) => {
+}, {}), DEEPLY_EQUAL = /* @__PURE__ */ Symbol("Deeply equal"), deepDiff = (value, update) => {
   if (typeof value != typeof update)
     return update;
   if (isEqual2(value, update))
@@ -33446,9 +33463,9 @@ function extractAnnotation(annotation) {
   return annotation ? composeConfigs([annotation]) : {};
 }
 function setProjectAnnotations(projectAnnotations) {
-  let annotations = Array.isArray(projectAnnotations) ? projectAnnotations : [projectAnnotations];
+  let annotations = Array.isArray(projectAnnotations) ? projectAnnotations : [projectAnnotations], alreadyComposedWithCore = annotations.some((annotation) => hasCoreAnnotations(annotation));
   return globalThis.globalProjectAnnotations = composeConfigs([
-    ...getCoreAnnotations(),
+    ...alreadyComposedWithCore ? [] : getCoreAnnotations(),
     globalThis.defaultProjectAnnotations ?? {},
     composeConfigs(annotations.map(extractAnnotation))
   ]), globalThis.globalProjectAnnotations ?? {};
@@ -33622,12 +33639,13 @@ async function runStory(story, context) {
 }
 
 // src/preview-api/modules/store/StoryStore.ts
+function composeProjectAnnotations(projectAnnotations) {
+  return hasCoreAnnotations(projectAnnotations) ? normalizeProjectAnnotations(projectAnnotations) : normalizeProjectAnnotations(composeConfigs([...getCoreAnnotations(), projectAnnotations]));
+}
 var CSF_CACHE_SIZE = 1e3, STORY_CACHE_SIZE = 1e4, StoryStore = class {
   constructor(storyIndex, importFn, projectAnnotations) {
     this.importFn = importFn;
-    this.storyIndex = new StoryIndexStore(storyIndex), this.projectAnnotations = normalizeProjectAnnotations(
-      composeConfigs([...getCoreAnnotations(), projectAnnotations])
-    );
+    this.storyIndex = new StoryIndexStore(storyIndex), this.projectAnnotations = composeProjectAnnotations(projectAnnotations);
     let { initialGlobals: initialGlobals5, globalTypes } = this.projectAnnotations;
     this.args = new ArgsStore(), this.userGlobals = new GlobalsStore({ globals: initialGlobals5, globalTypes }), this.hooks = {}, this.cleanupCallbacks = {}, this.processCSFFileWithCache = (0, import_memoizerific2.default)(CSF_CACHE_SIZE)(processCSFFile), this.prepareMetaWithCache = (0, import_memoizerific2.default)(CSF_CACHE_SIZE)(prepareMeta), this.prepareStoryWithCache = (0, import_memoizerific2.default)(STORY_CACHE_SIZE)(prepareStory);
   }
@@ -34384,6 +34402,11 @@ var { fetch: fetch2 } = scope, STORY_INDEX_PATH = "./index.json", Preview = clas
   }
 };
 
+// src/shared/utils/story-index-filters.ts
+function isMdxEntry({ tags }) {
+  return tags?.includes(Tag.UNATTACHED_MDX) || tags?.includes(Tag.ATTACHED_MDX);
+}
+
 // src/preview-api/modules/preview-web/docs-context/DocsContext.ts
 var DocsContext = class {
   constructor(channel, store, renderStoryToElement, csfFiles) {
@@ -34511,7 +34534,6 @@ var DocsContext = class {
           ...resolved,
           preparedMeta: this.store.preparedMetaFromCSFFile({ csfFile: resolved.csfFile })
         };
-      case "story":
       default:
         return resolved;
     }
@@ -34559,7 +34581,7 @@ var CsfDocsRender = class {
       renderStoryToElement,
       this.csfFiles
     );
-    return this.csfFiles.forEach((csfFile) => docsContext.attachCSFFile(csfFile)), docsContext;
+    return this.csfFiles.forEach((csfFile) => docsContext.attachCSFFile(csfFile)), docsContext.filterByAutodocs = !isMdxEntry(this.entry), docsContext;
   }
   async renderToElement(canvasElement, renderStoryToElement) {
     if (!this.story || !this.csfFiles)
@@ -34629,7 +34651,7 @@ var MdxDocsRender = class {
       renderStoryToElement,
       this.csfFiles
     );
-    return this.attachedCsfFile && docsContext.attachCSFFile(this.attachedCsfFile), docsContext;
+    return this.attachedCsfFile && docsContext.attachCSFFile(this.attachedCsfFile), docsContext.filterByAutodocs = !isMdxEntry(this.entry), docsContext;
   }
   async renderToElement(canvasElement, renderStoryToElement) {
     if (!this.exports || !this.csfFiles || !this.store.projectAnnotations)
@@ -34660,9 +34682,6 @@ var globalWindow = globalThis;
 function focusInInput(event) {
   let target = event.composedPath && event.composedPath()[0] || event.target;
   return /input|textarea/i.test(target.tagName) || target.getAttribute("contenteditable") !== null;
-}
-function isMdxEntry({ tags }) {
-  return tags?.includes(Tag.UNATTACHED_MDX) || tags?.includes(Tag.ATTACHED_MDX);
 }
 function isStoryRender(r) {
   return r.type === "story";
@@ -34855,7 +34874,7 @@ var PreviewWithSelection = class extends Preview {
     isStoryRender(render) ? (invariant(!!render.story), this.storyRenders.push(render), this.currentRender.renderToElement(
       this.view.prepareForStory(render.story)
     )) : this.currentRender.renderToElement(
-      this.view.prepareForDocs(),
+      this.view.prepareForDocs({ scrollReset: storyIdChanged || viewModeChanged }),
       // This argument is used for docs, which is currently only compatible with HTMLElements
       this.renderStoryToElement.bind(this)
     );
@@ -35034,8 +35053,8 @@ var { document: document5 } = scope, PREPARING_DELAY = 100, Mode = /* @__PURE__ 
   storyRoot() {
     return document5.getElementById("storybook-root");
   }
-  prepareForDocs() {
-    return this.showMain(), this.showDocs(), this.applyLayout("fullscreen"), document5.documentElement.scrollTop = 0, document5.documentElement.scrollLeft = 0, this.docsRoot();
+  prepareForDocs({ scrollReset = !0 } = {}) {
+    return this.showMain(), this.showDocs(), this.applyLayout("fullscreen"), scrollReset && (document5.documentElement.scrollTop = 0, document5.documentElement.scrollLeft = 0), this.docsRoot();
   }
   docsRoot() {
     return document5.getElementById("storybook-docs");
