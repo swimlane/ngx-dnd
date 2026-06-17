@@ -32,11 +32,10 @@
     "version": "npm run changelog",
     "postversion": "npm run setMetadata && git add -A . && git commit --amend --no-edit",
     "copyFiles": "cpx \"./{CHANGELOG.md,README.md,LICENSE}\" ./dist/swimlane/ngx-dnd",
-    "prepublish:lib": "run-s ci build:lib:prod",
-    "publish:lib": "cd dist/swimlane/ngx-dnd && npm publish --ignore-scripts --tag beta",
+    "prepublish:lib": "yarn package",
     "prepack:lib": "npm run build:lib:prod",
     "pack:lib": "cd dist/swimlane/ngx-dnd && npm pack",
-    "publish": "npm-run-all publish:lib deploy",
+    "publish": "npm publish ./dist/swimlane/ngx-dnd --ignore-scripts",
     "prepublishOnly": "echo \"This is the workspace -- you probably meant run 'npm run publish'.\" && exit 1"
   },
   "private": true,

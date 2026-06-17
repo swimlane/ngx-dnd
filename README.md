@@ -196,7 +196,7 @@ This project uses [heff/chg](https://github.com/heff/chg), a simple changelog/re
 - Run `git commit -am "(release): X.Y.Z"`
 - Run `git tag X.Y.Z`
 - Run `git push origin HEAD --tags`
-- Run `yarn publish:lib`
+- Run `yarn run publish`
 - Submit PR
 
 ## Credits
