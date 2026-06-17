@@ -9,6 +9,7 @@
     "build:lib": "ng build @swimlane/ngx-dnd",
     "build:lib:prod": "ng build --configuration production @swimlane/ngx-dnd",
     "build:storybook": "ng run @swimlane/ngx-dnd:build-storybook",
+    "package": "yarn build:lib:prod && yarn copyFiles",
     "deploy": "ng deploy --base-href=\"/ngx-dnd/\"",
     "start": "ng run @swimlane/ngx-dnd:storybook",
     "serve": "npm run start",
@@ -31,11 +32,10 @@
     "version": "npm run changelog",
     "postversion": "npm run setMetadata && git add -A . && git commit --amend --no-edit",
     "copyFiles": "cpx \"./{CHANGELOG.md,README.md,LICENSE}\" ./dist/swimlane/ngx-dnd",
-    "prepublish:lib": "run-s ci build:lib:prod",
-    "publish:lib": "cd dist/swimlane/ngx-dnd && npm publish --ignore-scripts --tag beta",
+    "prepublish:lib": "yarn package",
     "prepack:lib": "npm run build:lib:prod",
     "pack:lib": "cd dist/swimlane/ngx-dnd && npm pack",
-    "publish": "npm-run-all publish:lib deploy",
+    "publish": "npm publish ./dist/swimlane/ngx-dnd --ignore-scripts",
     "prepublishOnly": "echo \"This is the workspace -- you probably meant run 'npm run publish'.\" && exit 1"
   },
   "private": true,
@@ -86,7 +86,7 @@
     "@storybook/addon-docs": "^10.3.6",
     "@storybook/angular": "^10.3.6",
     "@swimlane/eslint-config": "^2.0.0",
-    "@swimlane/prettier-config-swimlane": "4.0.0-alpha.0",
+    "@swimlane/prettier-config-swimlane": "4.0.0",
     "@types/jasmine": "~3.6.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/mdast": "^3.0.3",
@@ -156,7 +156,8 @@
     "browserslist": "4.28.2"
   },
   "volta": {
-    "node": "22.16.0"
+    "node": "22.16.0",
+    "yarn": "4.9.2"
   },
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+  "packageManager": "yarn@4.9.2"
 }
