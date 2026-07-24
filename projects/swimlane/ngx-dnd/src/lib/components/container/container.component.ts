@@ -8,7 +8,8 @@ import {
   ContentChild,
   TemplateRef,
   ViewChild,
-  EventEmitter
+  EventEmitter,
+  ChangeDetectionStrategy
 } from '@angular/core';
 
 import { DroppableDirective } from '../../directives/ngx-droppable.directive';
@@ -28,6 +29,7 @@ function getNextId() {
   templateUrl: './container.component.html',
   styleUrls: ['./container.component.scss'],
   encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false
 })
 export class ContainerComponent implements OnInit, AfterViewInit {

@@ -13,5 +13,8 @@
     }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", ".storybook/*.ts"],
-  "exclude": ["src/test.ts", "**/*.spec.ts"]
+  "exclude": ["src/test.ts", "**/*.spec.ts"],
+  "angularCompilerOptions": {
+    "strictTemplates": false
+  }
 }
