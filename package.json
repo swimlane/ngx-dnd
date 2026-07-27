@@ -86,7 +86,6 @@
     "@eslint/js": "^10.0.1",
     "@storybook/addon-docs": "^10.5.3",
     "@storybook/angular": "^10.5.3",
-    "@swimlane/eslint-config": "^2.0.0",
     "@swimlane/prettier-config-swimlane": "4.0.0",
     "@types/jasmine": "~3.6.0",
     "@types/jasminewd2": "~2.0.3",
