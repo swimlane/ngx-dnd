@@ -2,6 +2,12 @@
 
 ## HEAD (Unreleased)
 
+## 13.0.0 (2026-07-29)
+
+- Added support for Angular 22
+- Removed support for Angular 19 and 20
+- Pinned Node.js to 24.18.0
+
 ## 12.0.0 (2026-06-17)
 
 - Added support for Angular 21
