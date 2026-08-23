@@ -34,7 +34,11 @@ export class DraggableDirective implements OnInit, OnDestroy, DoCheck {
     this._dropZones = val;
   }
 
-  @Input('moves') _moves: boolean | ((...args: any[]) => any) = true;
+  @Input() moves: boolean | ((...args: any[]) => any) = true;
+
+  get _moves(): boolean | ((...args: any[]) => any) {
+    return this.moves;
+  }
 
   /*
   ContentChildren doesn't get children created with NgTemplateOutlet
@@ -131,7 +135,7 @@ export class DraggableDirective implements OnInit, OnDestroy, DoCheck {
     return true;
   }
 
-  moves(source: any, handle: any, sibling: any): boolean {
+  canDrag(source: any, handle: any, sibling: any): boolean {
     if (!this.canMove(source, handle, sibling)) return false;
 
     return this.hasHandle ? this.handles.some(h => handelFor(handle, h)) : true;
