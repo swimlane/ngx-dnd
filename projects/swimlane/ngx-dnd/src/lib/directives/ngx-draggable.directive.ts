@@ -23,7 +23,7 @@ import { DrakeStoreService } from '../services/drake-store.service';
   standalone: false
 })
 export class DraggableDirective implements OnInit, OnDestroy, DoCheck {
-  @Input() ngxDraggable: string[];
+  @Input() ngxDraggable?: string[] | '';
   @Input() model: any;
 
   @Input()

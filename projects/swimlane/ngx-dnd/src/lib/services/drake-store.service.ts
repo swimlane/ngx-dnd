@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import dragula from '@swimlane/dragula';
+import type { DragulaOptions, Drake } from 'dragula';
 import { DroppableDirective } from '../directives/ngx-droppable.directive';
 import { DraggableDirective } from '../directives/ngx-draggable.directive';
 
@@ -13,8 +14,8 @@ import { DraggableDirective } from '../directives/ngx-draggable.directive';
 export class DrakeStoreService {
   private droppableMap = new WeakMap<any, DroppableDirective>();
   private draggableMap = new WeakMap<any, DraggableDirective>();
-  private dragulaOptions: dragula.DragulaOptions;
-  private drake: dragula.Drake;
+  private dragulaOptions: DragulaOptions;
+  private drake: Drake;
 
   constructor() {
     this.dragulaOptions = this.createDrakeOptions();
@@ -43,7 +44,7 @@ export class DrakeStoreService {
     this.draggableMap.delete(draggable.element);
   }
 
-  createDrakeOptions(): dragula.DragulaOptions {
+  createDrakeOptions(): DragulaOptions {
     const accepts = (el: any, target: any /*, source: any, sibling: any */) => {
       if (el.contains(target)) {
         return false;
